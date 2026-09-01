@@ -6,6 +6,17 @@ estética y general, medicina estética, medicina de especialidad y nutrición.
 El sitio institucional de la agencia todavía no existe: por ahora la raíz es una portada
 mínima cuyo único trabajo es llevar a **Estudios**, que es lo que sí está construido.
 
+## En vivo
+
+**https://consultorios-brown.vercel.app** — corre en modo demostración (ver abajo), así que las
+cuentas y los assessments que se creen ahí se borran solos. Cuenta lista para probar:
+`demo@consultorios.co` / `consultorios123`.
+
+El proyecto de Vercel está enlazado a este repositorio y despliega en cada push a `main`.
+`vercel.json` declara el framework explícitamente: el proyecto se creó cuando el repositorio
+todavía estaba vacío, así que la autodetección no encontró nada y sin esa declaración Vercel
+publica solo `public/` como sitio estático (síntoma: 404 en todas las rutas menos `/admin/`).
+
 ## El ciclo del producto
 
 ```
