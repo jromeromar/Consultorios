@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { salir } from '@/lib/auth/actions'
 import type { SessionUser } from '@/lib/auth/session'
+import { DEMO_MODE } from '@/lib/mode'
 
 export function SiteHeader({ user }: { user: SessionUser | null }) {
   return (
@@ -62,7 +63,7 @@ export function SiteHeader({ user }: { user: SessionUser | null }) {
  * adelantado evita que parezca un fallo.
  */
 function DemoModeBanner() {
-  if (process.env.DEMO_MODE !== '1') return null
+  if (!DEMO_MODE) return null
 
   return (
     <div className="border-b border-[var(--color-hair)] bg-[var(--color-brand)] px-5 py-2 text-center text-[12px] leading-relaxed text-white">

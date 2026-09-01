@@ -39,6 +39,16 @@ Sin `DATABASE_URL` la app usa **PGlite** (Postgres compilado a WASM) en `.data/p
 hace falta instalar nada. Con `DATABASE_URL` apunta a un Postgres real (Neon, Supabase,
 Vercel Postgres) usando el mismo esquema y las mismas consultas.
 
+### Modo demostración
+
+Con `DEMO_MODE=1` —o al desplegar en Vercel sin `DATABASE_URL`— la app arranca un Postgres
+**en memoria**, lo migra y lo siembra en cada arranque en frío. Sirve para publicar una versión
+navegable sin infraestructura, a cambio de que las cuentas y los assessments se borren cuando
+la instancia se enfría. La cabecera lo advierte en todas las páginas.
+
+La presencia de `DATABASE_URL` descarta el modo siempre: una instalación real no puede
+convertirse en demo por accidente.
+
 Cuentas del seed: `demo@consultorios.co` y `agencia@consultorios.co` (rol `admin`), ambas con
 contraseña `consultorios123`.
 
@@ -54,9 +64,16 @@ contraseña `consultorios123`.
 | `npm run db:seed` | Carga/actualiza el benchmark (idempotente) |
 | `npm run db:reset` | Borra el PGlite local y vuelve a migrar y sembrar |
 
+## Mercado
+
+Colombia: `es-CO`, pesos colombianos, país `CO`. Ambos configurables en `.env`
+(`NEXT_PUBLIC_LOCALE`, `NEXT_PUBLIC_CURRENCY`) y el país por celda del benchmark vive en la
+propia tabla, así que abrir otro mercado es cargar celdas nuevas, no tocar código.
+
 ## Los datos del periodo cargado son sintéticos
 
-`src/lib/benchmark/reference-data.ts` genera distribuciones **plausibles pero inventadas**.
+`src/lib/benchmark/reference-data.ts` genera distribuciones **plausibles pero inventadas**,
+denominadas en pesos colombianos.
 Existen para que la plataforma funcione de punta a punta antes de tener muestra de campo, y
 la interfaz lo declara en cada vista donde aparece una cifra.
 

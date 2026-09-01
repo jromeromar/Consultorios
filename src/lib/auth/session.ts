@@ -7,6 +7,7 @@ import { SignJWT, jwtVerify } from 'jose'
 
 import { getDb } from '@/lib/db'
 import { users } from '@/lib/db/schema'
+import { DEMO_MODE } from '@/lib/mode'
 
 const COOKIE = 'consultorios_session'
 const DURACION_DIAS = 30
@@ -22,9 +23,20 @@ export type SessionUser = {
   city: string | null
 }
 
+/** Secreto efímero del modo demostración: uno por proceso, nunca en disco. */
+let secretoEfimero: Uint8Array | undefined
+
 function secret(): Uint8Array {
   const value = process.env.AUTH_SECRET
   if (value && value.length >= 32) return new TextEncoder().encode(value)
+
+  if (DEMO_MODE) {
+    // En demostración la base vive en memoria: una sesión no puede sobrevivir
+    // al proceso de todas formas, así que un secreto por instancia es coherente
+    // y evita firmar con una constante pública.
+    secretoEfimero ??= crypto.getRandomValues(new Uint8Array(48))
+    return secretoEfimero
+  }
 
   if (process.env.NODE_ENV === 'production') {
     throw new Error(

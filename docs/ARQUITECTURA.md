@@ -21,12 +21,21 @@ De ahí sale todo lo demás.
 | Gráficas | Componentes propios en HTML/SVG | Sin librería: cuatro formas de gráfica, todas responsivas y con gemelo tabular. Pesan menos que cualquier dependencia. |
 | Contenido editorial | Markdown en `content/estudios` + Decap CMS | La narrativa la escribe una persona; las cifras no se escriben a mano nunca. |
 
-### Un esquema, dos drivers
+### Un esquema, tres modos
 
-`src/lib/db/connect.ts` decide por presencia de `DATABASE_URL`:
+`src/lib/db/connect.ts` decide, y `src/lib/mode.ts` concentra el criterio:
 
-- **definido** → `postgres-js` contra Neon / Supabase / Vercel Postgres.
-- **vacío** → PGlite en `.data/pglite`.
+- **`DATABASE_URL` definido** → `postgres-js` contra Neon / Supabase / Vercel Postgres. El
+  único modo apto para producción real.
+- **modo demostración** (`DEMO_MODE=1`, o Vercel sin `DATABASE_URL`) → PGlite **en memoria**,
+  migrado y sembrado en cada arranque en frío. Permite publicar algo navegable sin
+  infraestructura; nada persiste y la cabecera lo dice en todas las páginas.
+- **local** → PGlite en `.data/pglite`.
+
+La inferencia solo ocurre en Vercel y solo sin base de datos, porque ahí la alternativa es
+estrellarse: PGlite necesita disco de escritura y en serverless no lo hay. La presencia de
+`DATABASE_URL` descarta el modo demostración siempre, así que una instalación real no puede
+degradarse a demo por accidente.
 
 `src/lib/db/index.ts` envuelve eso en un singleton cacheado en `globalThis`, para que los
 recargos en caliente de `next dev` no abran una conexión nueva por edición. Los scripts de CLI
@@ -126,7 +135,9 @@ módulo entero no se muestra: es preferible a rellenar un hueco con un supuesto.
 - Sesión en JWT HS256 dentro de una cookie `httpOnly`, `sameSite=lax`, `secure` en producción,
   30 días (`src/lib/auth/session.ts`).
 - `AUTH_SECRET` **debe** estar definido y tener 32+ caracteres en producción: si falta, el
-  arranque de una sesión falla en voz alta en lugar de firmar con una constante.
+  arranque de una sesión falla en voz alta en lugar de firmar con una constante. La única
+  excepción es el modo demostración, donde se genera un secreto aleatorio por instancia — que
+  es coherente, porque ahí la base tampoco sobrevive al proceso.
 - `getSessionUser()` nunca lanza por un token inválido o vencido: devuelve `null`.
 - La guardia autoritativa es `src/app/plataforma/layout.tsx` (`requireUser`). Todas las páginas
   bajo `/plataforma` se renderizan en servidor, así que ninguna se ejecuta sin sesión. No hay
@@ -188,7 +199,14 @@ archivos se editan por pull request como cualquier otro cambio.
 4. `npm run build`.
 
 PGlite escribe en disco local: sirve para desarrollo, no para serverless. En producción
-`DATABASE_URL` es obligatorio de facto.
+`DATABASE_URL` es obligatorio de facto — sin ella, un despliegue en Vercel arranca en modo
+demostración y nada de lo que hagan los usuarios se guarda.
+
+### Mercado
+
+Colombia (`es-CO`, COP, país `CO`). El país es una columna de `benchmark_stats`, no una
+constante repartida por el código: abrir un segundo mercado es cargar celdas nuevas y cambiar
+las dos variables de formato.
 
 ## Lo que falta
 

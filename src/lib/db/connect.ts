@@ -1,20 +1,18 @@
 import type { PgDatabase } from 'drizzle-orm/pg-core'
+import { DEMO_MODE } from '../mode'
 import * as schema from './schema'
 
 export type Db = PgDatabase<never, typeof schema>
-
-/** Modo demostración: Postgres en memoria, sin infraestructura y sin persistencia. */
-export const DEMO_MODE = process.env.DEMO_MODE === '1'
 
 /**
  * Un solo esquema, tres modos:
  *
  *  - `DATABASE_URL` definido → Postgres real (Neon / Supabase / Vercel Postgres).
  *    Es el único modo apto para producción de verdad.
- *  - `DEMO_MODE=1` → PGlite **en memoria**, migrado y sembrado en cada arranque
- *    en frío. Permite publicar una versión navegable sin base de datos, a costa
- *    de que las cuentas y los assessments vivan solo mientras la instancia esté
- *    caliente. La interfaz lo advierte con una barra permanente.
+ *  - modo demostración (ver `src/lib/mode.ts`) → PGlite **en memoria**, migrado
+ *    y sembrado en cada arranque en frío. Permite publicar una versión
+ *    navegable sin base de datos, a costa de que las cuentas y los assessments
+ *    vivan solo mientras la instancia esté caliente. La cabecera lo advierte.
  *  - ninguno de los dos → PGlite en `.data/pglite`, para desarrollo local.
  *
  * Devuelve también `close`, que los scripts de CLI necesitan y el servidor no usa.
