@@ -5,6 +5,7 @@ import { Card, DemoDataNotice, SectionTitle } from '@/components/ui/chrome'
 import { getAssessmentsForUser } from '@/lib/assessment/actions'
 import { requireUser } from '@/lib/auth/session'
 import { formatDate } from '@/lib/benchmark/format'
+import { getSourceNote } from '@/lib/benchmark/queries'
 import { getSegment, getSpecialty } from '@/lib/benchmark/taxonomy'
 import { getStudies } from '@/lib/content/studies'
 
@@ -12,9 +13,10 @@ export const metadata: Metadata = { title: 'Mi plataforma' }
 
 export default async function PlataformaPage() {
   const user = await requireUser()
-  const [assessments, studies] = await Promise.all([
+  const [assessments, studies, sourceNote] = await Promise.all([
     getAssessmentsForUser(user.id, user.email),
     getStudies(),
+    getSourceNote(user.specialtySlug),
   ])
 
   const miEstudio = studies.find((s) => s.specialtySlug === user.specialtySlug)
@@ -125,7 +127,7 @@ export default async function PlataformaPage() {
             </Card>
           ) : null}
 
-          <DemoDataNotice />
+          <DemoDataNotice sourceNote={sourceNote} />
         </div>
       </div>
     </>

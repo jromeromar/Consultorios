@@ -1,0 +1,6 @@
+id,especialidad,segmento,periodo,pais,ciudad,tasa-cierre,ticket-promedio,lead-a-cita,no-show,leads-mes,costo-por-lead,cac,tiempo-respuesta,precio-ancla,margen-bruto,descuento-promedio,ocupacion-agenda,ingreso-por-unidad,tasa-retorno
+C-001,ortodoncia,clinica-pequena,2026-S1,CO,Medellín,46,4200000,39,13,62,27000,470000,32,4500000,58,9,70,24000000,27
+C-002,ortodoncia,solo,2026-S1,CO,Bogotá,33,2900000,26,21,28,41000,780000,180,3600000,49,16,54,11000000,14
+C-003,ortodoncia,clinica-multiple,2026-S1,CO,Cali,61,7300000,52,8,145,19000,310000,7,6800000,68,4,82,44000000,41
+C-004,odontologia-estetica,clinica-pequena,2026-S1,CO,Medellín,42,6600000,35,15,49,44000,760000,55,7100000,55,13,64,35000000,19
+C-005,medicina-estetica,solo,2026-S1,CO,Barranquilla,,2100000,29,,74,,,15,,,,61,,

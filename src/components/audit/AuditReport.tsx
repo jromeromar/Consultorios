@@ -310,7 +310,13 @@ export function AuditReport({ result, leadName, clinicName, mode, registerHref }
         </Card>
       )}
 
-      <DemoDataNotice />
+      <DemoDataNotice
+        sourceNote={
+          result.blocks
+            .flatMap((block) => block.kpis)
+            .find((kpi) => kpi.distribution !== null)?.distribution?.sourceNote
+        }
+      />
     </div>
   )
 }

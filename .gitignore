@@ -8,3 +8,7 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+# Datos de campo: se versionan las plantillas, nunca las muestras reales.
+data/*.csv
+!data/plantillas/*.csv

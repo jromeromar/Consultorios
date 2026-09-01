@@ -72,7 +72,8 @@ contraseña `consultorios123`.
 | `npm run typecheck` / `lint` | TypeScript estricto y ESLint |
 | `npm run db:generate` | Genera la migración SQL a partir del esquema Drizzle |
 | `npm run db:migrate` | Aplica las migraciones al driver activo |
-| `npm run db:seed` | Carga/actualiza el benchmark (idempotente) |
+| `npm run db:seed` | Carga/actualiza el benchmark sintético (idempotente) |
+| `npm run db:import -- <csv>` | Importa el benchmark desde CSV (ver [`data/README.md`](data/README.md)) |
 | `npm run db:reset` | Borra el PGlite local y vuelve a migrar y sembrar |
 
 ## Mercado
@@ -90,6 +91,18 @@ la interfaz lo declara en cada vista donde aparece una cifra.
 
 Cuando llegue la primera muestra real solo se sustituye el contenido de la tabla
 `benchmark_stats`: ninguna otra parte del sistema lee números de otro lugar.
+
+```bash
+# Valida e informa sin escribir
+npm run db:import -- data/campo-2026-s1.csv --nota "Muestra de campo, 214 consultorios" --dry-run
+# Escribe y borra las celdas sintéticas del periodo
+npm run db:import -- data/campo-2026-s1.csv --nota "Muestra de campo, 214 consultorios" --reemplazar
+```
+
+El importador acepta **observaciones** (una fila por consultorio, una columna por KPI — calcula
+él los percentiles) o **percentiles ya agregados**. La interfaz deja de mostrar el aviso de
+demostración por sí sola: la advertencia depende de la procedencia guardada en cada celda, no de
+una bandera que alguien tenga que acordarse de apagar. Ver [`data/README.md`](data/README.md).
 
 ## Documentación
 

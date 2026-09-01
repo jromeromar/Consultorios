@@ -80,6 +80,37 @@ Correo único, hash bcrypt (12 rondas), especialidad y segmento —que son el co
 de sus comparaciones— y `role` (`pro` | `admin`) para que el staff de la agencia pueda abrir
 cualquier auditoría.
 
+## Entrada de datos
+
+Las cifras entran por un solo camino: `benchmark_stats`. `npm run db:import` lo alimenta desde
+CSV y es el único componente que ve observaciones individuales — las agrega y las descarta.
+
+Dos formas de archivo, detectadas por las columnas:
+
+- **Observaciones** (una fila por consultorio, una columna por KPI): el importador calcula los
+  percentiles con interpolación lineal, KPI por KPI, usando solo las observaciones que tienen
+  ese dato. Un archivo con huecos es válido y cada KPI acaba con su propio `n`, que es lo
+  honesto: nadie mide los catorce indicadores.
+- **Percentiles** (una fila por celda ya agregada): para cifras calculadas fuera. Se valida que
+  vayan ordenadas de menor a mayor valor — la dirección la resuelve el catálogo, no el archivo.
+
+Tres reglas que el importador impone y por qué:
+
+1. **Muestra mínima de 12 por celda.** Con menos, los percentiles no significan nada; y con muy
+   pocas, un profesional podría deducir la cifra de un competidor. Las celdas cortas no se
+   publican y la consulta cae al agregado `all` de la especialidad, que el importador calcula
+   solo juntando todos los segmentos.
+2. **Procedencia obligatoria.** Sin `--nota` o columna `fuente` no se escribe. Esa cadena se
+   guarda por celda y es lo que la interfaz muestra: `esFuenteSintetica()` decide si sale la
+   advertencia de demostración o la ficha técnica. Al importar datos reales el aviso desaparece
+   solo, sin que nadie tenga que acordarse de apagarlo.
+3. **Todo o nada.** Un solo problema (especialidad desconocida, valor fuera de rango,
+   percentiles desordenados) aborta la escritura completa. Media importación es peor que
+   ninguna: deja el benchmark en un estado que nadie sabe interpretar.
+
+`data/*.csv` está en `.gitignore` — solo se versionan las plantillas. Las muestras de campo no
+entran al repositorio.
+
 ## El motor de scoring
 
 Todo en `src/lib/benchmark/scoring.ts`, sin dependencias y sin acceso a base de datos: recibe

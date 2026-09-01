@@ -10,10 +10,19 @@
  */
 
 import { KPIS } from './kpis'
-import { SEGMENTS, SPECIALTIES } from './taxonomy'
+import { PAIS_DEFAULT, PERIOD_ACTUAL, SEGMENTS, SPECIALTIES } from './taxonomy'
 
 export const NOTA_FUENTE_DEMO =
   'Datos sintéticos de demostración: cifras plausibles, no una muestra de campo.'
+
+/**
+ * Si la procedencia de una celda es el generador sintético. La interfaz lo usa
+ * para decidir si muestra la advertencia de demostración o la ficha técnica de
+ * una muestra real, sin que haya que tocar código al importar datos.
+ */
+export function esFuenteSintetica(sourceNote: string | undefined): boolean {
+  return (sourceNote ?? '').startsWith('Datos sintéticos')
+}
 
 type Percentiles = [p10: number, p25: number, p50: number, p75: number, p90: number]
 
@@ -91,10 +100,13 @@ function round(kpiSlug: string, value: number): number {
   return Math.round(Math.min(99, Math.max(1, value)) * 10) / 10
 }
 
+/** Una celda del benchmark, lista para escribirse en `benchmark_stats`. */
 export type BenchmarkRow = {
   kpiSlug: string
   specialtySlug: string
   segmentSlug: string
+  period: string
+  country: string
   p10: number
   p25: number
   p50: number
@@ -147,6 +159,8 @@ export function buildBenchmarkRows(): BenchmarkRow[] {
           kpiSlug: kpi.slug,
           specialtySlug: specialty.slug,
           segmentSlug,
+          period: PERIOD_ACTUAL,
+          country: PAIS_DEFAULT,
           p10,
           p25,
           p50,

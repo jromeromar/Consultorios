@@ -49,7 +49,7 @@ export default async function EstudiosPage() {
         />
 
         <div className="mt-6 max-w-3xl">
-          <DemoDataNotice />
+          <DemoDataNotice sourceNote={across[0]?.distribution.sourceNote} />
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_1fr]">

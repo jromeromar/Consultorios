@@ -4,6 +4,7 @@ import { AssessmentForm } from '@/components/assessment/AssessmentForm'
 import { Card, DemoDataNotice, SectionTitle, SiteFooter, SiteHeader } from '@/components/ui/chrome'
 import { getSessionUser } from '@/lib/auth/session'
 import { BLOCKS } from '@/lib/benchmark/kpis'
+import { getSourceNote } from '@/lib/benchmark/queries'
 
 export const metadata: Metadata = {
   title: 'Assessment de benchmark',
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 
 export default async function AssessmentPage() {
   const user = await getSessionUser()
+  const sourceNote = await getSourceNote(user?.specialtySlug)
 
   return (
     <>
@@ -69,7 +71,7 @@ export default async function AssessmentPage() {
               </ol>
             </Card>
 
-            <DemoDataNotice />
+            <DemoDataNotice sourceNote={sourceNote} />
           </aside>
         </div>
       </main>

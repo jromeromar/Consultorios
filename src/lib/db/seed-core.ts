@@ -1,22 +1,24 @@
 import { sql } from 'drizzle-orm'
 
-import { buildBenchmarkRows } from '../benchmark/reference-data'
-import { PAIS_DEFAULT, PERIOD_ACTUAL } from '../benchmark/taxonomy'
+import { buildBenchmarkRows, type BenchmarkRow } from '../benchmark/reference-data'
 import { hashPassword } from '../auth/password'
 import { benchmarkStats, users } from './schema'
 import type { Db } from './connect'
 
 /**
- * Carga (o actualiza) las celdas del benchmark. Idempotente.
- * Lo usan tanto `npm run db:seed` como el arranque del modo demostración.
+ * Escribe celdas del benchmark. Idempotente: una celda ya existente se
+ * actualiza (misma clave especialidad × segmento × periodo × país × KPI).
+ *
+ * Es el único camino por el que entran cifras al sistema, lo use el seed
+ * sintético, el arranque del modo demostración o la importación de CSV.
  */
-export async function seedBenchmark(db: Db): Promise<number> {
-  const rows = buildBenchmarkRows().map((row) => ({
+export async function upsertBenchmarkRows(db: Db, filas: BenchmarkRow[]): Promise<number> {
+  const rows = filas.map((row) => ({
     kpiSlug: row.kpiSlug,
     specialtySlug: row.specialtySlug,
     segmentSlug: row.segmentSlug,
-    period: PERIOD_ACTUAL,
-    country: PAIS_DEFAULT,
+    period: row.period,
+    country: row.country,
     sampleSize: row.sampleSize,
     p10: String(row.p10),
     p25: String(row.p25),
@@ -53,6 +55,11 @@ export async function seedBenchmark(db: Db): Promise<number> {
   }
 
   return rows.length
+}
+
+/** Carga el benchmark sintético de referencia. */
+export function seedBenchmark(db: Db): Promise<number> {
+  return upsertBenchmarkRows(db, buildBenchmarkRows())
 }
 
 export const CUENTAS_DEMO = [

@@ -11,7 +11,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx src/lib/db/migrate.ts",
     "db:seed": "tsx src/lib/db/seed.ts",
-    "db:reset": "rm -rf .data/pglite && npm run db:migrate && npm run db:seed"
+    "db:reset": "rm -rf .data/pglite && npm run db:migrate && npm run db:seed",
+    "db:import": "tsx src/lib/db/import-csv.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",

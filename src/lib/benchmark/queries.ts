@@ -82,6 +82,28 @@ export async function getKpiAcrossSpecialties(
   }))
 }
 
+/**
+ * Procedencia de las cifras cargadas, para la ficha técnica de las páginas que
+ * no consultan una distribución concreta. Toma una celda cualquiera del corte:
+ * un periodo se importa de una sola fuente.
+ */
+export async function getSourceNote(specialtySlug?: string): Promise<string | undefined> {
+  const db = await getDb()
+  const where = specialtySlug
+    ? and(
+        eq(benchmarkStats.specialtySlug, specialtySlug),
+        eq(benchmarkStats.period, PERIOD_ACTUAL),
+      )
+    : eq(benchmarkStats.period, PERIOD_ACTUAL)
+
+  const [row] = await db
+    .select({ sourceNote: benchmarkStats.sourceNote })
+    .from(benchmarkStats)
+    .where(where)
+    .limit(1)
+  return row?.sourceNote
+}
+
 export async function benchmarkIsSeeded(): Promise<boolean> {
   const db = await getDb()
   const rows = await db.select({ id: benchmarkStats.id }).from(benchmarkStats).limit(1)

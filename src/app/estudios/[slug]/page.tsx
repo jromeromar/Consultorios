@@ -54,6 +54,7 @@ export default async function EstudioPage({
 
   const byKpi = new Map(distributions.map((d) => [d.kpiSlug, d]))
   const sampleSize = distributions[0]?.sampleSize
+  const sourceNote = distributions[0]?.sourceNote
 
   return (
     <>
@@ -72,8 +73,28 @@ export default async function EstudioPage({
         </div>
 
         <div className="mt-6 max-w-3xl">
-          <DemoDataNotice sampleSize={sampleSize} />
+          <DemoDataNotice sampleSize={sampleSize} sourceNote={sourceNote} />
         </div>
+
+        {distributions.length === 0 ? (
+          <Card className="mt-8 p-6">
+            <h2 className="text-[15px] font-semibold text-[var(--color-ink)]">
+              Este periodo todavía no tiene cifras publicadas
+            </h2>
+            <p className="mt-2 max-w-2xl text-[13px] leading-relaxed text-[var(--color-ink-2)]">
+              La lectura del periodo ya está escrita, pero el benchmark de {specialty.name} para{' '}
+              {study.period} aún no alcanza muestra publicable. Un corte se publica a partir de 12
+              consultorios: por debajo de eso los percentiles no significan nada y una cifra
+              individual sería deducible.
+            </p>
+            <Link
+              href="/assessment"
+              className="mt-4 inline-block rounded-md bg-[var(--color-brand)] px-4 py-2 text-[13px] font-medium text-white hover:bg-[var(--color-accent)]"
+            >
+              Responder el assessment y sumar a la muestra
+            </Link>
+          </Card>
+        ) : null}
 
         <div className="mt-8 flex flex-wrap items-center gap-2">
           <span className="mr-1 text-[12px] text-[var(--color-muted)]">Corte:</span>

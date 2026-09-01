@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { salir } from '@/lib/auth/actions'
 import type { SessionUser } from '@/lib/auth/session'
+import { esFuenteSintetica } from '@/lib/benchmark/reference-data'
 import { DEMO_MODE } from '@/lib/mode'
 
 export function SiteHeader({ user }: { user: SessionUser | null }) {
@@ -89,14 +90,36 @@ export function SiteFooter() {
   )
 }
 
-/** Aviso permanente de que el periodo cargado no es una muestra de campo. */
-export function DemoDataNotice({ sampleSize }: { sampleSize?: number }) {
+/**
+ * Ficha de procedencia de las cifras. Con datos sintéticos advierte; con una
+ * muestra real cita la fuente y el tamaño. Lo decide `sourceNote`, que viene de
+ * la propia celda del benchmark, así que al importar CSV el aviso desaparece
+ * solo — sin que nadie tenga que acordarse de quitarlo.
+ */
+export function DemoDataNotice({
+  sampleSize,
+  sourceNote,
+}: {
+  sampleSize?: number
+  sourceNote?: string
+}) {
+  if (esFuenteSintetica(sourceNote)) {
+    return (
+      <p className="rounded-md border border-[var(--color-hair)] bg-[var(--color-surface-2)] px-3 py-2 text-[12px] leading-relaxed text-[var(--color-ink-2)]">
+        <strong className="font-semibold">Periodo de demostración.</strong> Las distribuciones
+        cargadas son sintéticas: sirven para operar la plataforma completa antes de la primera
+        muestra de campo, no como resultado de un estudio.
+        {sampleSize ? ` (n = ${sampleSize} simulado)` : null}
+      </p>
+    )
+  }
+
+  if (!sourceNote) return null
+
   return (
     <p className="rounded-md border border-[var(--color-hair)] bg-[var(--color-surface-2)] px-3 py-2 text-[12px] leading-relaxed text-[var(--color-ink-2)]">
-      <strong className="font-semibold">Periodo de demostración.</strong> Las distribuciones
-      cargadas son sintéticas: sirven para operar la plataforma completa antes de la primera
-      muestra de campo, no como resultado de un estudio.
-      {sampleSize ? ` (n = ${sampleSize} simulado)` : null}
+      <strong className="font-semibold">Ficha técnica.</strong> {sourceNote}
+      {sampleSize ? ` Muestra del corte mostrado: n = ${sampleSize}.` : null}
     </p>
   )
 }
