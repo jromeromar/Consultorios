@@ -1,0 +1,61 @@
+@import 'tailwindcss';
+
+/*
+ * Paleta: la instancia validada de la guía de visualización de datos.
+ * Los tokens de marca viven en la familia azul para no competir con los
+ * colores de serie de las gráficas.
+ */
+@theme {
+  --color-plane: #f9f9f7;
+  --color-surface: #fcfcfb;
+  --color-surface-2: #f2f1ee;
+  --color-ink: #0b0b0b;
+  --color-ink-2: #52514e;
+  --color-muted: #898781;
+  --color-hair: #e1e0d9;
+  --color-axis: #c3c2b7;
+
+  --color-brand: #123047;
+  --color-accent: #1c5cab;
+  --color-accent-soft: #cde2fb;
+
+  --color-series-1: #2a78d6;
+  --color-series-2: #eb6834;
+  --color-series-3: #1baf7a;
+
+  --color-good: #0ca30c;
+  --color-warning: #fab219;
+  --color-serious: #ec835a;
+  --color-critical: #d03b3b;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-plane);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Números que se alinean en columna: tablas y ejes. Nunca en cifras grandes. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

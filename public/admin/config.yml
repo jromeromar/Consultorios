@@ -1,0 +1,49 @@
+# Panel editorial (Decap CMS) para la parte redaccional de los estudios.
+#
+# Alcance deliberado: aquí solo se escriben los archivos Markdown de
+# content/estudios. Las cifras del benchmark NO pasan por el CMS — viven en la
+# tabla `benchmark_stats` y se cargan con `npm run db:seed` o con el proceso de
+# captura. Un editor no debería poder mover un percentil desde un formulario.
+#
+# Falta conectar el backend de autenticación antes de que el panel funcione:
+# ver docs/ARQUITECTURA.md § Panel editorial.
+backend:
+  name: github
+  repo: jromeromar/Consultorios
+  branch: main
+
+media_folder: public/estudios
+public_folder: /estudios
+
+locale: es
+
+collections:
+  - name: estudios
+    label: Estudios de Benchmark
+    label_singular: Estudio
+    folder: content/estudios
+    create: true
+    slug: '{{fields.specialty}}-{{fields.period}}'
+    extension: md
+    fields:
+      - { name: title, label: Título, widget: string }
+      - name: specialty
+        label: Especialidad
+        widget: select
+        options:
+          - { label: Ortodoncia, value: ortodoncia }
+          - { label: Odontología estética, value: odontologia-estetica }
+          - { label: Odontología general, value: odontologia-general }
+          - { label: Medicina estética, value: medicina-estetica }
+          - { label: Medicina de especialidad, value: medicina-especialidad }
+          - { label: Nutrición y bienestar, value: nutricion-bienestar }
+      - { name: period, label: Periodo, widget: string, hint: 'Formato AAAA-S1 / AAAA-S2' }
+      - name: summary
+        label: Resumen
+        widget: text
+        hint: Una o dos frases. Es lo que se lee en la tarjeta del índice.
+      - { name: published, label: Fecha de publicación, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - name: body
+        label: Lectura del periodo
+        widget: markdown
+        hint: Usa encabezados de nivel 2. Va en la columna lateral del estudio.
