@@ -39,7 +39,7 @@ Sin `DATABASE_URL` la app usa **PGlite** (Postgres compilado a WASM) en `.data/p
 hace falta instalar nada. Con `DATABASE_URL` apunta a un Postgres real (Neon, Supabase,
 Vercel Postgres) usando el mismo esquema y las mismas consultas.
 
-Cuentas del seed: `demo@consultorios.mx` y `agencia@consultorios.mx` (rol `admin`), ambas con
+Cuentas del seed: `demo@consultorios.co` y `agencia@consultorios.co` (rol `admin`), ambas con
 contraseña `consultorios123`.
 
 ## Scripts

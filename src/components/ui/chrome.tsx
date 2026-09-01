@@ -6,6 +6,7 @@ import type { SessionUser } from '@/lib/auth/session'
 export function SiteHeader({ user }: { user: SessionUser | null }) {
   return (
     <header className="border-b border-[var(--color-hair)] bg-[var(--color-surface)]">
+      <DemoModeBanner />
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-5 py-4">
         <Link href="/" className="text-[15px] font-semibold tracking-tight text-[var(--color-brand)]">
           Consultorios
@@ -52,6 +53,24 @@ export function SiteHeader({ user }: { user: SessionUser | null }) {
         </div>
       </div>
     </header>
+  )
+}
+
+/**
+ * Barra del modo demostración. La base vive en memoria, así que las cuentas y
+ * los assessments desaparecen cuando la instancia se enfría: decirlo por
+ * adelantado evita que parezca un fallo.
+ */
+function DemoModeBanner() {
+  if (process.env.DEMO_MODE !== '1') return null
+
+  return (
+    <div className="border-b border-[var(--color-hair)] bg-[var(--color-brand)] px-5 py-2 text-center text-[12px] leading-relaxed text-white">
+      <strong className="font-semibold">Versión de demostración.</strong> Corre sobre una base en
+      memoria: las cuentas y los resultados que crees aquí se borran solos. Cuenta lista para
+      probar: <span className="tabular">demo@consultorios.co</span> /{' '}
+      <span className="tabular">consultorios123</span>
+    </div>
   )
 }
 

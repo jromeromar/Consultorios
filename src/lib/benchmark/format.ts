@@ -1,7 +1,7 @@
 import type { Unit } from './kpis'
 
-const LOCALE = process.env.NEXT_PUBLIC_LOCALE ?? 'es-MX'
-const CURRENCY = process.env.NEXT_PUBLIC_CURRENCY ?? 'MXN'
+export const LOCALE = process.env.NEXT_PUBLIC_LOCALE ?? 'es-CO'
+export const CURRENCY = process.env.NEXT_PUBLIC_CURRENCY ?? 'COP'
 
 export function formatValue(value: number | null, unit: Unit): string {
   if (value === null || !Number.isFinite(value)) return '—'

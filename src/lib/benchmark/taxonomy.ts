@@ -1,7 +1,7 @@
 /** Taxonomía compartida: especialidades, segmentos y periodos del benchmark. */
 
 export const PERIOD_ACTUAL = '2026-S1'
-export const PAIS_DEFAULT = 'MX'
+export const PAIS_DEFAULT = 'CO'
 
 export type Specialty = { slug: string; name: string; short: string; anchor: string }
 

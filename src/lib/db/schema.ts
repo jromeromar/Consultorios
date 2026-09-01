@@ -24,7 +24,7 @@ export const users = pgTable(
     clinicName: text('clinic_name'),
     specialtySlug: text('specialty_slug').notNull(),
     segmentSlug: text('segment_slug').notNull(),
-    country: text('country').notNull().default('MX'),
+    country: text('country').notNull().default('CO'),
     city: text('city'),
     phone: text('phone'),
     role: text('role').notNull().default('pro'),
@@ -46,7 +46,7 @@ export const benchmarkStats = pgTable(
     specialtySlug: text('specialty_slug').notNull(),
     segmentSlug: text('segment_slug').notNull().default('all'),
     period: text('period').notNull(),
-    country: text('country').notNull().default('MX'),
+    country: text('country').notNull().default('CO'),
     sampleSize: integer('sample_size').notNull(),
     p10: numeric('p10').notNull(),
     p25: numeric('p25').notNull(),
@@ -84,7 +84,7 @@ export const assessments = pgTable(
     specialtySlug: text('specialty_slug').notNull(),
     segmentSlug: text('segment_slug').notNull(),
     period: text('period').notNull(),
-    country: text('country').notNull().default('MX'),
+    country: text('country').notNull().default('CO'),
     /** Respuestas crudas: { [questionId]: number | string | null } */
     answers: jsonb('answers').notNull(),
     /** Resultado calculado por src/lib/benchmark/scoring.ts */

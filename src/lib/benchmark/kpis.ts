@@ -100,7 +100,7 @@ export const KPIS: Kpi[] = [
     question: '¿Cuánto factura en promedio un caso aceptado, de principio a fin?',
     help: 'Ingreso total del tratamiento (no el abono inicial) ÷ número de casos aceptados.',
     min: 0,
-    max: 2_000_000,
+    max: 500_000_000,
     gapMeaning:
       'Estás resolviendo el motivo de consulta pero no el caso completo: falta plan integral o venta cruzada.',
   },
@@ -161,7 +161,7 @@ export const KPIS: Kpi[] = [
     question: '¿Cuánto te cuesta, en publicidad, cada persona que te contacta?',
     help: 'Inversión publicitaria del mes ÷ contactos nuevos generados por publicidad.',
     min: 0,
-    max: 100_000,
+    max: 10_000_000,
     gapMeaning:
       'Pagas la atención más caro que el sector: suele ser segmentación amplia o creativos sin oferta clara.',
   },
@@ -176,7 +176,7 @@ export const KPIS: Kpi[] = [
     question: '¿Cuánto te cuesta conseguir un paciente que sí inicia tratamiento?',
     help: 'Inversión publicitaria del mes ÷ pacientes nuevos que iniciaron tratamiento ese mes.',
     min: 0,
-    max: 1_000_000,
+    max: 100_000_000,
     gapMeaning:
       'Cada paciente nuevo se come una parte del margen mayor a la del sector; el techo de crecimiento llega antes.',
   },
@@ -209,7 +209,7 @@ export const KPIS: Kpi[] = [
     question: '¿Cuánto cobras por {ancla}?',
     help: 'Precio de lista publicado, sin promociones. Se compara con el rango del sector; no sube ni baja tu puntaje.',
     min: 0,
-    max: 5_000_000,
+    max: 1_000_000_000,
     gapMeaning:
       'Estás por debajo del rango del sector para el mismo trabajo. Compararlo es el primer paso; subirlo requiere respaldo de propuesta.',
   },
@@ -270,7 +270,7 @@ export const KPIS: Kpi[] = [
     question: '¿Cuánto factura al mes cada sillón o consultorio que tienes en operación?',
     help: 'Ingreso mensual total ÷ número de sillones o consultorios activos.',
     min: 0,
-    max: 10_000_000,
+    max: 5_000_000_000,
     gapMeaning:
       'Cada metro cuadrado rinde menos que en el sector: mezcla de ocupación baja, ticket bajo o agenda mal armada.',
   },

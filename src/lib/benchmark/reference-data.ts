@@ -18,24 +18,24 @@ export const NOTA_FUENTE_DEMO =
 type Percentiles = [p10: number, p25: number, p50: number, p75: number, p90: number]
 
 /**
- * Base del sector: ortodoncia, clínica pequeña, MXN. Todas las series están
- * ordenadas de menor a mayor valor (no de peor a mejor): la dirección la
- * resuelve el KPI.
+ * Base del sector: ortodoncia, clínica pequeña, Colombia, pesos colombianos.
+ * Todas las series están ordenadas de menor a mayor valor (no de peor a mejor):
+ * la dirección la resuelve el KPI.
  */
 const BASE: Record<string, Percentiles> = {
   'tasa-cierre': [25, 35, 45, 58, 70],
-  'ticket-promedio': [8_000, 14_000, 24_000, 42_000, 68_000],
+  'ticket-promedio': [1_500_000, 2_600_000, 4_200_000, 7_000_000, 11_000_000],
   'lead-a-cita': [18, 28, 38, 50, 62],
   'no-show': [4, 8, 14, 22, 32],
   'leads-mes': [15, 32, 60, 110, 190],
-  'costo-por-lead': [60, 110, 190, 320, 520],
-  cac: [900, 1_600, 2_800, 4_800, 8_200],
+  'costo-por-lead': [8_000, 16_000, 28_000, 48_000, 80_000],
+  cac: [150_000, 280_000, 480_000, 850_000, 1_500_000],
   'tiempo-respuesta': [3, 9, 35, 180, 1_440],
-  'precio-ancla': [12_000, 22_000, 35_000, 55_000, 85_000],
+  'precio-ancla': [2_200_000, 3_200_000, 4_500_000, 6_500_000, 9_500_000],
   'margen-bruto': [38, 48, 57, 66, 74],
   'descuento-promedio': [2, 5, 10, 17, 26],
   'ocupacion-agenda': [42, 55, 68, 79, 88],
-  'ingreso-por-unidad': [45_000, 85_000, 145_000, 240_000, 390_000],
+  'ingreso-por-unidad': [7_000_000, 14_000_000, 24_000_000, 40_000_000, 65_000_000],
   'tasa-retorno': [8, 16, 26, 38, 52],
 }
 
@@ -80,8 +80,11 @@ const MUESTRA_BASE_POR_ESPECIALIDAD = 240
 
 function round(kpiSlug: string, value: number): number {
   if (MONEY_KPIS.has(kpiSlug)) {
-    const step = value >= 10_000 ? 500 : value >= 1_000 ? 50 : 5
-    return Math.round(value / step) * step
+    // Tres cifras significativas: funciona igual en pesos colombianos que en
+    // cualquier otra moneda a la que se lleve el benchmark.
+    if (value === 0) return 0
+    const magnitude = Math.pow(10, Math.floor(Math.log10(Math.abs(value))) - 2)
+    return Math.round(value / magnitude) * magnitude
   }
   if (kpiSlug === 'tiempo-respuesta') return Math.max(1, Math.round(value))
   if (VOLUME_KPIS.has(kpiSlug)) return Math.max(1, Math.round(value))

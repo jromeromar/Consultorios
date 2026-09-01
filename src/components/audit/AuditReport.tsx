@@ -149,7 +149,7 @@ export function AuditReport({ result, leadName, clinicName, mode, registerHref }
                 headers={['Etapa', 'Volumen mensual']}
                 rows={result.funnel.steps.map((step) => [
                   step.label,
-                  Math.round(step.value).toLocaleString('es-MX'),
+                  formatValue(Math.round(step.value), 'count'),
                 ])}
               />
             </div>
