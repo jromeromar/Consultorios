@@ -1,0 +1,43 @@
+consultorio_id,cid,place_id,es_ortodoncia,tipo_establecimiento,estado_registro,consultorio_id_maestro,motivo_duplicado,fuente_listado,en_muestra_estudio,estrato_muestra,fecha_alta,fecha_ultima_captura
+C-0001,10000000000000000001,ChIJfix00001,true,clinica_multisilla,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0002,10000000000000000002,ChIJfix00002,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0003,10000000000000000003,ChIJfix00003,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0004,10000000000000000004,ChIJfix00004,true,clinica_multisilla,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0005,10000000000000000005,ChIJfix00005,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0006,10000000000000000006,ChIJfix00006,true,clinica_multisilla,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0007,10000000000000000007,ChIJfix00007,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0008,10000000000000000008,ChIJfix00008,true,clinica_multisilla,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0009,10000000000000000009,ChIJfix00009,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0010,10000000000000000010,ChIJfix00010,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0011,10000000000000000011,ChIJfix00011,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_principal,2026-09-01,2026-09-12
+C-0012,10000000000000000012,ChIJfix00012,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0013,10000000000000000013,ChIJfix00013,true,clinica_multisilla,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0014,10000000000000000014,ChIJfix00014,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0015,10000000000000000015,ChIJfix00015,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0016,10000000000000000016,ChIJfix00016,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0017,10000000000000000017,ChIJfix00017,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0018,10000000000000000018,ChIJfix00018,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0019,10000000000000000019,ChIJfix00019,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0020,10000000000000000020,ChIJfix00020,true,clinica_multisilla,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0021,10000000000000000021,ChIJfix00021,true,consultorio_individual,activo,,,google_maps,true,sintetico-intermedia,2026-09-01,2026-09-12
+C-0022,10000000000000000022,ChIJfix00022,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0023,10000000000000000023,ChIJfix00023,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0024,10000000000000000024,ChIJfix00024,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0025,10000000000000000025,ChIJfix00025,true,clinica_multisilla,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0026,10000000000000000026,ChIJfix00026,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0027,10000000000000000027,ChIJfix00027,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0028,10000000000000000028,ChIJfix00028,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0029,10000000000000000029,ChIJfix00029,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+C-0030,10000000000000000030,ChIJfix00030,true,consultorio_individual,activo,,,google_maps,true,sintetico-capital_departamental,2026-09-01,2026-09-12
+X-001,90000000000000000001,,true,,duplicado,C-0004,mismo telefono,google_maps,false,,2026-09-01,
+X-002,90000000000000000002,,true,,duplicado,C-0004,mismo telefono,google_maps,false,,2026-09-01,
+X-003,90000000000000000003,,true,,duplicado,C-0004,mismo telefono,google_maps,false,,2026-09-01,
+X-004,90000000000000000004,,true,,duplicado,C-0004,mismo telefono,google_maps,false,,2026-09-01,
+X-005,90000000000000000005,,true,,cerrado,,,google_maps,false,,2026-09-01,
+X-006,90000000000000000006,,true,,cerrado,,,google_maps,false,,2026-09-01,
+X-007,90000000000000000007,,true,,cerrado,,,google_maps,false,,2026-09-01,
+X-008,90000000000000000008,,true,,fuera_de_alcance,,,google_maps,false,,2026-09-01,
+X-009,90000000000000000009,,true,,fuera_de_alcance,,,google_maps,false,,2026-09-01,
+X-010,90000000000000000010,,true,,fuera_de_alcance,,,google_maps,false,,2026-09-01,
+X-011,90000000000000000011,,false,,activo,,,google_maps,false,,2026-09-01,
+X-012,90000000000000000012,,false,,activo,,,google_maps,false,,2026-09-01,

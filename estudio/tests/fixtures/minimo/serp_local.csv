@@ -1,0 +1,46 @@
+consulta_texto,consulta_normalizada,municipio_id,fecha_consulta,dispositivo,bloque,posicion,nombre_resultado_crudo,consultorio_id,metodo_emparejamiento,confianza_emparejamiento
+ortodoncista en Barranquilla,ortodoncista-0-08001,08001,2026-09-11,movil,paquete_local,1,Consultorio C-0004,C-0004,place_id,1.0
+ortodoncista en Barranquilla,ortodoncista-0-08001,08001,2026-09-11,movil,paquete_local,2,Consultorio C-0001,C-0001,place_id,1.0
+ortodoncista en Barranquilla,ortodoncista-0-08001,08001,2026-09-11,movil,paquete_local,3,Consultorio C-0008,C-0008,place_id,1.0
+brackets precio en Barranquilla,brackets-precio-1-08001,08001,2026-09-11,movil,paquete_local,1,Consultorio C-0008,C-0008,place_id,1.0
+brackets precio en Barranquilla,brackets-precio-1-08001,08001,2026-09-11,movil,paquete_local,2,Consultorio C-0004,C-0004,place_id,1.0
+brackets precio en Barranquilla,brackets-precio-1-08001,08001,2026-09-11,movil,paquete_local,3,Consultorio C-0006,C-0006,place_id,1.0
+ortodoncia invisible en Barranquilla,ortodoncia-invisible-2-08001,08001,2026-09-11,movil,paquete_local,1,Consultorio C-0008,C-0008,place_id,1.0
+ortodoncia invisible en Barranquilla,ortodoncia-invisible-2-08001,08001,2026-09-11,movil,paquete_local,2,Consultorio C-0004,C-0004,place_id,1.0
+ortodoncia invisible en Barranquilla,ortodoncia-invisible-2-08001,08001,2026-09-11,movil,paquete_local,3,Consultorio C-0001,C-0001,place_id,1.0
+ortodoncista cerca de mi en Barranquilla,ortodoncista-cerca-de-mi-3-08001,08001,2026-09-11,movil,paquete_local,1,Consultorio C-0006,C-0006,place_id,1.0
+ortodoncista cerca de mi en Barranquilla,ortodoncista-cerca-de-mi-3-08001,08001,2026-09-11,movil,paquete_local,2,Consultorio C-0001,C-0001,place_id,1.0
+ortodoncista cerca de mi en Barranquilla,ortodoncista-cerca-de-mi-3-08001,08001,2026-09-11,movil,paquete_local,3,Consultorio C-0008,C-0008,place_id,1.0
+clinica de ortodoncia en Barranquilla,clinica-de-ortodoncia-4-08001,08001,2026-09-11,movil,paquete_local,1,Consultorio C-0008,C-0008,place_id,1.0
+clinica de ortodoncia en Barranquilla,clinica-de-ortodoncia-4-08001,08001,2026-09-11,movil,paquete_local,2,Consultorio C-0004,C-0004,place_id,1.0
+clinica de ortodoncia en Barranquilla,clinica-de-ortodoncia-4-08001,08001,2026-09-11,movil,paquete_local,3,Consultorio C-0001,C-0001,place_id,1.0
+ortodoncista en Ibagué,ortodoncista-0-73001,73001,2026-09-11,movil,paquete_local,1,Consultorio C-0020,C-0020,place_id,1.0
+ortodoncista en Ibagué,ortodoncista-0-73001,73001,2026-09-11,movil,paquete_local,2,Consultorio C-0013,C-0013,place_id,1.0
+ortodoncista en Ibagué,ortodoncista-0-73001,73001,2026-09-11,movil,paquete_local,3,Consultorio C-0016,C-0016,place_id,1.0
+brackets precio en Ibagué,brackets-precio-1-73001,73001,2026-09-11,movil,paquete_local,1,Consultorio C-0020,C-0020,place_id,1.0
+brackets precio en Ibagué,brackets-precio-1-73001,73001,2026-09-11,movil,paquete_local,2,Consultorio C-0013,C-0013,place_id,1.0
+brackets precio en Ibagué,brackets-precio-1-73001,73001,2026-09-11,movil,paquete_local,3,Consultorio C-0016,C-0016,place_id,1.0
+ortodoncia invisible en Ibagué,ortodoncia-invisible-2-73001,73001,2026-09-11,movil,paquete_local,1,Consultorio C-0020,C-0020,place_id,1.0
+ortodoncia invisible en Ibagué,ortodoncia-invisible-2-73001,73001,2026-09-11,movil,paquete_local,2,Consultorio C-0013,C-0013,place_id,1.0
+ortodoncia invisible en Ibagué,ortodoncia-invisible-2-73001,73001,2026-09-11,movil,paquete_local,3,Consultorio C-0017,C-0017,place_id,1.0
+ortodoncista cerca de mi en Ibagué,ortodoncista-cerca-de-mi-3-73001,73001,2026-09-11,movil,paquete_local,1,Consultorio C-0020,C-0020,place_id,1.0
+ortodoncista cerca de mi en Ibagué,ortodoncista-cerca-de-mi-3-73001,73001,2026-09-11,movil,paquete_local,2,Consultorio C-0013,C-0013,place_id,1.0
+ortodoncista cerca de mi en Ibagué,ortodoncista-cerca-de-mi-3-73001,73001,2026-09-11,movil,paquete_local,3,Consultorio C-0016,C-0016,place_id,1.0
+clinica de ortodoncia en Ibagué,clinica-de-ortodoncia-4-73001,73001,2026-09-11,movil,paquete_local,1,Consultorio C-0013,C-0013,place_id,1.0
+clinica de ortodoncia en Ibagué,clinica-de-ortodoncia-4-73001,73001,2026-09-11,movil,paquete_local,2,Consultorio C-0020,C-0020,place_id,1.0
+clinica de ortodoncia en Ibagué,clinica-de-ortodoncia-4-73001,73001,2026-09-11,movil,paquete_local,3,Consultorio C-0016,C-0016,place_id,1.0
+ortodoncista en Pereira,ortodoncista-0-66001,66001,2026-09-11,movil,paquete_local,1,Consultorio C-0025,C-0025,place_id,1.0
+ortodoncista en Pereira,ortodoncista-0-66001,66001,2026-09-11,movil,paquete_local,2,Consultorio C-0028,C-0028,place_id,1.0
+ortodoncista en Pereira,ortodoncista-0-66001,66001,2026-09-11,movil,paquete_local,3,Consultorio C-0022,C-0022,place_id,1.0
+brackets precio en Pereira,brackets-precio-1-66001,66001,2026-09-11,movil,paquete_local,1,Consultorio C-0025,C-0025,place_id,1.0
+brackets precio en Pereira,brackets-precio-1-66001,66001,2026-09-11,movil,paquete_local,2,Consultorio C-0022,C-0022,place_id,1.0
+brackets precio en Pereira,brackets-precio-1-66001,66001,2026-09-11,movil,paquete_local,3,Consultorio C-0028,C-0028,place_id,1.0
+ortodoncia invisible en Pereira,ortodoncia-invisible-2-66001,66001,2026-09-11,movil,paquete_local,1,Consultorio C-0025,C-0025,place_id,1.0
+ortodoncia invisible en Pereira,ortodoncia-invisible-2-66001,66001,2026-09-11,movil,paquete_local,2,Consultorio C-0022,C-0022,place_id,1.0
+ortodoncia invisible en Pereira,ortodoncia-invisible-2-66001,66001,2026-09-11,movil,paquete_local,3,Consultorio C-0028,C-0028,place_id,1.0
+ortodoncista cerca de mi en Pereira,ortodoncista-cerca-de-mi-3-66001,66001,2026-09-11,movil,paquete_local,1,Consultorio C-0028,C-0028,place_id,1.0
+ortodoncista cerca de mi en Pereira,ortodoncista-cerca-de-mi-3-66001,66001,2026-09-11,movil,paquete_local,2,Consultorio C-0025,C-0025,place_id,1.0
+ortodoncista cerca de mi en Pereira,ortodoncista-cerca-de-mi-3-66001,66001,2026-09-11,movil,paquete_local,3,Consultorio C-0022,C-0022,place_id,1.0
+clinica de ortodoncia en Pereira,clinica-de-ortodoncia-4-66001,66001,2026-09-11,movil,paquete_local,1,Consultorio C-0025,C-0025,place_id,1.0
+clinica de ortodoncia en Pereira,clinica-de-ortodoncia-4-66001,66001,2026-09-11,movil,paquete_local,2,Consultorio C-0022,C-0022,place_id,1.0
+clinica de ortodoncia en Pereira,clinica-de-ortodoncia-4-66001,66001,2026-09-11,movil,paquete_local,3,Consultorio C-0028,C-0028,place_id,1.0

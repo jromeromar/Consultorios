@@ -1,0 +1,4 @@
+ambito_tipo,ambito_id,indicador,periodo,valor,unidad,fuente,version_serie,fecha_captura
+municipio,08001,poblacion,2026,1336000,habitantes,dane_proyeccion,2018-2035,2026-09-01
+municipio,73001,poblacion,2026,542000,habitantes,dane_proyeccion,2018-2035,2026-09-01
+municipio,66001,poblacion,2026,482000,habitantes,dane_proyeccion,2018-2035,2026-09-01

@@ -1,0 +1,294 @@
+# Textos editoriales. NINGÚN NÚMERO vive aquí.
+#
+# Los títulos llevan huecos {asi} que el motor rellena con estadísticas del JSON.
+# Cada hallazgo declara en `estadisticas` los identificadores que necesita: si el
+# motor no los emite, la corrida falla en vez de imprimir un hueco vacío.
+#
+# `comprobacion` es la salvaguarda contra un título que afirme una dirección que
+# el dato no sostiene. Un titular como «la mitad tardó más de tres horas» es
+# falso si en la siguiente edición la mediana baja a veinte minutos, y el hueco
+# relleno lo diría igual de convencido. Si la comprobación falla, el hallazgo se
+# imprime como no concluyente y queda anotado en el reporte de corrida.
+
+estudio:
+  titulo: El reloj del paciente
+  subtitulo: >-
+    Cuánto tarda un consultorio de ortodoncia en Colombia en responderle a un
+    paciente que pregunta por un tratamiento, y qué encuentra ese paciente antes
+    y después de escribir.
+  etiqueta_edicion: Estudio sectorial · Primera edición
+  como_citar: >-
+    {marca} ({anio}). El reloj del paciente: tiempos de respuesta en ortodoncia
+    en Colombia. {etiqueta_edicion}. Muestra de {n_medidos} consultorios en
+    {n_ciudades} ciudades, trabajo de campo del {campo_inicio} al {campo_fin}.
+
+titular:
+  cifra: "{mediana_respuesta}"
+  pie: >-
+    es la mediana de tiempo hasta la primera respuesta a una consulta de paciente
+    en los consultorios de ortodoncia medidos.
+  apoyo:
+    - estadistica: respuesta.sin_respuesta_prop
+      texto: no respondió nunca dentro del corte de reloj declarado.
+    - estadistica: respuesta.bajo_cinco_min_prop
+      texto: respondió en menos de cinco minutos. Es el grupo que fija el techo de la categoría.
+    - estadistica: respuesta.razon_intermedias_grandes
+      texto: más lento fue el tiempo mediano en las ciudades intermedias que en las grandes.
+
+metodo:
+  # Lo que no sale de edicion_estudio va aquí, y solo lo que es editorial.
+  intro: >-
+    Un estudio sin método declarado no es un estudio. Estas son las condiciones
+    exactas del trabajo de campo, puestas antes de los hallazgos para que cada
+    cifra se lea sabiendo de dónde salió.
+  instrumento: >-
+    Una consulta idéntica enviada por el canal de mensajería que el consultorio
+    publica, escrita como paciente que pregunta por el costo de un tratamiento.
+    El guion no usa lenguaje técnico ni identifica al estudio.
+  que_se_registro: >-
+    Minutos hasta la primera respuesta, si contestó una persona o un sistema
+    automático, si ofreció agendar, si dio precio, y si hubo un segundo contacto
+    sin que el paciente volviera a escribir.
+  denominadores: >-
+    El estudio maneja dos denominadores y los distingue en cada cifra: los
+    consultorios a los que se aplicó el instrumento, y los que respondieron
+    dentro del corte de reloj. Una conducta que solo puede observarse en una
+    conversación se calcula sobre los segundos, nunca sobre los primeros.
+  no_observado: >-
+    Cuando una conversación no permite afirmar si una conducta ocurrió, se
+    registra como no observada y sale del numerador y del denominador. Un
+    consultorio que no respondió no cuenta como uno que no ofreció agendar.
+  anonimato: >-
+    La publicación es agregada y anónima. No aparece el nombre de ningún
+    consultorio ni de ningún profesional, ni cifras que permitan identificar a
+    uno solo. Las ciudades sí van con nombre.
+  que_no_se_midio: >-
+    El canal telefónico, la calidad clínica, lo que ocurre después de la primera
+    respuesta, y el desempeño fuera de la ventana y los días de la medición.
+
+hallazgos:
+  - id: h01
+    bloque: respuesta
+    forma: barras
+    titulo: >-
+      La mitad de los consultorios tardó más de {mediana_respuesta} en dar la
+      primera respuesta
+    lede: >-
+      De {n_medidos} consultas enviadas, {n_respondieron} recibieron respuesta
+      dentro del corte de reloj. La distribución no se agrupa alrededor de la
+      mediana: se parte en un grupo pequeño que contesta casi de inmediato y una
+      cola larga que contesta al día siguiente o no contesta.
+    no_dice: >-
+      No dice cuánto tarda cada consultorio en promedio. Cada uno recibió una
+      sola consulta, y una observación no describe un hábito.
+    nota_denominador: >-
+      El total del gráfico son los consultorios medidos; la mediana se calcula
+      solo sobre los que respondieron.
+    estadisticas:
+      - respuesta.distribucion_minutos
+      - respuesta.mediana_minutos
+    comprobacion:
+      tipo: mediana_por_encima_de
+      estadistica: respuesta.mediana_minutos
+      valor: 0
+
+  - id: h02
+    bloque: respuesta
+    forma: barras_grupo
+    titulo: >-
+      Las ciudades intermedias respondieron {razon_intermedias_grandes} más
+      lento que las grandes
+    lede: >-
+      El corte se publica por tipo de ciudad y no por ciudad individual: con la
+      muestra de esta edición, ninguna ciudad por separado llega al mínimo de
+      observaciones que el estudio exige para publicar una cifra.
+    no_dice: >-
+      No dice por qué. La diferencia puede venir del tamaño del equipo, del
+      volumen de consultas o de la competencia local, y el estudio no separa
+      esas causas.
+    estadisticas:
+      - respuesta.mediana_minutos_por_ciudad
+    comprobacion:
+      tipo: grupo_mayor
+      estadistica: respuesta.mediana_minutos_por_ciudad
+      grupo: intermedia
+
+  - id: h03
+    bloque: visibilidad
+    forma: barras_grupo
+    titulo: >-
+      {categoria_incorrecta_prop} de los consultorios está listado en una
+      categoría que no es su especialidad
+    lede: >-
+      Un consultorio de ortodoncia listado como consultorio dental genérico no
+      aparece en las búsquedas de su propia especialidad. El grupo con la
+      categoría bien asignada ocupó posiciones más altas en el paquete local que
+      el grupo que la tiene mal.
+    no_dice: >-
+      No dice que corregir la categoría mueva la posición. Son dos grupos
+      observados el mismo día, no un antes y un después del mismo consultorio.
+    estadisticas:
+      - visibilidad.categoria_incorrecta_prop
+      - visibilidad.posicion_por_categoria
+    comprobacion:
+      tipo: proporcion_entre
+      estadistica: visibilidad.categoria_incorrecta_prop
+      minimo: 0
+      maximo: 100
+
+  - id: h04
+    bloque: reputacion
+    forma: barras
+    titulo: >-
+      El canal público que el consultorio sí controla está casi sin usar
+    lede: >-
+      La mediana de reseñas respondidas por el consultorio es
+      {resenas_respondidas_mediana}, y la mediana de días desde la última reseña
+      es {recencia_mediana}. Responder una reseña y pedir la siguiente son las
+      dos únicas palancas de este bloque que no dependen de nadie más.
+    no_dice: >-
+      Nada sobre la satisfacción real de los pacientes. Mide el canal público de
+      reputación, no la experiencia clínica que hay detrás de él.
+    estadisticas:
+      - reputacion.resenas_respondidas_mediana
+      - reputacion.recencia_mediana
+      - reputacion.distribucion_resenas_respondidas
+
+  - id: h05
+    bloque: contenido
+    forma: barras
+    titulo: >-
+      Solo {enlace_reserva_prop} de las cuentas públicas lleva a algún lugar
+      donde se pueda reservar
+    lede: >-
+      Del grupo cuya cuenta pública se pudo emparejar, la mayoría publica con
+      regularidad y termina el recorrido en un perfil sin salida. El enlace de la
+      biografía es el único punto donde ese tráfico puede convertirse en una
+      cita.
+    no_dice: >-
+      Nada del consultorio que no publica su cuenta en su ficha. Ese grupo no se
+      pudo emparejar y queda fuera del denominador, no contado como si no
+      tuviera cuenta.
+    estadisticas:
+      - contenido.enlace_reserva_prop
+      - contenido.distribucion_destino_enlace
+
+  - id: h06
+    bloque: reservabilidad
+    forma: barras
+    titulo: >-
+      Un paciente decidido no puede reservar solo en {sin_reserva_online_prop} de
+      los sitios rastreados
+    lede: >-
+      Reservar sin hablar con nadie y dejar un pago al reservar son las dos
+      condiciones de una agenda que no depende de que alguien conteste. La
+      segunda es mucho menos frecuente que la primera.
+    no_dice: >-
+      Un rastreo que falló no es un «no tiene». Los sitios que no se pudieron
+      leer salen del denominador; contarlos como carentes de reserva inflaría el
+      hallazgo.
+    estadisticas:
+      - reservabilidad.sin_reserva_online_prop
+      - reservabilidad.distribucion_reservabilidad
+
+  - id: h07
+    bloque: respuesta
+    forma: dispersion
+    contra_hallazgo: true
+    titulo: >-
+      Responder rápido no vino acompañado de mejores señales públicas de
+      captación
+    lede: >-
+      Cruzando el tiempo de respuesta contra las señales públicas que este
+      estudio observó no aparece relación. Los consultorios más rápidos no son
+      los más visibles ni los mejor calificados, y este resultado va en contra
+      de la lectura que le conviene a quien firma el estudio.
+    no_dice: >-
+      No dice que la velocidad de respuesta sea irrelevante: dice que no predice
+      las señales públicas observadas aquí. Un efecto sobre la conversación, que
+      este estudio no midió, seguiría siendo posible.
+    estadisticas:
+      - contra.respuesta_vs_reputacion
+      - contra.respuesta_vs_visibilidad
+    comprobacion:
+      tipo: sin_relacion
+      estadisticas:
+        - contra.respuesta_vs_reputacion
+        - contra.respuesta_vs_visibilidad
+      rho_maximo: 0.25
+
+contexto_demanda:
+  etiqueta: verificado · no es campo
+  intro: >-
+    Este bloque no viene del trabajo de campo sino de investigación de palabras
+    clave hecha aparte, y va marcado como tal para que no se confunda con lo
+    medido arriba.
+  nota: >-
+    Las cifras cuentan consultas distintas: no se suman variantes con tilde ni
+    con distinto orden de palabras, y las consultas de precio se cuentan como
+    comerciales aunque la herramienta las clasifique como informativas.
+
+limites_informe:
+  - >-
+    Que responder más rápido produzca más pacientes, más tratamientos vendidos o
+    más ingresos. El estudio mide la respuesta, no lo que ocurre después de ella.
+  - >-
+    El desempeño habitual de ningún consultorio. Cada uno recibió una sola
+    consulta, un día hábil, en horario de oficina; una observación no es un
+    promedio.
+  - >-
+    Nada sobre el canal telefónico ni sobre el paciente que llega caminando. La
+    medición cubre únicamente mensajería escrita.
+  - >-
+    Nada sobre calidad clínica. Todo lo medido pertenece a la operación comercial
+    que rodea al tratamiento.
+  - >-
+    Que la muestra represente al universo de ortodoncia del país. El listado de
+    origen favorece a los consultorios con presencia digital, y el sesgo
+    probablemente juega a favor de los tiempos medidos, no en contra.
+
+limites_auditoria:
+  - >-
+    Cuántos pacientes nuevos produciría cambiar cualquiera de estos indicadores.
+    Eso depende de la demanda del territorio y del ticket, y este estudio no lo
+    mide.
+  - >-
+    Cuánto factura el consultorio, ni cuántos de los que escriben terminan en
+    tratamiento. No se preguntó y no se observa desde afuera.
+  - >-
+    La calidad clínica. Nada de lo medido aquí habla del tratamiento, solo de la
+    operación comercial que lo rodea.
+  - >-
+    El desempeño en un día distinto al de la medición. El tiempo de respuesta se
+    midió una vez; una sola observación no es un promedio.
+  - >-
+    Qué pasa con el posicionamiento y las reseñas en el mediano plazo. Los dos se
+    mueven en meses, y la ventana medida fue más corta.
+
+auditoria:
+  titulo: Auditoría de captación de pacientes
+  deck: >-
+    Dónde está este consultorio frente a los {n_medidos} consultorios de
+    ortodoncia medidos en {n_ciudades} ciudades de Colombia, en los cinco pasos
+    que recorre un paciente antes de reservar.
+  intro_declarados: >-
+    Todo lo demás de este reporte se midió sin preguntarle nada. Estos tres los
+    aportó el consultorio, y por eso van marcados como declarados en las tablas.
+    No mueven el puntaje.
+  intro_bloques: >-
+    Los bloques van en el orden en que un paciente los atraviesa. Un paciente que
+    no lo encuentra nunca llega al paso cuatro, así que un puntaje bajo temprano
+    limita todo lo que viene después.
+  nota_declarados: >-
+    Los indicadores marcados como declarados los aportó el consultorio; el resto
+    se observó sin preguntar.
+
+autoria:
+  titulo: Quién hizo este estudio
+  texto: >-
+    {marca} trabaja con consultorios de salud de alto ticket en la captación y
+    reserva de pacientes. El estudio se hizo para entender la categoría, y sus
+    datos agregados son públicos. Un consultorio medido que quiera saber en qué
+    punto de estas distribuciones está puede pedir su reporte individual, sin
+    costo.
+  cta: Pedir el reporte individual

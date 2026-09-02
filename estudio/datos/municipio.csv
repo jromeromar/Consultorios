@@ -1,0 +1,13 @@
+municipio_id,nombre_municipio,departamento,departamento_id,categoria_ciudad,area_metropolitana,es_cabecera_de_area
+08001,Barranquilla,Atlántico,08,capital_principal,Área Metropolitana de Barranquilla,true
+68001,Bucaramanga,Santander,68,capital_principal,Área Metropolitana de Bucaramanga,true
+63001,Armenia,Quindío,63,intermedia,,false
+73001,Ibagué,Tolima,73,intermedia,,false
+41001,Neiva,Huila,41,intermedia,,false
+19001,Popayán,Cauca,19,intermedia,,false
+47001,Santa Marta,Magdalena,47,intermedia,,false
+50001,Villavicencio,Meta,50,intermedia,,false
+66001,Pereira,Risaralda,66,capital_departamental,Área Metropolitana Centro Occidente,true
+17001,Manizales,Caldas,17,capital_departamental,,false
+52001,Pasto,Nariño,52,capital_departamental,,false
+54001,Cúcuta,Norte de Santander,54,capital_departamental,Área Metropolitana de Cúcuta,true

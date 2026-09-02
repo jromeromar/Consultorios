@@ -1,0 +1,116 @@
+{
+  "_leeme": [
+    "ÚNICA fuente de identidad del sistema. Ningún color, tipografía ni nombre",
+    "de marca se escribe en una plantilla: cumplimiento.py falla si encuentra un",
+    "literal de color fuera de este archivo.",
+    "",
+    "Hoy la identidad NO está decidida. El nombre es un marcador y la paleta es",
+    "la neutra de trabajo de las maquetas. Cuando la identidad se apruebe,",
+    "cambiar este archivo tiene que bastar: no debe implicar tocar código, porque",
+    "van a haber cinco días entre la aprobación y el envío a imprenta."
+  ],
+
+  "nombre": "[MARCA POR DEFINIR]",
+  "nombre_corto": "[MARCA]",
+  "logo": {
+    "tipo": "marcador",
+    "_nota": "Con tipo 'marcador' las plantillas dibujan el recuadro punteado de la maqueta. Con tipo 'archivo', 'ruta' apunta a un SVG dentro de plantillas/.",
+    "ruta": null
+  },
+
+  "tipografia": {
+    "titulos": {
+      "familia": "Archivo",
+      "respaldo": "\"Helvetica Neue\", Arial, sans-serif",
+      "archivos": [
+        { "ruta": "fuentes/archivo.woff2", "estilo": "normal", "rango_pesos": "100 900" }
+      ]
+    },
+    "prosa": {
+      "familia": "Source Serif 4",
+      "respaldo": "Georgia, serif",
+      "archivos": [
+        { "ruta": "fuentes/source-serif-4.woff2", "estilo": "normal", "rango_pesos": "200 900" },
+        { "ruta": "fuentes/source-serif-4-italic.woff2", "estilo": "italic", "rango_pesos": "200 900" }
+      ]
+    }
+  },
+
+  "color": {
+    "_nota": "Nombres de token idénticos en claro y oscuro. El oscuro se elige, no se invierte: cada valor está escalonado contra su propia superficie.",
+    "claro": {
+      "plane": "#eceee9",
+      "surface": "#fafbf8",
+      "surface-2": "#f2f4ef",
+      "ink": "#161a15",
+      "ink-2": "#545a51",
+      "muted": "#878d82",
+      "hair": "#dcdfd6",
+      "hair-strong": "#c6cabe",
+      "accent": "#184f95",
+      "accent-ink": "#184f95",
+      "accent-soft": "#dbe8fa",
+      "curve-line": "#9aa39d",
+      "curve-fill": "rgba(24,79,149,0.07)",
+      "gap-fill": "rgba(24,79,149,0.15)",
+      "serie-1": "#2a78d6",
+      "serie-2": "#eb6834",
+      "rampa-1": "#cde2fb",
+      "rampa-2": "#9ec5f4",
+      "rampa-3": "#5598e7",
+      "rampa-4": "#1c5cab",
+      "cuartil-1": "#86b6ef",
+      "cuartil-2": "#5598e7",
+      "cuartil-3": "#2a78d6",
+      "cuartil-4": "#1c5cab",
+      "cuartil-5": "#104281",
+      "good": "#006300",
+      "ribbon": "#3a3f36",
+      "ribbon-ink": "#f3f5ef",
+      "cover": "#1d211b",
+      "cover-ink": "#f4f6f0",
+      "cover-2": "#a8b0a4",
+      "shadow": "0 1px 2px rgba(20,24,19,.05), 0 8px 24px -18px rgba(20,24,19,.35)"
+    },
+    "oscuro": {
+      "plane": "#0d0f0d",
+      "surface": "#191c18",
+      "surface-2": "#21241f",
+      "ink": "#f2f4ee",
+      "ink-2": "#b7bdb1",
+      "muted": "#8a9084",
+      "hair": "#2b2f29",
+      "hair-strong": "#3b4038",
+      "accent": "#5598e7",
+      "accent-ink": "#8fbcf0",
+      "accent-soft": "#16305a",
+      "curve-line": "#6e776f",
+      "curve-fill": "rgba(85,152,231,0.10)",
+      "gap-fill": "rgba(85,152,231,0.20)",
+      "serie-1": "#3987e5",
+      "serie-2": "#d95926",
+      "rampa-1": "#184f95",
+      "rampa-2": "#256abf",
+      "rampa-3": "#3987e5",
+      "rampa-4": "#9ec5f4",
+      "cuartil-1": "#184f95",
+      "cuartil-2": "#256abf",
+      "cuartil-3": "#3987e5",
+      "cuartil-4": "#6da7ec",
+      "cuartil-5": "#9ec5f4",
+      "good": "#0ca30c",
+      "ribbon": "#2a2e27",
+      "ribbon-ink": "#e6e9e1",
+      "cover": "#1e231c",
+      "cover-ink": "#f2f4ee",
+      "cover-2": "#9ba396",
+      "shadow": "0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8)"
+    }
+  },
+
+  "cintillo_provisional": {
+    "_nota": "Mientras la identidad y los datos sean provisionales, los documentos llevan cintillo. Poner en null cuando se publique de verdad.",
+    "titulo": "BORRADOR · IDENTIDAD SIN DEFINIR",
+    "detalle": "La identidad visual de esta pieza es provisional. Sirve para decidir la forma del documento, no su marca."
+  }
+}

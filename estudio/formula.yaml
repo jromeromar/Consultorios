@@ -1,0 +1,364 @@
+# Fórmula del puntaje · versión v1.0
+#
+# Este archivo es la única fuente de pesos, anclas y mínimos. Cambiar un peso es
+# publicar una versión nueva: `version` queda estampada en cada JSON y cada HTML,
+# así que un percentil de septiembre se reproduce en noviembre corriendo el mismo
+# comando con la misma versión.
+#
+# ANCLAS FIJAS, NO RANGO DE LA MUESTRA. Un puntaje normalizado contra la propia
+# muestra sube cuando a los demás les va peor y no se puede comparar entre
+# ediciones. El puntaje es absoluto; el percentil es lo relativo, y se calcula
+# contra la distribución de la edición.
+
+version: v1.0
+vigente_desde: 2026-09-01
+
+# ── Mínimos ────────────────────────────────────────────────────────────────
+# El mínimo se aplica a la ESTADÍSTICA PUBLICADA, no a cada barra de un
+# histograma: si se aplicara por barra, ninguna distribución sería publicable.
+minimos:
+  publicable: 30        # n por debajo de esto -> publicable: false
+  grupo_corte: 30       # todo grupo de un corte debe llegar, o el corte no sale
+  # Un corte por ciudad individual no se publica nunca, sin importar el n.
+  cortes_prohibidos: [municipio]
+
+# ── Cortes que el motor evalúa ─────────────────────────────────────────────
+# Cada uno se publica solo si TODOS sus grupos llegan a `minimos.grupo_corte`.
+# Un corte que no alcanza no se estima ni se interpola: el documento imprime
+# «no medido en esta edición» y sigue. Declararlos aquí, incluido el que se
+# espera que falle, es lo que convierte la compuerta en algo mecánico.
+cortes:
+  - id: nacional
+    dimensiones: []
+    _nota: El corte base. Siempre se publica si el total llega al mínimo.
+  - id: tipo_ciudad
+    dimensiones: [categoria_ciudad]
+  - id: franja
+    dimensiones: [franja_horaria]
+  - id: franja_x_tipo_ciudad
+    dimensiones: [franja_horaria, categoria_ciudad]
+    _nota: >-
+      Cruce de segundo nivel. Con la muestra de esta edición no alcanza, aunque
+      cada dimensión por separado sí lo haga. Está declarado a propósito para
+      que el documento responda «no medido» a una pregunta razonable en vez de
+      callarla.
+
+# ── Denominadores admitidos ────────────────────────────────────────────────
+# Enum cerrado. Una estadística sin denominador de esta lista no se construye:
+# falla en el motor. Confundir 122 medidos con 94 que respondieron es el error
+# más fácil de cometer y el más difícil de detectar después.
+denominadores:
+  universo:              Consultorios del universo del censo
+  medidos:               Consultorios a los que se aplicó el instrumento de campo
+  respondieron:          Consultorios que respondieron dentro del corte de reloj
+  con_ficha:             Consultorios cuya ficha pública se pudo leer
+  con_sitio_rastreado:   Consultorios cuyo sitio se rastreó con estado ok
+  con_instagram:         Consultorios cuya cuenta pública se pudo emparejar
+  con_serp_medido:       Consultorios en un municipio donde se midió búsqueda local
+  declararon:            Consultorios que aportaron el dato declarado
+
+# ── Bloques ────────────────────────────────────────────────────────────────
+# En el orden en que un paciente los atraviesa. El orden es la estructura de los
+# dos documentos y no se reordena.
+bloques:
+  - id: visibilidad
+    paso: 1
+    nombre: Lo encuentran
+    subtitulo: Visibilidad local
+    peso: 0.20
+  - id: reputacion
+    paso: 2
+    nombre: Lo eligen
+    subtitulo: Reputación
+    peso: 0.20
+  - id: contenido
+    paso: 3
+    nombre: Lo reconocen
+    subtitulo: Contenido y redes
+    peso: 0.15
+  - id: respuesta
+    paso: 4
+    nombre: Contesta
+    subtitulo: Tiempo de respuesta
+    peso: 0.25
+  - id: reservabilidad
+    paso: 5
+    nombre: Reservan
+    subtitulo: Reservabilidad y depósito
+    peso: 0.20
+
+# ── Indicadores ────────────────────────────────────────────────────────────
+# `peso` es relativo dentro del bloque y los del bloque suman 1.
+# `puntua: false` -> se muestra y se compara, pero no mueve el puntaje.
+# Transformaciones: booleano · lineal(a0,a100) · log(a0,a100) · mapa
+#   En lineal y log, a100 es el valor que vale 100 y a0 el que vale 0; si a100
+#   es menor que a0, el indicador es de los que mejoran al bajar.
+indicadores:
+
+  # ── 1 · Lo encuentran ────────────────────────────────────────────────────
+  - id: categoria_correcta
+    bloque: visibilidad
+    nombre: Categoría de la ficha correcta
+    origen: consultorio_snapshot.categoria_principal
+    transformacion: booleano
+    peso: 0.35
+    denominador: con_ficha
+    unidad: booleano
+  - id: presencia_paquete_local
+    bloque: visibilidad
+    nombre: Consultas donde aparece en el paquete local
+    origen: serp_local
+    transformacion: lineal
+    a0: 0
+    a100: 5
+    peso: 0.30
+    denominador: con_serp_medido
+    unidad: consultas
+  - id: posicion_paquete_local
+    bloque: visibilidad
+    nombre: Posición media en el paquete local
+    origen: serp_local.posicion
+    transformacion: lineal
+    a0: 10
+    a100: 1
+    peso: 0.20
+    denominador: con_serp_medido
+    unidad: posicion
+  - id: direccion_visible
+    bloque: visibilidad
+    nombre: Dirección visible en la ficha
+    origen: consultorio_snapshot.es_area_de_servicio
+    transformacion: booleano
+    peso: 0.15
+    denominador: con_ficha
+    unidad: booleano
+
+  # ── 2 · Lo eligen ────────────────────────────────────────────────────────
+  - id: calificacion
+    bloque: reputacion
+    nombre: Calificación pública
+    origen: consultorio_snapshot.calificacion
+    transformacion: lineal
+    a0: 3.8
+    a100: 4.9
+    peso: 0.30
+    denominador: con_ficha
+    unidad: estrellas
+  - id: resenas_total
+    bloque: reputacion
+    nombre: Reseñas acumuladas
+    origen: consultorio_snapshot.resenas_total
+    transformacion: log
+    a0: 0
+    a100: 200
+    peso: 0.25
+    denominador: con_ficha
+    unidad: resenas
+  - id: recencia_resena
+    bloque: reputacion
+    nombre: Días desde la última reseña
+    origen: consultorio_snapshot.fecha_resena_mas_reciente
+    transformacion: log
+    a0: 365
+    a100: 15
+    peso: 0.25
+    denominador: con_ficha
+    unidad: dias
+  - id: resenas_respondidas_pct
+    bloque: reputacion
+    nombre: Reseñas respondidas por el consultorio
+    origen: consultorio_snapshot.resenas_respondidas_pct
+    transformacion: lineal
+    a0: 0
+    a100: 60
+    peso: 0.20
+    denominador: con_ficha
+    unidad: porcentaje
+
+  # ── 3 · Lo reconocen ─────────────────────────────────────────────────────
+  - id: publicaciones_30d
+    bloque: contenido
+    nombre: Publicaciones en 30 días
+    origen: instagram_snapshot.publicaciones_30d
+    transformacion: lineal
+    a0: 0
+    a100: 12
+    peso: 0.30
+    denominador: con_instagram
+    unidad: publicaciones
+  - id: interaccion_pct
+    bloque: contenido
+    nombre: Interacción por publicación
+    origen: instagram_snapshot.interaccion_promedio_pct
+    transformacion: lineal
+    a0: 0.5
+    a100: 4.0
+    peso: 0.25
+    denominador: con_instagram
+    unidad: porcentaje
+  - id: enlace_bio_destino
+    bloque: contenido
+    nombre: Destino del enlace de la biografía
+    origen: instagram_snapshot.destino_enlace
+    transformacion: mapa
+    mapa:
+      reserva: 100
+      whatsapp: 70
+      sitio: 40
+      agregador: 20
+      ninguno: 0
+    peso: 0.20
+    denominador: con_instagram
+    unidad: enum
+  - id: seguidores
+    bloque: contenido
+    nombre: Seguidores
+    origen: instagram_snapshot.seguidores
+    transformacion: log
+    a0: 100
+    a100: 20000
+    peso: 0.15
+    denominador: con_instagram
+    unidad: seguidores
+  - id: cuenta_profesional
+    bloque: contenido
+    nombre: Cuenta profesional
+    origen: instagram_snapshot.es_cuenta_profesional
+    transformacion: booleano
+    peso: 0.10
+    denominador: con_instagram
+    unidad: booleano
+
+  # ── 4 · Contesta ─────────────────────────────────────────────────────────
+  - id: hubo_respuesta
+    bloque: respuesta
+    nombre: Respondió dentro del corte de reloj
+    origen: contacto_campo.hubo_respuesta
+    transformacion: booleano
+    peso: 0.30
+    denominador: medidos
+    unidad: booleano
+  - id: minutos_primera_respuesta
+    bloque: respuesta
+    nombre: Minutos hasta la primera respuesta
+    origen: contacto_campo.minutos_primera_respuesta
+    transformacion: log
+    a0: 1440
+    a100: 5
+    peso: 0.30
+    denominador: respondieron
+    unidad: minutos
+  - id: ofrecio_agendar
+    bloque: respuesta
+    nombre: Ofreció agendar en el primer mensaje
+    origen: contacto_campo.ofrecio_agendar
+    transformacion: mapa
+    mapa:
+      si: 100
+      no: 0
+    peso: 0.20
+    denominador: respondieron
+    unidad: enum
+  - id: dio_precio
+    bloque: respuesta
+    nombre: Dio precio o rango
+    origen: contacto_campo.dio_precio
+    transformacion: mapa
+    mapa:
+      exacto: 100
+      rango: 70
+      no: 0
+    peso: 0.10
+    denominador: respondieron
+    unidad: enum
+  - id: seguimiento_espontaneo
+    bloque: respuesta
+    nombre: Segundo contacto sin que el paciente escribiera
+    origen: contacto_campo.hubo_seguimiento_espontaneo
+    transformacion: mapa
+    mapa:
+      si: 100
+      no: 0
+    peso: 0.10
+    denominador: respondieron
+    unidad: enum
+
+  # ── 5 · Reservan ─────────────────────────────────────────────────────────
+  - id: reserva_online
+    bloque: reservabilidad
+    nombre: Reserva en línea sin hablar con nadie
+    origen: sitio_snapshot.tiene_reserva_online
+    transformacion: booleano
+    peso: 0.35
+    denominador: con_sitio_rastreado
+    unidad: booleano
+  - id: pago_en_linea
+    bloque: reservabilidad
+    nombre: Pago del paciente al reservar
+    origen: sitio_snapshot.tiene_pago_en_linea
+    transformacion: booleano
+    peso: 0.25
+    denominador: con_sitio_rastreado
+    unidad: booleano
+  - id: horario_publicado
+    bloque: reservabilidad
+    nombre: Horario publicado en la ficha
+    origen: consultorio_snapshot.tiene_horario_publicado
+    transformacion: booleano
+    peso: 0.15
+    denominador: con_ficha
+    unidad: booleano
+  - id: movil_responsive
+    bloque: reservabilidad
+    nombre: Sitio usable en celular
+    origen: sitio_snapshot.es_movil_responsive
+    transformacion: booleano
+    peso: 0.15
+    denominador: con_sitio_rastreado
+    unidad: booleano
+  - id: plataforma_agenda
+    bloque: reservabilidad
+    nombre: Software de agenda detectado
+    origen: sitio_snapshot.plataforma_agenda_detectada
+    transformacion: mapa
+    mapa:
+      dentalink: 100
+      agendapro: 100
+      doctoralia: 100
+      calendly: 70
+      otro: 50
+      ninguno: 0
+    peso: 0.10
+    denominador: con_sitio_rastreado
+    unidad: enum
+
+  # ── Declarados · se muestran y comparan, no puntúan ──────────────────────
+  # Entran para poder leer los observados. Que no puntúen es lo que mantiene el
+  # puntaje íntegramente observado.
+  - id: precio_lista
+    bloque: reservabilidad
+    nombre: Precio de lista del tratamiento principal
+    origen: dato_declarado.precio_lista
+    transformacion: ninguna
+    puntua: false
+    peso: 0
+    denominador: declararon
+    unidad: pesos
+  - id: cobra_primera_cita
+    bloque: reservabilidad
+    nombre: Cobra la primera cita
+    origen: dato_declarado.cobra_primera_cita
+    transformacion: ninguna
+    puntua: false
+    peso: 0
+    denominador: declararon
+    unidad: booleano
+  - id: consultas_mes
+    bloque: respuesta
+    nombre: Consultas nuevas al mes
+    origen: dato_declarado.consultas_mes
+    transformacion: ninguna
+    puntua: false
+    peso: 0
+    denominador: declararon
+    unidad: consultas

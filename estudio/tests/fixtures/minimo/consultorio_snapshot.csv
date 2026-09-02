@@ -1,0 +1,31 @@
+consultorio_id,fecha_captura,fuente_captura,categoria_principal,municipio_id,es_area_de_servicio,calificacion,resenas_total,fecha_resena_mas_reciente,resenas_respondidas_pct,tiene_horario_publicado,fotos_n,telefono_e164,dominio,instagram_handle
+C-0001,2026-09-12,maps,Ortodoncista,08001,false,4.9,200,2026-08-28,60,true,70,+57305000001,fix1.co,fix1
+C-0002,2026-09-12,maps,Clínica dental,08001,true,3.8,0,2025-09-12,0,false,1,+57305000002,fix2.co,fix2
+C-0003,2026-09-12,maps,Ortodoncista,08001,false,3.8,183,2026-06-14,16,true,49,+57305000003,fix3.co,fix3
+C-0004,2026-09-12,maps,Ortodoncista,08001,false,4.8,314,2026-08-17,33,true,64,+57305000004,fix4.co,fix4
+C-0005,2026-09-12,maps,Clínica dental,08001,false,4.0,30,2025-12-11,0,true,20,+57305000005,,
+C-0006,2026-09-12,maps,Ortodoncista,08001,false,4.9,341,2026-08-24,36,true,66,+57305000006,fix6.co,fix6
+C-0007,2026-09-12,maps,Ortodoncista,08001,false,4.3,95,2026-03-28,4,true,35,+57305000007,fix7.co,fix7
+C-0008,2026-09-12,maps,Ortodoncista,08001,false,4.9,374,2026-08-30,40,true,69,+57305000008,fix8.co,fix8
+C-0009,2026-09-12,maps,Clínica dental,08001,false,3.8,8,2025-09-26,0,false,10,+57305000009,,
+C-0010,2026-09-12,maps,Ortodoncista,08001,false,4.4,130,2026-05-02,9,true,41,+57305000010,fix10.co,fix10
+C-0011,2026-09-12,maps,Dentista,08001,false,4.2,67,2026-02-19,1,true,30,+57305000011,fix11.co,
+C-0012,2026-09-12,maps,Dentista,73001,false,4.0,31,2025-12-14,0,true,20,+57305000012,,
+C-0013,2026-09-12,maps,Ortodoncista,73001,false,4.9,373,2026-08-30,40,true,69,+57305000013,fix13.co,fix13
+C-0014,2026-09-12,maps,Ortodoncista,73001,false,4.3,90,2026-03-22,4,true,34,+57305000014,fix14.co,fix14
+C-0015,2026-09-12,maps,Clínica dental,73001,true,3.7,3,2025-08-16,0,false,4,+57305000015,,
+C-0016,2026-09-12,maps,Ortodoncista,73001,false,4.6,230,2026-07-12,22,true,55,+57305000016,fix16.co,fix16
+C-0017,2026-09-12,maps,Ortodoncista,73001,false,4.7,234,2026-07-14,22,true,55,+57305000017,fix17.co,fix17
+C-0018,2026-09-12,maps,Clínica dental,73001,false,4.1,65,2026-02-16,1,true,29,+57305000018,fix18.co,
+C-0019,2026-09-12,maps,Clínica dental,73001,false,4.1,57,2026-02-04,0,true,27,+57305000019,fix19.co,
+C-0020,2026-09-12,maps,Ortodoncista,73001,false,4.9,378,2026-08-31,41,true,70,+57305000020,fix20.co,fix20
+C-0021,2026-09-12,maps,Clínica dental,73001,false,4.0,40,2026-01-03,0,true,23,+57305000021,fix21.co,
+C-0022,2026-09-12,maps,Ortodoncista,66001,false,4.7,237,2026-07-16,23,true,55,+57305000022,fix22.co,fix22
+C-0023,2026-09-12,maps,Ortodoncista,66001,false,4.6,210,2026-07-01,19,true,52,+57305000023,fix23.co,fix23
+C-0024,2026-09-12,maps,Dentista,66001,false,4.2,68,2026-02-21,1,true,30,+57305000024,fix24.co,
+C-0025,2026-09-12,maps,Ortodoncista,66001,false,4.9,354,2026-08-27,38,true,68,+57305000025,fix25.co,fix25
+C-0026,2026-09-12,maps,Dentista,66001,false,3.8,8,2025-09-27,0,false,10,+57305000026,,
+C-0027,2026-09-12,maps,Ortodoncista,66001,false,4.3,91,2026-03-24,4,true,35,+57305000027,fix27.co,fix27
+C-0028,2026-09-12,maps,Ortodoncista,66001,false,4.7,236,2026-07-15,23,true,55,+57305000028,fix28.co,fix28
+C-0029,2026-09-12,maps,Clínica dental,66001,false,3.9,19,2025-11-12,0,true,16,+57305000029,,
+C-0030,2026-09-12,maps,Dentista,66001,false,4.0,31,2025-12-15,0,true,20,+57305000030,,

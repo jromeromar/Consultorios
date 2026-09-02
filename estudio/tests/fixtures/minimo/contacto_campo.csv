@@ -1,0 +1,28 @@
+consultorio_id,edicion_id,guion_id,canal,emisor_id,enviado_en,dia_semana,franja_horaria,estado_envio,minutos_primera_respuesta,hubo_respuesta,tipo_primer_respondedor,ofrecio_agendar,dio_precio,hubo_seguimiento_espontaneo,codificado_por,codificado_en,version_codificacion,excluido_del_analisis,motivo_exclusion
+C-0001,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-03T09:15:00-05:00,1,manana,entregado,5,true,automatico,si,exacto,si,fixture,2026-09-14,v1,false,
+C-0002,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-04T13:05:00-05:00,2,mediodia,entregado,,false,,,,,fixture,2026-09-14,v1,false,
+C-0003,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-05T16:40:00-05:00,3,tarde,entregado,214,true,persona,si,exacto,si,fixture,2026-09-14,v1,true,"prueba de piloto, guion distinto"
+C-0004,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-06T09:15:00-05:00,4,manana,entregado,524,true,persona,no,rango,no,fixture,2026-09-14,v1,false,
+C-0005,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-07T13:05:00-05:00,5,mediodia,entregado,359,true,persona,no_observado,rango,no,fixture,2026-09-14,v1,false,
+C-0006,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-08T16:40:00-05:00,1,tarde,entregado,93,true,persona,no,no,no,fixture,2026-09-14,v1,false,
+C-0007,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-09T09:15:00-05:00,2,manana,entregado,58,true,persona,si,no_observado,si,fixture,2026-09-14,v1,false,
+C-0008,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-10T13:05:00-05:00,3,mediodia,entregado,11,true,automatico,si,exacto,si,fixture,2026-09-14,v1,true,"prueba de piloto, guion distinto"
+C-0009,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-11T16:40:00-05:00,4,tarde,entregado,277,true,persona,si,exacto,si,fixture,2026-09-14,v1,false,
+C-0010,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-03T09:15:00-05:00,5,manana,entregado,101,true,persona,si,rango,no,fixture,2026-09-14,v1,false,
+C-0012,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-04T13:05:00-05:00,1,mediodia,entregado,,false,,,,,fixture,2026-09-14,v1,false,
+C-0013,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-05T16:40:00-05:00,2,tarde,entregado,,false,,,,,fixture,2026-09-14,v1,false,
+C-0014,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-06T09:15:00-05:00,3,manana,entregado,557,true,persona,no_observado,exacto,si,fixture,2026-09-14,v1,true,"prueba de piloto, guion distinto"
+C-0015,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-07T13:05:00-05:00,4,mediodia,entregado,,false,,,,,fixture,2026-09-14,v1,false,
+C-0016,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-08T16:40:00-05:00,5,tarde,entregado,794,true,persona,si,exacto,no,fixture,2026-09-14,v1,false,
+C-0017,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-09T09:15:00-05:00,1,manana,entregado,28,true,persona,no,no_observado,no,fixture,2026-09-14,v1,false,
+C-0018,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-10T13:05:00-05:00,2,mediodia,entregado,919,true,persona,si,rango,no,fixture,2026-09-14,v1,false,
+C-0019,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-11T16:40:00-05:00,3,tarde,entregado,464,true,persona,no_observado,rango,no,fixture,2026-09-14,v1,true,"prueba de piloto, guion distinto"
+C-0020,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-03T09:15:00-05:00,4,manana,entregado,,false,,,,,fixture,2026-09-14,v1,false,
+C-0022,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-04T13:05:00-05:00,5,mediodia,entregado,8,true,automatico,no,no,no,fixture,2026-09-14,v1,false,
+C-0023,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-05T16:40:00-05:00,1,tarde,entregado,743,true,persona,no,no_observado,no,fixture,2026-09-14,v1,false,
+C-0024,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-06T09:15:00-05:00,2,manana,entregado,708,true,persona,no_observado,rango,no_observado,fixture,2026-09-14,v1,false,
+C-0025,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-07T13:05:00-05:00,3,mediodia,entregado,15,true,persona,no,no,no,fixture,2026-09-14,v1,true,"prueba de piloto, guion distinto"
+C-0026,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-08T16:40:00-05:00,4,tarde,entregado,625,true,persona,si,rango,no,fixture,2026-09-14,v1,false,
+C-0027,ed-2026-09,g-1,whatsapp,emisor-1,2026-09-09T09:15:00-05:00,5,manana,entregado,449,true,persona,si,exacto,si,fixture,2026-09-14,v1,false,
+C-0028,ed-2026-09,g-1,whatsapp,emisor-2,2026-09-10T13:05:00-05:00,1,mediodia,entregado,582,true,persona,no,no,no,fixture,2026-09-14,v1,false,
+C-0029,ed-2026-09,g-1,whatsapp,emisor-3,2026-09-11T16:40:00-05:00,2,tarde,entregado,5,true,automatico,si,no_observado,si,fixture,2026-09-14,v1,false,

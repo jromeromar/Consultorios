@@ -1,0 +1,4 @@
+municipio_id,nombre_municipio,departamento,departamento_id,categoria_ciudad,area_metropolitana,es_cabecera_de_area
+08001,Barranquilla,Atlántico,08,capital_principal,,false
+73001,Ibagué,Tolima,73,intermedia,,false
+66001,Pereira,Risaralda,66,capital_departamental,,false
