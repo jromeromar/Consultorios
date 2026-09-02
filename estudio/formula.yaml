@@ -35,6 +35,12 @@ cortes:
     dimensiones: [categoria_ciudad]
   - id: franja
     dimensiones: [franja_horaria]
+  - id: municipio
+    dimensiones: [municipio]
+    _nota: >-
+      Declarado para que el informe diga que está prohibido. Un corte por ciudad
+      individual identificaría consultorios, así que no se publica nunca sin
+      importar el n.
   - id: franja_x_tipo_ciudad
     dimensiones: [franja_horaria, categoria_ciudad]
     _nota: >-

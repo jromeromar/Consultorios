@@ -1,201 +1,201 @@
-consultorio_id,fecha_captura,fuente_captura,categoria_principal,municipio_id,es_area_de_servicio,calificacion,resenas_total,fecha_resena_mas_reciente,resenas_respondidas_pct,tiene_horario_publicado,fotos_n,telefono_e164,dominio,instagram_handle
-C-0001,2026-09-12,maps,Ortodoncista,08001,false,4.9,200,2026-08-28,60,true,70,+57305000001,fix1.co,fix1
-C-0002,2026-09-12,maps,Clínica dental,08001,true,3.8,0,2025-09-12,0,false,1,+57305000002,fix2.co,fix2
-C-0003,2026-09-12,maps,Ortodoncista,08001,false,3.8,111,2026-04-15,6,true,38,+57305000003,fix3.co,fix3
-C-0004,2026-09-12,maps,Dentista,08001,false,3.8,9,2025-10-02,0,false,10,+57305000004,,
-C-0005,2026-09-12,maps,Ortodoncista,08001,false,4.4,145,2026-05-16,11,true,43,+57305000005,fix5.co,fix5
-C-0006,2026-09-12,maps,Ortodoncista,08001,false,4.6,210,2026-07-01,19,true,52,+57305000006,fix6.co,fix6
-C-0007,2026-09-12,maps,Ortodoncista,08001,false,4.5,186,2026-06-16,16,true,49,+57305000007,fix7.co,fix7
-C-0008,2026-09-12,maps,Ortodoncista,08001,false,4.9,332,2026-08-22,35,true,65,+57305000008,fix8.co,fix8
-C-0009,2026-09-12,maps,Dentista,08001,false,4.1,47,2026-01-17,0,true,25,+57305000009,fix9.co,
-C-0010,2026-09-12,maps,Ortodoncista,08001,false,4.6,190,2026-06-18,17,true,50,+57305000010,fix10.co,fix10
-C-0011,2026-09-12,maps,Dentista,08001,false,4.1,56,2026-02-01,0,true,27,+57305000011,fix11.co,
-C-0012,2026-09-12,maps,Clínica dental,08001,false,4.0,43,2026-01-10,0,true,24,+57305000012,fix12.co,
-C-0013,2026-09-12,maps,Ortodoncista,08001,false,4.4,152,2026-05-21,11,true,44,+57305000013,fix13.co,fix13
-C-0014,2026-09-12,maps,Dentista,08001,false,3.8,9,2025-10-05,0,false,11,+57305000014,,
-C-0015,2026-09-12,maps,Ortodoncista,08001,false,4.9,378,2026-08-31,41,true,70,+57305000015,fix15.co,fix15
-C-0016,2026-09-12,maps,Ortodoncista,08001,false,4.6,225,2026-07-09,21,true,54,+57305000016,fix16.co,fix16
-C-0017,2026-09-12,maps,Ortodoncista,08001,false,4.3,114,2026-04-17,7,true,39,+57305000017,fix17.co,fix17
-C-0018,2026-09-12,maps,Ortodoncista,08001,false,4.5,175,2026-06-08,15,true,48,+57305000018,fix18.co,fix18
-C-0019,2026-09-12,maps,Ortodoncista,08001,false,4.8,291,2026-08-09,30,true,61,+57305000019,fix19.co,fix19
-C-0020,2026-09-12,maps,Ortodoncista,08001,false,4.7,272,2026-08-01,27,true,59,+57305000020,fix20.co,fix20
-C-0021,2026-09-12,maps,Dentista,08001,false,3.9,19,2025-11-12,0,true,16,+57305000021,,
-C-0022,2026-09-12,maps,Ortodoncista,08001,false,4.2,86,2026-03-17,3,true,34,+57305000022,fix22.co,fix22
-C-0023,2026-09-12,maps,Ortodoncista,08001,false,4.7,270,2026-07-31,27,true,59,+57305000023,fix23.co,fix23
-C-0024,2026-09-12,maps,Dentista,08001,true,3.7,4,2025-08-29,0,false,6,+57305000024,,
-C-0025,2026-09-12,maps,Clínica dental,08001,true,3.6,2,2025-07-25,0,false,2,+57305000025,,
-C-0026,2026-09-12,maps,Dentista,08001,false,4.1,56,2026-02-02,0,true,27,+57305000026,fix26.co,
-C-0027,2026-09-12,maps,Ortodoncista,68001,false,4.9,359,2026-08-28,38,true,68,+57305000027,fix27.co,fix27
-C-0028,2026-09-12,maps,Dentista,68001,true,3.6,2,2025-07-31,0,false,2,+57305000028,,
-C-0029,2026-09-12,maps,Dentista,68001,false,3.8,11,2025-10-14,0,false,12,+57305000029,,
-C-0030,2026-09-12,maps,Ortodoncista,68001,false,4.4,132,2026-05-05,9,true,42,+57305000030,fix30.co,fix30
-C-0031,2026-09-12,maps,Clínica dental,68001,false,4.1,59,2026-02-07,1,true,28,+57305000031,fix31.co,
-C-0032,2026-09-12,maps,Dentista,68001,true,3.6,2,2025-08-02,0,false,3,+57305000032,,
-C-0033,2026-09-12,maps,Ortodoncista,68001,false,4.8,299,2026-08-12,31,true,62,+57305000033,fix33.co,fix33
-C-0034,2026-09-12,maps,Ortodoncista,68001,false,4.6,227,2026-07-11,21,true,54,+57305000034,fix34.co,fix34
-C-0035,2026-09-12,maps,Ortodoncista,68001,false,4.5,165,2026-06-01,13,true,46,+57305000035,fix35.co,fix35
-C-0036,2026-09-12,maps,Clínica dental,68001,false,3.8,12,2025-10-16,0,false,12,+57305000036,,
-C-0037,2026-09-12,maps,Clínica dental,68001,false,4.1,58,2026-02-05,1,true,28,+57305000037,fix37.co,
-C-0038,2026-09-12,maps,Dentista,68001,false,3.9,27,2025-12-06,0,true,19,+57305000038,,
-C-0039,2026-09-12,maps,Ortodoncista,68001,false,4.5,169,2026-06-04,14,true,47,+57305000039,fix39.co,fix39
-C-0040,2026-09-12,maps,Clínica dental,68001,false,4.0,39,2026-01-03,0,true,23,+57305000040,fix40.co,
-C-0041,2026-09-12,maps,Dentista,68001,false,4.1,61,2026-02-10,1,true,28,+57305000041,fix41.co,
-C-0042,2026-09-12,maps,Ortodoncista,68001,false,4.2,77,2026-03-05,2,true,32,+57305000042,fix42.co,fix42
-C-0043,2026-09-12,maps,Ortodoncista,68001,false,4.9,352,2026-08-27,37,true,67,+57305000043,fix43.co,fix43
-C-0044,2026-09-12,maps,Ortodoncista,68001,false,4.7,235,2026-07-14,22,true,55,+57305000044,fix44.co,fix44
-C-0045,2026-09-12,maps,Dentista,68001,false,4.0,30,2025-12-14,0,true,20,+57305000045,,
-C-0046,2026-09-12,maps,Ortodoncista,68001,false,4.8,312,2026-08-16,32,true,63,+57305000046,fix46.co,fix46
-C-0047,2026-09-12,maps,Dentista,68001,false,4.1,62,2026-02-11,1,true,28,+57305000047,fix47.co,
-C-0048,2026-09-12,maps,Ortodoncista,68001,false,4.8,304,2026-08-13,31,true,63,+57305000048,fix48.co,fix48
-C-0049,2026-09-12,maps,Ortodoncista,68001,false,4.2,79,2026-03-08,3,true,32,+57305000049,fix49.co,fix49
-C-0050,2026-09-12,maps,Dentista,68001,false,4.0,42,2026-01-08,0,true,23,+57305000050,fix50.co,
-C-0051,2026-09-12,maps,Clínica dental,68001,false,4.0,31,2025-12-16,0,true,20,+57305000051,,
-C-0052,2026-09-12,maps,Clínica dental,68001,false,4.2,67,2026-02-19,1,true,30,+57305000052,fix52.co,
-C-0053,2026-09-12,maps,Ortodoncista,63001,false,4.2,74,2026-03-02,2,true,31,+57305000053,fix53.co,fix53
-C-0054,2026-09-12,maps,Ortodoncista,63001,false,4.5,175,2026-06-08,15,true,48,+57305000054,fix54.co,fix54
-C-0055,2026-09-12,maps,Ortodoncista,63001,false,4.5,155,2026-05-24,12,true,45,+57305000055,fix55.co,fix55
-C-0056,2026-09-12,maps,Dentista,63001,false,4.1,51,2026-01-24,0,true,26,+57305000056,fix56.co,
-C-0057,2026-09-12,maps,Dentista,63001,false,3.8,12,2025-10-15,0,false,12,+57305000057,,
-C-0058,2026-09-12,maps,Ortodoncista,63001,false,4.8,290,2026-08-08,29,true,61,+57305000058,fix58.co,fix58
-C-0059,2026-09-12,maps,Dentista,63001,false,3.8,9,2025-10-05,0,false,11,+57305000059,,
-C-0060,2026-09-12,maps,Dentista,63001,false,3.9,25,2025-12-01,0,true,18,+57305000060,,
-C-0061,2026-09-12,maps,Dentista,63001,false,4.1,55,2026-02-01,0,true,27,+57305000061,fix61.co,
-C-0062,2026-09-12,maps,Dentista,63001,false,4.1,44,2026-01-12,0,true,24,+57305000062,fix62.co,
-C-0063,2026-09-12,maps,Dentista,63001,false,4.1,48,2026-01-19,0,true,25,+57305000063,fix63.co,
-C-0064,2026-09-12,maps,Ortodoncista,63001,false,4.5,164,2026-05-31,13,true,46,+57305000064,fix64.co,fix64
-C-0065,2026-09-12,maps,Ortodoncista,63001,false,4.4,133,2026-05-06,9,true,42,+57305000065,fix65.co,fix65
-C-0066,2026-09-12,maps,Dentista,63001,false,4.0,41,2026-01-06,0,true,23,+57305000066,fix66.co,
-C-0067,2026-09-12,maps,Ortodoncista,73001,false,4.8,298,2026-08-11,31,true,62,+57305000067,fix67.co,fix67
-C-0068,2026-09-12,maps,Ortodoncista,73001,false,4.8,313,2026-08-16,32,true,64,+57305000068,fix68.co,fix68
-C-0069,2026-09-12,maps,Ortodoncista,73001,false,4.5,174,2026-06-07,14,true,48,+57305000069,fix69.co,fix69
-C-0070,2026-09-12,maps,Clínica dental,73001,false,3.9,21,2025-11-18,0,true,16,+57305000070,,
-C-0071,2026-09-12,maps,Ortodoncista,73001,false,4.4,133,2026-05-05,9,true,42,+57305000071,fix71.co,fix71
-C-0072,2026-09-12,maps,Ortodoncista,73001,false,4.6,217,2026-07-05,20,true,53,+57305000072,fix72.co,fix72
-C-0073,2026-09-12,maps,Ortodoncista,73001,false,4.4,122,2026-04-25,8,true,40,+57305000073,fix73.co,fix73
-C-0074,2026-09-12,maps,Ortodoncista,73001,false,4.6,208,2026-06-29,19,true,52,+57305000074,fix74.co,fix74
-C-0075,2026-09-12,maps,Clínica dental,73001,false,3.9,24,2025-11-25,0,true,17,+57305000075,,
-C-0076,2026-09-12,maps,Ortodoncista,73001,false,4.5,180,2026-06-12,15,true,48,+57305000076,fix76.co,fix76
-C-0077,2026-09-12,maps,Dentista,73001,true,3.7,4,2025-08-27,0,false,6,+57305000077,,
-C-0078,2026-09-12,maps,Ortodoncista,73001,false,4.4,139,2026-05-10,10,true,42,+57305000078,fix78.co,fix78
-C-0079,2026-09-12,maps,Ortodoncista,73001,false,4.7,233,2026-07-14,22,true,55,+57305000079,fix79.co,fix79
-C-0080,2026-09-12,maps,Clínica dental,73001,false,4.0,42,2026-01-09,0,true,24,+57305000080,fix80.co,
-C-0081,2026-09-12,maps,Dentista,41001,true,3.7,6,2025-09-15,0,false,8,+57305000081,,
-C-0082,2026-09-12,maps,Dentista,41001,false,3.8,13,2025-10-21,0,false,13,+57305000082,,
-C-0083,2026-09-12,maps,Dentista,41001,false,4.0,41,2026-01-06,0,true,23,+57305000083,fix83.co,
-C-0084,2026-09-12,maps,Clínica dental,41001,false,4.1,52,2026-01-27,0,true,26,+57305000084,fix84.co,
-C-0085,2026-09-12,maps,Clínica dental,41001,false,3.9,22,2025-11-22,0,true,17,+57305000085,,
-C-0086,2026-09-12,maps,Ortodoncista,41001,false,4.3,91,2026-03-24,4,true,35,+57305000086,fix86.co,fix86
-C-0087,2026-09-12,maps,Dentista,41001,false,3.9,26,2025-12-03,0,true,19,+57305000087,,
-C-0088,2026-09-12,maps,Ortodoncista,41001,false,4.7,258,2026-07-26,25,true,58,+57305000088,fix88.co,fix88
-C-0089,2026-09-12,maps,Ortodoncista,41001,false,4.3,100,2026-04-02,5,true,36,+57305000089,fix89.co,fix89
-C-0090,2026-09-12,maps,Ortodoncista,41001,false,4.7,241,2026-07-18,23,true,56,+57305000090,fix90.co,fix90
-C-0091,2026-09-12,maps,Ortodoncista,41001,false,4.7,272,2026-08-01,27,true,59,+57305000091,fix91.co,fix91
-C-0092,2026-09-12,maps,Ortodoncista,41001,false,4.6,210,2026-07-01,19,true,52,+57305000092,fix92.co,fix92
-C-0093,2026-09-12,maps,Ortodoncista,41001,false,4.9,343,2026-08-25,36,true,67,+57305000093,fix93.co,fix93
-C-0094,2026-09-12,maps,Dentista,41001,false,4.1,46,2026-01-15,0,true,25,+57305000094,fix94.co,
-C-0095,2026-09-12,maps,Ortodoncista,19001,false,4.3,105,2026-04-08,6,true,37,+57305000095,fix95.co,fix95
-C-0096,2026-09-12,maps,Ortodoncista,19001,false,4.7,262,2026-07-28,26,true,58,+57305000096,fix96.co,fix96
-C-0097,2026-09-12,maps,Dentista,19001,false,4.0,31,2025-12-16,0,true,20,+57305000097,,
-C-0098,2026-09-12,maps,Ortodoncista,19001,false,4.6,222,2026-07-07,21,true,54,+57305000098,fix98.co,fix98
-C-0099,2026-09-12,maps,Clínica dental,19001,false,4.0,39,2026-01-02,0,true,23,+57305000099,fix99.co,
-C-0100,2026-09-12,maps,Ortodoncista,19001,false,4.8,309,2026-08-15,32,true,63,+57305000100,fix100.co,fix100
-C-0101,2026-09-12,maps,Ortodoncista,19001,false,4.6,201,2026-06-25,18,true,51,+57305000101,fix101.co,fix101
-C-0102,2026-09-12,maps,Clínica dental,19001,false,3.8,10,2025-10-06,0,false,11,+57305000102,,
-C-0103,2026-09-12,maps,Clínica dental,19001,false,3.8,10,2025-10-06,0,false,11,+57305000103,,
-C-0104,2026-09-12,maps,Ortodoncista,19001,false,4.8,321,2026-08-19,33,true,64,+57305000104,fix104.co,fix104
-C-0105,2026-09-12,maps,Ortodoncista,19001,false,4.3,113,2026-04-16,7,true,38,+57305000105,fix105.co,fix105
-C-0106,2026-09-12,maps,Dentista,19001,true,3.7,3,2025-08-17,0,false,5,+57305000106,,
-C-0107,2026-09-12,maps,Clínica dental,19001,false,3.9,17,2025-11-06,0,true,15,+57305000107,,
-C-0108,2026-09-12,maps,Ortodoncista,19001,false,4.9,377,2026-08-31,41,true,70,+57305000108,fix108.co,fix108
-C-0109,2026-09-12,maps,Ortodoncista,47001,false,4.5,167,2026-06-02,14,true,47,+57305000109,fix109.co,fix109
-C-0110,2026-09-12,maps,Clínica dental,47001,false,4.1,50,2026-01-22,0,true,25,+57305000110,fix110.co,
-C-0111,2026-09-12,maps,Ortodoncista,47001,false,4.5,178,2026-06-10,15,true,48,+57305000111,fix111.co,fix111
-C-0112,2026-09-12,maps,Ortodoncista,47001,false,4.8,279,2026-08-04,28,true,60,+57305000112,fix112.co,fix112
-C-0113,2026-09-12,maps,Ortodoncista,47001,false,4.5,156,2026-05-25,12,true,45,+57305000113,fix113.co,fix113
-C-0114,2026-09-12,maps,Ortodoncista,47001,false,4.3,101,2026-04-04,5,true,36,+57305000114,fix114.co,fix114
-C-0115,2026-09-12,maps,Dentista,47001,false,3.8,14,2025-10-26,0,false,13,+57305000115,,
-C-0116,2026-09-12,maps,Ortodoncista,47001,false,4.3,90,2026-03-22,4,true,34,+57305000116,fix116.co,fix116
-C-0117,2026-09-12,maps,Ortodoncista,47001,false,4.3,96,2026-03-29,4,true,35,+57305000117,fix117.co,fix117
-C-0118,2026-09-12,maps,Ortodoncista,47001,false,4.3,99,2026-04-01,5,true,36,+57305000118,fix118.co,fix118
-C-0119,2026-09-12,maps,Clínica dental,47001,false,3.8,15,2025-10-28,0,false,14,+57305000119,,
-C-0120,2026-09-12,maps,Ortodoncista,47001,false,4.3,117,2026-04-20,7,true,39,+57305000120,fix120.co,fix120
-C-0121,2026-09-12,maps,Ortodoncista,47001,false,4.2,85,2026-03-15,3,true,33,+57305000121,fix121.co,fix121
-C-0122,2026-09-12,maps,Dentista,47001,false,3.9,25,2025-11-29,0,true,18,+57305000122,,
-C-0123,2026-09-12,maps,Ortodoncista,50001,false,4.8,290,2026-08-08,30,true,61,+57305000123,fix123.co,fix123
-C-0124,2026-09-12,maps,Ortodoncista,50001,false,4.8,322,2026-08-19,34,true,65,+57305000124,fix124.co,fix124
-C-0125,2026-09-12,maps,Ortodoncista,50001,false,4.7,274,2026-08-02,27,true,60,+57305000125,fix125.co,fix125
-C-0126,2026-09-12,maps,Ortodoncista,50001,false,4.3,106,2026-04-09,6,true,37,+57305000126,fix126.co,fix126
-C-0127,2026-09-12,maps,Dentista,50001,false,4.0,40,2026-01-03,0,true,23,+57305000127,fix127.co,
-C-0128,2026-09-12,maps,Clínica dental,50001,false,3.9,16,2025-11-02,0,false,14,+57305000128,,
-C-0129,2026-09-12,maps,Dentista,50001,false,4.0,28,2025-12-08,0,true,19,+57305000129,,
-C-0130,2026-09-12,maps,Ortodoncista,50001,false,4.8,323,2026-08-20,34,true,65,+57305000130,fix130.co,fix130
-C-0131,2026-09-12,maps,Ortodoncista,50001,false,4.4,122,2026-04-25,8,true,40,+57305000131,fix131.co,fix131
-C-0132,2026-09-12,maps,Dentista,50001,false,4.0,37,2025-12-29,0,true,22,+57305000132,fix132.co,
-C-0133,2026-09-12,maps,Ortodoncista,50001,false,4.2,89,2026-03-21,4,true,34,+57305000133,fix133.co,fix133
-C-0134,2026-09-12,maps,Ortodoncista,50001,false,4.9,339,2026-08-24,36,true,66,+57305000134,fix134.co,fix134
-C-0135,2026-09-12,maps,Ortodoncista,50001,false,4.8,290,2026-08-08,30,true,61,+57305000135,fix135.co,fix135
-C-0136,2026-09-12,maps,Ortodoncista,50001,false,4.7,268,2026-07-30,27,true,59,+57305000136,fix136.co,fix136
-C-0137,2026-09-12,maps,Ortodoncista,66001,false,4.7,254,2026-07-24,25,true,57,+57305000137,fix137.co,fix137
-C-0138,2026-09-12,maps,Ortodoncista,66001,false,4.6,216,2026-07-04,20,true,53,+57305000138,fix138.co,fix138
-C-0139,2026-09-12,maps,Dentista,66001,false,4.2,67,2026-02-19,1,true,30,+57305000139,fix139.co,
-C-0140,2026-09-12,maps,Ortodoncista,66001,false,4.4,146,2026-05-17,11,true,44,+57305000140,fix140.co,fix140
-C-0141,2026-09-12,maps,Ortodoncista,66001,false,4.4,144,2026-05-15,10,true,43,+57305000141,fix141.co,fix141
-C-0142,2026-09-12,maps,Dentista,66001,false,4.1,53,2026-01-28,0,true,26,+57305000142,fix142.co,
-C-0143,2026-09-12,maps,Ortodoncista,66001,false,4.6,223,2026-07-08,21,true,54,+57305000143,fix143.co,fix143
-C-0144,2026-09-12,maps,Dentista,66001,true,3.7,6,2025-09-11,0,false,8,+57305000144,,
-C-0145,2026-09-12,maps,Ortodoncista,66001,false,4.3,111,2026-04-14,6,true,38,+57305000145,fix145.co,fix145
-C-0146,2026-09-12,maps,Dentista,66001,false,3.8,10,2025-10-10,0,false,11,+57305000146,,
-C-0147,2026-09-12,maps,Clínica dental,66001,false,4.0,32,2025-12-17,0,true,20,+57305000147,,
-C-0148,2026-09-12,maps,Ortodoncista,66001,false,4.4,145,2026-05-16,11,true,44,+57305000148,fix148.co,fix148
-C-0149,2026-09-12,maps,Ortodoncista,66001,false,4.2,78,2026-03-07,2,true,32,+57305000149,fix149.co,fix149
-C-0150,2026-09-12,maps,Clínica dental,66001,true,3.7,3,2025-08-09,0,false,4,+57305000150,,
-C-0151,2026-09-12,maps,Dentista,66001,false,3.9,22,2025-11-21,0,true,17,+57305000151,,
-C-0152,2026-09-12,maps,Ortodoncista,66001,false,4.5,178,2026-06-10,15,true,48,+57305000152,fix152.co,fix152
-C-0153,2026-09-12,maps,Ortodoncista,17001,false,4.2,76,2026-03-04,2,true,32,+57305000153,fix153.co,fix153
-C-0154,2026-09-12,maps,Clínica dental,17001,true,3.7,3,2025-08-20,0,false,5,+57305000154,,
-C-0155,2026-09-12,maps,Dentista,17001,true,3.6,2,2025-07-27,0,false,2,+57305000155,,
-C-0156,2026-09-12,maps,Ortodoncista,17001,false,4.3,113,2026-04-16,7,true,38,+57305000156,fix156.co,fix156
-C-0157,2026-09-12,maps,Dentista,17001,false,4.0,36,2025-12-25,0,true,22,+57305000157,,
-C-0158,2026-09-12,maps,Ortodoncista,17001,false,4.4,138,2026-05-10,10,true,42,+57305000158,fix158.co,fix158
-C-0159,2026-09-12,maps,Dentista,17001,true,3.7,5,2025-09-07,0,false,7,+57305000159,,
-C-0160,2026-09-12,maps,Ortodoncista,17001,false,4.4,135,2026-05-07,9,true,42,+57305000160,fix160.co,fix160
-C-0161,2026-09-12,maps,Ortodoncista,17001,false,4.2,89,2026-03-20,4,true,34,+57305000161,fix161.co,fix161
-C-0162,2026-09-12,maps,Ortodoncista,17001,false,4.7,234,2026-07-14,22,true,55,+57305000162,fix162.co,fix162
-C-0163,2026-09-12,maps,Dentista,17001,false,3.9,27,2025-12-06,0,true,19,+57305000163,,
-C-0164,2026-09-12,maps,Ortodoncista,17001,false,4.2,79,2026-03-08,3,true,32,+57305000164,fix164.co,fix164
-C-0165,2026-09-12,maps,Ortodoncista,17001,false,4.2,82,2026-03-11,3,true,33,+57305000165,fix165.co,fix165
-C-0166,2026-09-12,maps,Dentista,17001,false,3.8,9,2025-10-03,0,false,10,+57305000166,,
-C-0167,2026-09-12,maps,Ortodoncista,17001,false,4.2,76,2026-03-04,2,true,32,+57305000167,fix167.co,fix167
-C-0168,2026-09-12,maps,Ortodoncista,17001,false,4.5,186,2026-06-16,16,true,49,+57305000168,fix168.co,fix168
-C-0169,2026-09-12,maps,Clínica dental,52001,true,3.7,6,2025-09-18,0,false,8,+57305000169,,
-C-0170,2026-09-12,maps,Ortodoncista,52001,false,4.5,153,2026-05-22,12,true,45,+57305000170,fix170.co,fix170
-C-0171,2026-09-12,maps,Ortodoncista,52001,false,4.4,147,2026-05-17,11,true,44,+57305000171,fix171.co,fix171
-C-0172,2026-09-12,maps,Ortodoncista,52001,false,4.4,122,2026-04-25,8,true,40,+57305000172,fix172.co,fix172
-C-0173,2026-09-12,maps,Ortodoncista,52001,false,4.4,125,2026-04-28,8,true,40,+57305000173,fix173.co,fix173
-C-0174,2026-09-12,maps,Ortodoncista,52001,false,4.8,278,2026-08-04,28,true,60,+57305000174,fix174.co,fix174
-C-0175,2026-09-12,maps,Ortodoncista,52001,false,4.3,105,2026-04-08,6,true,37,+57305000175,fix175.co,fix175
-C-0176,2026-09-12,maps,Clínica dental,52001,true,3.6,2,2025-07-24,0,false,2,+57305000176,,
-C-0177,2026-09-12,maps,Ortodoncista,52001,false,4.8,299,2026-08-11,31,true,62,+57305000177,fix177.co,fix177
-C-0178,2026-09-12,maps,Dentista,52001,false,4.1,51,2026-01-25,0,true,26,+57305000178,fix178.co,
-C-0179,2026-09-12,maps,Ortodoncista,52001,false,4.4,138,2026-05-10,10,true,42,+57305000179,fix179.co,fix179
-C-0180,2026-09-12,maps,Ortodoncista,52001,false,4.5,178,2026-06-10,15,true,48,+57305000180,fix180.co,fix180
-C-0181,2026-09-12,maps,Ortodoncista,52001,false,4.9,363,2026-08-29,39,true,68,+57305000181,fix181.co,fix181
-C-0182,2026-09-12,maps,Dentista,52001,false,3.8,9,2025-09-30,0,false,10,+57305000182,,
-C-0183,2026-09-12,maps,Dentista,52001,false,4.1,64,2026-02-15,1,true,29,+57305000183,fix183.co,
-C-0184,2026-09-12,maps,Clínica dental,52001,true,3.7,5,2025-09-05,0,false,7,+57305000184,,
-C-0185,2026-09-12,maps,Ortodoncista,54001,false,4.4,141,2026-05-13,10,true,43,+57305000185,fix185.co,fix185
-C-0186,2026-09-12,maps,Ortodoncista,54001,false,4.3,95,2026-03-28,4,true,35,+57305000186,fix186.co,fix186
-C-0187,2026-09-12,maps,Ortodoncista,54001,false,4.9,374,2026-08-31,40,true,69,+57305000187,fix187.co,fix187
-C-0188,2026-09-12,maps,Clínica dental,54001,true,3.7,5,2025-09-08,0,false,7,+57305000188,,
-C-0189,2026-09-12,maps,Ortodoncista,54001,false,4.8,305,2026-08-14,31,true,63,+57305000189,fix189.co,fix189
-C-0190,2026-09-12,maps,Ortodoncista,54001,false,4.7,237,2026-07-16,23,true,55,+57305000190,fix190.co,fix190
-C-0191,2026-09-12,maps,Ortodoncista,54001,false,4.8,294,2026-08-10,30,true,62,+57305000191,fix191.co,fix191
-C-0192,2026-09-12,maps,Ortodoncista,54001,false,4.9,347,2026-08-26,37,true,67,+57305000192,fix192.co,fix192
-C-0193,2026-09-12,maps,Dentista,54001,false,3.8,9,2025-10-02,0,false,10,+57305000193,,
-C-0194,2026-09-12,maps,Dentista,54001,false,4.1,57,2026-02-04,0,true,27,+57305000194,fix194.co,
-C-0195,2026-09-12,maps,Dentista,54001,false,3.9,20,2025-11-14,0,true,16,+57305000195,,
-C-0196,2026-09-12,maps,Dentista,54001,true,3.7,3,2025-08-14,0,false,4,+57305000196,,
-C-0197,2026-09-12,maps,Ortodoncista,54001,false,4.4,144,2026-05-15,10,true,43,+57305000197,fix197.co,fix197
-C-0198,2026-09-12,maps,Dentista,54001,false,3.9,16,2025-10-31,0,false,14,+57305000198,,
-C-0199,2026-09-12,maps,Ortodoncista,54001,false,4.3,117,2026-04-20,7,true,39,+57305000199,fix199.co,fix199
-C-0200,2026-09-12,maps,Clínica dental,54001,false,4.0,38,2025-12-30,0,true,22,+57305000200,fix200.co,
+consultorio_id,fecha_captura,fuente_captura,nombre_comercial,nombre_normalizado,categoria_principal,municipio_id,es_area_de_servicio,calificacion,resenas_total,fecha_resena_mas_reciente,resenas_respondidas_pct,tiene_horario_publicado,fotos_n,telefono_e164,dominio,instagram_handle
+C-0001,2026-09-12,maps,Ortodoncia Sanmiguel 001,ortodoncia sanmiguel 001,Ortodoncista,08001,false,4.9,200,2026-08-27,60,true,70,+57305000001,fix1.co,fix1
+C-0002,2026-09-12,maps,Centro Valderrama 002,centro valderrama 002,Clínica dental,08001,true,3.8,0,2025-09-11,0,false,1,+57305000002,fix2.co,fix2
+C-0003,2026-09-12,maps,Consultorio Echeverri 003,consultorio echeverri 003,Ortodoncista,08001,false,3.8,111,2026-04-15,6,true,38,+57305000003,fix3.co,fix3
+C-0004,2026-09-12,maps,Clínica Betancur 004,clínica betancur 004,Dentista,08001,false,3.8,9,2025-10-02,0,false,10,+57305000004,,
+C-0005,2026-09-12,maps,Ortodoncia Zapata 005,ortodoncia zapata 005,Ortodoncista,08001,false,4.4,145,2026-05-16,11,true,43,+57305000005,fix5.co,fix5
+C-0006,2026-09-12,maps,Centro Ocampo 006,centro ocampo 006,Ortodoncista,08001,false,4.6,210,2026-07-01,19,true,52,+57305000006,fix6.co,fix6
+C-0007,2026-09-12,maps,Clínica Restrepo 007,clínica restrepo 007,Ortodoncista,08001,false,4.5,186,2026-06-16,16,true,49,+57305000007,fix7.co,fix7
+C-0008,2026-09-12,maps,Consultorio Villegas 008,consultorio villegas 008,Ortodoncista,08001,false,4.9,332,2026-08-22,35,true,65,+57305000008,fix8.co,fix8
+C-0009,2026-09-12,maps,Ortodoncia Cadavid 009,ortodoncia cadavid 009,Dentista,08001,false,4.1,47,2026-01-17,0,true,25,+57305000009,fix9.co,
+C-0010,2026-09-12,maps,Centro Mejía 010,centro mejía 010,Ortodoncista,08001,false,4.6,190,2026-06-18,17,true,50,+57305000010,fix10.co,fix10
+C-0011,2026-09-12,maps,Clínica Uribe 011,clínica uribe 011,Dentista,08001,false,4.1,56,2026-02-01,0,true,27,+57305000011,fix11.co,
+C-0012,2026-09-12,maps,Clínica Arboleda 012,clínica arboleda 012,Clínica dental,08001,false,4.0,43,2026-01-10,0,true,24,+57305000012,fix12.co,
+C-0013,2026-09-12,maps,Ortodoncia Sanmiguel 013,ortodoncia sanmiguel 013,Ortodoncista,08001,false,4.4,152,2026-05-21,11,true,44,+57305000013,fix13.co,fix13
+C-0014,2026-09-12,maps,Centro Valderrama 014,centro valderrama 014,Dentista,08001,false,3.8,9,2025-10-05,0,false,11,+57305000014,,
+C-0015,2026-09-12,maps,Consultorio Echeverri 015,consultorio echeverri 015,Ortodoncista,08001,false,4.9,378,2026-08-31,41,true,70,+57305000015,fix15.co,fix15
+C-0016,2026-09-12,maps,Clínica Betancur 016,clínica betancur 016,Ortodoncista,08001,false,4.6,225,2026-07-09,21,true,54,+57305000016,fix16.co,fix16
+C-0017,2026-09-12,maps,Ortodoncia Zapata 017,ortodoncia zapata 017,Ortodoncista,08001,false,4.3,114,2026-04-17,7,true,39,+57305000017,fix17.co,fix17
+C-0018,2026-09-12,maps,Centro Ocampo 018,centro ocampo 018,Ortodoncista,08001,false,4.5,175,2026-06-08,15,true,48,+57305000018,fix18.co,fix18
+C-0019,2026-09-12,maps,Clínica Restrepo 019,clínica restrepo 019,Ortodoncista,08001,false,4.8,291,2026-08-09,30,true,61,+57305000019,fix19.co,fix19
+C-0020,2026-09-12,maps,Consultorio Villegas 020,consultorio villegas 020,Ortodoncista,08001,false,4.7,272,2026-08-01,27,true,59,+57305000020,fix20.co,fix20
+C-0021,2026-09-12,maps,Ortodoncia Cadavid 021,ortodoncia cadavid 021,Dentista,08001,false,3.9,19,2025-11-12,0,true,16,+57305000021,,
+C-0022,2026-09-12,maps,Centro Mejía 022,centro mejía 022,Ortodoncista,08001,false,4.2,86,2026-03-17,3,true,34,+57305000022,fix22.co,fix22
+C-0023,2026-09-12,maps,Clínica Uribe 023,clínica uribe 023,Ortodoncista,08001,false,4.7,270,2026-07-31,27,true,59,+57305000023,fix23.co,fix23
+C-0024,2026-09-12,maps,Clínica Arboleda 024,clínica arboleda 024,Dentista,08001,true,3.7,4,2025-08-29,0,false,6,+57305000024,,
+C-0025,2026-09-12,maps,Ortodoncia Sanmiguel 025,ortodoncia sanmiguel 025,Clínica dental,08001,true,3.6,2,2025-07-25,0,false,2,+57305000025,,
+C-0026,2026-09-12,maps,Centro Valderrama 026,centro valderrama 026,Dentista,08001,false,4.1,56,2026-02-02,0,true,27,+57305000026,fix26.co,
+C-0027,2026-09-12,maps,Consultorio Echeverri 027,consultorio echeverri 027,Ortodoncista,68001,false,4.9,359,2026-08-28,38,true,68,+57305000027,fix27.co,fix27
+C-0028,2026-09-12,maps,Clínica Betancur 028,clínica betancur 028,Dentista,68001,true,3.6,2,2025-07-31,0,false,2,+57305000028,,
+C-0029,2026-09-12,maps,Ortodoncia Zapata 029,ortodoncia zapata 029,Dentista,68001,false,3.8,11,2025-10-14,0,false,12,+57305000029,,
+C-0030,2026-09-12,maps,Centro Ocampo 030,centro ocampo 030,Ortodoncista,68001,false,4.4,132,2026-05-05,9,true,42,+57305000030,fix30.co,fix30
+C-0031,2026-09-12,maps,Clínica Restrepo 031,clínica restrepo 031,Clínica dental,68001,false,4.1,59,2026-02-07,1,true,28,+57305000031,fix31.co,
+C-0032,2026-09-12,maps,Consultorio Villegas 032,consultorio villegas 032,Dentista,68001,true,3.6,2,2025-08-02,0,false,3,+57305000032,,
+C-0033,2026-09-12,maps,Ortodoncia Cadavid 033,ortodoncia cadavid 033,Ortodoncista,68001,false,4.8,299,2026-08-12,31,true,62,+57305000033,fix33.co,fix33
+C-0034,2026-09-12,maps,Centro Mejía 034,centro mejía 034,Ortodoncista,68001,false,4.6,227,2026-07-11,21,true,54,+57305000034,fix34.co,fix34
+C-0035,2026-09-12,maps,Clínica Uribe 035,clínica uribe 035,Ortodoncista,68001,false,4.5,165,2026-06-01,13,true,46,+57305000035,fix35.co,fix35
+C-0036,2026-09-12,maps,Clínica Arboleda 036,clínica arboleda 036,Clínica dental,68001,false,3.8,12,2025-10-16,0,false,12,+57305000036,,
+C-0037,2026-09-12,maps,Ortodoncia Sanmiguel 037,ortodoncia sanmiguel 037,Clínica dental,68001,false,4.1,58,2026-02-05,1,true,28,+57305000037,fix37.co,
+C-0038,2026-09-12,maps,Centro Valderrama 038,centro valderrama 038,Dentista,68001,false,3.9,27,2025-12-06,0,true,19,+57305000038,,
+C-0039,2026-09-12,maps,Consultorio Echeverri 039,consultorio echeverri 039,Ortodoncista,68001,false,4.5,169,2026-06-04,14,true,47,+57305000039,fix39.co,fix39
+C-0040,2026-09-12,maps,Clínica Betancur 040,clínica betancur 040,Clínica dental,68001,false,4.0,39,2026-01-03,0,true,23,+57305000040,fix40.co,
+C-0041,2026-09-12,maps,Ortodoncia Zapata 041,ortodoncia zapata 041,Dentista,68001,false,4.1,61,2026-02-10,1,true,28,+57305000041,fix41.co,
+C-0042,2026-09-12,maps,Centro Ocampo 042,centro ocampo 042,Ortodoncista,68001,false,4.2,77,2026-03-05,2,true,32,+57305000042,fix42.co,fix42
+C-0043,2026-09-12,maps,Clínica Restrepo 043,clínica restrepo 043,Ortodoncista,68001,false,4.9,352,2026-08-27,37,true,67,+57305000043,fix43.co,fix43
+C-0044,2026-09-12,maps,Consultorio Villegas 044,consultorio villegas 044,Ortodoncista,68001,false,4.7,235,2026-07-14,22,true,55,+57305000044,fix44.co,fix44
+C-0045,2026-09-12,maps,Ortodoncia Cadavid 045,ortodoncia cadavid 045,Dentista,68001,false,4.0,30,2025-12-14,0,true,20,+57305000045,,
+C-0046,2026-09-12,maps,Centro Mejía 046,centro mejía 046,Ortodoncista,68001,false,4.8,312,2026-08-16,32,true,63,+57305000046,fix46.co,fix46
+C-0047,2026-09-12,maps,Clínica Uribe 047,clínica uribe 047,Dentista,68001,false,4.1,62,2026-02-11,1,true,28,+57305000047,fix47.co,
+C-0048,2026-09-12,maps,Clínica Arboleda 048,clínica arboleda 048,Ortodoncista,68001,false,4.8,304,2026-08-13,31,true,63,+57305000048,fix48.co,fix48
+C-0049,2026-09-12,maps,Ortodoncia Sanmiguel 049,ortodoncia sanmiguel 049,Ortodoncista,68001,false,4.2,79,2026-03-08,3,true,32,+57305000049,fix49.co,fix49
+C-0050,2026-09-12,maps,Centro Valderrama 050,centro valderrama 050,Dentista,68001,false,4.0,42,2026-01-08,0,true,23,+57305000050,fix50.co,
+C-0051,2026-09-12,maps,Consultorio Echeverri 051,consultorio echeverri 051,Clínica dental,68001,false,4.0,31,2025-12-16,0,true,20,+57305000051,,
+C-0052,2026-09-12,maps,Clínica Betancur 052,clínica betancur 052,Clínica dental,68001,false,4.2,67,2026-02-19,1,true,30,+57305000052,fix52.co,
+C-0053,2026-09-12,maps,Ortodoncia Zapata 053,ortodoncia zapata 053,Ortodoncista,63001,false,4.2,74,2026-03-02,2,true,31,+57305000053,fix53.co,fix53
+C-0054,2026-09-12,maps,Centro Ocampo 054,centro ocampo 054,Ortodoncista,63001,false,4.5,175,2026-06-08,15,true,48,+57305000054,fix54.co,fix54
+C-0055,2026-09-12,maps,Clínica Restrepo 055,clínica restrepo 055,Ortodoncista,63001,false,4.5,155,2026-05-24,12,true,45,+57305000055,fix55.co,fix55
+C-0056,2026-09-12,maps,Consultorio Villegas 056,consultorio villegas 056,Dentista,63001,false,4.1,51,2026-01-24,0,true,26,+57305000056,fix56.co,
+C-0057,2026-09-12,maps,Ortodoncia Cadavid 057,ortodoncia cadavid 057,Dentista,63001,false,3.8,12,2025-10-15,0,false,12,+57305000057,,
+C-0058,2026-09-12,maps,Centro Mejía 058,centro mejía 058,Ortodoncista,63001,false,4.8,290,2026-08-08,29,true,61,+57305000058,fix58.co,fix58
+C-0059,2026-09-12,maps,Clínica Uribe 059,clínica uribe 059,Dentista,63001,false,3.8,9,2025-10-05,0,false,11,+57305000059,,
+C-0060,2026-09-12,maps,Clínica Arboleda 060,clínica arboleda 060,Dentista,63001,false,3.9,25,2025-12-01,0,true,18,+57305000060,,
+C-0061,2026-09-12,maps,Ortodoncia Sanmiguel 061,ortodoncia sanmiguel 061,Dentista,63001,false,4.1,55,2026-02-01,0,true,27,+57305000061,fix61.co,
+C-0062,2026-09-12,maps,Centro Valderrama 062,centro valderrama 062,Dentista,63001,false,4.1,44,2026-01-12,0,true,24,+57305000062,fix62.co,
+C-0063,2026-09-12,maps,Consultorio Echeverri 063,consultorio echeverri 063,Dentista,63001,false,4.1,48,2026-01-19,0,true,25,+57305000063,fix63.co,
+C-0064,2026-09-12,maps,Clínica Betancur 064,clínica betancur 064,Ortodoncista,63001,false,4.5,164,2026-05-31,13,true,46,+57305000064,fix64.co,fix64
+C-0065,2026-09-12,maps,Ortodoncia Zapata 065,ortodoncia zapata 065,Ortodoncista,63001,false,4.4,133,2026-05-06,9,true,42,+57305000065,fix65.co,fix65
+C-0066,2026-09-12,maps,Centro Ocampo 066,centro ocampo 066,Dentista,63001,false,4.0,41,2026-01-06,0,true,23,+57305000066,fix66.co,
+C-0067,2026-09-12,maps,Clínica Restrepo 067,clínica restrepo 067,Ortodoncista,73001,false,4.8,298,2026-08-11,31,true,62,+57305000067,fix67.co,fix67
+C-0068,2026-09-12,maps,Consultorio Villegas 068,consultorio villegas 068,Ortodoncista,73001,false,4.8,313,2026-08-16,32,true,64,+57305000068,fix68.co,fix68
+C-0069,2026-09-12,maps,Ortodoncia Cadavid 069,ortodoncia cadavid 069,Ortodoncista,73001,false,4.5,174,2026-06-07,14,true,48,+57305000069,fix69.co,fix69
+C-0070,2026-09-12,maps,Centro Mejía 070,centro mejía 070,Clínica dental,73001,false,3.9,21,2025-11-18,0,true,16,+57305000070,,
+C-0071,2026-09-12,maps,Clínica Uribe 071,clínica uribe 071,Ortodoncista,73001,false,4.4,133,2026-05-05,9,true,42,+57305000071,fix71.co,fix71
+C-0072,2026-09-12,maps,Clínica Arboleda 072,clínica arboleda 072,Ortodoncista,73001,false,4.6,217,2026-07-05,20,true,53,+57305000072,fix72.co,fix72
+C-0073,2026-09-12,maps,Ortodoncia Sanmiguel 073,ortodoncia sanmiguel 073,Ortodoncista,73001,false,4.4,122,2026-04-25,8,true,40,+57305000073,fix73.co,fix73
+C-0074,2026-09-12,maps,Centro Valderrama 074,centro valderrama 074,Ortodoncista,73001,false,4.6,208,2026-06-29,19,true,52,+57305000074,fix74.co,fix74
+C-0075,2026-09-12,maps,Consultorio Echeverri 075,consultorio echeverri 075,Clínica dental,73001,false,3.9,24,2025-11-25,0,true,17,+57305000075,,
+C-0076,2026-09-12,maps,Clínica Betancur 076,clínica betancur 076,Ortodoncista,73001,false,4.5,180,2026-06-12,15,true,48,+57305000076,fix76.co,fix76
+C-0077,2026-09-12,maps,Ortodoncia Zapata 077,ortodoncia zapata 077,Dentista,73001,true,3.7,4,2025-08-27,0,false,6,+57305000077,,
+C-0078,2026-09-12,maps,Centro Ocampo 078,centro ocampo 078,Ortodoncista,73001,false,4.4,139,2026-05-10,10,true,42,+57305000078,fix78.co,fix78
+C-0079,2026-09-12,maps,Clínica Restrepo 079,clínica restrepo 079,Ortodoncista,73001,false,4.7,233,2026-07-14,22,true,55,+57305000079,fix79.co,fix79
+C-0080,2026-09-12,maps,Consultorio Villegas 080,consultorio villegas 080,Clínica dental,73001,false,4.0,42,2026-01-09,0,true,24,+57305000080,fix80.co,
+C-0081,2026-09-12,maps,Ortodoncia Cadavid 081,ortodoncia cadavid 081,Dentista,41001,true,3.7,6,2025-09-15,0,false,8,+57305000081,,
+C-0082,2026-09-12,maps,Centro Mejía 082,centro mejía 082,Dentista,41001,false,3.8,13,2025-10-21,0,false,13,+57305000082,,
+C-0083,2026-09-12,maps,Clínica Uribe 083,clínica uribe 083,Dentista,41001,false,4.0,41,2026-01-06,0,true,23,+57305000083,fix83.co,
+C-0084,2026-09-12,maps,Clínica Arboleda 084,clínica arboleda 084,Clínica dental,41001,false,4.1,52,2026-01-27,0,true,26,+57305000084,fix84.co,
+C-0085,2026-09-12,maps,Ortodoncia Sanmiguel 085,ortodoncia sanmiguel 085,Clínica dental,41001,false,3.9,22,2025-11-22,0,true,17,+57305000085,,
+C-0086,2026-09-12,maps,Centro Valderrama 086,centro valderrama 086,Ortodoncista,41001,false,4.3,91,2026-03-24,4,true,35,+57305000086,fix86.co,fix86
+C-0087,2026-09-12,maps,Consultorio Echeverri 087,consultorio echeverri 087,Dentista,41001,false,3.9,26,2025-12-03,0,true,19,+57305000087,,
+C-0088,2026-09-12,maps,Clínica Betancur 088,clínica betancur 088,Ortodoncista,41001,false,4.7,258,2026-07-26,25,true,58,+57305000088,fix88.co,fix88
+C-0089,2026-09-12,maps,Ortodoncia Zapata 089,ortodoncia zapata 089,Ortodoncista,41001,false,4.3,100,2026-04-02,5,true,36,+57305000089,fix89.co,fix89
+C-0090,2026-09-12,maps,Centro Ocampo 090,centro ocampo 090,Ortodoncista,41001,false,4.7,241,2026-07-18,23,true,56,+57305000090,fix90.co,fix90
+C-0091,2026-09-12,maps,Clínica Restrepo 091,clínica restrepo 091,Ortodoncista,41001,false,4.7,272,2026-08-01,27,true,59,+57305000091,fix91.co,fix91
+C-0092,2026-09-12,maps,Consultorio Villegas 092,consultorio villegas 092,Ortodoncista,41001,false,4.6,210,2026-07-01,19,true,52,+57305000092,fix92.co,fix92
+C-0093,2026-09-12,maps,Ortodoncia Cadavid 093,ortodoncia cadavid 093,Ortodoncista,41001,false,4.9,343,2026-08-25,36,true,67,+57305000093,fix93.co,fix93
+C-0094,2026-09-12,maps,Centro Mejía 094,centro mejía 094,Dentista,41001,false,4.1,46,2026-01-15,0,true,25,+57305000094,fix94.co,
+C-0095,2026-09-12,maps,Clínica Uribe 095,clínica uribe 095,Ortodoncista,19001,false,4.3,105,2026-04-08,6,true,37,+57305000095,fix95.co,fix95
+C-0096,2026-09-12,maps,Clínica Arboleda 096,clínica arboleda 096,Ortodoncista,19001,false,4.7,262,2026-07-28,26,true,58,+57305000096,fix96.co,fix96
+C-0097,2026-09-12,maps,Ortodoncia Sanmiguel 097,ortodoncia sanmiguel 097,Dentista,19001,false,4.0,31,2025-12-16,0,true,20,+57305000097,,
+C-0098,2026-09-12,maps,Centro Valderrama 098,centro valderrama 098,Ortodoncista,19001,false,4.6,222,2026-07-07,21,true,54,+57305000098,fix98.co,fix98
+C-0099,2026-09-12,maps,Consultorio Echeverri 099,consultorio echeverri 099,Clínica dental,19001,false,4.0,39,2026-01-02,0,true,23,+57305000099,fix99.co,
+C-0100,2026-09-12,maps,Clínica Betancur 100,clínica betancur 100,Ortodoncista,19001,false,4.8,309,2026-08-15,32,true,63,+57305000100,fix100.co,fix100
+C-0101,2026-09-12,maps,Ortodoncia Zapata 101,ortodoncia zapata 101,Ortodoncista,19001,false,4.6,201,2026-06-25,18,true,51,+57305000101,fix101.co,fix101
+C-0102,2026-09-12,maps,Centro Ocampo 102,centro ocampo 102,Clínica dental,19001,false,3.8,10,2025-10-06,0,false,11,+57305000102,,
+C-0103,2026-09-12,maps,Clínica Restrepo 103,clínica restrepo 103,Clínica dental,19001,false,3.8,10,2025-10-06,0,false,11,+57305000103,,
+C-0104,2026-09-12,maps,Consultorio Villegas 104,consultorio villegas 104,Ortodoncista,19001,false,4.8,321,2026-08-19,33,true,64,+57305000104,fix104.co,fix104
+C-0105,2026-09-12,maps,Ortodoncia Cadavid 105,ortodoncia cadavid 105,Ortodoncista,19001,false,4.3,113,2026-04-16,7,true,38,+57305000105,fix105.co,fix105
+C-0106,2026-09-12,maps,Centro Mejía 106,centro mejía 106,Dentista,19001,true,3.7,3,2025-08-17,0,false,5,+57305000106,,
+C-0107,2026-09-12,maps,Clínica Uribe 107,clínica uribe 107,Clínica dental,19001,false,3.9,17,2025-11-06,0,true,15,+57305000107,,
+C-0108,2026-09-12,maps,Clínica Arboleda 108,clínica arboleda 108,Ortodoncista,19001,false,4.9,377,2026-08-31,41,true,70,+57305000108,fix108.co,fix108
+C-0109,2026-09-12,maps,Ortodoncia Sanmiguel 109,ortodoncia sanmiguel 109,Ortodoncista,47001,false,4.5,167,2026-06-02,14,true,47,+57305000109,fix109.co,fix109
+C-0110,2026-09-12,maps,Centro Valderrama 110,centro valderrama 110,Clínica dental,47001,false,4.1,50,2026-01-22,0,true,25,+57305000110,fix110.co,
+C-0111,2026-09-12,maps,Consultorio Echeverri 111,consultorio echeverri 111,Ortodoncista,47001,false,4.5,178,2026-06-10,15,true,48,+57305000111,fix111.co,fix111
+C-0112,2026-09-12,maps,Clínica Betancur 112,clínica betancur 112,Ortodoncista,47001,false,4.8,279,2026-08-04,28,true,60,+57305000112,fix112.co,fix112
+C-0113,2026-09-12,maps,Ortodoncia Zapata 113,ortodoncia zapata 113,Ortodoncista,47001,false,4.5,156,2026-05-25,12,true,45,+57305000113,fix113.co,fix113
+C-0114,2026-09-12,maps,Centro Ocampo 114,centro ocampo 114,Ortodoncista,47001,false,4.3,101,2026-04-04,5,true,36,+57305000114,fix114.co,fix114
+C-0115,2026-09-12,maps,Clínica Restrepo 115,clínica restrepo 115,Dentista,47001,false,3.8,14,2025-10-26,0,false,13,+57305000115,,
+C-0116,2026-09-12,maps,Consultorio Villegas 116,consultorio villegas 116,Ortodoncista,47001,false,4.3,90,2026-03-22,4,true,34,+57305000116,fix116.co,fix116
+C-0117,2026-09-12,maps,Ortodoncia Cadavid 117,ortodoncia cadavid 117,Ortodoncista,47001,false,4.3,96,2026-03-29,4,true,35,+57305000117,fix117.co,fix117
+C-0118,2026-09-12,maps,Centro Mejía 118,centro mejía 118,Ortodoncista,47001,false,4.3,99,2026-04-01,5,true,36,+57305000118,fix118.co,fix118
+C-0119,2026-09-12,maps,Clínica Uribe 119,clínica uribe 119,Clínica dental,47001,false,3.8,15,2025-10-28,0,false,14,+57305000119,,
+C-0120,2026-09-12,maps,Clínica Arboleda 120,clínica arboleda 120,Ortodoncista,47001,false,4.3,117,2026-04-20,7,true,39,+57305000120,fix120.co,fix120
+C-0121,2026-09-12,maps,Ortodoncia Sanmiguel 121,ortodoncia sanmiguel 121,Ortodoncista,47001,false,4.2,85,2026-03-15,3,true,33,+57305000121,fix121.co,fix121
+C-0122,2026-09-12,maps,Centro Valderrama 122,centro valderrama 122,Dentista,47001,false,3.9,25,2025-11-29,0,true,18,+57305000122,,
+C-0123,2026-09-12,maps,Consultorio Echeverri 123,consultorio echeverri 123,Ortodoncista,50001,false,4.8,290,2026-08-08,30,true,61,+57305000123,fix123.co,fix123
+C-0124,2026-09-12,maps,Clínica Betancur 124,clínica betancur 124,Ortodoncista,50001,false,4.8,322,2026-08-19,34,true,65,+57305000124,fix124.co,fix124
+C-0125,2026-09-12,maps,Ortodoncia Zapata 125,ortodoncia zapata 125,Ortodoncista,50001,false,4.7,274,2026-08-02,27,true,60,+57305000125,fix125.co,fix125
+C-0126,2026-09-12,maps,Centro Ocampo 126,centro ocampo 126,Ortodoncista,50001,false,4.3,106,2026-04-09,6,true,37,+57305000126,fix126.co,fix126
+C-0127,2026-09-12,maps,Clínica Restrepo 127,clínica restrepo 127,Dentista,50001,false,4.0,40,2026-01-03,0,true,23,+57305000127,fix127.co,
+C-0128,2026-09-12,maps,Consultorio Villegas 128,consultorio villegas 128,Clínica dental,50001,false,3.9,16,2025-11-02,0,false,14,+57305000128,,
+C-0129,2026-09-12,maps,Ortodoncia Cadavid 129,ortodoncia cadavid 129,Dentista,50001,false,4.0,28,2025-12-08,0,true,19,+57305000129,,
+C-0130,2026-09-12,maps,Centro Mejía 130,centro mejía 130,Ortodoncista,50001,false,4.8,323,2026-08-20,34,true,65,+57305000130,fix130.co,fix130
+C-0131,2026-09-12,maps,Clínica Uribe 131,clínica uribe 131,Ortodoncista,50001,false,4.4,122,2026-04-25,8,true,40,+57305000131,fix131.co,fix131
+C-0132,2026-09-12,maps,Clínica Arboleda 132,clínica arboleda 132,Dentista,50001,false,4.0,37,2025-12-29,0,true,22,+57305000132,fix132.co,
+C-0133,2026-09-12,maps,Ortodoncia Sanmiguel 133,ortodoncia sanmiguel 133,Ortodoncista,50001,false,4.2,89,2026-03-21,4,true,34,+57305000133,fix133.co,fix133
+C-0134,2026-09-12,maps,Centro Valderrama 134,centro valderrama 134,Ortodoncista,50001,false,4.9,339,2026-08-24,36,true,66,+57305000134,fix134.co,fix134
+C-0135,2026-09-12,maps,Consultorio Echeverri 135,consultorio echeverri 135,Ortodoncista,50001,false,4.8,290,2026-08-08,30,true,61,+57305000135,fix135.co,fix135
+C-0136,2026-09-12,maps,Clínica Betancur 136,clínica betancur 136,Ortodoncista,50001,false,4.7,268,2026-07-30,27,true,59,+57305000136,fix136.co,fix136
+C-0137,2026-09-12,maps,Ortodoncia Zapata 137,ortodoncia zapata 137,Ortodoncista,66001,false,4.7,254,2026-07-24,25,true,57,+57305000137,fix137.co,fix137
+C-0138,2026-09-12,maps,Centro Ocampo 138,centro ocampo 138,Ortodoncista,66001,false,4.6,216,2026-07-04,20,true,53,+57305000138,fix138.co,fix138
+C-0139,2026-09-12,maps,Clínica Restrepo 139,clínica restrepo 139,Dentista,66001,false,4.2,67,2026-02-19,1,true,30,+57305000139,fix139.co,
+C-0140,2026-09-12,maps,Consultorio Villegas 140,consultorio villegas 140,Ortodoncista,66001,false,4.4,146,2026-05-17,11,true,44,+57305000140,fix140.co,fix140
+C-0141,2026-09-12,maps,Ortodoncia Cadavid 141,ortodoncia cadavid 141,Ortodoncista,66001,false,4.4,144,2026-05-15,10,true,43,+57305000141,fix141.co,fix141
+C-0142,2026-09-12,maps,Centro Mejía 142,centro mejía 142,Dentista,66001,false,4.1,53,2026-01-28,0,true,26,+57305000142,fix142.co,
+C-0143,2026-09-12,maps,Clínica Uribe 143,clínica uribe 143,Ortodoncista,66001,false,4.6,223,2026-07-08,21,true,54,+57305000143,fix143.co,fix143
+C-0144,2026-09-12,maps,Clínica Arboleda 144,clínica arboleda 144,Dentista,66001,true,3.7,6,2025-09-11,0,false,8,+57305000144,,
+C-0145,2026-09-12,maps,Ortodoncia Sanmiguel 145,ortodoncia sanmiguel 145,Ortodoncista,66001,false,4.3,111,2026-04-14,6,true,38,+57305000145,fix145.co,fix145
+C-0146,2026-09-12,maps,Centro Valderrama 146,centro valderrama 146,Dentista,66001,false,3.8,10,2025-10-10,0,false,11,+57305000146,,
+C-0147,2026-09-12,maps,Consultorio Echeverri 147,consultorio echeverri 147,Clínica dental,66001,false,4.0,32,2025-12-17,0,true,20,+57305000147,,
+C-0148,2026-09-12,maps,Clínica Betancur 148,clínica betancur 148,Ortodoncista,66001,false,4.4,145,2026-05-16,11,true,44,+57305000148,fix148.co,fix148
+C-0149,2026-09-12,maps,Ortodoncia Zapata 149,ortodoncia zapata 149,Ortodoncista,66001,false,4.2,78,2026-03-07,2,true,32,+57305000149,fix149.co,fix149
+C-0150,2026-09-12,maps,Centro Ocampo 150,centro ocampo 150,Clínica dental,66001,true,3.7,3,2025-08-09,0,false,4,+57305000150,,
+C-0151,2026-09-12,maps,Clínica Restrepo 151,clínica restrepo 151,Dentista,66001,false,3.9,22,2025-11-21,0,true,17,+57305000151,,
+C-0152,2026-09-12,maps,Consultorio Villegas 152,consultorio villegas 152,Ortodoncista,66001,false,4.5,178,2026-06-10,15,true,48,+57305000152,fix152.co,fix152
+C-0153,2026-09-12,maps,Ortodoncia Cadavid 153,ortodoncia cadavid 153,Ortodoncista,17001,false,4.2,76,2026-03-04,2,true,32,+57305000153,fix153.co,fix153
+C-0154,2026-09-12,maps,Centro Mejía 154,centro mejía 154,Clínica dental,17001,true,3.7,3,2025-08-20,0,false,5,+57305000154,,
+C-0155,2026-09-12,maps,Clínica Uribe 155,clínica uribe 155,Dentista,17001,true,3.6,2,2025-07-27,0,false,2,+57305000155,,
+C-0156,2026-09-12,maps,Clínica Arboleda 156,clínica arboleda 156,Ortodoncista,17001,false,4.3,113,2026-04-16,7,true,38,+57305000156,fix156.co,fix156
+C-0157,2026-09-12,maps,Ortodoncia Sanmiguel 157,ortodoncia sanmiguel 157,Dentista,17001,false,4.0,36,2025-12-25,0,true,22,+57305000157,,
+C-0158,2026-09-12,maps,Centro Valderrama 158,centro valderrama 158,Ortodoncista,17001,false,4.4,138,2026-05-10,10,true,42,+57305000158,fix158.co,fix158
+C-0159,2026-09-12,maps,Consultorio Echeverri 159,consultorio echeverri 159,Dentista,17001,true,3.7,5,2025-09-07,0,false,7,+57305000159,,
+C-0160,2026-09-12,maps,Clínica Betancur 160,clínica betancur 160,Ortodoncista,17001,false,4.4,135,2026-05-07,9,true,42,+57305000160,fix160.co,fix160
+C-0161,2026-09-12,maps,Ortodoncia Zapata 161,ortodoncia zapata 161,Ortodoncista,17001,false,4.2,89,2026-03-20,4,true,34,+57305000161,fix161.co,fix161
+C-0162,2026-09-12,maps,Centro Ocampo 162,centro ocampo 162,Ortodoncista,17001,false,4.7,234,2026-07-14,22,true,55,+57305000162,fix162.co,fix162
+C-0163,2026-09-12,maps,Clínica Restrepo 163,clínica restrepo 163,Dentista,17001,false,3.9,27,2025-12-06,0,true,19,+57305000163,,
+C-0164,2026-09-12,maps,Consultorio Villegas 164,consultorio villegas 164,Ortodoncista,17001,false,4.2,79,2026-03-08,3,true,32,+57305000164,fix164.co,fix164
+C-0165,2026-09-12,maps,Ortodoncia Cadavid 165,ortodoncia cadavid 165,Ortodoncista,17001,false,4.2,82,2026-03-11,3,true,33,+57305000165,fix165.co,fix165
+C-0166,2026-09-12,maps,Centro Mejía 166,centro mejía 166,Dentista,17001,false,3.8,9,2025-10-03,0,false,10,+57305000166,,
+C-0167,2026-09-12,maps,Clínica Uribe 167,clínica uribe 167,Ortodoncista,17001,false,4.2,76,2026-03-04,2,true,32,+57305000167,fix167.co,fix167
+C-0168,2026-09-12,maps,Clínica Arboleda 168,clínica arboleda 168,Ortodoncista,17001,false,4.5,186,2026-06-16,16,true,49,+57305000168,fix168.co,fix168
+C-0169,2026-09-12,maps,Ortodoncia Sanmiguel 169,ortodoncia sanmiguel 169,Clínica dental,52001,true,3.7,6,2025-09-18,0,false,8,+57305000169,,
+C-0170,2026-09-12,maps,Centro Valderrama 170,centro valderrama 170,Ortodoncista,52001,false,4.5,153,2026-05-22,12,true,45,+57305000170,fix170.co,fix170
+C-0171,2026-09-12,maps,Consultorio Echeverri 171,consultorio echeverri 171,Ortodoncista,52001,false,4.4,147,2026-05-17,11,true,44,+57305000171,fix171.co,fix171
+C-0172,2026-09-12,maps,Clínica Betancur 172,clínica betancur 172,Ortodoncista,52001,false,4.4,122,2026-04-25,8,true,40,+57305000172,fix172.co,fix172
+C-0173,2026-09-12,maps,Ortodoncia Zapata 173,ortodoncia zapata 173,Ortodoncista,52001,false,4.4,125,2026-04-28,8,true,40,+57305000173,fix173.co,fix173
+C-0174,2026-09-12,maps,Centro Ocampo 174,centro ocampo 174,Ortodoncista,52001,false,4.8,278,2026-08-04,28,true,60,+57305000174,fix174.co,fix174
+C-0175,2026-09-12,maps,Clínica Restrepo 175,clínica restrepo 175,Ortodoncista,52001,false,4.3,105,2026-04-08,6,true,37,+57305000175,fix175.co,fix175
+C-0176,2026-09-12,maps,Consultorio Villegas 176,consultorio villegas 176,Clínica dental,52001,true,3.6,2,2025-07-24,0,false,2,+57305000176,,
+C-0177,2026-09-12,maps,Ortodoncia Cadavid 177,ortodoncia cadavid 177,Ortodoncista,52001,false,4.8,299,2026-08-11,31,true,62,+57305000177,fix177.co,fix177
+C-0178,2026-09-12,maps,Centro Mejía 178,centro mejía 178,Dentista,52001,false,4.1,51,2026-01-25,0,true,26,+57305000178,fix178.co,
+C-0179,2026-09-12,maps,Clínica Uribe 179,clínica uribe 179,Ortodoncista,52001,false,4.4,138,2026-05-10,10,true,42,+57305000179,fix179.co,fix179
+C-0180,2026-09-12,maps,Clínica Arboleda 180,clínica arboleda 180,Ortodoncista,52001,false,4.5,178,2026-06-10,15,true,48,+57305000180,fix180.co,fix180
+C-0181,2026-09-12,maps,Ortodoncia Sanmiguel 181,ortodoncia sanmiguel 181,Ortodoncista,52001,false,4.9,363,2026-08-29,39,true,68,+57305000181,fix181.co,fix181
+C-0182,2026-09-12,maps,Centro Valderrama 182,centro valderrama 182,Dentista,52001,false,3.8,9,2025-09-30,0,false,10,+57305000182,,
+C-0183,2026-09-12,maps,Consultorio Echeverri 183,consultorio echeverri 183,Dentista,52001,false,4.1,64,2026-02-15,1,true,29,+57305000183,fix183.co,
+C-0184,2026-09-12,maps,Clínica Betancur 184,clínica betancur 184,Clínica dental,52001,true,3.7,5,2025-09-05,0,false,7,+57305000184,,
+C-0185,2026-09-12,maps,Ortodoncia Zapata 185,ortodoncia zapata 185,Ortodoncista,54001,false,4.4,141,2026-05-13,10,true,43,+57305000185,fix185.co,fix185
+C-0186,2026-09-12,maps,Centro Ocampo 186,centro ocampo 186,Ortodoncista,54001,false,4.3,95,2026-03-28,4,true,35,+57305000186,fix186.co,fix186
+C-0187,2026-09-12,maps,Clínica Restrepo 187,clínica restrepo 187,Ortodoncista,54001,false,4.9,374,2026-08-31,40,true,69,+57305000187,fix187.co,fix187
+C-0188,2026-09-12,maps,Consultorio Villegas 188,consultorio villegas 188,Clínica dental,54001,true,3.7,5,2025-09-08,0,false,7,+57305000188,,
+C-0189,2026-09-12,maps,Ortodoncia Cadavid 189,ortodoncia cadavid 189,Ortodoncista,54001,false,4.8,305,2026-08-14,31,true,63,+57305000189,fix189.co,fix189
+C-0190,2026-09-12,maps,Centro Mejía 190,centro mejía 190,Ortodoncista,54001,false,4.7,237,2026-07-16,23,true,55,+57305000190,fix190.co,fix190
+C-0191,2026-09-12,maps,Clínica Uribe 191,clínica uribe 191,Ortodoncista,54001,false,4.8,294,2026-08-10,30,true,62,+57305000191,fix191.co,fix191
+C-0192,2026-09-12,maps,Clínica Arboleda 192,clínica arboleda 192,Ortodoncista,54001,false,4.9,347,2026-08-26,37,true,67,+57305000192,fix192.co,fix192
+C-0193,2026-09-12,maps,Ortodoncia Sanmiguel 193,ortodoncia sanmiguel 193,Dentista,54001,false,3.8,9,2025-10-02,0,false,10,+57305000193,,
+C-0194,2026-09-12,maps,Centro Valderrama 194,centro valderrama 194,Dentista,54001,false,4.1,57,2026-02-04,0,true,27,+57305000194,fix194.co,
+C-0195,2026-09-12,maps,Consultorio Echeverri 195,consultorio echeverri 195,Dentista,54001,false,3.9,20,2025-11-14,0,true,16,+57305000195,,
+C-0196,2026-09-12,maps,Clínica Betancur 196,clínica betancur 196,Dentista,54001,true,3.7,3,2025-08-14,0,false,4,+57305000196,,
+C-0197,2026-09-12,maps,Ortodoncia Zapata 197,ortodoncia zapata 197,Ortodoncista,54001,false,4.4,144,2026-05-15,10,true,43,+57305000197,fix197.co,fix197
+C-0198,2026-09-12,maps,Centro Ocampo 198,centro ocampo 198,Dentista,54001,false,3.9,16,2025-10-31,0,false,14,+57305000198,,
+C-0199,2026-09-12,maps,Clínica Restrepo 199,clínica restrepo 199,Ortodoncista,54001,false,4.3,117,2026-04-20,7,true,39,+57305000199,fix199.co,fix199
+C-0200,2026-09-12,maps,Consultorio Villegas 200,consultorio villegas 200,Clínica dental,54001,false,4.0,38,2025-12-30,0,true,22,+57305000200,fix200.co,

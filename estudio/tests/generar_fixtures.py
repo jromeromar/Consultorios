@@ -95,6 +95,23 @@ FRANJAS = ["manana", "mediodia", "tarde"]
 # a la mitad: es el hallazgo 02 y el fixture tiene que contenerlo.
 PROP_PRIMERA_HORA = {"manana": 0.42, "mediodia": 0.19, "tarde": 0.30}
 
+# Nombres inventados con forma de nombre real. Existen para que la prueba de
+# anonimato tenga algo que buscar en el JSON agregado: con el campo vacío esa
+# prueba pasaría de vacío y no demostraría nada.
+NOMBRES = [
+    "Clínica Arboleda", "Ortodoncia Sanmiguel", "Centro Valderrama",
+    "Consultorio Echeverri", "Clínica Betancur", "Ortodoncia Zapata",
+    "Centro Ocampo", "Clínica Restrepo", "Consultorio Villegas",
+    "Ortodoncia Cadavid", "Centro Mejía", "Clínica Uribe",
+]
+
+CATEGORIAS_FICHA = ["Dentista", "Clínica dental", "Odontólogo"]
+
+
+def nombre_de(indice: int) -> str:
+    return f"{NOMBRES[indice % len(NOMBRES)]} {indice:03d}"
+
+
 EXCLUIDOS = (
     [("duplicado", True)] * 4 + [("cerrado", True)] * 3
     + [("fuera_de_alcance", True)] * 3 + [("activo", False)] * 2
@@ -133,7 +150,7 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
 
     consultorios, fichas, sitios, cuentas, contactos = [], [], [], [], []
     resenas, declarados, serps = [], [], []
-    por_municipio: dict[str, list[tuple[str, float]]] = {}
+    por_municipio: dict[str, list[tuple[str, float, str]]] = {}
 
     indice = 0
     for dane, nombre, _dep, _depid, _cat, cuantos, _area in municipios:
@@ -165,15 +182,21 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
                 "fecha_alta": "2026-09-01",
                 "fecha_ultima_captura": "2026-09-12",
             })
-            por_municipio.setdefault(dane, []).append((cid, presencia))
+            nombre = nombre_de(indice)
+            por_municipio.setdefault(dane, []).append((cid, presencia, nombre))
 
             # ── ficha pública: todos la tienen ─────────────────────────────
             cat_ok = presencia > 0.42 or control == "C-0001"
-            dias_resena = 15 if control == "C-0001" else (365 if control == "C-0002" else round(interp((1 - presencia) ** 1.4, 12, 420)))
+            # Los controles se fijan contra campo_fin, que es lo que el motor usa
+            # para la recencia: si se fijaran contra fecha_captura caerían a un
+            # día de la ancla y el control dejaría de ser exacto.
+            dias_resena = 16 if control == "C-0001" else (366 if control == "C-0002" else round(interp((1 - presencia) ** 1.4, 12, 420)))
             fichas.append({
                 "consultorio_id": cid,
                 "fecha_captura": "2026-09-12",
                 "fuente_captura": "maps",
+                "nombre_comercial": nombre,
+                "nombre_normalizado": nombre.lower(),
                 "categoria_principal": "Ortodoncista" if cat_ok else ("Dentista" if r() > 0.4 else "Clínica dental"),
                 "municipio_id": dane,
                 "es_area_de_servicio": "false" if (presencia > 0.12 or control == "C-0001") else "true",
@@ -208,9 +231,9 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
                     "consultorio_id": cid,
                     "handle": f"fix{indice}",
                     "fecha_captura": "2026-09-12",
-                    "seguidores": 20000 if control == "C-0001" else round(interp(presencia ** 2, 120, 26000)),
+                    "seguidores": 20000 if control == "C-0001" else (100 if control == "C-0002" else round(interp(presencia ** 2, 120, 26000))),
                     "publicaciones_30d": 12 if control == "C-0001" else round(interp(presencia, 0, 16)),
-                    "interaccion_promedio_pct": "4.0" if control == "C-0001" else f"{interp(presencia, 0.3, 4.6):.2f}",
+                    "interaccion_promedio_pct": "4.0" if control == "C-0001" else ("0.5" if control == "C-0002" else f"{interp(presencia, 0.3, 4.6):.2f}"),
                     "es_cuenta_profesional": "true" if presencia > 0.5 or control == "C-0001" else "false",
                     "destino_enlace": _destino(presencia, control),
                     "publica_antes_despues": "true" if presencia > 0.6 else "false",
@@ -253,7 +276,7 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
     elegidos: list[str] = []
     cat_de_cid: dict[str, str] = {}
     for dane, _n, _d, _di, categoria, *_ in municipios:
-        lista = [cid for cid, _p in por_municipio.get(dane, [])]
+        lista = [cid for cid, _p, _n in por_municipio.get(dane, [])]
         for cid in lista:
             cat_de_cid[cid] = categoria
         cuantos = max(1, round(len(lista) * 0.875))
@@ -277,8 +300,6 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
             minutos = ""
         elif control == "C-0001":
             minutos = 5
-        elif control == "C-0002":
-            minutos = 1440
         else:
             base = (12 if rapido else 220) * FACTOR_CIUDAD[cat_de_cid[cid]]
             minutos = max(2, round(math.exp(math.log(base) + (r2() - 0.5) * 2.4)))
@@ -328,8 +349,17 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
     for dane, nombre, _d, _di, _c, _n, _a in municipios:
         lista = por_municipio.get(dane, [])
         for k, (consulta, _intencion) in enumerate(CONSULTAS):
-            orden = sorted(lista, key=lambda t: -(t[1] + (r3() - 0.5) * 0.3))[:3]
-            for pos, (cid, _p) in enumerate(orden, start=1):
+            # Los controles se fuerzan: C-0001 siempre primero (presencia 5,
+            # posición 1) y C-0002 nunca aparece. Sin eso, el ruido del ranking
+            # los movería y dejarían de ser controles exactos.
+            candidatos = [t for t in lista if t[0] != "C-0002"]
+            resto = sorted(
+                [t for t in candidatos if t[0] != "C-0001"],
+                key=lambda t: -(t[1] + (r3() - 0.5) * 0.3),
+            )
+            fijo = [t for t in candidatos if t[0] == "C-0001"]
+            orden = (fijo + resto)[:3]
+            for pos, (cid, _p, nombre_serp) in enumerate(orden, start=1):
                 serps.append({
                     "consulta_texto": f"{consulta} en {nombre}",
                     "consulta_normalizada": f"{consulta.replace(' ', '-')}-{k}-{dane}",
@@ -338,7 +368,7 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
                     "dispositivo": "movil",
                     "bloque": "paquete_local",
                     "posicion": pos,
-                    "nombre_resultado_crudo": f"Consultorio {cid}",
+                    "nombre_resultado_crudo": nombre_serp,
                     "consultorio_id": cid,
                     "metodo_emparejamiento": "place_id",
                     "confianza_emparejamiento": "1.0",
@@ -380,7 +410,8 @@ def generar(destino: Path, municipios, semilla: int, etiqueta: str) -> None:
               "fecha_ultima_captura"], consultorios)
 
     escribir(destino / "consultorio_snapshot.csv",
-             ["consultorio_id", "fecha_captura", "fuente_captura", "categoria_principal",
+             ["consultorio_id", "fecha_captura", "fuente_captura", "nombre_comercial",
+              "nombre_normalizado", "categoria_principal",
               "municipio_id", "es_area_de_servicio", "calificacion", "resenas_total",
               "fecha_resena_mas_reciente", "resenas_respondidas_pct",
               "tiene_horario_publicado", "fotos_n", "telefono_e164", "dominio",

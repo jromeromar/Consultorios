@@ -121,20 +121,25 @@ hallazgos:
       categoría que no es su especialidad
     lede: >-
       Un consultorio de ortodoncia listado como consultorio dental genérico no
-      aparece en las búsquedas de su propia especialidad. El grupo con la
-      categoría bien asignada ocupó posiciones más altas en el paquete local que
-      el grupo que la tiene mal.
+      aparece en las búsquedas de su propia especialidad. La comparación es de
+      presencia y no de posición: el bloque de mapas muestra tres resultados, así
+      que del grupo con la categoría mal asignada no se observa que rankee más
+      abajo, se observa que no sale.
     no_dice: >-
-      No dice que corregir la categoría mueva la posición. Son dos grupos
-      observados el mismo día, no un antes y un después del mismo consultorio.
+      No dice que corregir la categoría haga aparecer al consultorio. Son dos
+      grupos observados el mismo día, no un antes y un después del mismo
+      consultorio, y la categoría puede estar acompañada de otras cosas que
+      también pesan en ese bloque.
     estadisticas:
       - visibilidad.categoria_incorrecta_prop
-      - visibilidad.posicion_por_categoria
+      - visibilidad.presencia_por_categoria
     comprobacion:
-      tipo: proporcion_entre
-      estadistica: visibilidad.categoria_incorrecta_prop
-      minimo: 0
-      maximo: 100
+      # Guarda la afirmación del lede: que el grupo con la categoría bien
+      # asignada aparece más. Un rango 0–100 sobre una proporción no guarda
+      # nada, porque siempre pasa.
+      tipo: grupo_mayor
+      estadistica: visibilidad.presencia_por_categoria
+      grupo: categoria_correcta
 
   - id: h04
     bloque: reputacion
