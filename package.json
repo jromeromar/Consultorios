@@ -11,9 +11,10 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx src/lib/db/migrate.ts",
     "db:seed": "tsx src/lib/db/seed.ts",
-    "db:reset": "rm -rf .data/pglite && npm run db:migrate && npm run db:seed",
+    "db:reset": "rm -rf .data/pglite && npm run db:migrate && npm run db:seed && npm run db:censo-demo",
     "db:import": "tsx src/lib/db/import-csv.ts",
-    "test": "tsx --test src/**/*.test.ts"
+    "test": "tsx --test src/**/*.test.ts",
+    "db:censo-demo": "tsx src/lib/db/seed-censo.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",
