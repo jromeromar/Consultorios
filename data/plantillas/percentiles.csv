@@ -1,4 +1,0 @@
-especialidad,segmento,periodo,pais,kpi,p10,p25,p50,p75,p90,n,fuente
-ortodoncia,all,2026-S1,CO,tasa-cierre,25,35,45,58,70,214,"Muestra de campo Consultorios, marzo 2026"
-ortodoncia,all,2026-S1,CO,ticket-promedio,1500000,2600000,4200000,7000000,11000000,214,"Muestra de campo Consultorios, marzo 2026"
-ortodoncia,clinica-pequena,2026-S1,CO,tasa-cierre,27,37,47,60,71,88,"Muestra de campo Consultorios, marzo 2026"

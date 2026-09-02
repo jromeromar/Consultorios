@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1788288657932,
-      "tag": "0000_inicial",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1788290704728,
-      "tag": "0001_pais_colombia",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1788313482848,
-      "tag": "0002_censo_ortodoncia",
+      "when": 1788315957742,
+      "tag": "0000_censo",
       "breakpoints": true
     }
   ]
