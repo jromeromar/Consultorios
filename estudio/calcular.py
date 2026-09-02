@@ -887,6 +887,10 @@ FORMATO_UNIDAD = {
     "posicion": lambda v: "no medido" if v is None else f"{v:.1f}".replace(".", ",") + "ª",
     "booleano": lambda v: "no medido" if v is None else ("Sí" if v >= 50 else "No"),
     "enum": lambda v: "no medido" if v is None else fmt_pct(v, 0),
+    "consultas": lambda v: fmt_num(v),
+    "seguidores": lambda v: fmt_num(v),
+    "publicaciones": lambda v: fmt_num(v),
+    "resenas": lambda v: fmt_num(v),
 }
 
 
@@ -1267,6 +1271,7 @@ def main(argv: list[str] | None = None) -> int:
     escribir_json(salida / f"edicion_{args.edicion}.json", edicion_json)
 
     # ── un reporte por consultorio medido ──────────────────────────────────
+    bloques_por_id = {b["id"]: b for b in bloques_json}
     reportes = 0
     for cid in pob.medidos:
         p = puntajes[cid]
@@ -1286,11 +1291,7 @@ def main(argv: list[str] | None = None) -> int:
                 "banda": banda(p["percentil_general"]),
             },
             "bloques": {
-                b["id"]: {
-                    "puntaje": p["bloques"][b["id"]],
-                    "percentil": p["percentil_bloques"][b["id"]],
-                    "banda": banda(p["percentil_bloques"][b["id"]]),
-                }
+                b["id"]: _bloque_reporte(p, b, bloques_por_id)
                 for b in formula["bloques"]
             },
             "bloques_no_medidos": p["bloques_no_medidos"],
@@ -1327,6 +1328,33 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
+def _bloque_reporte(p: dict, b: dict, agregado: dict) -> dict:
+    """
+    El bloque de un consultorio con sus distancias ya calculadas.
+
+    Las distancias se restan aquí y no en el renderizador porque calcular.py es
+    el único archivo que hace aritmética: si el renderizador restara, el informe
+    y la auditoría podrían llegar a restar distinto.
+    """
+    puntaje = p["bloques"][b["id"]]
+    ag = agregado[b["id"]]
+    mediana, top10 = ag["mediana"], ag["p90"]
+
+    dm = None if (puntaje is None or mediana is None) else round(puntaje - mediana, 2)
+    dt = None if (puntaje is None or top10 is None) else round(max(0.0, top10 - puntaje), 2)
+
+    return {
+        "puntaje": puntaje,
+        "percentil": p["percentil_bloques"][b["id"]],
+        "banda": banda(p["percentil_bloques"][b["id"]]),
+        "mediana_muestra": mediana,
+        "top10_muestra": top10,
+        "distancia_mediana": dm,
+        "distancia_top10": dt,
+        "por_encima_de_la_mediana": None if dm is None else dm > 0,
+    }
+
+
 def _crudo_serializable(v: Any) -> Any:
     if isinstance(v, bool) or v is None or isinstance(v, (int, float)):
         return v
@@ -1338,7 +1366,10 @@ def _texto_crudo(v: Any, ind: dict) -> str:
         return "no medido"
     if isinstance(v, str) and v.strip().lower() in {"no_observado", "no_dice"}:
         return "no observado"
-    if ind["transformacion"] == "booleano":
+    # Un booleano se lee Sí/No venga de donde venga. Los declarados llevan
+    # transformación «ninguna» porque no puntúan, y sin esta rama caían al
+    # formateador numérico y salían como «no medido» teniendo dato.
+    if ind["transformacion"] == "booleano" or isinstance(v, bool) or ind["unidad"] == "booleano":
         b = bol(v)
         return "no medido" if b is None else ("Sí" if b else "No")
     if ind["transformacion"] == "mapa":
@@ -1420,6 +1451,11 @@ def _textos_resueltos(textos: dict, huecos: dict, faltan: list, marca: dict, fic
         "limites_informe": [" ".join(x.split()) for x in textos["limites_informe"]],
         "limites_auditoria": [" ".join(x.split()) for x in textos["limites_auditoria"]],
         "auditoria": {k: rellenar(v, h, faltan) for k, v in textos["auditoria"].items()},
+        "bloques": {
+            k: {kk: " ".join(vv.split()) for kk, vv in v.items()}
+            for k, v in textos["bloques"].items()
+        },
+        "territorio": {k: " ".join(v.split()) for k, v in textos["territorio"].items()},
         "autoria": {
             "titulo": textos["autoria"]["titulo"],
             "texto": rellenar(textos["autoria"]["texto"], h, faltan),

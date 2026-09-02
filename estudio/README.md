@@ -32,6 +32,10 @@ día discreparían y alguien lo notaría en público.
 | `render_agregado.py` | Una página desde el JSON. Solo el lector anónimo. |
 | `render_auditoria.py` | N páginas y N PDF. Lector identificado. |
 | `cumplimiento.py` | Revisión previa a publicar. Falla si encuentra un nombre en el agregado, una cifra proyectada, una estadística sin `n` o un color fuera de `marca.json`. |
+| `svg.py` | Geometría de los gráficos. Compartida por los dos renderizadores para que ninguna plantilla convierta un valor en una coordenada. |
+| `estilo.py` | Traduce `marca.json` a variables CSS y `@font-face`. Es lo que hace cumplible que no haya un color escrito a mano. |
+| `plantilla.py` | Relleno de huecos `{{clave}}`. Un hueco sin valor revienta: un documento que va a imprenta no puede llevar un blanco donde iba una cifra. |
+| `lectura.py` | Los dos lectores, anónimo e identificado. |
 
 ## Puntaje absoluto, percentil relativo
 
@@ -115,9 +119,44 @@ Eso prueba la maquinaria, no describe el mercado.
   y la huella de los archivos de entrada.
 - **No se inventa nada.** Si falta un dato, se imprime «no medido».
 
+## Las plantillas no calculan
+
+Una plantilla es HTML con huecos `{{clave}}` y nada más: ni bucles, ni
+condicionales, ni aritmética, ni scripts. Lo que se repite —los cinco bloques,
+las filas de una tabla— lo arma el renderizador con una plantilla parcial y lo
+inyecta ya hecho. La geometría de los gráficos vive en `svg.py`, compartida por
+los dos documentos y probada, así que ninguna plantilla convierte un valor en una
+coordenada.
+
+Las cifras publicadas van estampadas con `data-stat` en el HTML. Es lo que
+permite que la prueba de consistencia compare **los dos documentos generados** y
+no el JSON contra sí mismo, que sería una tautología.
+
+## PDF
+
+Chromium imprimiendo el mismo HTML, para que el impreso sea idéntico a la
+pantalla. El HTML del PDF se genera en modo claro: un impreso no tiene modo
+oscuro y heredar el del sistema daría una hoja negra.
+
+```bash
+python3 render_auditoria.py --edicion 2026-09 --consultorio TODOS
+python3 render_auditoria.py --edicion 2026-09 --consultorio TODOS --sin-pdf
+python3 render_auditoria.py --edicion 2026-09 --consultorio TODOS --chromium /ruta/al/navegador
+```
+
+Cada auditoría sale como un archivo nombrado por `consultorio_id`, **nunca por
+el nombre del establecimiento**, y se entrega solo al consultorio medido.
+
+## Pruebas
+
+```bash
+python3 -m pytest tests/ -q
+```
+
 ## Estado
 
-Paso 1 de 5 hecho: `formula.yaml`, `marca.json`, `textos.yaml`, tipografías
-copiadas y los datos sintéticos, con su auditoría de composición.
+Pasos 1 a 3 hechos: `formula.yaml`, `marca.json`, `textos.yaml`, tipografías
+copiadas, datos sintéticos, `calcular.py` y `render_auditoria.py`.
 
-Sigue `calcular.py` con sus pruebas.
+Sigue `render_agregado.py` y después `cumplimiento.py`, que es donde entra la
+prueba de consistencia entre los dos documentos.

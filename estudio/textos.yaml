@@ -270,6 +270,59 @@ limites_auditoria:
     Qué pasa con el posicionamiento y las reseñas en el mediano plazo. Los dos se
     mueven en meses, y la ventana medida fue más corta.
 
+# Prosa de los cinco bloques. Va aquí y no en la plantilla porque describe el
+# instrumento y se va a revisar palabra por palabra entre ediciones.
+bloques:
+  visibilidad:
+    descripcion: >-
+      Si el consultorio aparece cuando alguien de su municipio busca ortodoncia
+      en el mapa y en el buscador.
+    mecanismo: >-
+      El orden del bloque de mapas depende de la cercanía, la relevancia de la
+      ficha y su prominencia. La categoría principal mal asignada saca al
+      consultorio de las búsquedas de su propia especialidad.
+  reputacion:
+    descripcion: >-
+      El volumen, la frescura y la calificación de las reseñas públicas, y qué
+      tanto responde el consultorio a ellas.
+    mecanismo: >-
+      El perfil público pondera volumen, recencia y calificación, y las tres se
+      mueven con la operación diaria. Responder una reseña y pedir la siguiente
+      son las dos palancas de este bloque que no dependen de nadie más.
+  contenido:
+    descripcion: >-
+      Actividad, alcance e interacción de la cuenta pública, y si esa cuenta
+      lleva a algún lugar donde se pueda reservar.
+    mecanismo: >-
+      La cuenta cumple dos funciones que conviene no confundir: sostiene la
+      decisión de quien ya encontró al consultorio, y es el destino al que llega
+      quien vio la ficha. Solo la segunda depende de que haya un enlace de
+      reserva.
+  respuesta:
+    descripcion: >-
+      Cuánto tardó en llegar la primera respuesta a una consulta enviada como
+      paciente, y qué contenía esa respuesta.
+    mecanismo: >-
+      Es el único bloque donde el consultorio compite contra el reloj del
+      paciente y no contra un algoritmo. Un paciente que escribe a tres
+      consultorios el mismo día conversa con el que le contesta primero.
+  reservabilidad:
+    descripcion: >-
+      Si un paciente decidido puede reservar sin depender de que alguien
+      conteste, y qué política de cobro existe hoy.
+    mecanismo: >-
+      Los indicadores declarados de este bloque no cambian el puntaje: entran
+      para poder leer los observados. Un cobro de primera cita ya existente
+      cambia por completo qué tan lejos está el consultorio de operar con
+      depósito.
+
+territorio:
+  titulo: Un solo consultorio por municipio
+  texto: >-
+    El trabajo se hace con un consultorio por municipio, en exclusiva. Esta
+    auditoría no dice si el territorio de este consultorio está disponible: esa
+    es una conversación aparte y su estado no se mide en este estudio.
+
 auditoria:
   titulo: Auditoría de captación de pacientes
   deck: >-

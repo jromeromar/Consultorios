@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>{{titulo_pagina}}</title>
+<style>{{estilo}}</style>
+</head>
+<body>
+{{cintillo}}
+<div class="wrap">
+
+  <header class="mast">
+    {{marca}}
+    <h1>{{titulo}}</h1>
+    <p class="deck">{{deck}}</p>
+    <dl class="meta">{{meta}}</dl>
+  </header>
+
+  <section>
+    <div class="antetitulo">Resumen</div>
+    <div class="resumen tarjeta">
+      <div>
+        <div class="cifra-hero">{{percentil_general}}</div>
+        <div class="pie-hero">{{pie_percentil}}</div>
+        <div class="banda"><i style="background:var(--{{banda_token}})"></i><span>{{banda_nombre}}</span></div>
+      </div>
+      <div>{{tira}}</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="antetitulo">Lo que aportó el consultorio</div>
+    <h2>Tres datos que ningún instrumento observa desde afuera</h2>
+    <p class="entrada">{{intro_declarados}}</p>
+    <div class="tarjeta declarados">
+      <h3>Datos declarados</h3>
+      <div class="dgrid">{{declarados}}</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="antetitulo">Los cinco pasos</div>
+    <h2>El recorrido del paciente, medido paso por paso</h2>
+    <p class="entrada">{{intro_bloques}}</p>
+    {{bloques}}
+  </section>
+
+  <section>
+    <div class="antetitulo">Límites</div>
+    <h2>Lo que esta auditoría no dice</h2>
+    <div class="prosa"><p>Un instrumento que mide bien también declara qué no midió. Estas cosas quedan fuera y ninguna cifra de las páginas anteriores permite deducirlas.</p></div>
+    <ul class="limites">{{limites}}</ul>
+  </section>
+
+  <section>
+    <div class="antetitulo">Método</div>
+    <h2>Cómo se midió</h2>
+    <div class="tarjeta metodo">
+      <p class="entrada" style="margin-top:0">{{metodo_intro}}</p>
+      <dl>{{metodo}}</dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="antetitulo">Territorio</div>
+    <div class="tarjeta territorio">
+      <h3>{{territorio_titulo}}</h3>
+      <p>{{territorio_texto}}</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>{{marca_nombre}} · {{titulo}} · {{edicion_nombre}}</span>
+    <span>Reporte individual · uso exclusivo del consultorio medido</span>
+  </footer>
+  <p class="sello">{{sello}}</p>
+
+</div>
+</body>
+</html>

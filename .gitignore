@@ -12,3 +12,8 @@ next-env.d.ts
 # Datos de campo: se versionan las plantillas, nunca las muestras reales.
 data/*.csv
 !data/plantillas/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
