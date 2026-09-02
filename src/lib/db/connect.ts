@@ -1,6 +1,9 @@
 import type { PgDatabase } from 'drizzle-orm/pg-core'
 import { DEMO_MODE } from '../mode'
-import * as schema from './schema'
+import * as schemaCenso from './schema-censo'
+import * as schemaPlataforma from './schema'
+
+const schema = { ...schemaPlataforma, ...schemaCenso }
 
 export type Db = PgDatabase<never, typeof schema>
 
