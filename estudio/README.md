@@ -153,10 +153,59 @@ el nombre del establecimiento**, y se entrega solo al consultorio medido.
 python3 -m pytest tests/ -q
 ```
 
+## La prueba que sostiene el encargo
+
+El percentil que un profesional ve en su auditoría tiene que salir exactamente de
+la distribución que el informe publica. Se comprueba sobre **los dos HTML
+generados**, no sobre el JSON contra sí mismo, que sería una tautología:
+
+- El informe estampa la mediana de cada bloque en su ficha de método con
+  `data-stat="bloque.X.mediana" data-valor="…"`.
+- La auditoría estampa la que dibuja en la curva con `data-mediana="…"`.
+- `cumplimiento.py` y `tests/test_consistencia.py` comparan las dos cadenas
+  exactas, y hay dos pruebas de mutación que alteran una mediana a propósito
+  para comprobar que la comparación lo caza.
+
+## La compuerta antes de publicar
+
+```bash
+python3 cumplimiento.py --edicion 2026-09
+```
+
+36 controles sobre los HTML ya generados, porque lo que importa es lo que va a
+salir impreso. Falla —y dice qué regla rompió y dónde— si encuentra:
+
+- un nombre de consultorio en el informe agregado, o un identificador
+- lenguaje de proyección en cualquiera de los dos documentos
+- segunda persona sobre un profesional en el agregado
+- una estadística publicada sin su `n` visible
+- un color escrito a mano fuera de `marca.json`
+- una mediana que discrepa entre los dos documentos
+- un documento que no viene del último cálculo
+- la falta del aviso cuando la edición declara datos no de campo
+- las palabras «estimado», «aproximado», «extrapolado» o «proyectado»
+
+Cada control tiene su prueba de mutación: una revisión que no falla nunca no
+revisa nada.
+
+Un efecto que no busqué y que resultó valioso: **la compuerta detecta documentos
+viejos.** La primera vez que la corrí encontró que los HTML en disco no venían
+del último cálculo, porque solo había vuelto a renderizar uno.
+
+## Una corrida completa
+
+```bash
+python3 calcular.py          --edicion 2026-09 --datos ./datos
+python3 render_agregado.py   --edicion 2026-09
+python3 render_auditoria.py  --edicion 2026-09 --consultorio TODOS
+python3 cumplimiento.py      --edicion 2026-09
+```
+
 ## Estado
 
-Pasos 1 a 3 hechos: `formula.yaml`, `marca.json`, `textos.yaml`, tipografías
-copiadas, datos sintéticos, `calcular.py` y `render_auditoria.py`.
+Los cinco pasos hechos. 163 pruebas.
 
-Sigue `render_agregado.py` y después `cumplimiento.py`, que es donde entra la
-prueba de consistencia entre los dos documentos.
+Lo que queda para una edición real, en orden: sustituir `datos/` por el
+levantamiento de campo, revisar los pesos y las anclas de `formula.yaml` —los de
+ahora son una propuesta mía—, y decidir la identidad para poner `marca.json` y
+apagar el cintillo provisional.

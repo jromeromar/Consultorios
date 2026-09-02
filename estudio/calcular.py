@@ -715,6 +715,33 @@ def estadisticas(
         corte="tipo_ciudad", texto=fmt_razon(razon),
     )
 
+    # Proporción respondida dentro de la primera hora, por franja. El
+    # denominador son los MEDIDOS de la franja y no los que respondieron: no
+    # contestar es uno de los resultados posibles de la pregunta.
+    por_franja: dict[str, dict[str, int]] = {}
+    for cid in pob.medidos:
+        fr = texto(censo.campo[cid].get("franja_horaria")) or "sin dato"
+        g = por_franja.setdefault(fr, {"a_tiempo": 0, "n": 0})
+        g["n"] += 1
+        m = minutos.get(cid)
+        if m is not None and m <= 60:
+            g["a_tiempo"] += 1
+    grupos_franja = {k: v["n"] for k, v in por_franja.items()}
+    E["respuesta.primera_hora_por_franja"] = motor.est(
+        {
+            k: {
+                "valor": _redondear(_prop(v["a_tiempo"], v["n"])),
+                "n": v["n"],
+                "a_tiempo": v["a_tiempo"],
+                "texto": fmt_pct(_prop(v["a_tiempo"], v["n"])),
+            }
+            for k, v in sorted(por_franja.items())
+        }
+        if all(n >= motor.minimo_grupo for n in grupos_franja.values()) else None,
+        "porcentaje", n=sum(grupos_franja.values()), denominador="medidos", corte="franja",
+        grupos=grupos_franja,
+    )
+
     # ── bloque 1 · visibilidad ──────────────────────────────────────────────
     cat_ok = {cid: crudos[cid]["categoria_correcta"] for cid in pob.con_ficha}
     medidos_cat = [c for c in cat_ok.values() if c is not None]
@@ -836,10 +863,15 @@ def estadisticas(
             if minutos.get(cid) is not None and num(crudos[cid][campo]) is not None
         ]
         rho = spearman([p[0] for p in pares], [p[1] for p in pares]) if pares else None
+        # La mediana del eje Y es la referencia con que se dibuja la ausencia de
+        # relación. Se emite en vez de ajustar una recta: una recta de pendiente
+        # casi nula sobre una nube sin relación sugiere una tendencia que no hay.
         E[clave] = motor.est(
             None if rho is None else round(rho, 3), "rho",
             n=len(pares), denominador="respondieron",
-            eje_y=etiqueta, puntos=[{"x": int(x), "y": round(y, 2)} for x, y in sorted(pares)],
+            eje_y=etiqueta,
+            mediana_y=_redondear(_mediana([p[1] for p in pares]), 2),
+            puntos=[{"x": int(x), "y": round(y, 2)} for x, y in sorted(pares)],
         )
 
     grupos_por_corte = {
@@ -993,6 +1025,17 @@ def comprobar(comp: dict | None, E: dict[str, dict]) -> tuple[bool, str | None]:
             return False, f"{comp['estadistica']} fuera del rango declarado"
         return True, None
 
+    if tipo == "minimo_en_grupo":
+        e = E.get(comp["estadistica"], {})
+        detalle = e.get("valor")
+        if not isinstance(detalle, dict) or comp["grupo"] not in detalle:
+            return False, f"{comp['estadistica']} no publica grupos comparables"
+        objetivo = detalle[comp["grupo"]]["valor"]
+        otros = [d["valor"] for g, d in detalle.items() if g != comp["grupo"]]
+        if not otros or objetivo >= min(otros):
+            return False, f"el grupo «{comp['grupo']}» no es el más bajo"
+        return True, None
+
     if tipo == "sin_relacion":
         rhos = [E.get(c, {}).get("valor") for c in comp["estadisticas"]]
         if any(r is None for r in rhos):
@@ -1015,6 +1058,8 @@ def resolver_huecos(E: dict, pob: Poblaciones, censo: Censo) -> dict[str, str]:
         "n_ciudades": fmt_num(len(censo.municipios)),
         "mediana_respuesta": t("respuesta.mediana_minutos"),
         "razon_intermedias_grandes": t("respuesta.razon_intermedias_grandes"),
+        "primera_hora_mediodia": _de_grupo(E, "respuesta.primera_hora_por_franja", "mediodia"),
+        "primera_hora_manana": _de_grupo(E, "respuesta.primera_hora_por_franja", "manana"),
         "categoria_incorrecta_prop": t("visibilidad.categoria_incorrecta_prop"),
         "resenas_respondidas_mediana": t("reputacion.resenas_respondidas_mediana"),
         "recencia_mediana": t("reputacion.recencia_mediana"),
@@ -1023,6 +1068,13 @@ def resolver_huecos(E: dict, pob: Poblaciones, censo: Censo) -> dict[str, str]:
         "campo_inicio": texto(censo.edicion.get("campo_inicio")) or "no declarado",
         "campo_fin": texto(censo.edicion.get("campo_fin")) or "no declarado",
     }
+
+
+def _de_grupo(E: dict, clave: str, grupo: str) -> str:
+    detalle = E.get(clave, {}).get("valor")
+    if not isinstance(detalle, dict) or grupo not in detalle:
+        return "no medido"
+    return detalle[grupo].get("texto", "no medido")
 
 
 def rellenar(plantilla: str, huecos: dict[str, str], faltantes: list[str]) -> str:
@@ -1052,6 +1104,13 @@ def armar_hallazgos(motor: Motor, E: dict, pob: Poblaciones, censo: Censo) -> tu
                 f"{', '.join(faltan_est)}. Agrégalas en calcular.py o quítalas de textos.yaml."
             )
 
+        grafica = h.get("grafica", h["estadisticas"][0])
+        if grafica not in h["estadisticas"]:
+            raise SystemExit(
+                f"El hallazgo {h['id']} grafica «{grafica}», que no está entre las "
+                f"estadísticas que declara. Añádela a `estadisticas` o corrige `grafica`."
+            )
+
         publicables = [E[c]["publicable"] for c in h["estadisticas"]]
         concluyente, motivo = comprobar(h.get("comprobacion"), E)
         faltantes: list[str] = []
@@ -1072,6 +1131,7 @@ def armar_hallazgos(motor: Motor, E: dict, pob: Poblaciones, censo: Censo) -> tu
             "no_dice": " ".join(h["no_dice"].split()),
             "nota_denominador": " ".join(h.get("nota_denominador", "").split()) or None,
             "estadisticas": h["estadisticas"],
+            "grafica": grafica,
             "publicable": all(publicables),
             "concluyente": concluyente,
             "motivo_no_concluyente": motivo,
@@ -1456,7 +1516,10 @@ def _textos_resueltos(textos: dict, huecos: dict, faltan: list, marca: dict, fic
             "etiqueta_edicion": textos["estudio"]["etiqueta_edicion"],
             "como_citar": rellenar(textos["estudio"]["como_citar"], h, faltan),
         },
-        "metodo": {k: " ".join(v.split()) for k, v in textos["metodo"].items()},
+        # `estadisticas` es una lista de claves, no prosa: se salta.
+        "metodo": {
+            k: " ".join(v.split()) for k, v in textos["metodo"].items() if isinstance(v, str)
+        },
         "limites_informe": [" ".join(x.split()) for x in textos["limites_informe"]],
         "limites_auditoria": [" ".join(x.split()) for x in textos["limites_auditoria"]],
         "auditoria": {k: rellenar(v, h, faltan) for k, v in textos["auditoria"].items()},

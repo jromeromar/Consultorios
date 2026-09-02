@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{titulo_pagina}}</title>
+<meta name="description" content="{{descripcion}}">
+<style>{{estilo}}</style>
+</head>
+<body>
+{{cintillo}}
+
+<header class="portada">
+  <div class="dentro">
+    {{marca}}
+    <div class="etiqueta-edicion">{{etiqueta_edicion}}</div>
+    <h1>{{titulo}}</h1>
+    <p class="subtitulo">{{subtitulo}}</p>
+    <dl class="franja-metodo">{{franja_metodo}}</dl>
+    <div class="relleno"></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <nav class="indice" aria-label="Índice del estudio">{{indice}}</nav>
+
+  <section id="titular">
+    <div class="antetitulo">El hallazgo</div>
+    <div class="titular tarjeta">
+      <div>
+        <div class="cifra-grande">{{cifra}}</div>
+        <p class="pie-grande">{{pie}}</p>
+      </div>
+      <div class="apoyo">{{apoyo}}</div>
+    </div>
+  </section>
+
+  <section id="metodo">
+    <div class="antetitulo">Método</div>
+    <h2>Cómo se midió, antes de los resultados</h2>
+    <p class="entrada">{{metodo_intro}}</p>
+    <div class="tarjeta ficha">
+      <dl>{{metodo}}</dl>
+    </div>
+  </section>
+
+  <section id="hallazgos">
+    <div class="antetitulo">Los siete hallazgos</div>
+    <h2>Qué encontró el estudio</h2>
+    <p class="entrada">{{hallazgos_intro}}</p>
+    {{hallazgos}}
+  </section>
+
+  <section id="contexto">
+    <div class="antetitulo">Contexto</div>
+    <h2>La demanda que hay para repartir</h2>
+    <p class="entrada">{{contexto_intro}}</p>
+    <div class="tarjeta verificado">
+      <h3>{{contexto_titulo}}<span class="marca-verificado">{{contexto_etiqueta}}</span></h3>
+      <div class="vgrid">{{contexto_grid}}</div>
+      <p class="entrada" style="margin-top:20px;max-width:66ch">{{contexto_nota}}</p>
+    </div>
+  </section>
+
+  <section id="limites">
+    <div class="antetitulo">Límites</div>
+    <h2>Lo que este estudio no establece</h2>
+    <ul class="limites">{{limites}}</ul>
+  </section>
+
+  <section id="ficha">
+    <div class="antetitulo">Ficha técnica</div>
+    <h2>Datos de la edición</h2>
+    <div class="tarjeta ficha">
+      <dl>{{ficha}}</dl>
+      <div class="cita"><b>Cómo citar este estudio</b>{{cita}}</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="autoria">
+  <div class="dentro">
+    <h3>{{autoria_titulo}}</h3>
+    <p>{{autoria_texto}}</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>{{marca_nombre}} · {{titulo}} · {{etiqueta_edicion}}</span>
+    <span>Publicación agregada y anónima</span>
+  </footer>
+  <p class="sello">{{sello}}</p>
+</div>
+
+</body>
+</html>

@@ -12,8 +12,9 @@ marca.json.
 
 from __future__ import annotations
 
+import math
 from html import escape
-from typing import Iterable, Sequence
+from typing import Sequence
 
 
 def _n(v: float) -> str:
@@ -222,3 +223,237 @@ def tira_percentiles(filas: Sequence[dict], *, ancho: float = 560) -> str:
                              espaciado=".06em"))
     partes.append("</svg>")
     return "".join(partes)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# Formas del informe agregado
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# Una serie, un color. La longitud de la barra ya codifica la magnitud, así que
+# el color no vuelve a decirlo: no hay rampas por valor sobre categorías. Marcas
+# finas, rejilla de un pelo, y etiqueta directa donde informa.
+
+def _rejilla(izq: float, der: float, arriba: float, alto_plot: float, maximo: float,
+            *, sufijo: str = "", pasos: int = 5) -> tuple[str, float]:
+    partes = []
+    for i in range(pasos + 1):
+        y = arriba + alto_plot - (i / pasos) * alto_plot
+        partes.append(_linea(izq, y, der, y, token="hair" if i else "hair-strong"))
+        valor = maximo * i / pasos
+        etiqueta = f"{valor:.0f}{sufijo}"
+        partes.append(_texto(izq - 8, y + 3.5, etiqueta, tam=10.5, ancla="end"))
+    return "".join(partes), alto_plot
+
+
+def _techo(maximo: float, redondeo: float = 5) -> float:
+    if maximo <= 0:
+        return redondeo
+    return math.ceil(maximo / redondeo) * redondeo
+
+
+def barras(datos: Sequence[dict], *, unidad: str, ancho: float = 660,
+           estampa: str | None = None) -> str:
+    """
+    Barras verticales para una distribución por categorías.
+
+    Una categoría marcada `alterno` —«Sin respuesta»— se dibuja hueca: no es una
+    segunda serie, es una categoría de otra naturaleza, y el contorno lo dice sin
+    gastar un color de serie.
+    """
+    if not datos:
+        return _sin_dato(ancho, 240, "No medido en esta edición")
+
+    alto, arriba, abajo, izq, der = 268, 22, 74, 38, 10
+    ancho_plot, alto_plot = ancho - izq - der, alto - arriba - abajo
+    maximo = _techo(max(d["n"] for d in datos))
+    ranura = ancho_plot / len(datos)
+    ancho_barra = min(58.0, ranura - 16)
+
+    partes = [
+        f'<svg viewBox="0 0 {_n(ancho)} {_n(alto)}" width="100%" height="{_n(alto)}" role="img" '
+        f'aria-label="{escape(unidad)}"' + (f' data-stat="{estampa}"' if estampa else "") + ">",
+    ]
+    rejilla, _ = _rejilla(izq, ancho - der, arriba, alto_plot, maximo)
+    partes.append(rejilla)
+
+    for i, d in enumerate(datos):
+        x = izq + ranura * i + (ranura - ancho_barra) / 2
+        h = (d["n"] / maximo) * alto_plot if maximo else 0
+        y = arriba + alto_plot - h
+        hueca = d.get("alterno")
+        relleno = "none" if hueca else "var(--serie-1)"
+        borde = ' stroke="var(--serie-1)" stroke-width="1.5" stroke-dasharray="3 3"' if hueca else ""
+        partes.append(
+            f'<rect x="{_n(x)}" y="{_n(y)}" width="{_n(ancho_barra)}" '
+            f'height="{_n(max(2.0, h))}" rx="4" fill="{relleno}"{borde}/>'
+        )
+        partes.append(_texto(x + ancho_barra / 2, y - 8, str(d["n"]), tam=13, peso=700, token="ink"))
+        for k, linea in enumerate(_partir(d["etiqueta"], 13)):
+            partes.append(_texto(x + ancho_barra / 2, arriba + alto_plot + 18 + k * 13,
+                                 linea, tam=11, token="ink-2"))
+
+    partes.append(_texto(izq, alto - 8, unidad, tam=10.5, ancla="start", espaciado=".05em"))
+    partes.append("</svg>")
+    return "".join(partes)
+
+
+def linea(datos: Sequence[dict], *, unidad: str, destacar: str | None = None,
+          ancho: float = 660, estampa: str | None = None) -> str:
+    """
+    Línea para una secuencia ordenada. Se etiquetan los extremos y el punto
+    destacado, que es el que sostiene el hallazgo; el resto lo lleva la tabla.
+    """
+    if not datos:
+        return _sin_dato(ancho, 240, "No medido en esta edición")
+
+    alto, arriba, abajo, izq, der = 246, 30, 56, 44, 40
+    ancho_plot, alto_plot = ancho - izq - der, alto - arriba - abajo
+    maximo = _techo(max(d["valor"] for d in datos), 10)
+    paso = ancho_plot / max(1, len(datos) - 1)
+
+    def X(i: int) -> float:
+        return izq + paso * i
+
+    def Y(v: float) -> float:
+        return arriba + alto_plot - (v / maximo) * alto_plot
+
+    partes = [
+        f'<svg viewBox="0 0 {_n(ancho)} {_n(alto)}" width="100%" height="{_n(alto)}" role="img" '
+        f'aria-label="{escape(unidad)}"' + (f' data-stat="{estampa}"' if estampa else "") + ">",
+    ]
+    rejilla, _ = _rejilla(izq, ancho - der, arriba, alto_plot, maximo, sufijo=" %")
+    partes.append(rejilla)
+
+    trazo = "".join(
+        f'{"M" if i == 0 else "L"}{_n(X(i))} {_n(Y(d["valor"]))} ' for i, d in enumerate(datos)
+    )
+    partes.append(
+        trazo and f'<path d="{trazo}L{_n(X(len(datos) - 1))} {_n(arriba + alto_plot)} '
+                  f'L{_n(X(0))} {_n(arriba + alto_plot)} Z" fill="var(--curve-fill)"/>'
+    )
+    partes.append(f'<path d="{trazo}" fill="none" stroke="var(--serie-1)" stroke-width="2" '
+                  f'stroke-linejoin="round"/>')
+
+    for i, d in enumerate(datos):
+        es_clave = d["etiqueta"] == destacar or i in (0, len(datos) - 1)
+        r = 6 if d["etiqueta"] == destacar else 4.5
+        partes.append(
+            f'<circle cx="{_n(X(i))}" cy="{_n(Y(d["valor"]))}" r="{r}" fill="var(--serie-1)" '
+            f'stroke="var(--surface)" stroke-width="2"/>'
+        )
+        if es_clave:
+            abajo_ = d["etiqueta"] == destacar
+            partes.append(_texto(X(i), Y(d["valor"]) + (22 if abajo_ else -13), d["texto"],
+                                 tam=12.5, peso=700, token="ink",
+                                 ancla="start" if i == 0 else ("end" if i == len(datos) - 1 else "middle")))
+        partes.append(_texto(X(i), arriba + alto_plot + 20, d["etiqueta"], tam=11, token="ink-2",
+                             ancla="start" if i == 0 else ("end" if i == len(datos) - 1 else "middle")))
+
+    partes.append(_texto(izq, alto - 8, unidad, tam=10.5, ancla="start", espaciado=".05em"))
+    partes.append("</svg>")
+    return "".join(partes)
+
+
+def barras_grupo(datos: Sequence[dict], *, unidad: str, ancho: float = 660,
+                 estampa: str | None = None) -> str:
+    """Barras horizontales para comparar pocos grupos. Etiqueta directa al final."""
+    if not datos:
+        return _sin_dato(ancho, 160, "No medido en esta edición")
+
+    alto_fila, arriba, abajo, izq = 62, 10, 30, 8
+    alto = arriba + alto_fila * len(datos) + abajo
+    ancho_etiqueta = min(260.0, ancho * 0.40)
+    inicio = izq + ancho_etiqueta + 14
+    ancho_pista = ancho - inicio - 74
+    maximo = _techo(max(d["valor"] for d in datos), 10)
+
+    partes = [
+        f'<svg viewBox="0 0 {_n(ancho)} {_n(alto)}" width="100%" height="{_n(alto)}" role="img" '
+        f'aria-label="{escape(unidad)}"' + (f' data-stat="{estampa}"' if estampa else "") + ">",
+    ]
+    for i, d in enumerate(datos):
+        y = arriba + alto_fila * i
+        if i:
+            partes.append(_linea(izq, y - 6, ancho - 8, y - 6))
+        for k, l in enumerate(_partir(d["etiqueta"], 30)):
+            partes.append(_texto(izq, y + 22 + k * 15, l, tam=12.5, peso=600, ancla="start",
+                                 token="ink"))
+        largo = (d["valor"] / maximo) * ancho_pista if maximo else 0
+        partes.append(
+            f'<rect x="{_n(inicio)}" y="{_n(y + 14)}" width="{_n(max(2.0, largo))}" height="18" '
+            f'rx="4" fill="var(--serie-1)"/>'
+        )
+        partes.append(_texto(inicio + largo + 9, y + 28, d["texto"], tam=12.5, peso=600,
+                             ancla="start", token="ink"))
+        if d.get("nota"):
+            partes.append(_texto(inicio, y + 48, d["nota"], tam=10.5, ancla="start"))
+    partes.append(_texto(izq, alto - 8, unidad, tam=10.5, ancla="start", espaciado=".05em"))
+    partes.append("</svg>")
+    return "".join(partes)
+
+
+def dispersion(puntos: Sequence[dict], *, unidad: str, eje_y: str, rho_texto: str,
+               mediana_y: float | None, ancho: float = 660, estampa: str | None = None) -> str:
+    """
+    Nube para el contra-hallazgo.
+
+    NO se ajusta una recta. Una recta de pendiente casi nula sobre una nube sin
+    relación sugiere una tendencia que no existe; la referencia honesta es la
+    mediana del eje Y, que muestra que la nube no se inclina.
+    """
+    if not puntos:
+        return _sin_dato(ancho, 280, "No medido en esta edición")
+
+    alto, arriba, abajo, izq, der = 300, 26, 56, 46, 14
+    ancho_plot, alto_plot = ancho - izq - der, alto - arriba - abajo
+    max_x = _techo(max(p["x"] for p in puntos), 240)
+    max_y = _techo(max(p["y"] for p in puntos), 10)
+
+    def X(v: float) -> float:
+        return izq + (min(v, max_x) / max_x) * ancho_plot
+
+    def Y(v: float) -> float:
+        return arriba + alto_plot - (min(v, max_y) / max_y) * alto_plot
+
+    partes = [
+        f'<svg viewBox="0 0 {_n(ancho)} {_n(alto)}" width="100%" height="{_n(alto)}" role="img" '
+        f'aria-label="{escape(unidad)}"' + (f' data-stat="{estampa}"' if estampa else "") + ">",
+    ]
+    rejilla, _ = _rejilla(izq, ancho - der, arriba, alto_plot, max_y)
+    partes.append(rejilla)
+
+    horas = max(1, int(max_x // 240))
+    for i in range(horas + 1):
+        x = X(i * 240)
+        partes.append(_texto(x, arriba + alto_plot + 18, f"{i * 4} h", tam=10.5))
+
+    if mediana_y is not None:
+        partes.append(_linea(izq, Y(mediana_y), ancho - der, Y(mediana_y), token="muted", grosor=2))
+        partes.append(_texto(ancho - der - 6, Y(mediana_y) - 8, f"mediana · {mediana_y:.0f}",
+                             tam=11, peso=600, ancla="end"))
+
+    for p in puntos:
+        partes.append(
+            f'<circle cx="{_n(X(p["x"]))}" cy="{_n(Y(p["y"]))}" r="4.5" fill="var(--serie-1)" '
+            f'fill-opacity="0.5" stroke="var(--surface)" stroke-width="1.5"/>'
+        )
+
+    partes.append(_texto(izq - 34, arriba - 9, eje_y, tam=10.5, ancla="start"))
+    partes.append(_texto(ancho - der, alto - 8, rho_texto, tam=11, peso=600, ancla="end", token="ink-2"))
+    partes.append(_texto(izq, alto - 8, unidad, tam=10.5, ancla="start", espaciado=".05em"))
+    partes.append("</svg>")
+    return "".join(partes)
+
+
+def _partir(texto_: str, ancho_max: int) -> list[str]:
+    """Parte una etiqueta en líneas sin cortar palabras. Una etiqueta recortada es un error."""
+    palabras, lineas, actual = texto_.split(), [], ""
+    for w in palabras:
+        if actual and len(actual) + 1 + len(w) > ancho_max:
+            lineas.append(actual)
+            actual = w
+        else:
+            actual = f"{actual} {w}".strip()
+    if actual:
+        lineas.append(actual)
+    return lineas[:3]

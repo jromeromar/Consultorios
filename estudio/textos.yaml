@@ -37,6 +37,13 @@ titular:
 
 metodo:
   # Lo que no sale de edicion_estudio va aquí, y solo lo que es editorial.
+  #
+  # La ficha de método también publica cifras: el corte por tipo de ciudad se
+  # declara aquí con el tamaño de cada grupo, que es lo que sostiene por qué ese
+  # corte se publica y el de ciudad individual no. Se listan para que la prueba
+  # de contrato sepa que están en uso.
+  estadisticas:
+    - respuesta.mediana_minutos_por_ciudad
   intro: >-
     Un estudio sin método declarado no es un estudio. Estas son las condiciones
     exactas del trabajo de campo, puestas antes de los hallazgos para que cada
@@ -68,6 +75,9 @@ metodo:
 
 hallazgos:
   - id: h01
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: respuesta.distribucion_minutos
     bloque: respuesta
     forma: barras
     titulo: >-
@@ -93,27 +103,35 @@ hallazgos:
       valor: 0
 
   - id: h02
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: respuesta.primera_hora_por_franja
     bloque: respuesta
-    forma: barras_grupo
+    forma: linea
     titulo: >-
-      Las ciudades intermedias respondieron {razon_intermedias_grandes} más
-      lento que las grandes
+      La consulta enviada al mediodía es la que peor le va
     lede: >-
-      El corte se publica por tipo de ciudad y no por ciudad individual: con la
-      muestra de esta edición, ninguna ciudad por separado llega al mínimo de
-      observaciones que el estudio exige para publicar una cifra.
+      La proporción de consultas respondidas dentro de la primera hora cae de
+      {primera_hora_manana} en la mañana a {primera_hora_mediodia} en la franja
+      del mediodía, y no se recupera del todo en la tarde. El denominador de
+      cada franja son los consultorios medidos en ella, no los que respondieron:
+      no contestar es uno de los resultados posibles de la pregunta.
     no_dice: >-
-      No dice por qué. La diferencia puede venir del tamaño del equipo, del
-      volumen de consultas o de la competencia local, y el estudio no separa
-      esas causas.
+      No dice qué pasa fuera del horario medido. La ventana fue de días hábiles
+      en horario de oficina, así que noches y fines de semana quedan sin medir.
+      Tampoco dice por qué: el estudio observa la hora de envío, no lo que
+      ocurre dentro del consultorio a esa hora.
     estadisticas:
-      - respuesta.mediana_minutos_por_ciudad
+      - respuesta.primera_hora_por_franja
     comprobacion:
-      tipo: grupo_mayor
-      estadistica: respuesta.mediana_minutos_por_ciudad
-      grupo: intermedia
+      tipo: minimo_en_grupo
+      estadistica: respuesta.primera_hora_por_franja
+      grupo: mediodia
 
   - id: h03
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: visibilidad.presencia_por_categoria
     bloque: visibilidad
     forma: barras_grupo
     titulo: >-
@@ -142,6 +160,9 @@ hallazgos:
       grupo: categoria_correcta
 
   - id: h04
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: reputacion.distribucion_resenas_respondidas
     bloque: reputacion
     forma: barras
     titulo: >-
@@ -160,6 +181,9 @@ hallazgos:
       - reputacion.distribucion_resenas_respondidas
 
   - id: h05
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: contenido.distribucion_destino_enlace
     bloque: contenido
     forma: barras
     titulo: >-
@@ -179,6 +203,9 @@ hallazgos:
       - contenido.distribucion_destino_enlace
 
   - id: h06
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: reservabilidad.distribucion_reservabilidad
     bloque: reservabilidad
     forma: barras
     titulo: >-
@@ -197,6 +224,9 @@ hallazgos:
       - reservabilidad.distribucion_reservabilidad
 
   - id: h07
+    # La estadística que alimenta el gráfico. Declarada y no deducida por
+    # posición: un hallazgo puede publicar varias y la forma no debe adivinar.
+    grafica: contra.respuesta_vs_reputacion
     bloque: respuesta
     forma: dispersion
     contra_hallazgo: true

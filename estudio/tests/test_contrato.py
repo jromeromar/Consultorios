@@ -82,20 +82,29 @@ class TestTextos:
 
 
 class TestContratoMotorTextos:
+    @staticmethod
+    def _declaradas(textos: dict) -> set[str]:
+        """
+        Toda superficie que publica cifras declara las que usa: los hallazgos,
+        las de apoyo del titular y la ficha de método, que publica el corte por
+        tipo de ciudad con el tamaño de cada grupo.
+        """
+        usadas = {e for h in textos["hallazgos"] for e in h["estadisticas"]}
+        usadas |= {a["estadistica"] for a in textos["titular"]["apoyo"]}
+        usadas |= set(textos["metodo"].get("estadisticas", []))
+        return usadas
+
     def test_toda_estadistica_declarada_existe_en_el_json(self, textos, corrida):
         emitidas = set(corrida["json"]["estadisticas"])
-        declaradas = {e for h in textos["hallazgos"] for e in h["estadisticas"]}
-        declaradas |= {a["estadistica"] for a in textos["titular"]["apoyo"]}
-        faltan = declaradas - emitidas
+        faltan = self._declaradas(textos) - emitidas
         assert not faltan, f"el motor no emite: {sorted(faltan)}"
 
     def test_toda_estadistica_emitida_se_usa(self, textos, corrida):
         # Una estadística que nadie publica es peso muerto que puede quedar
         # desactualizada sin que nada falle.
         emitidas = set(corrida["json"]["estadisticas"])
-        usadas = {e for h in textos["hallazgos"] for e in h["estadisticas"]}
-        usadas |= {a["estadistica"] for a in textos["titular"]["apoyo"]}
-        assert not (emitidas - usadas), f"nadie usa: {sorted(emitidas - usadas)}"
+        assert not (emitidas - self._declaradas(textos)), \
+            f"nadie usa: {sorted(emitidas - self._declaradas(textos))}"
 
     def test_las_comprobaciones_pasan_con_este_fixture(self, corrida):
         no_concluyentes = [h["id"] for h in corrida["json"]["hallazgos"] if not h["concluyente"]]

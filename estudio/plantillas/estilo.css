@@ -173,3 +173,113 @@ footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--hair-strong);
   .metodo dl{gap:12px 20px}
   footer{margin-top:24px}
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Informe agregado
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.portada{background:var(--cover);color:var(--cover-ink);padding:56px 20px 0}
+.portada .dentro{max-width:1000px;margin:0 auto}
+.portada .marca-hueco{border-color:var(--cover-2);color:var(--cover-2)}
+.portada .marca-hueco b{border-color:var(--cover-2)}
+.etiqueta-edicion{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cover-2);
+  font-weight:600;margin-top:34px}
+.portada h1{font-size:clamp(34px,6vw,64px);line-height:1;margin:14px 0 0;letter-spacing:-.03em;
+  max-width:15ch}
+.subtitulo{font-family:var(--familia-prosa);font-size:clamp(17px,2.1vw,21px);line-height:1.5;
+  color:var(--cover-2);margin:18px 0 0;max-width:54ch}
+.franja-metodo{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;
+  margin:40px 0 0;border:1px solid var(--hair-strong)}
+.franja-metodo > div{background:var(--cover);padding:14px 16px}
+.franja-metodo dt{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cover-2);
+  font-weight:600;margin:0}
+.franja-metodo dd{margin:6px 0 0;font-size:15px;font-weight:500}
+.portada .relleno{height:56px}
+
+.indice{position:sticky;top:0;z-index:30;background:var(--plane);
+  border-bottom:1px solid var(--hair-strong);margin:0 -20px;padding:9px 20px;display:flex;gap:6px;
+  align-items:center;overflow-x:auto;scrollbar-width:none}
+.indice::-webkit-scrollbar{display:none}
+.indice a{flex:none;text-decoration:none;color:var(--ink-2);font-size:12.5px;font-weight:600;
+  padding:5px 9px;border-radius:3px;font-variant-numeric:tabular-nums}
+.indice a:hover,.indice a:focus-visible{background:var(--surface-2);color:var(--ink)}
+.indice .et{flex:none;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;margin-right:6px}
+.indice .sep{flex:none;width:1px;height:18px;background:var(--hair-strong);margin:0 6px}
+
+.titular{margin-top:34px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  gap:1px;background:var(--hair)}
+.titular > div{background:var(--surface);padding:30px 28px}
+.cifra-grande{font-size:clamp(52px,8vw,88px);line-height:.9;font-weight:600;letter-spacing:-.045em}
+.pie-grande{font-family:var(--familia-prosa);font-size:18px;line-height:1.5;color:var(--ink-2);
+  margin-top:18px;max-width:34ch}
+.apoyo{display:flex;flex-direction:column;justify-content:center}
+.apoyo > div{padding:14px 0}
+.apoyo > div + div{border-top:1px solid var(--hair)}
+.apoyo .n{font-size:32px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.apoyo .t{font-size:13.5px;color:var(--ink-2);margin-top:6px;max-width:34ch}
+
+.hallazgo{margin-top:20px;overflow:hidden;scroll-margin-top:60px}
+.h-cabeza{padding:24px 28px 20px;border-bottom:1px solid var(--hair);display:flex;gap:18px;
+  align-items:flex-start}
+.h-num{flex:none;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted);
+  border:1px solid var(--hair-strong);border-radius:2px;padding:5px 8px;font-variant-numeric:tabular-nums}
+.h-contra{border-color:var(--accent);color:var(--accent-ink)}
+.h-cabeza h3{margin:0;font-size:clamp(18px,2.2vw,23px);font-weight:600;letter-spacing:-.015em;
+  line-height:1.25;max-width:34ch;text-wrap:balance}
+.h-cabeza p{margin:9px 0 0;font-family:var(--familia-prosa);font-size:16px;line-height:1.55;
+  color:var(--ink-2);max-width:62ch}
+.h-cuerpo{padding:22px 28px 8px}
+.h-cuerpo svg{display:block;width:100%}
+.h-nota{margin:0;padding:14px 28px 18px;font-size:13px;color:var(--ink-2);
+  border-top:1px solid var(--hair);background:var(--surface-2)}
+.h-nota b{color:var(--ink);font-weight:600}
+.h-denominador{font-size:12px;color:var(--muted);margin:0 0 12px;line-height:1.45}
+.h-nomedido{padding:26px 28px;font-size:14px;color:var(--ink-2)}
+.h-nomedido b{color:var(--ink)}
+
+details.tabla-datos{margin:6px 0 14px;border-top:1px solid var(--hair)}
+details.tabla-datos summary{cursor:pointer;font-size:12px;font-weight:600;color:var(--ink-2);
+  padding:10px 0;letter-spacing:.03em}
+details.tabla-datos summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.desliza{overflow-x:auto}
+
+.verificado{margin-top:20px;padding:26px 28px;border-left:3px solid var(--accent)}
+.verificado h3{margin:0;font-size:19px;font-weight:600}
+.marca-verificado{display:inline-block;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  font-weight:700;border:1px solid var(--accent);color:var(--accent-ink);border-radius:2px;
+  padding:2px 6px;margin-left:9px;vertical-align:2px}
+.vgrid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:18px}
+.vgrid .n{font-size:26px;font-weight:600;letter-spacing:-.025em}
+.vgrid .k{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin-bottom:6px}
+.vgrid .d{font-size:13px;color:var(--ink-2);margin-top:5px}
+
+.ficha{padding:26px 28px;margin-top:18px}
+.ficha dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 28px;
+  margin:18px 0 0}
+.ficha dt{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.ficha dd{margin:6px 0 0;font-size:14px;line-height:1.5}
+.cita{margin-top:22px;padding:16px 18px;background:var(--surface-2);border:1px solid var(--hair);
+  border-radius:3px;font-family:var(--familia-prosa);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.cita b{display:block;font-family:var(--familia-titulos);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:600}
+
+.autoria{margin-top:52px;background:var(--cover);color:var(--cover-ink);padding:48px 20px}
+.autoria .dentro{max-width:1000px;margin:0 auto}
+.autoria h3{margin:0;font-size:24px;font-weight:600;letter-spacing:-.02em;max-width:22ch}
+.autoria p{margin:12px 0 0;font-family:var(--familia-prosa);font-size:16px;line-height:1.55;
+  color:var(--cover-2);max-width:58ch}
+
+@media (max-width:840px){
+  .titular{grid-template-columns:1fr}
+  .h-cabeza{flex-direction:column;gap:12px}
+}
+@media print{
+  .indice{display:none}
+  .portada{padding:26px 0 0}
+  .portada .relleno{height:20px}
+  .hallazgo,.titular,.verificado,.ficha{break-inside:avoid}
+  details.tabla-datos{display:none}
+  .autoria{margin-top:26px;padding:26px 0}
+}
