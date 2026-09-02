@@ -1203,6 +1203,10 @@ def main(argv: list[str] | None = None) -> int:
         "corte_reloj_horas": ent(censo.edicion.get("corte_reloj_horas")),
         "publicada_en": texto(censo.edicion.get("publicada_en")),
         "notas_metodo": texto(censo.edicion.get("notas_metodo")),
+        # Si la edición declara que sus datos no son de campo, los dos
+        # documentos tienen que decirlo en la cara. La bandera va en el JSON y no
+        # en cada renderizador para que ninguno pueda olvidarse de mirarla.
+        "datos_sinteticos": _sinteticos(censo.edicion.get("notas_metodo")),
         "n_universo": len(pob.universo),
         "n_medidos": len(pob.medidos),
         "n_respondio": len(pob.respondieron),
@@ -1326,6 +1330,11 @@ def main(argv: list[str] | None = None) -> int:
 
     _imprimir_corrida(corrida, E, cortes)
     return 0
+
+
+def _sinteticos(notas: Any) -> bool:
+    t = (texto(notas) or "").lower()
+    return any(m in t for m in ("sintétic", "sintetic", "de prueba", "demostración", "demostracion"))
 
 
 def _bloque_reporte(p: dict, b: dict, agregado: dict) -> dict:

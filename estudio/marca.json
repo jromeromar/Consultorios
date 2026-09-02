@@ -9,7 +9,6 @@
     "cambiar este archivo tiene que bastar: no debe implicar tocar código, porque",
     "van a haber cinco días entre la aprobación y el envío a imprenta."
   ],
-
   "nombre": "[MARCA POR DEFINIR]",
   "nombre_corto": "[MARCA]",
   "logo": {
@@ -17,25 +16,35 @@
     "_nota": "Con tipo 'marcador' las plantillas dibujan el recuadro punteado de la maqueta. Con tipo 'archivo', 'ruta' apunta a un SVG dentro de plantillas/.",
     "ruta": null
   },
-
   "tipografia": {
     "titulos": {
       "familia": "Archivo",
       "respaldo": "\"Helvetica Neue\", Arial, sans-serif",
       "archivos": [
-        { "ruta": "fuentes/archivo.woff2", "estilo": "normal", "rango_pesos": "100 900" }
+        {
+          "ruta": "fuentes/archivo.woff2",
+          "estilo": "normal",
+          "rango_pesos": "100 900"
+        }
       ]
     },
     "prosa": {
       "familia": "Source Serif 4",
       "respaldo": "Georgia, serif",
       "archivos": [
-        { "ruta": "fuentes/source-serif-4.woff2", "estilo": "normal", "rango_pesos": "200 900" },
-        { "ruta": "fuentes/source-serif-4-italic.woff2", "estilo": "italic", "rango_pesos": "200 900" }
+        {
+          "ruta": "fuentes/source-serif-4.woff2",
+          "estilo": "normal",
+          "rango_pesos": "200 900"
+        },
+        {
+          "ruta": "fuentes/source-serif-4-italic.woff2",
+          "estilo": "italic",
+          "rango_pesos": "200 900"
+        }
       ]
     }
   },
-
   "color": {
     "_nota": "Nombres de token idénticos en claro y oscuro. El oscuro se elige, no se invierte: cada valor está escalonado contra su propia superficie.",
     "claro": {
@@ -70,7 +79,8 @@
       "cover": "#1d211b",
       "cover-ink": "#f4f6f0",
       "cover-2": "#a8b0a4",
-      "shadow": "0 1px 2px rgba(20,24,19,.05), 0 8px 24px -18px rgba(20,24,19,.35)"
+      "shadow": "0 1px 2px rgba(20,24,19,.05), 0 8px 24px -18px rgba(20,24,19,.35)",
+      "critical": "#8f2020"
     },
     "oscuro": {
       "plane": "#0d0f0d",
@@ -104,10 +114,10 @@
       "cover": "#1e231c",
       "cover-ink": "#f2f4ee",
       "cover-2": "#9ba396",
-      "shadow": "0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8)"
+      "shadow": "0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8)",
+      "critical": "#c04b4b"
     }
   },
-
   "cintillo_provisional": {
     "_nota": "Mientras la identidad y los datos sean provisionales, los documentos llevan cintillo. Poner en null cuando se publique de verdad.",
     "titulo": "BORRADOR · IDENTIDAD SIN DEFINIR",

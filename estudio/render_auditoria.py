@@ -196,6 +196,8 @@ def _metodo(ed: dict) -> str:
         ("Anonimato", m["anonimato"]),
         ("Qué no se midió", m["que_no_se_midio"]),
     ]
+    if ed["ficha_tecnica"].get("notas_metodo"):
+        filas.insert(0, ("Datos de esta edición", ed["ficha_tecnica"]["notas_metodo"]))
     return "".join(f"<div><dt>{escape(k)}</dt><dd>{escape(v)}</dd></div>" for k, v in filas)
 
 
@@ -240,7 +242,9 @@ def render_uno(ed: dict, rep: dict, marca: dict, *, solo_claro: bool = False) ->
     return plantilla.rellenar(base, {
         "titulo_pagina": f"{t['auditoria']['titulo']} · {rep['consultorio_id']}",
         "estilo": estilo.css(marca, solo_claro=solo_claro),
-        "cintillo": estilo.cintillo(marca),
+        "cintillo": estilo.cintillo(
+            marca, datos_sinteticos=bool(ed["ficha_tecnica"].get("datos_sinteticos"))
+        ),
         "marca": estilo.marca_visible(marca),
         "marca_nombre": escape(marca["nombre"]),
         "titulo": escape(t["auditoria"]["titulo"]),

@@ -17,6 +17,11 @@ body{
   padding:9px 20px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;text-align:center;
 }
 .cintillo span{opacity:.72;font-weight:500;letter-spacing:.06em;text-transform:none}
+/* El aviso de datos sintéticos usa el color de alerta, no el neutro del
+   cintillo de marca: no es una nota de estilo, es una advertencia sobre el
+   contenido. */
+.cintillo-datos{background:var(--critical);color:var(--surface)}
+.cintillo-datos span{opacity:.85}
 
 /* ── cabecera ─────────────────────────────────────────── */
 .mast{padding:44px 0 26px;border-bottom:1px solid var(--hair-strong)}

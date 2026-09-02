@@ -86,16 +86,38 @@ def css(marca: dict, *, incrustar_fuentes: bool = True, solo_claro: bool = False
     return "\n".join(partes)
 
 
-def cintillo(marca: dict) -> str:
-    """Cintillo de borrador. Se apaga poniendo la clave en null."""
-    c = marca.get("cintillo_provisional")
-    if not c:
-        return ""
+AVISO_SINTETICOS = (
+    "DATOS SINTÉTICOS DE PRUEBA",
+    "Ninguna cifra de este documento proviene de una medición real. Sirve para "
+    "decidir la forma del reporte, no su contenido.",
+)
+
+
+def cintillo(marca: dict, *, datos_sinteticos: bool = False) -> str:
+    """
+    Cintillo del documento. Se apaga poniendo `cintillo_provisional` en null.
+
+    El aviso de datos sintéticos NO depende de marca.json: lo decide la edición.
+    Si los datos no son de campo, el documento lo dice en la cabecera, porque un
+    reporte con cifras inventadas que no se anuncia como tal puede leerse como
+    una medición de un consultorio real.
+    """
     from html import escape
-    return (
-        '<div class="cintillo">' + escape(c["titulo"])
-        + f'<span>{escape(c["detalle"])}</span></div>'
-    )
+
+    partes = []
+    if datos_sinteticos:
+        titulo, detalle = AVISO_SINTETICOS
+        partes.append(
+            '<div class="cintillo cintillo-datos">' + escape(titulo)
+            + f'<span>{escape(detalle)}</span></div>'
+        )
+    c = marca.get("cintillo_provisional")
+    if c:
+        partes.append(
+            '<div class="cintillo">' + escape(c["titulo"])
+            + f'<span>{escape(c["detalle"])}</span></div>'
+        )
+    return "".join(partes)
 
 
 def marca_visible(marca: dict) -> str:

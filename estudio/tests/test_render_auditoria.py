@@ -146,6 +146,47 @@ class TestDeclarados:
                 assert i["peso"] == 0
 
 
+class TestDatosSinteticos:
+    """
+    Un documento con cifras inventadas que no se anuncia como tal puede leerse
+    como la medición de un consultorio real. La advertencia la decide la edición,
+    no marca.json.
+    """
+
+    def test_la_edicion_de_prueba_se_declara_sintetica(self, corrida):
+        assert corrida["json"]["ficha_tecnica"]["datos_sinteticos"] is True
+
+    def test_el_documento_lleva_la_advertencia(self, paginas):
+        titulo, detalle = estilo.AVISO_SINTETICOS
+        for cid, p in paginas.items():
+            assert titulo in p["html"], cid
+            assert detalle in p["html"], cid
+
+    def test_la_nota_de_metodo_de_la_edicion_se_publica(self, paginas):
+        for cid, p in paginas.items():
+            assert "Datos de esta edición" in p["html"], cid
+            assert p["ed"]["ficha_tecnica"]["notas_metodo"] in p["html"], cid
+
+    def test_una_edicion_de_campo_no_lleva_la_advertencia(self, corrida, marca):
+        ed, rep = leer_identificado(corrida["edicion"], "C-0001", corrida["salida"])
+        ed = json.loads(json.dumps(ed))
+        ed["ficha_tecnica"]["datos_sinteticos"] = False
+        ed["ficha_tecnica"]["notas_metodo"] = "Levantamiento de campo, primera edición."
+        html = render_auditoria.render_uno(ed, rep, marca)
+        assert "DATOS SINTÉTICOS DE PRUEBA" not in html
+        # El cintillo de identidad provisional sigue, que es otra cosa.
+        assert marca["cintillo_provisional"]["titulo"] in html
+
+    def test_la_advertencia_no_depende_de_marca_json(self, corrida, marca):
+        sin_cintillo = json.loads(json.dumps(marca))
+        sin_cintillo["cintillo_provisional"] = None
+        ed, rep = leer_identificado(corrida["edicion"], "C-0001", corrida["salida"])
+        html = render_auditoria.render_uno(ed, rep, sin_cintillo)
+        assert estilo.AVISO_SINTETICOS[0] in html, (
+            "apagar el cintillo de marca no puede apagar la advertencia de datos"
+        )
+
+
 class TestEstampaYNombres:
     def test_cada_pagina_lleva_su_estampa(self, paginas):
         for cid, p in paginas.items():
