@@ -192,7 +192,9 @@ export async function seedCensoDemo(db: Db, total = 180): Promise<{
         tieneReservaOnline: rastreoOk ? madurez > 0.72 : null,
         tienePagoEnLinea: rastreoOk ? madurez > 0.88 : null,
         pasarelaDetectada: rastreoOk ? (madurez > 0.88 ? 'wompi' : 'ninguna') : null,
-        esMovilResponsive: rastreoOk ? madurez > 0.35 : null,
+        // Tirada aparte: si dependiera del mismo umbral que «tener sitio»,
+        // todos los sitios del censo saldrían responsive y parecería un fallo.
+        esMovilResponsive: rastreoOk ? azar() < 0.35 + madurez * 0.55 : null,
       })
     }
 

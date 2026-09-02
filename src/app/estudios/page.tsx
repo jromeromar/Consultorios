@@ -9,6 +9,7 @@ import { formatValue } from '@/lib/benchmark/format'
 import { getKpi } from '@/lib/benchmark/kpis'
 import { getKpiAcrossSpecialties } from '@/lib/benchmark/queries'
 import { PERIOD_ACTUAL, getSpecialty } from '@/lib/benchmark/taxonomy'
+import { getEdiciones } from '@/lib/censo/queries'
 import { getStudies } from '@/lib/content/studies'
 
 export const metadata: Metadata = {
@@ -21,10 +22,11 @@ export const metadata: Metadata = {
 const KPI_PORTADA = 'tasa-cierre'
 
 export default async function EstudiosPage() {
-  const [user, studies, across] = await Promise.all([
+  const [user, studies, across, ediciones] = await Promise.all([
     getSessionUser(),
     getStudies(),
     getKpiAcrossSpecialties(KPI_PORTADA),
+    getEdiciones(),
   ])
 
   const kpi = getKpi(KPI_PORTADA)
@@ -51,6 +53,39 @@ export default async function EstudiosPage() {
         <div className="mt-6 max-w-3xl">
           <DemoDataNotice sourceNote={across[0]?.distribution.sourceNote} />
         </div>
+
+        {ediciones.length > 0 ? (
+          <section className="mt-10">
+            <SectionTitle
+              eyebrow="Censo de ortodoncia"
+              title="Ediciones del censo"
+              lead="El censo observa desde fuera todo el universo de consultorios de ortodoncia del país: visibilidad, reputación, contenido, respuesta y reservabilidad. Ningún indicador depende de que el consultorio conteste una encuesta."
+            />
+            <ul className="mt-5 grid gap-4 sm:grid-cols-2">
+              {ediciones.map((edicion) => (
+                <li key={edicion.edicionId}>
+                  <Link href={`/estudios/censo/${edicion.edicionId}`} className="block h-full">
+                    <Card className="h-full p-5 transition-colors hover:border-[var(--color-axis)]">
+                      <p className="text-[11px] uppercase tracking-[0.08em] text-[var(--color-muted)]">
+                        {edicion.publicadaEn ?? 'sin publicar'}
+                      </p>
+                      <h3 className="mt-2 text-[15px] font-semibold text-[var(--color-brand)]">
+                        {edicion.nombre}
+                      </h3>
+                      <p className="tabular mt-2 text-[13px] leading-relaxed text-[var(--color-ink-2)]">
+                        Universo {edicion.nUniverso ?? '—'} · contactados {edicion.nMuestra ?? '—'} ·
+                        respondieron {edicion.nRespondio ?? '—'}
+                      </p>
+                      <p className="mt-3 text-[12px] font-medium text-[var(--color-accent)]">
+                        Abrir la edición →
+                      </p>
+                    </Card>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <div className="mt-10 grid gap-6 lg:grid-cols-[1.05fr_1fr]">
           <Card className="p-6">
