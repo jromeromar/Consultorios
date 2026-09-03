@@ -1,0 +1,3668 @@
+{
+  "id": "abe259e6-7b23-4165-a790-c466df68ff8c",
+  "prevId": "4b630790-9796-4680-be84-e2a4c89e44c5",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.consulta": {
+      "name": "consulta",
+      "schema": "",
+      "columns": {
+        "consulta_id": {
+          "name": "consulta_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consulta_texto": {
+          "name": "consulta_texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "consulta_normalizada": {
+          "name": "consulta_normalizada",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vertical": {
+          "name": "vertical",
+          "type": "vertical",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo_intencion": {
+          "name": "tipo_intencion",
+          "type": "tipo_intencion",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lleva_calificador_geografico": {
+          "name": "lleva_calificador_geografico",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "conjunto": {
+          "name": "conjunto",
+          "type": "conjunto_consultas",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vigente_desde": {
+          "name": "vigente_desde",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "activa": {
+          "name": "activa",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": true
+        }
+      },
+      "indexes": {
+        "consulta_normalizada_unica": {
+          "name": "consulta_normalizada_unica",
+          "columns": [
+            {
+              "expression": "consulta_normalizada",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.consultorio": {
+      "name": "consultorio",
+      "schema": "",
+      "columns": {
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "cid": {
+          "name": "cid",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "place_id": {
+          "name": "place_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "place_id_verificado_fecha": {
+          "name": "place_id_verificado_fecha",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "google_id": {
+          "name": "google_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "kgmid": {
+          "name": "kgmid",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_ortodoncia": {
+          "name": "es_ortodoncia",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tipo_establecimiento": {
+          "name": "tipo_establecimiento",
+          "type": "tipo_establecimiento",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "estado_registro": {
+          "name": "estado_registro",
+          "type": "estado_registro",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'activo'"
+        },
+        "consultorio_id_maestro": {
+          "name": "consultorio_id_maestro",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "motivo_duplicado": {
+          "name": "motivo_duplicado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fuente_listado": {
+          "name": "fuente_listado",
+          "type": "fuente_listado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "en_muestra_estudio": {
+          "name": "en_muestra_estudio",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "estrato_muestra": {
+          "name": "estrato_muestra",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_alta": {
+          "name": "fecha_alta",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_ultima_captura": {
+          "name": "fecha_ultima_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "consultorio_cid_unico": {
+          "name": "consultorio_cid_unico",
+          "columns": [
+            {
+              "expression": "cid",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "consultorio_place_id_idx": {
+          "name": "consultorio_place_id_idx",
+          "columns": [
+            {
+              "expression": "place_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "consultorio_universo_idx": {
+          "name": "consultorio_universo_idx",
+          "columns": [
+            {
+              "expression": "es_ortodoncia",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "estado_registro",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.consultorio_contacto": {
+      "name": "consultorio_contacto",
+      "schema": "",
+      "columns": {
+        "contacto_id": {
+          "name": "contacto_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre_completo": {
+          "name": "nombre_completo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cargo": {
+          "name": "cargo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "email_estado_validacion": {
+          "name": "email_estado_validacion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "telefono_contacto_e164": {
+          "name": "telefono_contacto_e164",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "perfil_linkedin": {
+          "name": "perfil_linkedin",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "perfil_instagram": {
+          "name": "perfil_instagram",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "base_legal": {
+          "name": "base_legal",
+          "type": "base_legal",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_solicitud_supresion": {
+          "name": "fecha_solicitud_supresion",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "consultorio_contacto_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "consultorio_contacto_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "consultorio_contacto",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.consultorio_snapshot": {
+      "name": "consultorio_snapshot",
+      "schema": "",
+      "columns": {
+        "snapshot_id": {
+          "name": "snapshot_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fuente_captura": {
+          "name": "fuente_captura",
+          "type": "fuente_captura",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre_comercial": {
+          "name": "nombre_comercial",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nombre_normalizado": {
+          "name": "nombre_normalizado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "categoria_principal": {
+          "name": "categoria_principal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "subtipos": {
+          "name": "subtipos",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "esta_cerrado_permanente": {
+          "name": "esta_cerrado_permanente",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "direccion": {
+          "name": "direccion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codigo_postal": {
+          "name": "codigo_postal",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "latitud": {
+          "name": "latitud",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "longitud": {
+          "name": "longitud",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "h3": {
+          "name": "h3",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "plus_code": {
+          "name": "plus_code",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "centro_poblado_id": {
+          "name": "centro_poblado_id",
+          "type": "varchar(8)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "localidad_id": {
+          "name": "localidad_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "telefono_e164": {
+          "name": "telefono_e164",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "telefono_original": {
+          "name": "telefono_original",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dominio": {
+          "name": "dominio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "sitio_web_url": {
+          "name": "sitio_web_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "instagram_handle": {
+          "name": "instagram_handle",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "facebook_url": {
+          "name": "facebook_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_area_de_servicio": {
+          "name": "es_area_de_servicio",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calificacion": {
+          "name": "calificacion",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "resenas_total": {
+          "name": "resenas_total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_resena_mas_reciente": {
+          "name": "fecha_resena_mas_reciente",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "resenas_respondidas_pct": {
+          "name": "resenas_respondidas_pct",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_horario_publicado": {
+          "name": "tiene_horario_publicado",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fotos_n": {
+          "name": "fotos_n",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "consultorio_snapshot_clave_unica": {
+          "name": "consultorio_snapshot_clave_unica",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "consultorio_snapshot_municipio_idx": {
+          "name": "consultorio_snapshot_municipio_idx",
+          "columns": [
+            {
+              "expression": "municipio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "consultorio_snapshot_telefono_idx": {
+          "name": "consultorio_snapshot_telefono_idx",
+          "columns": [
+            {
+              "expression": "telefono_e164",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "consultorio_snapshot_dominio_idx": {
+          "name": "consultorio_snapshot_dominio_idx",
+          "columns": [
+            {
+              "expression": "dominio",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "consultorio_snapshot_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "consultorio_snapshot_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "consultorio_snapshot",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.contacto_campo": {
+      "name": "contacto_campo",
+      "schema": "",
+      "columns": {
+        "contacto_campo_id": {
+          "name": "contacto_campo_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "edicion_id": {
+          "name": "edicion_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "guion_id": {
+          "name": "guion_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "canal": {
+          "name": "canal",
+          "type": "canal_campo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "destino_usado": {
+          "name": "destino_usado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "emisor_id": {
+          "name": "emisor_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "enviado_en": {
+          "name": "enviado_en",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dia_semana": {
+          "name": "dia_semana",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "franja_horaria": {
+          "name": "franja_horaria",
+          "type": "franja_horaria",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "estado_envio": {
+          "name": "estado_envio",
+          "type": "estado_envio",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "primera_respuesta_en": {
+          "name": "primera_respuesta_en",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "minutos_primera_respuesta": {
+          "name": "minutos_primera_respuesta",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hubo_respuesta": {
+          "name": "hubo_respuesta",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tipo_primer_respondedor": {
+          "name": "tipo_primer_respondedor",
+          "type": "tipo_respondedor",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ofrecio_agendar": {
+          "name": "ofrecio_agendar",
+          "type": "observado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dio_precio": {
+          "name": "dio_precio",
+          "type": "dio_precio",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "precio_min_mencionado": {
+          "name": "precio_min_mencionado",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "precio_max_mencionado": {
+          "name": "precio_max_mencionado",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "menciono_cobro_primera_cita": {
+          "name": "menciono_cobro_primera_cita",
+          "type": "observado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "valor_primera_cita": {
+          "name": "valor_primera_cita",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "abona_al_tratamiento": {
+          "name": "abona_al_tratamiento",
+          "type": "declarado_si_no",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pidio_datos_del_paciente": {
+          "name": "pidio_datos_del_paciente",
+          "type": "observado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hubo_seguimiento_espontaneo": {
+          "name": "hubo_seguimiento_espontaneo",
+          "type": "observado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "minutos_hasta_seguimiento": {
+          "name": "minutos_hasta_seguimiento",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codificado_por": {
+          "name": "codificado_por",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "codificado_en": {
+          "name": "codificado_en",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "version_codificacion": {
+          "name": "version_codificacion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "excluido_del_analisis": {
+          "name": "excluido_del_analisis",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "motivo_exclusion": {
+          "name": "motivo_exclusion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "contacto_campo_clave_unica": {
+          "name": "contacto_campo_clave_unica",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "edicion_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "canal",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "contacto_campo_edicion_idx": {
+          "name": "contacto_campo_edicion_idx",
+          "columns": [
+            {
+              "expression": "edicion_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "contacto_campo_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "contacto_campo_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "contacto_campo",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "contacto_campo_guion_id_guion_guion_id_fk": {
+          "name": "contacto_campo_guion_id_guion_guion_id_fk",
+          "tableFrom": "contacto_campo",
+          "tableTo": "guion",
+          "columnsFrom": [
+            "guion_id"
+          ],
+          "columnsTo": [
+            "guion_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.conversacion_calificada": {
+      "name": "conversacion_calificada",
+      "schema": "",
+      "columns": {
+        "conversacion_id": {
+          "name": "conversacion_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha": {
+          "name": "fecha",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "evento": {
+          "name": "evento",
+          "type": "evento_conversacion",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "anos_ejercicio": {
+          "name": "anos_ejercicio",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "consultas_mes_declaradas": {
+          "name": "consultas_mes_declaradas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "persona_dedicada_mensajes": {
+          "name": "persona_dedicada_mensajes",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "software_gestion": {
+          "name": "software_gestion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_calificada": {
+          "name": "es_calificada",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "caso_mostrado": {
+          "name": "caso_mostrado",
+          "type": "caso_mostrado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "peldano_alcanzado": {
+          "name": "peldano_alcanzado",
+          "type": "peldano",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "objecion_fee": {
+          "name": "objecion_fee",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "objecion_credibilidad": {
+          "name": "objecion_credibilidad",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "reconstruccion_del_nombre": {
+          "name": "reconstruccion_del_nombre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "conversacion_calificada_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "conversacion_calificada_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "conversacion_calificada",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.dato_declarado": {
+      "name": "dato_declarado",
+      "schema": "",
+      "columns": {
+        "declarado_id": {
+          "name": "declarado_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha": {
+          "name": "fecha",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "evento": {
+          "name": "evento",
+          "type": "evento_declarado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "campo": {
+          "name": "campo",
+          "type": "campo_declarado",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "valor_texto": {
+          "name": "valor_texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "valor_numero": {
+          "name": "valor_numero",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "valor_booleano": {
+          "name": "valor_booleano",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rol_de_quien_declara": {
+          "name": "rol_de_quien_declara",
+          "type": "rol_declarante",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "confianza": {
+          "name": "confianza",
+          "type": "confianza",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "dato_declarado_consultorio_idx": {
+          "name": "dato_declarado_consultorio_idx",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "campo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "dato_declarado_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "dato_declarado_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "dato_declarado",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.directorio": {
+      "name": "directorio",
+      "schema": "",
+      "columns": {
+        "directorio_id": {
+          "name": "directorio_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nombre": {
+          "name": "nombre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dominio": {
+          "name": "dominio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "publica_calificacion": {
+          "name": "publica_calificacion",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "publica_orden": {
+          "name": "publica_orden",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "base_observacion": {
+          "name": "base_observacion",
+          "type": "base_observacion",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_revision_terminos": {
+          "name": "fecha_revision_terminos",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nota_terminos": {
+          "name": "nota_terminos",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.directorio_perfil_snapshot": {
+      "name": "directorio_perfil_snapshot",
+      "schema": "",
+      "columns": {
+        "perfil_snapshot_id": {
+          "name": "perfil_snapshot_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "directorio_id": {
+          "name": "directorio_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "estado_perfil": {
+          "name": "estado_perfil",
+          "type": "estado_perfil_directorio",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "existe": {
+          "name": "existe",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "url_perfil": {
+          "name": "url_perfil",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "esta_reclamado": {
+          "name": "esta_reclamado",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "esta_verificado": {
+          "name": "esta_verificado",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calificacion": {
+          "name": "calificacion",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "resenas_total": {
+          "name": "resenas_total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_resena_mas_reciente": {
+          "name": "fecha_resena_mas_reciente",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_foto": {
+          "name": "tiene_foto",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_horario": {
+          "name": "tiene_horario",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_precio": {
+          "name": "tiene_precio",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "servicios_n": {
+          "name": "servicios_n",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nombre_perfil_crudo": {
+          "name": "nombre_perfil_crudo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "metodo_emparejamiento": {
+          "name": "metodo_emparejamiento",
+          "type": "metodo_emparejamiento",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "confianza_emparejamiento": {
+          "name": "confianza_emparejamiento",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "directorio_perfil_clave_unica": {
+          "name": "directorio_perfil_clave_unica",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "directorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "directorio_perfil_directorio_idx": {
+          "name": "directorio_perfil_directorio_idx",
+          "columns": [
+            {
+              "expression": "directorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "directorio_perfil_snapshot_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "directorio_perfil_snapshot_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "directorio_perfil_snapshot",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "directorio_perfil_snapshot_directorio_id_directorio_directorio_id_fk": {
+          "name": "directorio_perfil_snapshot_directorio_id_directorio_directorio_id_fk",
+          "tableFrom": "directorio_perfil_snapshot",
+          "tableTo": "directorio",
+          "columnsFrom": [
+            "directorio_id"
+          ],
+          "columnsTo": [
+            "directorio_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.directorio_ranking": {
+      "name": "directorio_ranking",
+      "schema": "",
+      "columns": {
+        "ranking_id": {
+          "name": "ranking_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "directorio_id": {
+          "name": "directorio_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "consulta_texto": {
+          "name": "consulta_texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "consulta_normalizada": {
+          "name": "consulta_normalizada",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_consulta": {
+          "name": "fecha_consulta",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dispositivo": {
+          "name": "dispositivo",
+          "type": "dispositivo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "posicion": {
+          "name": "posicion",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "resultados_total": {
+          "name": "resultados_total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre_resultado_crudo": {
+          "name": "nombre_resultado_crudo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "metodo_emparejamiento": {
+          "name": "metodo_emparejamiento",
+          "type": "metodo_emparejamiento",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "confianza_emparejamiento": {
+          "name": "confianza_emparejamiento",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "directorio_ranking_clave_unica": {
+          "name": "directorio_ranking_clave_unica",
+          "columns": [
+            {
+              "expression": "directorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "consulta_normalizada",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "municipio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_consulta",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "dispositivo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "posicion",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "directorio_ranking_consultorio_idx": {
+          "name": "directorio_ranking_consultorio_idx",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_consulta",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "directorio_ranking_directorio_id_directorio_directorio_id_fk": {
+          "name": "directorio_ranking_directorio_id_directorio_directorio_id_fk",
+          "tableFrom": "directorio_ranking",
+          "tableTo": "directorio",
+          "columnsFrom": [
+            "directorio_id"
+          ],
+          "columnsTo": [
+            "directorio_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        },
+        "directorio_ranking_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "directorio_ranking_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "directorio_ranking",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.edicion_estudio": {
+      "name": "edicion_estudio",
+      "schema": "",
+      "columns": {
+        "edicion_id": {
+          "name": "edicion_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "nombre": {
+          "name": "nombre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "campo_inicio": {
+          "name": "campo_inicio",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "campo_fin": {
+          "name": "campo_fin",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "corte_reloj_horas": {
+          "name": "corte_reloj_horas",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "n_universo": {
+          "name": "n_universo",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "n_muestra": {
+          "name": "n_muestra",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "n_respondio": {
+          "name": "n_respondio",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "municipios_incluidos": {
+          "name": "municipios_incluidos",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "version_formula": {
+          "name": "version_formula",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "publicada_en": {
+          "name": "publicada_en",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "notas_metodo": {
+          "name": "notas_metodo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.formula_puntaje": {
+      "name": "formula_puntaje",
+      "schema": "",
+      "columns": {
+        "version": {
+          "name": "version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bloque": {
+          "name": "bloque",
+          "type": "bloque_puntaje",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "indicador": {
+          "name": "indicador",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "peso": {
+          "name": "peso",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "transformacion": {
+          "name": "transformacion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "direccion": {
+          "name": "direccion",
+          "type": "direccion_indicador",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vigente_desde": {
+          "name": "vigente_desde",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "formula_puntaje_version_indicador_pk": {
+          "name": "formula_puntaje_version_indicador_pk",
+          "columns": [
+            "version",
+            "indicador"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.guion": {
+      "name": "guion",
+      "schema": "",
+      "columns": {
+        "guion_id": {
+          "name": "guion_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "version": {
+          "name": "version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "canal": {
+          "name": "canal",
+          "type": "canal_campo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "texto": {
+          "name": "texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vigente_desde": {
+          "name": "vigente_desde",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "vigente_hasta": {
+          "name": "vigente_hasta",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.indicador_geografico": {
+      "name": "indicador_geografico",
+      "schema": "",
+      "columns": {
+        "indicador_geo_id": {
+          "name": "indicador_geo_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "ambito_tipo": {
+          "name": "ambito_tipo",
+          "type": "ambito_tipo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ambito_id": {
+          "name": "ambito_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "indicador": {
+          "name": "indicador",
+          "type": "indicador_geo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "periodo": {
+          "name": "periodo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "valor": {
+          "name": "valor",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "unidad": {
+          "name": "unidad",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fuente": {
+          "name": "fuente",
+          "type": "fuente_geo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "version_serie": {
+          "name": "version_serie",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nota": {
+          "name": "nota",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "indicador_geografico_clave_unica": {
+          "name": "indicador_geografico_clave_unica",
+          "columns": [
+            {
+              "expression": "ambito_tipo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ambito_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "indicador",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "periodo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fuente",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "version_serie",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "indicador_geografico_ambito_idx": {
+          "name": "indicador_geografico_ambito_idx",
+          "columns": [
+            {
+              "expression": "ambito_tipo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ambito_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "indicador",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.instagram_snapshot": {
+      "name": "instagram_snapshot",
+      "schema": "",
+      "columns": {
+        "ig_snapshot_id": {
+          "name": "ig_snapshot_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "handle": {
+          "name": "handle",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seguidores": {
+          "name": "seguidores",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "publicaciones_total": {
+          "name": "publicaciones_total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "publicaciones_30d": {
+          "name": "publicaciones_30d",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "interaccion_promedio_pct": {
+          "name": "interaccion_promedio_pct",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ultima_publicacion_fecha": {
+          "name": "ultima_publicacion_fecha",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_enlace_en_bio": {
+          "name": "tiene_enlace_en_bio",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "destino_enlace": {
+          "name": "destino_enlace",
+          "type": "destino_enlace",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_cuenta_profesional": {
+          "name": "es_cuenta_profesional",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "publica_antes_despues": {
+          "name": "publica_antes_despues",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "instagram_snapshot_clave_unica": {
+          "name": "instagram_snapshot_clave_unica",
+          "columns": [
+            {
+              "expression": "handle",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "instagram_snapshot_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "instagram_snapshot_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "instagram_snapshot",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.localidad": {
+      "name": "localidad",
+      "schema": "",
+      "columns": {
+        "localidad_id": {
+          "name": "localidad_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre_localidad": {
+          "name": "nombre_localidad",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "localidad_municipio_id_municipio_municipio_id_fk": {
+          "name": "localidad_municipio_id_municipio_municipio_id_fk",
+          "tableFrom": "localidad",
+          "tableTo": "municipio",
+          "columnsFrom": [
+            "municipio_id"
+          ],
+          "columnsTo": [
+            "municipio_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.mensaje_campo": {
+      "name": "mensaje_campo",
+      "schema": "",
+      "columns": {
+        "mensaje_id": {
+          "name": "mensaje_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "contacto_campo_id": {
+          "name": "contacto_campo_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "orden": {
+          "name": "orden",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "direccion": {
+          "name": "direccion",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "enviado_en": {
+          "name": "enviado_en",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "texto": {
+          "name": "texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "parece_automatico": {
+          "name": "parece_automatico",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "mensaje_campo_orden_unico": {
+          "name": "mensaje_campo_orden_unico",
+          "columns": [
+            {
+              "expression": "contacto_campo_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "orden",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "mensaje_campo_contacto_campo_id_contacto_campo_contacto_campo_id_fk": {
+          "name": "mensaje_campo_contacto_campo_id_contacto_campo_contacto_campo_id_fk",
+          "tableFrom": "mensaje_campo",
+          "tableTo": "contacto_campo",
+          "columnsFrom": [
+            "contacto_campo_id"
+          ],
+          "columnsTo": [
+            "contacto_campo_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.municipio": {
+      "name": "municipio",
+      "schema": "",
+      "columns": {
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nombre_municipio": {
+          "name": "nombre_municipio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "departamento": {
+          "name": "departamento",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "departamento_id": {
+          "name": "departamento_id",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "categoria_ciudad": {
+          "name": "categoria_ciudad",
+          "type": "categoria_ciudad",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "area_metropolitana": {
+          "name": "area_metropolitana",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_cabecera_de_area": {
+          "name": "es_cabecera_de_area",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.puntaje": {
+      "name": "puntaje",
+      "schema": "",
+      "columns": {
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "edicion_id": {
+          "name": "edicion_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "puntaje_visibilidad": {
+          "name": "puntaje_visibilidad",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_reputacion": {
+          "name": "puntaje_reputacion",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_contenido": {
+          "name": "puntaje_contenido",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_respuesta": {
+          "name": "puntaje_respuesta",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_reservabilidad": {
+          "name": "puntaje_reservabilidad",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_general": {
+          "name": "puntaje_general",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_general": {
+          "name": "percentil_general",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_visibilidad": {
+          "name": "percentil_visibilidad",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_reputacion": {
+          "name": "percentil_reputacion",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_contenido": {
+          "name": "percentil_contenido",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_respuesta": {
+          "name": "percentil_respuesta",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_reservabilidad": {
+          "name": "percentil_reservabilidad",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "percentil_grupo_ciudad": {
+          "name": "percentil_grupo_ciudad",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "bloques_no_medidos": {
+          "name": "bloques_no_medidos",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "version_formula": {
+          "name": "version_formula",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calculado_en": {
+          "name": "calculado_en",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "puntaje_edicion_idx": {
+          "name": "puntaje_edicion_idx",
+          "columns": [
+            {
+              "expression": "edicion_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "puntaje_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "puntaje_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "puntaje",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "puntaje_edicion_id_edicion_estudio_edicion_id_fk": {
+          "name": "puntaje_edicion_id_edicion_estudio_edicion_id_fk",
+          "tableFrom": "puntaje",
+          "tableTo": "edicion_estudio",
+          "columnsFrom": [
+            "edicion_id"
+          ],
+          "columnsTo": [
+            "edicion_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "puntaje_consultorio_id_edicion_id_pk": {
+          "name": "puntaje_consultorio_id_edicion_id_pk",
+          "columns": [
+            "consultorio_id",
+            "edicion_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.resena": {
+      "name": "resena",
+      "schema": "",
+      "columns": {
+        "resena_id": {
+          "name": "resena_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_publicacion": {
+          "name": "fecha_publicacion",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "calificacion": {
+          "name": "calificacion",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_respuesta_del_negocio": {
+          "name": "tiene_respuesta_del_negocio",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dias_hasta_respuesta": {
+          "name": "dias_hasta_respuesta",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "resena_consultorio_idx": {
+          "name": "resena_consultorio_idx",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_publicacion",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "resena_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "resena_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "resena",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.serp_local": {
+      "name": "serp_local",
+      "schema": "",
+      "columns": {
+        "serp_id": {
+          "name": "serp_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consulta_texto": {
+          "name": "consulta_texto",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "consulta_normalizada": {
+          "name": "consulta_normalizada",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "municipio_id": {
+          "name": "municipio_id",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fecha_consulta": {
+          "name": "fecha_consulta",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dispositivo": {
+          "name": "dispositivo",
+          "type": "dispositivo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "bloque": {
+          "name": "bloque",
+          "type": "bloque_serp",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "posicion": {
+          "name": "posicion",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nombre_resultado_crudo": {
+          "name": "nombre_resultado_crudo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "metodo_emparejamiento": {
+          "name": "metodo_emparejamiento",
+          "type": "metodo_emparejamiento",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "confianza_emparejamiento": {
+          "name": "confianza_emparejamiento",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "serp_local_clave_unica": {
+          "name": "serp_local_clave_unica",
+          "columns": [
+            {
+              "expression": "consulta_normalizada",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "municipio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_consulta",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "dispositivo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "bloque",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "posicion",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "serp_local_consultorio_idx": {
+          "name": "serp_local_consultorio_idx",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_consulta",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "serp_local_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "serp_local_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "serp_local",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.sitio_snapshot": {
+      "name": "sitio_snapshot",
+      "schema": "",
+      "columns": {
+        "sitio_snapshot_id": {
+          "name": "sitio_snapshot_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consultorio_id": {
+          "name": "consultorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dominio": {
+          "name": "dominio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_rastreo": {
+          "name": "fecha_rastreo",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "estado_rastreo": {
+          "name": "estado_rastreo",
+          "type": "estado_rastreo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "website_title": {
+          "name": "website_title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "website_description": {
+          "name": "website_description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "website_generator": {
+          "name": "website_generator",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_gtm": {
+          "name": "tiene_gtm",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_pixel_meta": {
+          "name": "tiene_pixel_meta",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "plataforma_agenda_detectada": {
+          "name": "plataforma_agenda_detectada",
+          "type": "plataforma_agenda",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_reserva_online": {
+          "name": "tiene_reserva_online",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "tiene_pago_en_linea": {
+          "name": "tiene_pago_en_linea",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pasarela_detectada": {
+          "name": "pasarela_detectada",
+          "type": "pasarela",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "es_movil_responsive": {
+          "name": "es_movil_responsive",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puntaje_velocidad_movil": {
+          "name": "puntaje_velocidad_movil",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "sitio_snapshot_clave_unica": {
+          "name": "sitio_snapshot_clave_unica",
+          "columns": [
+            {
+              "expression": "consultorio_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_rastreo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "sitio_snapshot_consultorio_id_consultorio_consultorio_id_fk": {
+          "name": "sitio_snapshot_consultorio_id_consultorio_consultorio_id_fk",
+          "tableFrom": "sitio_snapshot",
+          "tableTo": "consultorio",
+          "columnsFrom": [
+            "consultorio_id"
+          ],
+          "columnsTo": [
+            "consultorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.territorio": {
+      "name": "territorio",
+      "schema": "",
+      "columns": {
+        "territorio_id": {
+          "name": "territorio_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "nombre_territorio": {
+          "name": "nombre_territorio",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo": {
+          "name": "tipo",
+          "type": "tipo_territorio",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "poblacion_total": {
+          "name": "poblacion_total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "poblacion_periodo": {
+          "name": "poblacion_periodo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "poblacion_fuente": {
+          "name": "poblacion_fuente",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "volumen_busqueda_mes": {
+          "name": "volumen_busqueda_mes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "volumen_conjunto": {
+          "name": "volumen_conjunto",
+          "type": "conjunto_consultas",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "volumen_fecha_captura": {
+          "name": "volumen_fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "pasa_umbral_poblacional": {
+          "name": "pasa_umbral_poblacional",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "estado": {
+          "name": "estado",
+          "type": "estado_territorio",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "'libre'"
+        },
+        "consultorio_id_asignado": {
+          "name": "consultorio_id_asignado",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_reserva": {
+          "name": "fecha_reserva",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_vencimiento_reserva": {
+          "name": "fecha_vencimiento_reserva",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.territorio_unidad": {
+      "name": "territorio_unidad",
+      "schema": "",
+      "columns": {
+        "territorio_id": {
+          "name": "territorio_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "tipo_unidad": {
+          "name": "tipo_unidad",
+          "type": "tipo_unidad",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "unidad_id": {
+          "name": "unidad_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nota": {
+          "name": "nota",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "territorio_unidad_exclusividad": {
+          "name": "territorio_unidad_exclusividad",
+          "columns": [
+            {
+              "expression": "tipo_unidad",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "unidad_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "territorio_unidad_territorio_id_territorio_territorio_id_fk": {
+          "name": "territorio_unidad_territorio_id_territorio_territorio_id_fk",
+          "tableFrom": "territorio_unidad",
+          "tableTo": "territorio",
+          "columnsFrom": [
+            "territorio_id"
+          ],
+          "columnsTo": [
+            "territorio_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "territorio_unidad_territorio_id_tipo_unidad_unidad_id_pk": {
+          "name": "territorio_unidad_territorio_id_tipo_unidad_unidad_id_pk",
+          "columns": [
+            "territorio_id",
+            "tipo_unidad",
+            "unidad_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.volumen_busqueda": {
+      "name": "volumen_busqueda",
+      "schema": "",
+      "columns": {
+        "volumen_id": {
+          "name": "volumen_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "consulta_id": {
+          "name": "consulta_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ambito_tipo": {
+          "name": "ambito_tipo",
+          "type": "ambito_tipo",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "ambito_id": {
+          "name": "ambito_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "fecha_captura": {
+          "name": "fecha_captura",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "herramienta": {
+          "name": "herramienta",
+          "type": "herramienta_keywords",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "loc_id": {
+          "name": "loc_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ventana": {
+          "name": "ventana",
+          "type": "ventana_keywords",
+          "typeSchema": "public",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "volumen_mes": {
+          "name": "volumen_mes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cpc_estimado": {
+          "name": "cpc_estimado",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "competencia_pagada": {
+          "name": "competencia_pagada",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "dificultad_seo": {
+          "name": "dificultad_seo",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "nota": {
+          "name": "nota",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "volumen_busqueda_clave_unica": {
+          "name": "volumen_busqueda_clave_unica",
+          "columns": [
+            {
+              "expression": "consulta_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ambito_tipo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ambito_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "fecha_captura",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "herramienta",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "volumen_busqueda_ambito_idx": {
+          "name": "volumen_busqueda_ambito_idx",
+          "columns": [
+            {
+              "expression": "ambito_tipo",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ambito_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "volumen_busqueda_consulta_id_consulta_consulta_id_fk": {
+          "name": "volumen_busqueda_consulta_id_consulta_consulta_id_fk",
+          "tableFrom": "volumen_busqueda",
+          "tableTo": "consulta",
+          "columnsFrom": [
+            "consulta_id"
+          ],
+          "columnsTo": [
+            "consulta_id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {
+    "public.ambito_tipo": {
+      "name": "ambito_tipo",
+      "schema": "public",
+      "values": [
+        "pais",
+        "departamento",
+        "municipio",
+        "localidad",
+        "territorio"
+      ]
+    },
+    "public.base_legal": {
+      "name": "base_legal",
+      "schema": "public",
+      "values": [
+        "fuente_publica",
+        "consentimiento"
+      ]
+    },
+    "public.base_observacion": {
+      "name": "base_observacion",
+      "schema": "public",
+      "values": [
+        "pagina_publica",
+        "api_autorizada",
+        "acuerdo_escrito"
+      ]
+    },
+    "public.bloque_puntaje": {
+      "name": "bloque_puntaje",
+      "schema": "public",
+      "values": [
+        "visibilidad",
+        "reputacion",
+        "contenido",
+        "respuesta",
+        "reservabilidad"
+      ]
+    },
+    "public.bloque_serp": {
+      "name": "bloque_serp",
+      "schema": "public",
+      "values": [
+        "paquete_local",
+        "organico",
+        "anuncio"
+      ]
+    },
+    "public.campo_declarado": {
+      "name": "campo_declarado",
+      "schema": "public",
+      "values": [
+        "precio_lista",
+        "cobra_primera_cita",
+        "valor_primera_cita",
+        "consultas_mes",
+        "anos_ejercicio",
+        "sillas",
+        "persona_dedicada_mensajes",
+        "software_gestion"
+      ]
+    },
+    "public.canal_campo": {
+      "name": "canal_campo",
+      "schema": "public",
+      "values": [
+        "whatsapp",
+        "instagram_dm",
+        "formulario_web"
+      ]
+    },
+    "public.caso_mostrado": {
+      "name": "caso_mostrado",
+      "schema": "public",
+      "values": [
+        "no",
+        "territorio_1",
+        "territorio_2"
+      ]
+    },
+    "public.categoria_ciudad": {
+      "name": "categoria_ciudad",
+      "schema": "public",
+      "values": [
+        "capital_principal",
+        "capital_departamental",
+        "intermedia",
+        "otra"
+      ]
+    },
+    "public.confianza": {
+      "name": "confianza",
+      "schema": "public",
+      "values": [
+        "alta",
+        "media",
+        "baja"
+      ]
+    },
+    "public.conjunto_consultas": {
+      "name": "conjunto_consultas",
+      "schema": "public",
+      "values": [
+        "nucleo",
+        "ampliado"
+      ]
+    },
+    "public.declarado_si_no": {
+      "name": "declarado_si_no",
+      "schema": "public",
+      "values": [
+        "si",
+        "no",
+        "no_dice"
+      ]
+    },
+    "public.destino_enlace": {
+      "name": "destino_enlace",
+      "schema": "public",
+      "values": [
+        "reserva",
+        "whatsapp",
+        "sitio",
+        "agregador",
+        "ninguno"
+      ]
+    },
+    "public.dio_precio": {
+      "name": "dio_precio",
+      "schema": "public",
+      "values": [
+        "no",
+        "rango",
+        "exacto",
+        "no_observado"
+      ]
+    },
+    "public.direccion_indicador": {
+      "name": "direccion_indicador",
+      "schema": "public",
+      "values": [
+        "mas_es_mejor",
+        "menos_es_mejor"
+      ]
+    },
+    "public.dispositivo": {
+      "name": "dispositivo",
+      "schema": "public",
+      "values": [
+        "movil",
+        "escritorio"
+      ]
+    },
+    "public.estado_envio": {
+      "name": "estado_envio",
+      "schema": "public",
+      "values": [
+        "entregado",
+        "no_entregado",
+        "bloqueado",
+        "numero_invalido"
+      ]
+    },
+    "public.estado_perfil_directorio": {
+      "name": "estado_perfil_directorio",
+      "schema": "public",
+      "values": [
+        "ok",
+        "sin_perfil",
+        "bloqueado",
+        "timeout",
+        "error"
+      ]
+    },
+    "public.estado_rastreo": {
+      "name": "estado_rastreo",
+      "schema": "public",
+      "values": [
+        "ok",
+        "sin_sitio",
+        "error_dns",
+        "timeout",
+        "bloqueado"
+      ]
+    },
+    "public.estado_registro": {
+      "name": "estado_registro",
+      "schema": "public",
+      "values": [
+        "activo",
+        "cerrado",
+        "duplicado",
+        "fuera_de_alcance"
+      ]
+    },
+    "public.estado_territorio": {
+      "name": "estado_territorio",
+      "schema": "public",
+      "values": [
+        "libre",
+        "reservado",
+        "asignado",
+        "descartado"
+      ]
+    },
+    "public.evento_conversacion": {
+      "name": "evento_conversacion",
+      "schema": "public",
+      "values": [
+        "congreso",
+        "entrevista",
+        "referido"
+      ]
+    },
+    "public.evento_declarado": {
+      "name": "evento_declarado",
+      "schema": "public",
+      "values": [
+        "chat_campo",
+        "entrevista",
+        "stand_congreso",
+        "formulario_web"
+      ]
+    },
+    "public.franja_horaria": {
+      "name": "franja_horaria",
+      "schema": "public",
+      "values": [
+        "madrugada",
+        "manana",
+        "mediodia",
+        "tarde",
+        "noche"
+      ]
+    },
+    "public.fuente_captura": {
+      "name": "fuente_captura",
+      "schema": "public",
+      "values": [
+        "maps",
+        "serp",
+        "manual"
+      ]
+    },
+    "public.fuente_geo": {
+      "name": "fuente_geo",
+      "schema": "public",
+      "values": [
+        "dane_proyeccion",
+        "dane_censo",
+        "reps",
+        "rues",
+        "distrital",
+        "otra"
+      ]
+    },
+    "public.fuente_listado": {
+      "name": "fuente_listado",
+      "schema": "public",
+      "values": [
+        "google_maps",
+        "directorio",
+        "asociacion",
+        "manual"
+      ]
+    },
+    "public.herramienta_keywords": {
+      "name": "herramienta_keywords",
+      "schema": "public",
+      "values": [
+        "ubersuggest",
+        "keyword_planner",
+        "otra"
+      ]
+    },
+    "public.indicador_geo": {
+      "name": "indicador_geo",
+      "schema": "public",
+      "values": [
+        "poblacion",
+        "prestadores_odontologia",
+        "prestadores_ortodoncia",
+        "otro"
+      ]
+    },
+    "public.metodo_emparejamiento": {
+      "name": "metodo_emparejamiento",
+      "schema": "public",
+      "values": [
+        "place_id",
+        "telefono",
+        "dominio",
+        "nombre_aproximado",
+        "sin_emparejar"
+      ]
+    },
+    "public.observado": {
+      "name": "observado",
+      "schema": "public",
+      "values": [
+        "si",
+        "no",
+        "no_observado"
+      ]
+    },
+    "public.pasarela": {
+      "name": "pasarela",
+      "schema": "public",
+      "values": [
+        "wompi",
+        "mercadopago",
+        "payu",
+        "otra",
+        "ninguna"
+      ]
+    },
+    "public.peldano": {
+      "name": "peldano",
+      "schema": "public",
+      "values": [
+        "nada",
+        "carta",
+        "anticipo"
+      ]
+    },
+    "public.plataforma_agenda": {
+      "name": "plataforma_agenda",
+      "schema": "public",
+      "values": [
+        "dentalink",
+        "agendapro",
+        "doctoralia",
+        "calendly",
+        "otro",
+        "ninguno"
+      ]
+    },
+    "public.rol_declarante": {
+      "name": "rol_declarante",
+      "schema": "public",
+      "values": [
+        "profesional",
+        "recepcion",
+        "desconocido"
+      ]
+    },
+    "public.tipo_establecimiento": {
+      "name": "tipo_establecimiento",
+      "schema": "public",
+      "values": [
+        "consultorio_individual",
+        "clinica_multisilla",
+        "cadena",
+        "franquicia"
+      ]
+    },
+    "public.tipo_intencion": {
+      "name": "tipo_intencion",
+      "schema": "public",
+      "values": [
+        "precio",
+        "servicio",
+        "marca",
+        "informativa"
+      ]
+    },
+    "public.tipo_respondedor": {
+      "name": "tipo_respondedor",
+      "schema": "public",
+      "values": [
+        "persona",
+        "automatico",
+        "indeterminado"
+      ]
+    },
+    "public.tipo_territorio": {
+      "name": "tipo_territorio",
+      "schema": "public",
+      "values": [
+        "municipio",
+        "conjunto_de_municipios",
+        "localidad",
+        "conjunto_de_localidades"
+      ]
+    },
+    "public.tipo_unidad": {
+      "name": "tipo_unidad",
+      "schema": "public",
+      "values": [
+        "municipio",
+        "localidad"
+      ]
+    },
+    "public.ventana_keywords": {
+      "name": "ventana_keywords",
+      "schema": "public",
+      "values": [
+        "12m",
+        "3m",
+        "ultimo_mes"
+      ]
+    },
+    "public.vertical": {
+      "name": "vertical",
+      "schema": "public",
+      "values": [
+        "ortodoncia",
+        "odontologia_estetica",
+        "medicina_estetica",
+        "otra"
+      ]
+    }
+  },
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

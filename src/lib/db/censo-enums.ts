@@ -124,13 +124,7 @@ export const plataformaAgendaEnum = pgEnum('plataforma_agenda', [
   'ninguno',
 ])
 
-export const pasarelaEnum = pgEnum('pasarela', [
-  'wompi',
-  'mercadopago',
-  'payu',
-  'otra',
-  'ninguna',
-])
+export const pasarelaEnum = pgEnum('pasarela', ['wompi', 'mercadopago', 'payu', 'otra', 'ninguna'])
 
 export const bloqueSerpEnum = pgEnum('bloque_serp', ['paquete_local', 'organico', 'anuncio'])
 
@@ -153,11 +147,7 @@ export const destinoEnlaceEnum = pgEnum('destino_enlace', [
 ])
 
 // ── Trabajo de campo ────────────────────────────────────────────────────────
-export const canalCampoEnum = pgEnum('canal_campo', [
-  'whatsapp',
-  'instagram_dm',
-  'formulario_web',
-])
+export const canalCampoEnum = pgEnum('canal_campo', ['whatsapp', 'instagram_dm', 'formulario_web'])
 
 export const estadoEnvioEnum = pgEnum('estado_envio', [
   'entregado',
@@ -240,4 +230,33 @@ export const bloquePuntajeEnum = pgEnum('bloque_puntaje', [
 export const direccionIndicadorEnum = pgEnum('direccion_indicador', [
   'mas_es_mejor',
   'menos_es_mejor',
+])
+
+// ── Directorios médicos ─────────────────────────────────────────────────────
+
+/**
+ * Cómo terminó la lectura de un perfil de directorio.
+ *
+ * `sin_perfil` y `bloqueado` son cosas distintas y por eso son valores
+ * distintos: no tener perfil es una observación y entra al análisis; que el
+ * sitio rechace la lectura es ausencia de observación y no puede convertirse en
+ * un cero. Es la misma regla que rige todo el censo.
+ */
+export const estadoPerfilDirectorioEnum = pgEnum('estado_perfil_directorio', [
+  'ok',
+  'sin_perfil',
+  'bloqueado',
+  'timeout',
+  'error',
+])
+
+/**
+ * Con qué derecho se observa un directorio. Es obligatorio en el catálogo, así
+ * que no hay forma de registrar un directorio sin haber resuelto antes de qué
+ * manera se lo puede leer, y la decisión queda auditable seis meses después.
+ */
+export const baseObservacionEnum = pgEnum('base_observacion', [
+  'pagina_publica',
+  'api_autorizada',
+  'acuerdo_escrito',
 ])

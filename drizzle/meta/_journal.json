@@ -8,6 +8,13 @@
       "when": 1788315957742,
       "tag": "0000_censo",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1788449091235,
+      "tag": "0001_directorios",
+      "breakpoints": true
     }
   ]
 }

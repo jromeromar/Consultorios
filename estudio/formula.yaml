@@ -62,6 +62,8 @@ denominadores:
   con_instagram:         Consultorios cuya cuenta pública se pudo emparejar
   con_serp_medido:       Consultorios en un municipio donde se midió búsqueda local
   declararon:            Consultorios que aportaron el dato declarado
+  con_directorio_leido:  Consultorios cuyo perfil de directorio se leyó (ok o sin_perfil)
+  con_ranking_directorio: Consultorios en un municipio y directorio donde se midió el orden
 
 # ── Bloques ────────────────────────────────────────────────────────────────
 # En el orden en que un paciente los atraviesa. El orden es la estructura de los
@@ -107,7 +109,7 @@ indicadores:
     nombre: Categoría de la ficha correcta
     origen: consultorio_snapshot.categoria_principal
     transformacion: booleano
-    peso: 0.35
+    peso: 0.28
     denominador: con_ficha
     unidad: booleano
   - id: presencia_paquete_local
@@ -117,7 +119,7 @@ indicadores:
     transformacion: lineal
     a0: 0
     a100: 5
-    peso: 0.30
+    peso: 0.24
     denominador: con_serp_medido
     unidad: consultas
   - id: posicion_paquete_local
@@ -127,7 +129,7 @@ indicadores:
     transformacion: lineal
     a0: 10
     a100: 1
-    peso: 0.20
+    peso: 0.16
     denominador: con_serp_medido
     unidad: posicion
   - id: direccion_visible
@@ -135,11 +137,43 @@ indicadores:
     nombre: Dirección visible en la ficha
     origen: consultorio_snapshot.es_area_de_servicio
     transformacion: booleano
-    peso: 0.15
+    peso: 0.12
     denominador: con_ficha
     unidad: booleano
 
   # ── 2 · Lo eligen ────────────────────────────────────────────────────────
+  # ── Directorios médicos ─────────────────────────────────────────────────
+  # Los directorios entran como fuente, no como bloque: una calificación es
+  # reputación y una posición es visibilidad, así que un bloque que mezclara
+  # presencia, calificación y posición estaría mezclando fuente con dimensión.
+  #
+  # El peso que toman es el 20% de visibilidad y el 15% de reputación. Los
+  # indicadores que ya existían se reescalaron por ese factor y conservan sus
+  # proporciones exactas entre sí, así que ninguno cambia de importancia
+  # relativa: lo único que cambia es que ahora hay directorios.
+  - id: perfil_directorio_completo
+    bloque: visibilidad
+    nombre: Perfil de directorio reclamado y completo
+    origen: directorio_perfil_snapshot.completo
+    transformacion: lineal
+    a0: 0
+    a100: 1
+    peso: 0.12
+    denominador: con_directorio_leido
+    unidad: proporcion
+  - id: posicion_directorio
+    bloque: visibilidad
+    nombre: Mejor posición en el buscador del directorio
+    # `resultados_total` se captura y todavía no se usa: la posición 8 de 9 y la
+    # 8 de 200 no son el mismo hecho, y normalizar por ahí es una decisión de la
+    # versión 2. Mientras tanto el ancla es absoluta, como todas las demás.
+    origen: directorio_ranking.posicion
+    transformacion: lineal
+    a0: 20
+    a100: 1
+    peso: 0.08
+    denominador: con_ranking_directorio
+    unidad: posicion
   - id: calificacion
     bloque: reputacion
     nombre: Calificación pública
@@ -147,7 +181,7 @@ indicadores:
     transformacion: lineal
     a0: 3.8
     a100: 4.9
-    peso: 0.30
+    peso: 0.26
     denominador: con_ficha
     unidad: estrellas
   - id: resenas_total
@@ -157,7 +191,7 @@ indicadores:
     transformacion: log
     a0: 0
     a100: 200
-    peso: 0.25
+    peso: 0.21
     denominador: con_ficha
     unidad: resenas
   - id: recencia_resena
@@ -167,7 +201,7 @@ indicadores:
     transformacion: log
     a0: 365
     a100: 15
-    peso: 0.25
+    peso: 0.21
     denominador: con_ficha
     unidad: dias
   - id: resenas_respondidas_pct
@@ -177,11 +211,23 @@ indicadores:
     transformacion: lineal
     a0: 0
     a100: 60
-    peso: 0.20
+    peso: 0.17
     denominador: con_ficha
     unidad: porcentaje
 
   # ── 3 · Lo reconocen ─────────────────────────────────────────────────────
+  - id: calificacion_directorio
+    bloque: reputacion
+    nombre: Calificación en los directorios
+    # Mismas anclas que la calificación de Google: la escala es la misma y usar
+    # dos distintas haría incomparables dos cifras que el informe pone juntas.
+    origen: directorio_perfil_snapshot.calificacion
+    transformacion: lineal
+    a0: 3.8
+    a100: 4.9
+    peso: 0.15
+    denominador: con_directorio_leido
+    unidad: estrellas
   - id: publicaciones_30d
     bloque: contenido
     nombre: Publicaciones en 30 días

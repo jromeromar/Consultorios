@@ -44,6 +44,7 @@ export * from './censo-enums'
 import {
   ambitoTipoEnum,
   baseLegalEnum,
+  baseObservacionEnum,
   bloquePuntajeEnum,
   bloqueSerpEnum,
   campoDeclaradoEnum,
@@ -58,6 +59,7 @@ import {
   direccionIndicadorEnum,
   dispositivoEnum,
   estadoEnvioEnum,
+  estadoPerfilDirectorioEnum,
   estadoRastreoEnum,
   estadoRegistroEnum,
   estadoTerritorioEnum,
@@ -475,9 +477,7 @@ export const sitioSnapshot = pgTable(
     /** Opcional. Cuesta una llamada extra por sitio. */
     puntajeVelocidadMovil: integer('puntaje_velocidad_movil'),
   },
-  (t) => [
-    uniqueIndex('sitio_snapshot_clave_unica').on(t.consultorioId, t.fechaRastreo),
-  ],
+  (t) => [uniqueIndex('sitio_snapshot_clave_unica').on(t.consultorioId, t.fechaRastreo)],
 )
 
 /**
@@ -829,5 +829,154 @@ export const puntaje = pgTable(
   (t) => [
     primaryKey({ columns: [t.consultorioId, t.edicionId] }),
     index('puntaje_edicion_idx').on(t.edicionId),
+  ],
+)
+
+// ── Directorios médicos ─────────────────────────────────────────────────────
+//
+// Tres tablas, por el criterio 1 del encabezado: la calificación y la posición
+// de un consultorio dentro de un directorio se van a volver a medir y pueden
+// dar distinto, así que ninguna es una columna de `consultorio`.
+//
+// Y por el mismo criterio va aparte de `consultorio_snapshot`: es otro proceso,
+// con otra fecha y otro modo de fallar. Un directorio puede rechazar la lectura
+// el día que la ficha de Google se leyó sin problema, y una sola fecha para las
+// dos cosas sería falsa para la mitad de las columnas.
+
+/**
+ * El catálogo de directorios. Es tabla y no enum porque «los principales
+ * directorios médicos» no es un vocabulario cerrado, y porque cada directorio
+ * necesita decir de sí mismo tres cosas que un enum no puede guardar.
+ */
+export const directorio = pgTable('directorio', {
+  /** Estable y legible: `doctoralia`, `topdoctors`. */
+  directorioId: text('directorio_id').primaryKey(),
+  nombre: text('nombre').notNull(),
+  /** Sin protocolo ni www, igual que en el resto del esquema. */
+  dominio: text('dominio').notNull(),
+
+  /**
+   * Si el directorio publica una calificación agregada. Cuando es falso, la
+   * columna de calificación del snapshot queda nula por diseño y no por falta
+   * de dato: son casos distintos y el informe los tiene que distinguir.
+   */
+  publicaCalificacion: boolean('publica_calificacion').notNull(),
+  /**
+   * Si tiene buscador propio con un orden. Es lo que hace medible «tu posición
+   * dentro del directorio»; sin esto, `directorio_ranking` no aplica.
+   */
+  publicaOrden: boolean('publica_orden').notNull(),
+
+  /**
+   * Con qué derecho se lee. Obligatorio, así que ninguna captura puede correr
+   * contra un directorio cuyos términos nadie revisó.
+   */
+  baseObservacion: baseObservacionEnum('base_observacion').notNull(),
+  fechaRevisionTerminos: date('fecha_revision_terminos').notNull(),
+  /** Qué se leyó y quién lo revisó. */
+  notaTerminos: text('nota_terminos'),
+})
+
+/**
+ * El perfil de un consultorio en un directorio, en una fecha.
+ *
+ * Todas las medidas van nulas salvo cuando `estado_perfil` es `ok` o
+ * `sin_perfil`. Un `bloqueado` no deja ceros: deja nulos, y el consultorio sale
+ * del denominador.
+ */
+export const directorioPerfilSnapshot = pgTable(
+  'directorio_perfil_snapshot',
+  {
+    perfilSnapshotId: uuid('perfil_snapshot_id').primaryKey().defaultRandom(),
+    consultorioId: uuid('consultorio_id')
+      .notNull()
+      .references(() => consultorio.consultorioId, { onDelete: 'cascade' }),
+    directorioId: text('directorio_id')
+      .notNull()
+      .references(() => directorio.directorioId, { onDelete: 'restrict' }),
+    fechaCaptura: date('fecha_captura').notNull(),
+    estadoPerfil: estadoPerfilDirectorioEnum('estado_perfil').notNull(),
+
+    /** Existe el perfil. Falso solo con `estado_perfil = sin_perfil`. */
+    existe: boolean('existe'),
+    urlPerfil: text('url_perfil'),
+    /** El profesional lo reclamó. Un perfil que el directorio creó solo no cuenta igual. */
+    estaReclamado: boolean('esta_reclamado'),
+    estaVerificado: boolean('esta_verificado'),
+
+    /** Nulo cuando el directorio no publica calificación. */
+    calificacion: numeric('calificacion'),
+    resenasTotal: integer('resenas_total'),
+    fechaResenaMasReciente: date('fecha_resena_mas_reciente'),
+
+    /** Completitud del perfil, que es lo que un paciente ve al abrirlo. */
+    tieneFoto: boolean('tiene_foto'),
+    tieneHorario: boolean('tiene_horario'),
+    tienePrecio: boolean('tiene_precio'),
+    serviciosN: integer('servicios_n'),
+
+    /** Emparejamiento, con la misma disciplina que `serp_local`. */
+    nombrePerfilCrudo: text('nombre_perfil_crudo'),
+    metodoEmparejamiento: metodoEmparejamientoEnum('metodo_emparejamiento').notNull(),
+    /** 0 a 1. Por debajo del umbral, la fila no entra al análisis. */
+    confianzaEmparejamiento: numeric('confianza_emparejamiento'),
+  },
+  (t) => [
+    uniqueIndex('directorio_perfil_clave_unica').on(
+      t.consultorioId,
+      t.directorioId,
+      t.fechaCaptura,
+    ),
+    index('directorio_perfil_directorio_idx').on(t.directorioId, t.fechaCaptura),
+  ],
+)
+
+/**
+ * La posición de un consultorio dentro del buscador del propio directorio.
+ *
+ * Espeja `serp_local`, con una columna que aquella no tiene y que aquí es
+ * obligatoria: `resultados_total`. La posición 8 de 9 y la posición 8 de 200 no
+ * son el mismo hecho, y en este censo ninguna cifra se publica sin su
+ * denominador.
+ */
+export const directorioRanking = pgTable(
+  'directorio_ranking',
+  {
+    rankingId: uuid('ranking_id').primaryKey().defaultRandom(),
+    directorioId: text('directorio_id')
+      .notNull()
+      .references(() => directorio.directorioId, { onDelete: 'restrict' }),
+
+    /** Tal como se envió. */
+    consultaTexto: text('consulta_texto').notNull(),
+    /** Sin tildes y en orden canónico. Evita contar dos veces la misma consulta. */
+    consultaNormalizada: text('consulta_normalizada').notNull(),
+    municipioId: varchar('municipio_id', { length: 5 }).notNull(),
+    fechaConsulta: date('fecha_consulta').notNull(),
+    dispositivo: dispositivoEnum('dispositivo').notNull(),
+
+    posicion: integer('posicion').notNull(),
+    /** Cuántos resultados devolvió la consulta. Sin esto la posición no dice nada. */
+    resultadosTotal: integer('resultados_total').notNull(),
+
+    /** Se guarda para poder auditar el emparejamiento. */
+    nombreResultadoCrudo: text('nombre_resultado_crudo'),
+    /** Nulo si no se logró emparejar. */
+    consultorioId: uuid('consultorio_id').references(() => consultorio.consultorioId, {
+      onDelete: 'set null',
+    }),
+    metodoEmparejamiento: metodoEmparejamientoEnum('metodo_emparejamiento').notNull(),
+    confianzaEmparejamiento: numeric('confianza_emparejamiento'),
+  },
+  (t) => [
+    uniqueIndex('directorio_ranking_clave_unica').on(
+      t.directorioId,
+      t.consultaNormalizada,
+      t.municipioId,
+      t.fechaConsulta,
+      t.dispositivo,
+      t.posicion,
+    ),
+    index('directorio_ranking_consultorio_idx').on(t.consultorioId, t.fechaConsulta),
   ],
 )

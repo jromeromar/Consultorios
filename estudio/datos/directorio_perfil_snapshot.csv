@@ -1,0 +1,401 @@
+consultorio_id,directorio_id,fecha_captura,estado_perfil,existe,url_perfil,esta_reclamado,esta_verificado,calificacion,resenas_total,fecha_resena_mas_reciente,tiene_foto,tiene_horario,tiene_precio,servicios_n,nombre_perfil_crudo,metodo_emparejamiento,confianza_emparejamiento
+C-0001,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/control-1,true,true,5.0,96,2026-08-18,true,true,true,12,Control Arriba,nombre_telefono,1.00
+C-0001,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/control-1,true,true,5.0,96,2026-08-18,true,true,true,12,Control Arriba,nombre_telefono,1.00
+C-0002,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0002,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0003,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0003,false,false,4.4,10,2026-08-25,false,false,false,1,Consultorio Echeverri 003,nombre_telefono,0.94
+C-0003,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0004,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0004,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0005,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0005,false,false,4.5,11,2026-04-21,false,false,true,6,Ortodoncia Zapata 005,nombre_telefono,0.97
+C-0005,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0005,true,true,4.6,24,2026-07-24,false,true,false,5,Ortodoncia Zapata 005,nombre_telefono,0.79
+C-0006,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0006,true,true,4.5,37,2026-02-18,true,true,false,6,Centro Ocampo 006,nombre_telefono,0.85
+C-0006,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0006,false,false,4.8,28,2026-08-25,false,false,false,5,Centro Ocampo 006,nombre_telefono,0.86
+C-0007,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0007,false,false,4.7,13,2026-03-25,false,false,true,6,Clínica Restrepo 007,nombre_telefono,0.96
+C-0007,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0008,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0008,true,true,4.5,20,2026-02-25,true,false,false,6,Consultorio Villegas 008,nombre_telefono,0.81
+C-0008,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0008,true,false,4.5,20,2026-03-25,true,false,false,5,Consultorio Villegas 008,nombre_telefono,0.94
+C-0009,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0009,true,true,4.6,30,2026-04-15,true,true,false,6,Ortodoncia Cadavid 009,nombre_telefono,0.83
+C-0009,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0009,true,true,4.5,23,2026-03-24,true,true,false,0,Ortodoncia Cadavid 009,nombre_telefono,0.80
+C-0010,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0010,true,false,5.0,26,2026-07-13,true,false,true,11,Centro Mejía 010,nombre_telefono,0.98
+C-0010,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0010,true,true,4.7,31,2026-03-22,true,true,false,6,Centro Mejía 010,nombre_telefono,0.94
+C-0011,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0011,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0012,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0012,true,false,4.3,0,2026-03-19,true,true,true,1,Clínica Arboleda 012,nombre_telefono,0.89
+C-0012,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0013,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0013,true,true,4.9,28,2026-06-11,true,false,false,7,Ortodoncia Sanmiguel 013,nombre_telefono,0.93
+C-0013,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0013,true,false,4.6,31,2026-02-14,true,true,true,7,Ortodoncia Sanmiguel 013,nombre_telefono,0.94
+C-0014,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0014,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0015,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0015,false,false,4.8,43,2026-06-23,false,false,true,7,Consultorio Echeverri 015,nombre_telefono,0.96
+C-0015,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0015,true,false,4.8,39,2026-05-27,true,true,true,11,Consultorio Echeverri 015,nombre_telefono,0.81
+C-0016,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0016,true,true,4.8,23,2026-05-23,false,true,false,10,Clínica Betancur 016,nombre_telefono,0.93
+C-0016,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0017,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0017,true,false,4.5,29,2026-06-15,false,true,false,5,Ortodoncia Zapata 017,nombre_telefono,0.92
+C-0017,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0017,true,true,4.7,21,2026-05-18,true,false,false,3,Ortodoncia Zapata 017,nombre_telefono,0.80
+C-0018,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0018,false,false,4.7,22,2026-08-12,false,false,false,6,Centro Ocampo 018,nombre_telefono,0.82
+C-0018,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0018,false,false,4.7,26,2026-03-10,false,false,false,4,Centro Ocampo 018,nombre_telefono,0.80
+C-0019,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0019,true,true,4.6,22,2026-06-13,true,false,false,9,Clínica Restrepo 019,nombre_telefono,0.96
+C-0019,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0019,false,false,4.8,22,2026-06-15,false,false,false,6,Clínica Restrepo 019,nombre_telefono,0.90
+C-0020,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0020,true,true,4.6,14,2026-07-13,true,true,false,3,Consultorio Villegas 020,nombre_telefono,0.88
+C-0020,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0020,true,false,4.9,14,2026-01-17,false,true,false,4,Consultorio Villegas 020,nombre_telefono,0.82
+C-0021,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0021,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0022,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0022,true,true,4.6,30,2026-02-24,true,true,false,7,Centro Mejía 022,nombre_telefono,0.98
+C-0022,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0022,true,true,4.9,28,2026-01-17,false,true,false,4,Centro Mejía 022,nombre_telefono,0.92
+C-0023,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0023,true,true,4.8,43,2026-08-21,false,true,false,8,Clínica Uribe 023,nombre_telefono,0.85
+C-0023,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0023,true,false,4.9,42,2026-07-26,true,true,true,6,Clínica Uribe 023,nombre_telefono,0.83
+C-0024,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0024,false,false,4.1,8,2026-05-23,false,false,false,1,Clínica Arboleda 024,nombre_telefono,0.84
+C-0024,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0025,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0025,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0026,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0026,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0027,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0027,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0027,true,true,5.0,24,2026-03-13,true,true,false,7,Consultorio Echeverri 027,nombre_telefono,0.81
+C-0028,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0028,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0029,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0029,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0030,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0030,false,false,4.8,37,2026-02-27,false,false,false,8,Centro Ocampo 030,nombre_telefono,0.86
+C-0030,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0030,true,false,5.0,38,2026-03-12,true,true,false,8,Centro Ocampo 030,nombre_telefono,0.90
+C-0031,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0031,false,false,4.5,11,2026-04-23,false,false,false,3,Clínica Restrepo 031,nombre_telefono,0.95
+C-0031,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0032,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0032,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0033,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0033,true,true,4.4,20,2026-02-24,true,false,false,8,Ortodoncia Cadavid 033,nombre_telefono,0.84
+C-0033,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0033,false,false,4.9,26,2026-02-16,false,false,false,7,Ortodoncia Cadavid 033,nombre_telefono,0.98
+C-0034,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0034,true,true,4.9,28,2026-03-19,false,true,true,4,Centro Mejía 034,nombre_telefono,0.80
+C-0034,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0034,true,false,4.9,33,2026-03-15,true,true,false,6,Centro Mejía 034,nombre_telefono,0.94
+C-0035,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0035,false,false,4.9,37,2026-01-15,false,false,false,8,Clínica Uribe 035,nombre_telefono,0.82
+C-0035,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0035,true,true,4.9,34,2026-05-14,true,true,false,4,Clínica Uribe 035,nombre_telefono,0.87
+C-0036,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0036,false,false,4.3,14,2026-01-28,false,false,false,3,Clínica Arboleda 036,nombre_telefono,0.92
+C-0036,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0037,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0037,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0038,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0038,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0039,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0039,true,false,4.7,26,2026-04-20,true,true,false,10,Consultorio Echeverri 039,nombre_telefono,0.93
+C-0039,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0039,true,false,4.9,30,2026-08-22,true,true,false,8,Consultorio Echeverri 039,nombre_telefono,0.98
+C-0040,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0040,true,false,4.7,28,2026-08-16,true,true,false,7,Clínica Betancur 040,nombre_telefono,0.91
+C-0040,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0040,true,true,4.5,16,2026-01-14,true,true,false,3,Clínica Betancur 040,nombre_telefono,0.96
+C-0041,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0041,true,true,4.3,14,2026-04-10,true,true,false,4,Ortodoncia Zapata 041,nombre_telefono,0.80
+C-0041,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0041,false,false,4.3,28,2026-07-25,false,false,true,2,Ortodoncia Zapata 041,nombre_telefono,0.98
+C-0042,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0042,true,false,4.7,22,2026-04-14,true,true,false,8,Centro Ocampo 042,nombre_telefono,0.84
+C-0042,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0042,true,false,4.5,27,2026-03-14,false,true,false,6,Centro Ocampo 042,nombre_telefono,0.82
+C-0043,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0043,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0043,true,true,4.4,19,2026-03-14,true,true,false,6,Clínica Restrepo 043,nombre_telefono,0.96
+C-0044,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0044,true,true,4.8,31,2026-08-22,true,true,true,11,Consultorio Villegas 044,nombre_telefono,0.91
+C-0044,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0044,true,false,5.0,30,2026-07-23,true,true,true,8,Consultorio Villegas 044,nombre_telefono,0.82
+C-0045,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0045,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0046,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0046,false,false,4.6,19,2026-02-17,false,false,false,8,Centro Mejía 046,nombre_telefono,0.95
+C-0046,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0046,true,true,4.7,27,2026-08-20,true,true,true,5,Centro Mejía 046,nombre_telefono,0.85
+C-0047,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0047,true,false,4.3,16,2026-06-21,true,true,true,6,Clínica Uribe 047,nombre_telefono,0.90
+C-0047,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0048,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0048,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0048,true,false,4.7,30,2026-07-25,true,false,false,5,Clínica Arboleda 048,nombre_telefono,0.97
+C-0049,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0049,true,true,4.7,27,2026-05-15,true,true,false,7,Ortodoncia Sanmiguel 049,nombre_telefono,0.83
+C-0049,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0049,true,true,4.5,21,2026-03-24,true,true,true,6,Ortodoncia Sanmiguel 049,nombre_telefono,0.86
+C-0050,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0050,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0051,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0051,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0052,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0052,false,false,4.3,18,2026-05-19,false,false,true,4,Clínica Betancur 052,nombre_telefono,0.81
+C-0052,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0053,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0053,false,false,4.2,19,2026-06-15,false,false,false,4,Ortodoncia Zapata 053,nombre_telefono,0.93
+C-0053,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0053,false,false,4.3,10,2026-05-21,false,false,false,3,Ortodoncia Zapata 053,nombre_telefono,0.80
+C-0054,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0054,true,true,5.0,30,2026-06-13,true,false,false,9,Centro Ocampo 054,nombre_telefono,0.83
+C-0054,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0054,true,true,5.0,37,2026-04-16,true,false,true,4,Centro Ocampo 054,nombre_telefono,0.91
+C-0055,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0055,true,true,4.3,23,2026-01-12,true,false,false,4,Clínica Restrepo 055,nombre_telefono,0.89
+C-0055,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0055,true,false,4.5,21,2026-03-15,true,false,false,2,Clínica Restrepo 055,nombre_telefono,0.85
+C-0056,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0056,true,true,4.5,10,2026-06-15,true,true,false,5,Consultorio Villegas 056,nombre_telefono,0.90
+C-0056,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0056,false,false,4.5,16,2026-07-22,false,false,false,7,Consultorio Villegas 056,nombre_telefono,0.80
+C-0057,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0057,true,false,4.5,2,2026-05-20,false,true,false,5,Ortodoncia Cadavid 057,nombre_telefono,0.79
+C-0057,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0058,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0058,false,false,4.6,21,2026-05-17,false,false,false,6,Centro Mejía 058,nombre_telefono,0.96
+C-0058,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0058,false,false,4.6,22,2026-02-23,false,false,false,8,Centro Mejía 058,nombre_telefono,0.80
+C-0059,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0059,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0060,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0060,false,false,4.6,14,2026-03-18,false,false,false,5,Clínica Arboleda 060,nombre_telefono,0.86
+C-0060,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0061,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0061,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0062,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0062,true,true,4.4,10,2026-04-22,true,false,true,2,Centro Valderrama 062,nombre_telefono,0.90
+C-0062,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0063,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0063,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0064,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0064,true,true,4.6,35,2026-06-21,true,true,false,7,Clínica Betancur 064,nombre_telefono,0.95
+C-0064,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0064,false,false,5.0,22,2026-01-15,false,false,true,9,Clínica Betancur 064,nombre_telefono,0.94
+C-0065,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0065,true,true,4.1,15,2026-07-15,true,true,false,6,Ortodoncia Zapata 065,nombre_telefono,0.79
+C-0065,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0065,true,true,4.8,22,2026-01-15,true,true,false,4,Ortodoncia Zapata 065,nombre_telefono,0.81
+C-0066,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0066,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0067,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0067,true,false,4.9,43,2026-01-23,true,true,true,10,Clínica Restrepo 067,nombre_telefono,0.96
+C-0067,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0067,true,true,4.8,24,2026-07-21,true,true,false,8,Clínica Restrepo 067,nombre_telefono,0.90
+C-0068,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0068,true,true,4.8,32,2026-07-10,false,false,false,9,Consultorio Villegas 068,nombre_telefono,0.97
+C-0068,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0068,false,false,4.6,24,2026-08-20,false,false,false,9,Consultorio Villegas 068,nombre_telefono,0.92
+C-0069,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0069,true,true,4.6,24,2026-07-27,true,true,false,6,Ortodoncia Cadavid 069,nombre_telefono,0.85
+C-0069,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0069,true,true,4.5,24,2026-04-16,true,true,false,7,Ortodoncia Cadavid 069,nombre_telefono,0.82
+C-0070,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0070,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0071,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0071,false,false,4.4,36,2026-01-13,false,false,true,7,Clínica Uribe 071,nombre_telefono,0.82
+C-0071,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0071,false,false,4.7,23,2026-05-16,false,false,true,8,Clínica Uribe 071,nombre_telefono,0.88
+C-0072,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0072,true,true,5.0,35,2026-02-26,false,true,false,8,Clínica Arboleda 072,nombre_telefono,0.85
+C-0072,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0072,true,true,4.8,35,2026-08-24,true,true,false,8,Clínica Arboleda 072,nombre_telefono,0.90
+C-0073,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0073,false,false,4.2,18,2026-04-17,false,false,false,2,Ortodoncia Sanmiguel 073,nombre_telefono,0.85
+C-0073,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0073,false,false,4.3,19,2026-05-23,false,false,false,1,Ortodoncia Sanmiguel 073,nombre_telefono,0.92
+C-0074,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0074,true,false,4.0,16,2026-03-26,false,false,false,8,Centro Valderrama 074,nombre_telefono,0.79
+C-0074,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0075,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0075,false,false,4.9,32,2026-07-10,false,false,false,10,Consultorio Echeverri 075,nombre_telefono,0.80
+C-0075,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0075,false,false,4.7,35,2026-02-25,false,false,true,6,Consultorio Echeverri 075,nombre_telefono,0.89
+C-0076,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0076,false,false,4.7,34,2026-03-28,false,false,true,8,Clínica Betancur 076,nombre_telefono,0.90
+C-0076,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0076,true,true,4.7,23,2026-07-17,true,true,true,11,Clínica Betancur 076,nombre_telefono,0.80
+C-0077,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0077,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0078,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0078,false,false,4.7,9,2026-05-27,false,false,false,5,Centro Ocampo 078,nombre_telefono,0.91
+C-0078,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0078,false,false,4.4,21,2026-06-14,false,false,false,8,Centro Ocampo 078,nombre_telefono,0.78
+C-0079,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0079,true,true,4.9,29,2026-01-27,true,true,false,10,Clínica Restrepo 079,nombre_telefono,0.81
+C-0079,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0079,true,true,4.8,30,2026-04-13,false,false,false,5,Clínica Restrepo 079,nombre_telefono,0.86
+C-0080,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0080,false,false,4.5,23,2026-03-24,false,false,true,7,Consultorio Villegas 080,nombre_telefono,0.86
+C-0080,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0080,true,false,4.6,27,2026-05-23,true,true,false,7,Consultorio Villegas 080,nombre_telefono,0.96
+C-0081,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0081,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0082,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0082,false,false,4.4,1,2026-02-28,false,false,false,3,Centro Mejía 082,nombre_telefono,0.87
+C-0082,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0083,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0083,false,false,4.1,14,2026-08-10,false,false,false,0,Clínica Uribe 083,nombre_telefono,0.95
+C-0083,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0084,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0084,true,false,4.9,24,2026-05-21,true,false,false,5,Clínica Arboleda 084,nombre_telefono,0.83
+C-0084,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0084,false,false,5.0,34,2026-02-23,false,false,false,10,Clínica Arboleda 084,nombre_telefono,0.83
+C-0085,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0085,true,false,4.4,16,2026-01-12,true,true,false,5,Ortodoncia Sanmiguel 085,nombre_telefono,0.79
+C-0085,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0086,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0086,true,true,4.7,21,2026-02-26,true,false,false,6,Centro Valderrama 086,nombre_telefono,0.91
+C-0086,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0086,false,false,4.5,17,2026-04-11,false,false,false,7,Centro Valderrama 086,nombre_telefono,0.90
+C-0087,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0087,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0088,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0088,true,false,4.5,28,2026-04-16,true,true,false,4,Clínica Betancur 088,nombre_telefono,0.85
+C-0088,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0088,true,false,4.5,25,2026-06-19,true,true,false,6,Clínica Betancur 088,nombre_telefono,0.79
+C-0089,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0089,true,true,4.3,24,2026-06-19,true,true,false,0,Ortodoncia Zapata 089,nombre_telefono,0.92
+C-0089,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0090,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0090,false,false,4.8,35,2026-07-20,false,false,true,8,Centro Ocampo 090,nombre_telefono,0.96
+C-0090,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0090,true,false,4.7,31,2026-08-27,true,true,false,10,Centro Ocampo 090,nombre_telefono,0.87
+C-0091,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0091,false,false,4.7,10,2026-07-22,false,false,false,7,Clínica Restrepo 091,nombre_telefono,0.82
+C-0091,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0091,false,false,4.6,29,2026-08-19,false,false,false,5,Clínica Restrepo 091,nombre_telefono,0.96
+C-0092,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0092,true,true,4.8,38,2026-03-21,true,true,false,9,Consultorio Villegas 092,nombre_telefono,0.86
+C-0092,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0092,false,false,5.0,23,2026-01-10,false,false,false,11,Consultorio Villegas 092,nombre_telefono,0.86
+C-0093,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0093,true,true,4.8,27,2026-05-27,true,false,false,10,Ortodoncia Cadavid 093,nombre_telefono,0.88
+C-0093,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0093,true,true,4.9,32,2026-04-25,true,false,false,8,Ortodoncia Cadavid 093,nombre_telefono,0.97
+C-0094,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0094,true,false,4.2,16,2026-03-11,true,false,false,0,Centro Mejía 094,nombre_telefono,0.93
+C-0094,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0095,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0095,false,false,4.5,20,2026-08-15,false,false,true,2,Clínica Uribe 095,nombre_telefono,0.91
+C-0095,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0095,true,true,4.6,24,2026-06-13,false,true,false,7,Clínica Uribe 095,nombre_telefono,0.90
+C-0096,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0096,false,false,4.8,32,2026-05-25,false,false,false,5,Clínica Arboleda 096,nombre_telefono,0.97
+C-0096,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0096,true,false,4.9,35,2026-07-17,true,false,false,13,Clínica Arboleda 096,nombre_telefono,0.86
+C-0097,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0097,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0098,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0098,true,false,4.8,36,2026-04-13,false,true,false,6,Centro Valderrama 098,nombre_telefono,0.85
+C-0098,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0098,false,false,4.6,30,2026-07-17,false,false,false,9,Centro Valderrama 098,nombre_telefono,0.79
+C-0099,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0099,false,false,4.4,19,2026-01-19,false,false,false,4,Consultorio Echeverri 099,nombre_telefono,0.83
+C-0099,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0100,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0100,true,true,4.9,35,2026-06-24,true,true,false,9,Clínica Betancur 100,nombre_telefono,0.82
+C-0100,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0100,true,true,5.0,34,2026-03-13,false,false,false,9,Clínica Betancur 100,nombre_telefono,0.79
+C-0101,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0101,true,true,4.7,33,2026-06-16,true,true,false,8,Ortodoncia Zapata 101,nombre_telefono,0.97
+C-0101,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0101,true,false,4.8,30,2026-02-11,true,true,false,5,Ortodoncia Zapata 101,nombre_telefono,0.86
+C-0102,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0102,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0103,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0103,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0104,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0104,false,false,4.9,30,2026-02-17,false,false,false,7,Consultorio Villegas 104,nombre_telefono,0.92
+C-0104,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0104,true,true,5.0,40,2026-06-28,true,true,false,8,Consultorio Villegas 104,nombre_telefono,0.88
+C-0105,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0105,false,false,4.3,20,2026-06-15,false,false,false,8,Ortodoncia Cadavid 105,nombre_telefono,0.81
+C-0105,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0105,false,false,4.3,18,2026-07-19,false,false,false,7,Ortodoncia Cadavid 105,nombre_telefono,0.80
+C-0106,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0106,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0107,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0107,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0108,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0108,true,false,4.8,28,2026-04-13,true,true,false,10,Clínica Arboleda 108,nombre_telefono,0.93
+C-0108,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0108,true,true,4.7,24,2026-08-21,true,true,false,8,Clínica Arboleda 108,nombre_telefono,0.80
+C-0109,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0109,true,true,4.7,18,2026-02-12,true,true,false,8,Ortodoncia Sanmiguel 109,nombre_telefono,0.97
+C-0109,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0109,false,false,4.9,32,2026-02-20,false,false,true,4,Ortodoncia Sanmiguel 109,nombre_telefono,0.86
+C-0110,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0110,true,true,4.4,14,2026-02-23,false,false,false,5,Centro Valderrama 110,nombre_telefono,0.85
+C-0110,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0111,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0111,true,true,4.8,30,2026-02-25,true,false,true,6,Consultorio Echeverri 111,nombre_telefono,0.86
+C-0111,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0112,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0112,true,true,4.6,31,2026-02-21,true,true,false,8,Clínica Betancur 112,nombre_telefono,0.96
+C-0112,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0112,true,false,4.9,36,2026-04-24,true,true,false,10,Clínica Betancur 112,nombre_telefono,0.97
+C-0113,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0113,true,false,4.7,35,2026-06-23,true,true,true,9,Ortodoncia Zapata 113,nombre_telefono,0.97
+C-0113,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0113,true,false,4.7,26,2026-08-19,true,true,true,6,Ortodoncia Zapata 113,nombre_telefono,0.92
+C-0114,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0114,true,true,4.5,20,2026-05-11,false,true,false,8,Centro Ocampo 114,nombre_telefono,0.92
+C-0114,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0114,false,false,4.7,34,2026-07-10,false,false,true,10,Centro Ocampo 114,nombre_telefono,0.90
+C-0115,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0115,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0116,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0116,false,false,4.1,14,2026-02-19,false,false,true,3,Consultorio Villegas 116,nombre_telefono,0.98
+C-0116,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0117,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0117,true,false,4.5,16,2026-05-22,true,true,true,6,Ortodoncia Cadavid 117,nombre_telefono,0.78
+C-0117,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0117,false,false,4.6,35,2026-04-23,false,false,true,3,Ortodoncia Cadavid 117,nombre_telefono,0.91
+C-0118,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0118,true,true,4.4,11,2026-08-28,true,true,true,6,Centro Mejía 118,nombre_telefono,0.80
+C-0118,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0119,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0119,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0120,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0120,false,false,4.7,19,2026-06-14,false,false,false,7,Clínica Arboleda 120,nombre_telefono,0.92
+C-0120,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0120,true,false,4.6,17,2026-07-22,true,true,true,5,Clínica Arboleda 120,nombre_telefono,0.96
+C-0121,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0121,false,false,4.4,25,2026-02-26,false,false,false,1,Ortodoncia Sanmiguel 121,nombre_telefono,0.78
+C-0121,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0121,false,false,4.3,11,2026-07-19,false,false,true,4,Ortodoncia Sanmiguel 121,nombre_telefono,0.80
+C-0122,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0122,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0123,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0123,false,false,4.6,37,2026-06-26,false,false,false,8,Consultorio Echeverri 123,nombre_telefono,0.79
+C-0123,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0123,false,false,4.7,24,2026-03-10,false,false,false,10,Consultorio Echeverri 123,nombre_telefono,0.98
+C-0124,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0124,true,true,4.5,26,2026-08-27,true,false,true,6,Clínica Betancur 124,nombre_telefono,0.82
+C-0124,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0124,true,true,5.0,29,2026-07-24,true,true,false,8,Clínica Betancur 124,nombre_telefono,0.84
+C-0125,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0125,false,false,4.6,21,2026-07-13,false,false,false,4,Ortodoncia Zapata 125,nombre_telefono,0.82
+C-0125,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0126,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0126,false,false,4.2,11,2026-05-25,false,false,false,2,Centro Ocampo 126,nombre_telefono,0.84
+C-0126,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0127,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0127,false,false,3.8,8,2026-08-22,false,false,false,0,Clínica Restrepo 127,nombre_telefono,0.83
+C-0127,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0128,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0128,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0129,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0129,true,false,4.1,2,2026-08-10,true,true,false,2,Ortodoncia Cadavid 129,nombre_telefono,0.90
+C-0129,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0130,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0130,false,false,4.6,32,2026-06-22,false,false,false,6,Centro Mejía 130,nombre_telefono,0.88
+C-0130,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0130,true,true,4.6,18,2026-04-25,true,true,false,5,Centro Mejía 130,nombre_telefono,0.81
+C-0131,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0131,true,true,4.7,18,2026-08-12,true,false,true,5,Clínica Uribe 131,nombre_telefono,0.94
+C-0131,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0131,false,false,4.6,26,2026-08-20,false,false,false,5,Clínica Uribe 131,nombre_telefono,0.95
+C-0132,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0132,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0133,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0133,false,false,4.4,11,2026-06-10,false,false,true,3,Ortodoncia Sanmiguel 133,nombre_telefono,0.82
+C-0133,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0134,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0134,true,true,5.0,28,2026-06-13,true,true,false,9,Centro Valderrama 134,nombre_telefono,0.83
+C-0134,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0134,true,false,5.0,35,2026-06-26,true,false,false,7,Centro Valderrama 134,nombre_telefono,0.79
+C-0135,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0135,true,false,4.7,40,2026-03-20,true,false,false,11,Consultorio Echeverri 135,nombre_telefono,0.92
+C-0135,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0135,true,true,4.9,29,2026-05-19,true,false,false,11,Consultorio Echeverri 135,nombre_telefono,0.87
+C-0136,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0136,true,false,4.9,30,2026-03-14,true,false,false,4,Clínica Betancur 136,nombre_telefono,0.82
+C-0136,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0136,true,true,4.9,25,2026-07-21,true,true,false,3,Clínica Betancur 136,nombre_telefono,0.91
+C-0137,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0137,false,false,4.5,26,2026-08-10,false,false,false,5,Ortodoncia Zapata 137,nombre_telefono,0.84
+C-0137,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0137,true,true,4.4,22,2026-01-11,true,false,false,3,Ortodoncia Zapata 137,nombre_telefono,0.86
+C-0138,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0138,false,false,4.7,21,2026-03-26,false,false,false,6,Centro Ocampo 138,nombre_telefono,0.89
+C-0138,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0138,true,true,4.4,31,2026-08-20,true,true,false,7,Centro Ocampo 138,nombre_telefono,0.81
+C-0139,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0139,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0140,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0140,true,true,4.7,18,2026-07-26,true,true,false,7,Consultorio Villegas 140,nombre_telefono,0.89
+C-0140,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0140,false,false,4.6,24,2026-03-16,false,false,false,3,Consultorio Villegas 140,nombre_telefono,0.92
+C-0141,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0141,false,false,4.7,26,2026-03-11,false,false,true,6,Ortodoncia Cadavid 141,nombre_telefono,0.81
+C-0141,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0141,true,true,4.6,29,2026-03-27,false,true,false,4,Ortodoncia Cadavid 141,nombre_telefono,0.91
+C-0142,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0142,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0143,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0143,true,false,4.8,23,2026-07-25,true,true,false,5,Clínica Uribe 143,nombre_telefono,0.91
+C-0143,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0143,true,false,4.9,34,2026-08-26,true,true,false,7,Clínica Uribe 143,nombre_telefono,0.78
+C-0144,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0144,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0145,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0145,true,false,5.0,24,2026-01-27,true,false,false,9,Ortodoncia Sanmiguel 145,nombre_telefono,0.84
+C-0145,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0145,false,false,4.9,39,2026-05-26,false,false,false,7,Ortodoncia Sanmiguel 145,nombre_telefono,0.94
+C-0146,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0146,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0147,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0147,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0148,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0148,false,false,4.7,31,2026-04-22,false,false,true,6,Clínica Betancur 148,nombre_telefono,0.96
+C-0148,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0148,false,false,4.6,24,2026-05-10,false,false,false,3,Clínica Betancur 148,nombre_telefono,0.80
+C-0149,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0149,true,true,4.2,9,2026-07-19,true,false,false,2,Ortodoncia Zapata 149,nombre_telefono,0.93
+C-0149,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0149,true,false,4.4,20,2026-04-11,false,false,false,7,Ortodoncia Zapata 149,nombre_telefono,0.78
+C-0150,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0150,true,true,4.2,10,2026-08-28,true,true,true,0,Centro Ocampo 150,nombre_telefono,0.89
+C-0150,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0151,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0151,true,true,4.3,9,2026-05-24,true,true,true,2,Clínica Restrepo 151,nombre_telefono,0.97
+C-0151,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0152,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0152,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0152,false,false,4.8,28,2026-02-17,false,false,false,8,Consultorio Villegas 152,nombre_telefono,0.87
+C-0153,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0153,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0154,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0154,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0155,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0155,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0156,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0156,false,false,4.6,24,2026-06-18,false,false,true,10,Clínica Arboleda 156,nombre_telefono,0.95
+C-0156,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0156,true,false,4.7,19,2026-05-24,true,true,false,6,Clínica Arboleda 156,nombre_telefono,0.81
+C-0157,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0157,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0158,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0158,true,true,4.9,18,2026-05-28,true,true,false,6,Centro Valderrama 158,nombre_telefono,0.94
+C-0158,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0158,true,true,4.7,25,2026-01-28,true,true,false,5,Centro Valderrama 158,nombre_telefono,0.83
+C-0159,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0159,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0160,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0160,false,false,4.6,11,2026-03-13,false,false,false,2,Clínica Betancur 160,nombre_telefono,0.82
+C-0160,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0161,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0161,false,false,4.1,7,2026-01-26,false,false,false,5,Ortodoncia Zapata 161,nombre_telefono,0.88
+C-0161,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0162,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0162,true,true,5.0,35,2026-07-19,true,false,false,11,Centro Ocampo 162,nombre_telefono,0.88
+C-0162,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0162,true,true,4.9,42,2026-04-24,true,true,false,8,Centro Ocampo 162,nombre_telefono,0.87
+C-0163,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0163,false,false,4.4,13,2026-02-21,false,false,false,5,Clínica Restrepo 163,nombre_telefono,0.91
+C-0163,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0164,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0164,true,true,4.6,15,2026-07-12,true,true,false,5,Consultorio Villegas 164,nombre_telefono,0.80
+C-0164,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0164,false,false,4.7,21,2026-06-23,false,false,false,8,Consultorio Villegas 164,nombre_telefono,0.86
+C-0165,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0165,true,true,4.9,39,2026-01-13,true,false,false,6,Ortodoncia Cadavid 165,nombre_telefono,0.79
+C-0165,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0165,false,false,5.0,33,2026-05-13,false,false,true,5,Ortodoncia Cadavid 165,nombre_telefono,0.88
+C-0166,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0166,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0167,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0167,false,false,4.2,17,2026-06-27,false,false,false,6,Clínica Uribe 167,nombre_telefono,0.91
+C-0167,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0168,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0168,false,false,4.5,22,2026-08-22,false,false,false,8,Clínica Arboleda 168,nombre_telefono,0.94
+C-0168,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0168,true,true,4.6,21,2026-04-17,true,true,false,4,Clínica Arboleda 168,nombre_telefono,0.91
+C-0169,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0169,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0170,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0170,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0171,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0171,false,false,5.0,31,2026-06-22,false,false,false,4,Consultorio Echeverri 171,nombre_telefono,0.95
+C-0171,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0171,true,false,4.7,29,2026-02-10,true,true,false,10,Consultorio Echeverri 171,nombre_telefono,0.93
+C-0172,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0172,true,true,5.0,34,2026-01-17,false,true,false,10,Clínica Betancur 172,nombre_telefono,0.98
+C-0172,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0172,true,true,4.9,40,2026-01-12,true,true,false,14,Clínica Betancur 172,nombre_telefono,0.98
+C-0173,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0173,true,true,4.4,15,2026-01-17,true,true,true,7,Ortodoncia Zapata 173,nombre_telefono,0.97
+C-0173,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0173,true,true,4.5,26,2026-03-26,true,true,false,6,Ortodoncia Zapata 173,nombre_telefono,0.94
+C-0174,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0174,true,false,5.0,40,2026-01-25,true,true,true,8,Centro Ocampo 174,nombre_telefono,0.78
+C-0174,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0174,true,true,5.0,25,2026-01-25,true,true,false,7,Centro Ocampo 174,nombre_telefono,0.82
+C-0175,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0175,false,false,4.9,27,2026-07-26,false,false,false,11,Clínica Restrepo 175,nombre_telefono,0.90
+C-0175,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0175,true,true,4.6,33,2026-07-25,true,true,false,5,Clínica Restrepo 175,nombre_telefono,0.80
+C-0176,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0176,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0177,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0177,false,false,4.9,37,2026-01-23,false,false,false,8,Ortodoncia Cadavid 177,nombre_telefono,0.97
+C-0177,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0177,false,false,4.9,32,2026-03-20,false,false,false,10,Ortodoncia Cadavid 177,nombre_telefono,0.89
+C-0178,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0178,true,true,4.6,8,2026-06-11,true,true,false,7,Centro Mejía 178,nombre_telefono,0.85
+C-0178,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0179,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0179,false,false,5.0,38,2026-02-28,false,false,false,9,Clínica Uribe 179,nombre_telefono,0.78
+C-0179,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0179,true,false,4.9,33,2026-06-19,true,false,false,10,Clínica Uribe 179,nombre_telefono,0.97
+C-0180,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0180,true,false,4.9,42,2026-04-16,true,false,true,12,Clínica Arboleda 180,nombre_telefono,0.92
+C-0180,topdoctors,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0181,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0181,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0181,true,false,4.8,14,2026-05-12,true,false,false,7,Ortodoncia Sanmiguel 181,nombre_telefono,0.85
+C-0182,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0182,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0183,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0183,true,true,4.8,25,2026-06-28,true,true,false,5,Consultorio Echeverri 183,nombre_telefono,0.93
+C-0183,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0183,true,true,4.5,13,2026-05-27,true,true,false,6,Consultorio Echeverri 183,nombre_telefono,0.79
+C-0184,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0184,false,false,4.2,7,2026-04-11,false,false,false,1,Clínica Betancur 184,nombre_telefono,0.93
+C-0184,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0185,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0185,true,true,4.9,30,2026-01-14,true,true,true,6,Ortodoncia Zapata 185,nombre_telefono,0.78
+C-0185,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0185,true,true,4.7,33,2026-02-10,true,false,false,9,Ortodoncia Zapata 185,nombre_telefono,0.85
+C-0186,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0186,true,true,4.2,28,2026-02-21,true,true,true,6,Centro Ocampo 186,nombre_telefono,0.84
+C-0186,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0186,true,true,4.2,21,2026-08-24,true,true,true,6,Centro Ocampo 186,nombre_telefono,0.80
+C-0187,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0187,true,true,4.9,35,2026-06-21,true,true,false,0,Clínica Restrepo 187,nombre_telefono,0.89
+C-0187,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0187,false,false,4.8,29,2026-02-28,false,false,false,10,Clínica Restrepo 187,nombre_telefono,0.89
+C-0188,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0188,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0189,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0189,false,false,4.3,16,2026-02-25,false,false,false,5,Ortodoncia Cadavid 189,nombre_telefono,0.97
+C-0189,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0189,false,false,4.4,16,2026-05-13,false,false,true,4,Ortodoncia Cadavid 189,nombre_telefono,0.88
+C-0190,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0190,true,false,4.7,34,2026-07-17,true,true,false,9,Centro Mejía 190,nombre_telefono,0.83
+C-0190,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0190,false,false,4.9,21,2026-02-22,false,false,true,5,Centro Mejía 190,nombre_telefono,0.97
+C-0191,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0191,true,false,4.6,34,2026-08-25,false,false,false,12,Clínica Uribe 191,nombre_telefono,0.81
+C-0191,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0191,true,false,4.9,32,2026-06-15,true,true,false,7,Clínica Uribe 191,nombre_telefono,0.96
+C-0192,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0192,true,true,4.9,34,2026-07-25,true,true,false,9,Clínica Arboleda 192,nombre_telefono,0.85
+C-0192,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0192,true,false,4.9,29,2026-07-26,true,true,false,7,Clínica Arboleda 192,nombre_telefono,0.78
+C-0193,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0193,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0194,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0194,false,false,4.4,11,2026-05-25,false,false,false,9,Centro Valderrama 194,nombre_telefono,0.79
+C-0194,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0195,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0195,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0196,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0196,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0197,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0197,false,false,4.1,19,2026-06-22,false,false,true,6,Ortodoncia Zapata 197,nombre_telefono,0.90
+C-0197,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0197,true,true,4.9,23,2026-08-23,false,true,false,5,Ortodoncia Zapata 197,nombre_telefono,0.97
+C-0198,doctoralia,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0198,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0199,doctoralia,2026-08-20,bloqueado,,,,,,,,,,,,,no_emparejado,
+C-0199,topdoctors,2026-08-20,sin_perfil,false,,,,,,,,,,,,no_emparejado,
+C-0200,doctoralia,2026-08-20,ok,true,https://www.doctoralia.co/p/C-0200,true,true,4.5,23,2026-05-11,true,true,false,2,Consultorio Villegas 200,nombre_telefono,0.79
+C-0200,topdoctors,2026-08-20,ok,true,https://www.topdoctors.com.co/p/C-0200,false,false,4.4,18,2026-02-21,false,false,true,0,Consultorio Villegas 200,nombre_telefono,0.98

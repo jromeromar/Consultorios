@@ -37,6 +37,7 @@ TABLAS = [
     "consultorio", "consultorio_snapshot", "sitio_snapshot", "resena",
     "serp_local", "instagram_snapshot", "contacto_campo", "dato_declarado",
     "municipio", "indicador_geografico", "volumen_busqueda", "edicion_estudio",
+    "directorio", "directorio_perfil_snapshot", "directorio_ranking",
 ]
 
 NULOS = {"", "n/a", "na", "nd", "-", "null", "none"}
@@ -367,6 +368,51 @@ class Censo:
             if pos is not None:
                 acc["posiciones"].append(pos)
 
+        # ── Directorios médicos ─────────────────────────────────────────────
+        # El perfil se indexa por (consultorio, directorio) y no por
+        # consultorio: un profesional puede estar completo en uno y no existir
+        # en el otro, y colapsarlos perdería justo eso.
+        #
+        # Un estado distinto de `ok` o `sin_perfil` no deja fila útil: el
+        # directorio rechazó la lectura, y eso es ausencia de observación, no un
+        # perfil vacío.
+        self.directorios = {d["directorio_id"]: d for d in self.tablas["directorio"]}
+        LEIDOS = ("ok", "sin_perfil")
+        self.dir_perfil: dict[str, dict[str, dict]] = {}
+        for fila in self.tablas["directorio_perfil_snapshot"]:
+            cid, did = fila.get("consultorio_id"), fila.get("directorio_id")
+            if not cid or cid not in conjunto or did not in self.directorios:
+                continue
+            if fila.get("estado_perfil") not in LEIDOS:
+                continue
+            conf = num(fila.get("confianza_emparejamiento"))
+            if conf is not None and conf < 0.7:
+                continue
+            por_dir = self.dir_perfil.setdefault(cid, {})
+            previa = por_dir.get(did)
+            if previa is None or (fila.get("fecha_captura") or "") > (
+                previa.get("fecha_captura") or ""
+            ):
+                por_dir[did] = fila
+
+        # El orden dentro del buscador del directorio. Se guarda la mejor
+        # posición, y aparte qué pares (municipio, directorio) se midieron: sin
+        # eso, no salir no se puede distinguir de no haber buscado.
+        self.dir_ranking: dict[str, list[int]] = {}
+        self.pares_directorio_medidos: set[str] = set()
+        for fila in self.tablas["directorio_ranking"]:
+            did = fila.get("directorio_id")
+            if did not in self.directorios:
+                continue
+            self.pares_directorio_medidos.add(f"{fila['municipio_id']}|{did}")
+            cid = fila.get("consultorio_id")
+            conf = num(fila.get("confianza_emparejamiento"))
+            if not cid or cid not in conjunto or (conf is not None and conf < 0.7):
+                continue
+            pos = ent(fila.get("posicion"))
+            if pos is not None:
+                self.dir_ranking.setdefault(cid, []).append(pos)
+
         # Declarado: el más reciente, y a igualdad de fecha el de más confianza.
         orden_conf = {"alta": 3, "media": 2, "baja": 1}
         self.declarado: dict[str, dict[str, dict]] = {}
@@ -420,6 +466,30 @@ def valores_crudos(censo: Censo, cid: str) -> dict[str, Any]:
     dec = censo.declarado.get(cid, {})
 
     sitio_util = s if s and s.get("estado_rastreo") == "ok" else None
+
+    # ── Directorios ────────────────────────────────────────────────────────
+    perfiles = censo.dir_perfil.get(cid, {})
+
+    def _perfil_completo(fila: dict) -> bool:
+        """Existe, lo reclamó su dueño, y un paciente que lo abre ve algo."""
+        return (
+            bol(fila.get("existe")) is True
+            and bol(fila.get("esta_reclamado")) is True
+            and bol(fila.get("tiene_foto")) is True
+            and bol(fila.get("tiene_horario")) is True
+        )
+
+    # Calificaciones solo de los directorios que publican calificación y donde
+    # el perfil existe: un perfil que no existe no tiene una calificación mala,
+    # no tiene ninguna.
+    calif_dir = [
+        n for n in (
+            num(fila.get("calificacion")) for did, fila in perfiles.items()
+            if bol(censo.directorios[did].get("publica_calificacion")) is True
+            and bol(fila.get("existe")) is True
+        ) if n is not None
+    ]
+    posiciones_dir = censo.dir_ranking.get(cid, [])
     cat = texto(f.get("categoria_principal")) if f else None
     en_municipio_medido = bool(f and f.get("municipio_id") in censo.municipios_medidos)
 
@@ -437,6 +507,16 @@ def valores_crudos(censo: Censo, cid: str) -> dict[str, Any]:
             sum(sp["posiciones"]) / len(sp["posiciones"])
             if sp and sp["posiciones"] else None
         ),
+        # Proporción de los directorios leídos donde el perfil está completo.
+        # Nulo si no se leyó ninguno: eso es que nadie miró, no que no haya.
+        "perfil_directorio_completo": (
+            sum(1 for fila in perfiles.values() if _perfil_completo(fila)) / len(perfiles)
+            if perfiles else None
+        ),
+        # La mejor posición dentro del buscador del directorio. No salir no es
+        # la última posición: es no estar, y eso lo cuenta el indicador de
+        # arriba. Aquí va nulo.
+        "posicion_directorio": min(posiciones_dir) if posiciones_dir else None,
         "direccion_visible": (
             None if not f or bol(f.get("es_area_de_servicio")) is None
             else not bol(f.get("es_area_de_servicio"))
@@ -446,6 +526,9 @@ def valores_crudos(censo: Censo, cid: str) -> dict[str, Any]:
         "resenas_total": f.get("resenas_total") if f else None,
         "recencia_resena": dias_entre(f.get("fecha_resena_mas_reciente"), censo.campo_fin) if f else None,
         "resenas_respondidas_pct": f.get("resenas_respondidas_pct") if f else None,
+        "calificacion_directorio": (
+            sum(calif_dir) / len(calif_dir) if calif_dir else None
+        ),
         # 3 · Lo reconocen
         "publicaciones_30d": g.get("publicaciones_30d") if g else None,
         "interaccion_pct": g.get("interaccion_promedio_pct") if g else None,
@@ -628,6 +711,18 @@ class Poblaciones:
             if f.get("municipio_id") in censo.municipios_medidos
         )
         self.declararon = sorted(censo.declarado)
+        # Se leyó al menos un perfil de directorio, con estado ok o sin_perfil.
+        # Un directorio que rechazó la lectura no mete a nadie aquí.
+        self.con_directorio_leido = sorted(censo.dir_perfil)
+        # Está en un municipio donde el buscador de algún directorio se midió.
+        # Sin esto, no salir no se distingue de no haber buscado.
+        self.con_ranking_directorio = sorted(
+            cid for cid, ficha in censo.ficha.items()
+            if any(
+                f"{ficha.get('municipio_id')}|{did}" in censo.pares_directorio_medidos
+                for did in censo.directorios
+            )
+        )
 
     def n(self, denominador: str) -> int:
         return len(getattr(self, denominador))

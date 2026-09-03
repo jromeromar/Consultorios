@@ -119,7 +119,10 @@ class TestContratoMotorTextos:
         d = corrida["json"]
         for clave in ("edicion_id", "version_formula", "fecha_calculo", "huella_entradas"):
             assert d.get(clave), clave
-        assert len(d["huella_entradas"]) == 12
+        # 15 = las 12 originales más las tres de directorios. El número va a
+        # mano a propósito: si una entrada nueva no se estampa, la estampa deja
+        # de describir la corrida y la reproducibilidad se rompe en silencio.
+        assert len(d["huella_entradas"]) == 15
         assert all(len(v) == 64 for v in d["huella_entradas"].values())
 
     def test_la_ficha_tecnica_sale_de_edicion_estudio(self, corrida):

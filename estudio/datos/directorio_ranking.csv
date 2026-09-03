@@ -1,0 +1,499 @@
+directorio_id,consulta_texto,consulta_normalizada,municipio_id,fecha_consulta,dispositivo,posicion,resultados_total,nombre_resultado_crudo,consultorio_id,metodo_emparejamiento,confianza_emparejamiento
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,1,19,Control Arriba,C-0001,nombre_telefono,1.00
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,2,20,Consultorio Echeverri 015,C-0015,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,3,20,Clínica Restrepo 019,C-0019,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,4,20,Consultorio Villegas 020,C-0020,nombre_telefono,0.98
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,5,20,Clínica Uribe 023,C-0023,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,6,20,Consultorio Villegas 008,C-0008,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,7,20,Centro Ocampo 006,C-0006,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,8,20,Ortodoncia Cadavid 009,C-0009,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,9,20,Centro Mejía 010,C-0010,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,11,20,Clínica Betancur 016,C-0016,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,12,20,Centro Ocampo 018,C-0018,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,13,20,Ortodoncia Zapata 005,C-0005,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,14,20,Consultorio Echeverri 003,C-0003,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,15,20,Centro Mejía 022,C-0022,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,16,20,Clínica Restrepo 007,C-0007,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,17,20,Ortodoncia Zapata 017,C-0017,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,18,20,Ortodoncia Sanmiguel 013,C-0013,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,19,20,Clínica Arboleda 024,C-0024,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,20,20,Clínica Arboleda 012,C-0012,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,1,19,Control Arriba,C-0001,nombre_telefono,1.00
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,2,20,Consultorio Echeverri 015,C-0015,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,3,20,Clínica Restrepo 019,C-0019,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,4,20,Consultorio Villegas 020,C-0020,nombre_telefono,0.80
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,5,20,Clínica Uribe 023,C-0023,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,6,20,Consultorio Villegas 008,C-0008,nombre_telefono,0.81
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,7,20,Centro Ocampo 006,C-0006,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,8,20,Ortodoncia Cadavid 009,C-0009,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,9,20,Centro Mejía 010,C-0010,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,11,20,Clínica Betancur 016,C-0016,nombre_telefono,0.83
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,12,20,Centro Ocampo 018,C-0018,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,13,20,Ortodoncia Zapata 005,C-0005,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,14,20,Consultorio Echeverri 003,C-0003,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,15,20,Centro Mejía 022,C-0022,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,16,20,Clínica Restrepo 007,C-0007,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,17,20,Ortodoncia Zapata 017,C-0017,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,18,20,Ortodoncia Sanmiguel 013,C-0013,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,19,20,Clínica Arboleda 024,C-0024,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,08001,2026-08-20,movil,20,20,Clínica Arboleda 012,C-0012,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,1,10,Centro Ocampo 162,C-0162,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,2,10,Clínica Arboleda 156,C-0156,nombre_telefono,0.80
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,3,10,Ortodoncia Zapata 161,C-0161,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,4,10,Clínica Betancur 160,C-0160,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,5,10,Clínica Arboleda 168,C-0168,nombre_telefono,0.84
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,6,10,Centro Valderrama 158,C-0158,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,7,10,Clínica Uribe 167,C-0167,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,8,10,Consultorio Villegas 164,C-0164,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,9,10,Ortodoncia Cadavid 165,C-0165,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,10,10,Clínica Restrepo 163,C-0163,nombre_telefono,0.83
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,1,10,Centro Ocampo 162,C-0162,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,2,10,Clínica Arboleda 156,C-0156,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,3,10,Ortodoncia Zapata 161,C-0161,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,4,10,Clínica Betancur 160,C-0160,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,5,10,Clínica Arboleda 168,C-0168,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,6,10,Centro Valderrama 158,C-0158,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,7,10,Clínica Uribe 167,C-0167,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,8,10,Consultorio Villegas 164,C-0164,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,9,10,Ortodoncia Cadavid 165,C-0165,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,17001,2026-08-20,movil,10,10,Clínica Restrepo 163,C-0163,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,1,9,Clínica Uribe 095,C-0095,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,2,9,Clínica Betancur 100,C-0100,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,3,9,Ortodoncia Zapata 101,C-0101,nombre_telefono,0.84
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,4,9,Consultorio Villegas 104,C-0104,nombre_telefono,0.80
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,5,9,Clínica Arboleda 108,C-0108,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,6,9,Centro Valderrama 098,C-0098,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,7,9,Ortodoncia Cadavid 105,C-0105,nombre_telefono,0.94
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,8,9,Clínica Arboleda 096,C-0096,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,9,9,Consultorio Echeverri 099,C-0099,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,1,9,Clínica Uribe 095,C-0095,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,2,9,Clínica Betancur 100,C-0100,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,3,9,Ortodoncia Zapata 101,C-0101,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,4,9,Consultorio Villegas 104,C-0104,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,5,9,Clínica Arboleda 108,C-0108,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,6,9,Centro Valderrama 098,C-0098,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,7,9,Ortodoncia Cadavid 105,C-0105,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,8,9,Clínica Arboleda 096,C-0096,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,19001,2026-08-20,movil,9,9,Consultorio Echeverri 099,C-0099,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,1,12,Ortodoncia Cadavid 093,C-0093,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,2,12,Ortodoncia Zapata 089,C-0089,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,3,12,Clínica Betancur 088,C-0088,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,4,12,Clínica Restrepo 091,C-0091,nombre_telefono,0.94
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,5,12,Consultorio Villegas 092,C-0092,nombre_telefono,0.84
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,6,12,Clínica Uribe 083,C-0083,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,7,12,Ortodoncia Sanmiguel 085,C-0085,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,8,12,Centro Ocampo 090,C-0090,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,9,12,Centro Valderrama 086,C-0086,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,10,12,Centro Mejía 094,C-0094,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,11,12,Clínica Arboleda 084,C-0084,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,12,12,Centro Mejía 082,C-0082,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,1,12,Ortodoncia Cadavid 093,C-0093,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,2,12,Ortodoncia Zapata 089,C-0089,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,3,12,Clínica Betancur 088,C-0088,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,4,12,Clínica Restrepo 091,C-0091,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,5,12,Consultorio Villegas 092,C-0092,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,6,12,Clínica Uribe 083,C-0083,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,7,12,Ortodoncia Sanmiguel 085,C-0085,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,8,12,Centro Ocampo 090,C-0090,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,9,12,Centro Valderrama 086,C-0086,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,10,12,Centro Mejía 094,C-0094,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,11,12,Clínica Arboleda 084,C-0084,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,41001,2026-08-20,movil,12,12,Centro Mejía 082,C-0082,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,1,11,Ortodoncia Zapata 113,C-0113,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,2,11,Centro Ocampo 114,C-0114,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,3,11,Clínica Betancur 112,C-0112,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,4,11,Consultorio Echeverri 111,C-0111,nombre_telefono,0.80
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,5,11,Consultorio Villegas 116,C-0116,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,6,11,Ortodoncia Sanmiguel 121,C-0121,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,7,11,Ortodoncia Cadavid 117,C-0117,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,8,11,Ortodoncia Sanmiguel 109,C-0109,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,9,11,Clínica Arboleda 120,C-0120,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,10,11,Centro Mejía 118,C-0118,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,11,11,Centro Valderrama 110,C-0110,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,1,11,Ortodoncia Zapata 113,C-0113,nombre_telefono,0.83
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,2,11,Centro Ocampo 114,C-0114,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,3,11,Clínica Betancur 112,C-0112,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,4,11,Consultorio Echeverri 111,C-0111,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,5,11,Consultorio Villegas 116,C-0116,nombre_telefono,0.98
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,6,11,Ortodoncia Sanmiguel 121,C-0121,nombre_telefono,0.80
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,7,11,Ortodoncia Cadavid 117,C-0117,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,8,11,Ortodoncia Sanmiguel 109,C-0109,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,9,11,Clínica Arboleda 120,C-0120,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,10,11,Centro Mejía 118,C-0118,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,47001,2026-08-20,movil,11,11,Centro Valderrama 110,C-0110,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,1,12,Consultorio Echeverri 123,C-0123,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,2,12,Clínica Betancur 124,C-0124,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,3,12,Centro Mejía 130,C-0130,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,4,12,Consultorio Echeverri 135,C-0135,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,5,12,Centro Ocampo 126,C-0126,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,6,12,Ortodoncia Sanmiguel 133,C-0133,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,7,12,Centro Valderrama 134,C-0134,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,8,12,Clínica Betancur 136,C-0136,nombre_telefono,0.98
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,9,12,Clínica Restrepo 127,C-0127,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,10,12,Ortodoncia Zapata 125,C-0125,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,11,12,Clínica Uribe 131,C-0131,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,12,12,Ortodoncia Cadavid 129,C-0129,nombre_telefono,0.80
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,1,12,Consultorio Echeverri 123,C-0123,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,2,12,Clínica Betancur 124,C-0124,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,3,12,Centro Mejía 130,C-0130,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,4,12,Consultorio Echeverri 135,C-0135,nombre_telefono,0.98
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,5,12,Centro Ocampo 126,C-0126,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,6,12,Ortodoncia Sanmiguel 133,C-0133,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,7,12,Centro Valderrama 134,C-0134,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,8,12,Clínica Betancur 136,C-0136,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,9,12,Clínica Restrepo 127,C-0127,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,10,12,Ortodoncia Zapata 125,C-0125,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,11,12,Clínica Uribe 131,C-0131,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,50001,2026-08-20,movil,12,12,Ortodoncia Cadavid 129,C-0129,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,1,11,Centro Ocampo 174,C-0174,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,2,11,Ortodoncia Zapata 173,C-0173,nombre_telefono,0.96
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,3,11,Clínica Betancur 172,C-0172,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,4,11,Ortodoncia Cadavid 177,C-0177,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,5,11,Consultorio Echeverri 171,C-0171,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,6,11,Clínica Arboleda 180,C-0180,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,7,11,Clínica Restrepo 175,C-0175,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,8,11,Clínica Betancur 184,C-0184,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,9,11,Clínica Uribe 179,C-0179,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,10,11,Centro Mejía 178,C-0178,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,11,11,Consultorio Echeverri 183,C-0183,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,1,11,Centro Ocampo 174,C-0174,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,2,11,Ortodoncia Zapata 173,C-0173,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,3,11,Clínica Betancur 172,C-0172,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,4,11,Ortodoncia Cadavid 177,C-0177,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,5,11,Consultorio Echeverri 171,C-0171,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,6,11,Clínica Arboleda 180,C-0180,nombre_telefono,0.80
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,7,11,Clínica Restrepo 175,C-0175,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,8,11,Clínica Betancur 184,C-0184,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,9,11,Clínica Uribe 179,C-0179,nombre_telefono,0.81
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,10,11,Centro Mejía 178,C-0178,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,52001,2026-08-20,movil,11,11,Consultorio Echeverri 183,C-0183,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,1,10,Clínica Arboleda 192,C-0192,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,2,10,Clínica Uribe 191,C-0191,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,3,10,Ortodoncia Cadavid 189,C-0189,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,4,10,Clínica Restrepo 187,C-0187,nombre_telefono,0.94
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,5,10,Centro Mejía 190,C-0190,nombre_telefono,0.97
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,6,10,Ortodoncia Zapata 197,C-0197,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,7,10,Centro Ocampo 186,C-0186,nombre_telefono,0.94
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,8,10,Centro Valderrama 194,C-0194,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,9,10,Ortodoncia Zapata 185,C-0185,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,10,10,Consultorio Villegas 200,C-0200,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,1,10,Clínica Arboleda 192,C-0192,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,2,10,Clínica Uribe 191,C-0191,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,3,10,Ortodoncia Cadavid 189,C-0189,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,4,10,Clínica Restrepo 187,C-0187,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,5,10,Centro Mejía 190,C-0190,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,6,10,Ortodoncia Zapata 197,C-0197,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,7,10,Centro Ocampo 186,C-0186,nombre_telefono,0.81
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,8,10,Centro Valderrama 194,C-0194,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,9,10,Ortodoncia Zapata 185,C-0185,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,54001,2026-08-20,movil,10,10,Consultorio Villegas 200,C-0200,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,1,10,Clínica Betancur 064,C-0064,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,2,10,Clínica Restrepo 055,C-0055,nombre_telefono,0.81
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,3,10,Centro Ocampo 054,C-0054,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,4,10,Centro Valderrama 062,C-0062,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,5,10,Ortodoncia Zapata 065,C-0065,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,6,10,Centro Mejía 058,C-0058,nombre_telefono,0.84
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,7,10,Consultorio Villegas 056,C-0056,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,8,10,Ortodoncia Zapata 053,C-0053,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,9,10,Clínica Arboleda 060,C-0060,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,10,10,Ortodoncia Cadavid 057,C-0057,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,1,10,Clínica Betancur 064,C-0064,nombre_telefono,0.87
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,2,10,Clínica Restrepo 055,C-0055,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,3,10,Centro Ocampo 054,C-0054,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,4,10,Centro Valderrama 062,C-0062,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,5,10,Ortodoncia Zapata 065,C-0065,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,6,10,Centro Mejía 058,C-0058,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,7,10,Consultorio Villegas 056,C-0056,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,8,10,Ortodoncia Zapata 053,C-0053,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,9,10,Clínica Arboleda 060,C-0060,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,63001,2026-08-20,movil,10,10,Ortodoncia Cadavid 057,C-0057,nombre_telefono,0.89
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,1,10,Ortodoncia Zapata 137,C-0137,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,2,10,Centro Ocampo 138,C-0138,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,3,10,Ortodoncia Cadavid 141,C-0141,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,4,10,Clínica Uribe 143,C-0143,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,5,10,Clínica Betancur 148,C-0148,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,6,10,Consultorio Villegas 140,C-0140,nombre_telefono,0.82
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,7,10,Ortodoncia Zapata 149,C-0149,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,8,10,Ortodoncia Sanmiguel 145,C-0145,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,9,10,Clínica Restrepo 151,C-0151,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,10,10,Centro Ocampo 150,C-0150,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,1,10,Ortodoncia Zapata 137,C-0137,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,2,10,Centro Ocampo 138,C-0138,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,3,10,Ortodoncia Cadavid 141,C-0141,nombre_telefono,0.98
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,4,10,Clínica Uribe 143,C-0143,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,5,10,Clínica Betancur 148,C-0148,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,6,10,Consultorio Villegas 140,C-0140,nombre_telefono,0.95
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,7,10,Ortodoncia Zapata 149,C-0149,nombre_telefono,0.83
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,8,10,Ortodoncia Sanmiguel 145,C-0145,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,9,10,Clínica Restrepo 151,C-0151,nombre_telefono,0.92
+doctoralia,ortodoncista,ortodoncista,66001,2026-08-20,movil,10,10,Centro Ocampo 150,C-0150,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,1,15,Centro Mejía 034,C-0034,nombre_telefono,0.98
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,2,15,Consultorio Echeverri 039,C-0039,nombre_telefono,0.87
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,3,15,Centro Mejía 046,C-0046,nombre_telefono,0.84
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,4,15,Ortodoncia Cadavid 033,C-0033,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,5,15,Consultorio Villegas 044,C-0044,nombre_telefono,0.94
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,6,15,Clínica Uribe 035,C-0035,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,7,15,Centro Ocampo 030,C-0030,nombre_telefono,0.95
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,8,15,Clínica Restrepo 031,C-0031,nombre_telefono,0.96
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,9,15,Centro Ocampo 042,C-0042,nombre_telefono,0.85
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,10,15,Ortodoncia Zapata 041,C-0041,nombre_telefono,0.90
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,11,15,Clínica Uribe 047,C-0047,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,12,15,Clínica Betancur 052,C-0052,nombre_telefono,0.88
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,13,15,Ortodoncia Sanmiguel 049,C-0049,nombre_telefono,0.83
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,14,15,Clínica Arboleda 036,C-0036,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,15,15,Clínica Betancur 040,C-0040,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,1,15,Centro Mejía 034,C-0034,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,2,15,Consultorio Echeverri 039,C-0039,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,3,15,Centro Mejía 046,C-0046,nombre_telefono,0.97
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,4,15,Ortodoncia Cadavid 033,C-0033,nombre_telefono,0.96
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,5,15,Consultorio Villegas 044,C-0044,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,6,15,Clínica Uribe 035,C-0035,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,7,15,Centro Ocampo 030,C-0030,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,8,15,Clínica Restrepo 031,C-0031,nombre_telefono,0.85
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,9,15,Centro Ocampo 042,C-0042,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,10,15,Ortodoncia Zapata 041,C-0041,nombre_telefono,0.80
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,11,15,Clínica Uribe 047,C-0047,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,12,15,Clínica Betancur 052,C-0052,nombre_telefono,0.88
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,13,15,Ortodoncia Sanmiguel 049,C-0049,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,14,15,Clínica Arboleda 036,C-0036,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,68001,2026-08-20,movil,15,15,Clínica Betancur 040,C-0040,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,1,12,Clínica Arboleda 072,C-0072,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,2,12,Consultorio Villegas 068,C-0068,nombre_telefono,0.98
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,3,12,Ortodoncia Sanmiguel 073,C-0073,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,4,12,Centro Ocampo 078,C-0078,nombre_telefono,0.92
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,5,12,Centro Valderrama 074,C-0074,nombre_telefono,0.98
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,6,12,Ortodoncia Cadavid 069,C-0069,nombre_telefono,0.86
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,7,12,Clínica Betancur 076,C-0076,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,8,12,Clínica Restrepo 079,C-0079,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,9,12,Consultorio Villegas 080,C-0080,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,10,12,Clínica Restrepo 067,C-0067,nombre_telefono,0.93
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,11,12,Clínica Uribe 071,C-0071,nombre_telefono,0.91
+doctoralia,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,12,12,Consultorio Echeverri 075,C-0075,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,1,12,Clínica Arboleda 072,C-0072,nombre_telefono,0.98
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,2,12,Consultorio Villegas 068,C-0068,nombre_telefono,0.94
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,3,12,Ortodoncia Sanmiguel 073,C-0073,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,4,12,Centro Ocampo 078,C-0078,nombre_telefono,0.89
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,5,12,Centro Valderrama 074,C-0074,nombre_telefono,0.91
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,6,12,Ortodoncia Cadavid 069,C-0069,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,7,12,Clínica Betancur 076,C-0076,nombre_telefono,0.84
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,8,12,Clínica Restrepo 079,C-0079,nombre_telefono,0.93
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,9,12,Consultorio Villegas 080,C-0080,nombre_telefono,0.82
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,10,12,Clínica Restrepo 067,C-0067,nombre_telefono,0.90
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,11,12,Clínica Uribe 071,C-0071,nombre_telefono,0.86
+doctoralia,ortodoncista,ortodoncista,73001,2026-08-20,movil,12,12,Consultorio Echeverri 075,C-0075,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,1,14,Control Arriba,C-0001,nombre_telefono,1.00
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,2,15,Consultorio Echeverri 015,C-0015,nombre_telefono,0.83
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,3,15,Clínica Restrepo 019,C-0019,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,4,15,Consultorio Villegas 020,C-0020,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,5,15,Clínica Uribe 023,C-0023,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,6,15,Consultorio Villegas 008,C-0008,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,7,15,Centro Ocampo 006,C-0006,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,8,15,Ortodoncia Cadavid 009,C-0009,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,9,15,Centro Mejía 010,C-0010,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,11,15,Centro Ocampo 018,C-0018,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,12,15,Ortodoncia Zapata 005,C-0005,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,13,15,Centro Mejía 022,C-0022,nombre_telefono,0.87
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,14,15,Ortodoncia Zapata 017,C-0017,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,08001,2026-08-20,movil,15,15,Ortodoncia Sanmiguel 013,C-0013,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,1,14,Control Arriba,C-0001,nombre_telefono,1.00
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,2,15,Consultorio Echeverri 015,C-0015,nombre_telefono,0.85
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,3,15,Clínica Restrepo 019,C-0019,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,4,15,Consultorio Villegas 020,C-0020,nombre_telefono,0.90
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,5,15,Clínica Uribe 023,C-0023,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,6,15,Consultorio Villegas 008,C-0008,nombre_telefono,0.91
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,7,15,Centro Ocampo 006,C-0006,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,8,15,Ortodoncia Cadavid 009,C-0009,nombre_telefono,0.89
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,9,15,Centro Mejía 010,C-0010,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,11,15,Centro Ocampo 018,C-0018,nombre_telefono,0.96
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,12,15,Ortodoncia Zapata 005,C-0005,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,13,15,Centro Mejía 022,C-0022,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,14,15,Ortodoncia Zapata 017,C-0017,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,08001,2026-08-20,movil,15,15,Ortodoncia Sanmiguel 013,C-0013,nombre_telefono,0.88
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,1,6,Centro Ocampo 162,C-0162,nombre_telefono,0.96
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,2,6,Clínica Arboleda 156,C-0156,nombre_telefono,0.82
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,3,6,Clínica Arboleda 168,C-0168,nombre_telefono,0.82
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,4,6,Centro Valderrama 158,C-0158,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,5,6,Consultorio Villegas 164,C-0164,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,17001,2026-08-20,movil,6,6,Ortodoncia Cadavid 165,C-0165,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,1,6,Centro Ocampo 162,C-0162,nombre_telefono,0.83
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,2,6,Clínica Arboleda 156,C-0156,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,3,6,Clínica Arboleda 168,C-0168,nombre_telefono,0.91
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,4,6,Centro Valderrama 158,C-0158,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,5,6,Consultorio Villegas 164,C-0164,nombre_telefono,0.87
+topdoctors,ortodoncista,ortodoncista,17001,2026-08-20,movil,6,6,Ortodoncia Cadavid 165,C-0165,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,1,8,Clínica Uribe 095,C-0095,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,2,8,Clínica Betancur 100,C-0100,nombre_telefono,0.97
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,3,8,Ortodoncia Zapata 101,C-0101,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,4,8,Consultorio Villegas 104,C-0104,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,5,8,Clínica Arboleda 108,C-0108,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,6,8,Centro Valderrama 098,C-0098,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,7,8,Ortodoncia Cadavid 105,C-0105,nombre_telefono,0.88
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,19001,2026-08-20,movil,8,8,Clínica Arboleda 096,C-0096,nombre_telefono,0.82
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,1,8,Clínica Uribe 095,C-0095,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,2,8,Clínica Betancur 100,C-0100,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,3,8,Ortodoncia Zapata 101,C-0101,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,4,8,Consultorio Villegas 104,C-0104,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,5,8,Clínica Arboleda 108,C-0108,nombre_telefono,0.83
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,6,8,Centro Valderrama 098,C-0098,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,7,8,Ortodoncia Cadavid 105,C-0105,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,19001,2026-08-20,movil,8,8,Clínica Arboleda 096,C-0096,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,1,7,Ortodoncia Cadavid 093,C-0093,nombre_telefono,0.98
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,2,7,Clínica Betancur 088,C-0088,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,3,7,Clínica Restrepo 091,C-0091,nombre_telefono,0.80
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,4,7,Consultorio Villegas 092,C-0092,nombre_telefono,0.87
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,5,7,Centro Ocampo 090,C-0090,nombre_telefono,0.88
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,6,7,Centro Valderrama 086,C-0086,nombre_telefono,0.98
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,41001,2026-08-20,movil,7,7,Clínica Arboleda 084,C-0084,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,1,7,Ortodoncia Cadavid 093,C-0093,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,2,7,Clínica Betancur 088,C-0088,nombre_telefono,0.83
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,3,7,Clínica Restrepo 091,C-0091,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,4,7,Consultorio Villegas 092,C-0092,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,5,7,Centro Ocampo 090,C-0090,nombre_telefono,0.90
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,6,7,Centro Valderrama 086,C-0086,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,41001,2026-08-20,movil,7,7,Clínica Arboleda 084,C-0084,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,1,7,Ortodoncia Zapata 113,C-0113,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,2,7,Centro Ocampo 114,C-0114,nombre_telefono,0.93
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,3,7,Clínica Betancur 112,C-0112,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,4,7,Ortodoncia Sanmiguel 121,C-0121,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,5,7,Ortodoncia Cadavid 117,C-0117,nombre_telefono,0.93
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,6,7,Ortodoncia Sanmiguel 109,C-0109,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,47001,2026-08-20,movil,7,7,Clínica Arboleda 120,C-0120,nombre_telefono,0.96
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,1,7,Ortodoncia Zapata 113,C-0113,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,2,7,Centro Ocampo 114,C-0114,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,3,7,Clínica Betancur 112,C-0112,nombre_telefono,0.85
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,4,7,Ortodoncia Sanmiguel 121,C-0121,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,5,7,Ortodoncia Cadavid 117,C-0117,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,6,7,Ortodoncia Sanmiguel 109,C-0109,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,47001,2026-08-20,movil,7,7,Clínica Arboleda 120,C-0120,nombre_telefono,0.82
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,1,7,Consultorio Echeverri 123,C-0123,nombre_telefono,0.83
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,2,7,Clínica Betancur 124,C-0124,nombre_telefono,0.87
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,3,7,Centro Mejía 130,C-0130,nombre_telefono,0.83
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,4,7,Consultorio Echeverri 135,C-0135,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,5,7,Centro Valderrama 134,C-0134,nombre_telefono,0.98
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,6,7,Clínica Betancur 136,C-0136,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,50001,2026-08-20,movil,7,7,Clínica Uribe 131,C-0131,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,1,7,Consultorio Echeverri 123,C-0123,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,2,7,Clínica Betancur 124,C-0124,nombre_telefono,0.85
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,3,7,Centro Mejía 130,C-0130,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,4,7,Consultorio Echeverri 135,C-0135,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,5,7,Centro Valderrama 134,C-0134,nombre_telefono,0.82
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,6,7,Clínica Betancur 136,C-0136,nombre_telefono,0.88
+topdoctors,ortodoncista,ortodoncista,50001,2026-08-20,movil,7,7,Clínica Uribe 131,C-0131,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,1,9,Centro Ocampo 174,C-0174,nombre_telefono,0.87
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,2,9,Ortodoncia Zapata 173,C-0173,nombre_telefono,0.83
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,3,9,Clínica Betancur 172,C-0172,nombre_telefono,0.98
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,4,9,Ortodoncia Cadavid 177,C-0177,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,5,9,Ortodoncia Sanmiguel 181,C-0181,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,6,9,Consultorio Echeverri 171,C-0171,nombre_telefono,0.86
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,7,9,Clínica Restrepo 175,C-0175,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,8,9,Clínica Uribe 179,C-0179,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,52001,2026-08-20,movil,9,9,Consultorio Echeverri 183,C-0183,nombre_telefono,0.83
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,1,9,Centro Ocampo 174,C-0174,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,2,9,Ortodoncia Zapata 173,C-0173,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,3,9,Clínica Betancur 172,C-0172,nombre_telefono,0.85
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,4,9,Ortodoncia Cadavid 177,C-0177,nombre_telefono,0.89
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,5,9,Ortodoncia Sanmiguel 181,C-0181,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,6,9,Consultorio Echeverri 171,C-0171,nombre_telefono,0.96
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,7,9,Clínica Restrepo 175,C-0175,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,8,9,Clínica Uribe 179,C-0179,nombre_telefono,0.87
+topdoctors,ortodoncista,ortodoncista,52001,2026-08-20,movil,9,9,Consultorio Echeverri 183,C-0183,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,1,9,Clínica Arboleda 192,C-0192,nombre_telefono,0.93
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,2,9,Clínica Uribe 191,C-0191,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,3,9,Ortodoncia Cadavid 189,C-0189,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,4,9,Clínica Restrepo 187,C-0187,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,5,9,Centro Mejía 190,C-0190,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,6,9,Ortodoncia Zapata 197,C-0197,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,7,9,Centro Ocampo 186,C-0186,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,8,9,Ortodoncia Zapata 185,C-0185,nombre_telefono,0.86
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,54001,2026-08-20,movil,9,9,Consultorio Villegas 200,C-0200,nombre_telefono,0.89
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,1,9,Clínica Arboleda 192,C-0192,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,2,9,Clínica Uribe 191,C-0191,nombre_telefono,0.88
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,3,9,Ortodoncia Cadavid 189,C-0189,nombre_telefono,0.90
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,4,9,Clínica Restrepo 187,C-0187,nombre_telefono,0.96
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,5,9,Centro Mejía 190,C-0190,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,6,9,Ortodoncia Zapata 197,C-0197,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,7,9,Centro Ocampo 186,C-0186,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,8,9,Ortodoncia Zapata 185,C-0185,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,54001,2026-08-20,movil,9,9,Consultorio Villegas 200,C-0200,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,1,7,Clínica Betancur 064,C-0064,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,2,7,Clínica Restrepo 055,C-0055,nombre_telefono,0.96
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,3,7,Centro Ocampo 054,C-0054,nombre_telefono,0.82
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,4,7,Ortodoncia Zapata 065,C-0065,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,5,7,Centro Mejía 058,C-0058,nombre_telefono,0.93
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,6,7,Consultorio Villegas 056,C-0056,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,63001,2026-08-20,movil,7,7,Ortodoncia Zapata 053,C-0053,nombre_telefono,0.81
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,1,7,Clínica Betancur 064,C-0064,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,2,7,Clínica Restrepo 055,C-0055,nombre_telefono,0.90
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,3,7,Centro Ocampo 054,C-0054,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,4,7,Ortodoncia Zapata 065,C-0065,nombre_telefono,0.82
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,5,7,Centro Mejía 058,C-0058,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,6,7,Consultorio Villegas 056,C-0056,nombre_telefono,0.81
+topdoctors,ortodoncista,ortodoncista,63001,2026-08-20,movil,7,7,Ortodoncia Zapata 053,C-0053,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,1,9,Ortodoncia Zapata 137,C-0137,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,2,9,Centro Ocampo 138,C-0138,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,3,9,Consultorio Villegas 152,C-0152,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,4,9,Ortodoncia Cadavid 141,C-0141,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,5,9,Clínica Uribe 143,C-0143,nombre_telefono,0.98
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,6,9,Clínica Betancur 148,C-0148,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,7,9,Consultorio Villegas 140,C-0140,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,8,9,Ortodoncia Zapata 149,C-0149,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,66001,2026-08-20,movil,9,9,Ortodoncia Sanmiguel 145,C-0145,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,1,9,Ortodoncia Zapata 137,C-0137,nombre_telefono,0.87
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,2,9,Centro Ocampo 138,C-0138,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,3,9,Consultorio Villegas 152,C-0152,nombre_telefono,0.81
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,4,9,Ortodoncia Cadavid 141,C-0141,nombre_telefono,0.88
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,5,9,Clínica Uribe 143,C-0143,nombre_telefono,0.81
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,6,9,Clínica Betancur 148,C-0148,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,7,9,Consultorio Villegas 140,C-0140,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,8,9,Ortodoncia Zapata 149,C-0149,nombre_telefono,0.87
+topdoctors,ortodoncista,ortodoncista,66001,2026-08-20,movil,9,9,Ortodoncia Sanmiguel 145,C-0145,nombre_telefono,0.90
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,1,14,Consultorio Echeverri 027,C-0027,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,2,14,Centro Mejía 034,C-0034,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,3,14,Consultorio Echeverri 039,C-0039,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,4,14,Clínica Restrepo 043,C-0043,nombre_telefono,0.85
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,5,14,Centro Mejía 046,C-0046,nombre_telefono,0.96
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,6,14,Clínica Arboleda 048,C-0048,nombre_telefono,0.82
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,7,14,Ortodoncia Cadavid 033,C-0033,nombre_telefono,0.88
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,8,14,Consultorio Villegas 044,C-0044,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,9,14,Clínica Uribe 035,C-0035,nombre_telefono,0.93
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,10,14,Centro Ocampo 030,C-0030,nombre_telefono,0.86
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,11,14,Centro Ocampo 042,C-0042,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,12,14,Ortodoncia Zapata 041,C-0041,nombre_telefono,0.96
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,13,14,Ortodoncia Sanmiguel 049,C-0049,nombre_telefono,0.92
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,68001,2026-08-20,movil,14,14,Clínica Betancur 040,C-0040,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,1,14,Consultorio Echeverri 027,C-0027,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,2,14,Centro Mejía 034,C-0034,nombre_telefono,0.82
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,3,14,Consultorio Echeverri 039,C-0039,nombre_telefono,0.95
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,4,14,Clínica Restrepo 043,C-0043,nombre_telefono,0.96
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,5,14,Centro Mejía 046,C-0046,nombre_telefono,0.88
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,6,14,Clínica Arboleda 048,C-0048,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,7,14,Ortodoncia Cadavid 033,C-0033,nombre_telefono,0.89
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,8,14,Consultorio Villegas 044,C-0044,nombre_telefono,0.86
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,9,14,Clínica Uribe 035,C-0035,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,10,14,Centro Ocampo 030,C-0030,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,11,14,Centro Ocampo 042,C-0042,nombre_telefono,0.90
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,12,14,Ortodoncia Zapata 041,C-0041,nombre_telefono,0.93
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,13,14,Ortodoncia Sanmiguel 049,C-0049,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,68001,2026-08-20,movil,14,14,Clínica Betancur 040,C-0040,nombre_telefono,0.94
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,1,11,Clínica Arboleda 072,C-0072,nombre_telefono,0.81
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,2,11,Consultorio Villegas 068,C-0068,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,3,11,Ortodoncia Sanmiguel 073,C-0073,nombre_telefono,0.91
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,4,11,Centro Ocampo 078,C-0078,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,5,11,Ortodoncia Cadavid 069,C-0069,nombre_telefono,0.96
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,6,11,Clínica Betancur 076,C-0076,nombre_telefono,0.89
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,7,11,Clínica Restrepo 079,C-0079,nombre_telefono,0.97
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,8,11,Consultorio Villegas 080,C-0080,nombre_telefono,0.95
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,9,11,Clínica Restrepo 067,C-0067,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,10,11,Clínica Uribe 071,C-0071,nombre_telefono,0.84
+topdoctors,cuanto vale ortodoncia,cuanto vale ortodoncia,73001,2026-08-20,movil,11,11,Consultorio Echeverri 075,C-0075,nombre_telefono,0.84
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,1,11,Clínica Arboleda 072,C-0072,nombre_telefono,0.82
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,2,11,Consultorio Villegas 068,C-0068,nombre_telefono,0.80
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,3,11,Ortodoncia Sanmiguel 073,C-0073,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,4,11,Centro Ocampo 078,C-0078,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,5,11,Ortodoncia Cadavid 069,C-0069,nombre_telefono,0.98
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,6,11,Clínica Betancur 076,C-0076,nombre_telefono,0.94
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,7,11,Clínica Restrepo 079,C-0079,nombre_telefono,0.92
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,8,11,Consultorio Villegas 080,C-0080,nombre_telefono,0.81
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,9,11,Clínica Restrepo 067,C-0067,nombre_telefono,0.97
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,10,11,Clínica Uribe 071,C-0071,nombre_telefono,0.88
+topdoctors,ortodoncista,ortodoncista,73001,2026-08-20,movil,11,11,Consultorio Echeverri 075,C-0075,nombre_telefono,0.98
