@@ -29,12 +29,13 @@ function renderizadas(): string[] {
   const fuera = new Set<string>()
   if (!C.CONFIG.mostrarPrecio) cadenas(C.PRECIO).forEach((s) => fuera.add(s))
   if (!C.CONFIG.indiceCalibrado) {
-    fuera.add(C.INSTRUMENTO.introCalibrado)
-    C.INSTRUMENTO.reglas.forEach((r) => fuera.add(r.textoCalibrado))
+    fuera.add(C.INDICE.introCalibrado)
+    C.INDICE.reglas.forEach((r) => fuera.add(r.textoCalibrado))
   } else {
-    fuera.add(C.INSTRUMENTO.introEnCalibracion)
-    C.INSTRUMENTO.reglas.forEach((r) => {
-      if ('textoEnCalibracion' in r) fuera.add((r as { textoEnCalibracion: string }).textoEnCalibracion)
+    fuera.add(C.INDICE.introEnCalibracion)
+    C.INDICE.reglas.forEach((r) => {
+      if ('textoEnCalibracion' in r)
+        fuera.add((r as { textoEnCalibracion: string }).textoEnCalibracion)
     })
   }
   if (!C.CONFIG.umbralPausaDefinido) {
@@ -75,8 +76,17 @@ describe('1 · Vocabulario prohibido', () => {
 
 describe('2 · Sin superlativos comparativos con colegas', () => {
   const SUPERLATIVOS = [
-    'los mejores', 'el mejor', 'la mejor', 'n.º 1', 'no. 1', 'número uno',
-    'líderes', 'el líder', 'los más', 'único en', 'insuperable',
+    'los mejores',
+    'el mejor',
+    'la mejor',
+    'n.º 1',
+    'no. 1',
+    'número uno',
+    'líderes',
+    'el líder',
+    'los más',
+    'único en',
+    'insuperable',
   ]
   it('ninguno aparece', () => {
     // C-355/94: la publicidad de servicios de salud no puede afirmar
@@ -89,8 +99,18 @@ describe('2 · Sin superlativos comparativos con colegas', () => {
 describe('3 · Sin nombres de fármacos ni principios activos', () => {
   // Decreto 334/2022: ni siquiera de ejemplo.
   const FARMACOS = [
-    'botox', 'toxina botulínica', 'ácido hialurónico', 'bótox', 'dysport', 'juvederm',
-    'invisalign', 'lidocaína', 'minoxidil', 'finasterida', 'ozempic', 'semaglutida',
+    'botox',
+    'toxina botulínica',
+    'ácido hialurónico',
+    'bótox',
+    'dysport',
+    'juvederm',
+    'invisalign',
+    'lidocaína',
+    'minoxidil',
+    'finasterida',
+    'ozempic',
+    'semaglutida',
   ]
   it('ninguno aparece', () => {
     const hallados = FARMACOS.filter((f) => TEXTO.includes(f))
@@ -132,9 +152,9 @@ describe('5 · Cada cifra con su fuente al lado', () => {
 describe('6 · El índice no sale sin calibración, o sale marcado', () => {
   it('si no está calibrado, la sección se marca y no anuncia margen de error', () => {
     if (C.CONFIG.indiceCalibrado) return
-    assert.ok(/en calibración/i.test(C.INSTRUMENTO.insignia))
-    assert.ok(!RENDERIZADAS.includes(C.INSTRUMENTO.introCalibrado))
-    assert.ok(/en calibración/i.test(C.INSTRUMENTO.introEnCalibracion))
+    assert.ok(/en calibración/i.test(C.INDICE.insignia))
+    assert.ok(!RENDERIZADAS.includes(C.INDICE.introCalibrado))
+    assert.ok(/en calibración/i.test(C.INDICE.introEnCalibracion))
   })
 
   it('no se afirma un margen de error que todavía no existe', () => {
@@ -146,15 +166,18 @@ describe('6 · El índice no sale sin calibración, o sale marcado', () => {
   })
 
   it('los pesos suman 100 y están visibles', () => {
-    const suma = C.INSTRUMENTO.dimensiones.reduce((t, d) => t + d.peso, 0)
+    const suma = C.DIMENSIONES.items.reduce((t, d) => t + d.peso, 0)
     assert.equal(suma, 100)
   })
 
   it('hay una palanca por dimensión y ninguna de más', () => {
     // «Si algo no mueve el índice, no lo hacemos.»
-    assert.equal(C.PALANCAS.items.length, C.INSTRUMENTO.dimensiones.length)
-    const dimensiones = C.INSTRUMENTO.dimensiones.map((d) => d.nombre)
-    assert.deepEqual(C.PALANCAS.items.map((p) => p.dimension), dimensiones)
+    assert.equal(C.PALANCAS.items.length, C.DIMENSIONES.items.length)
+    const dimensiones = C.DIMENSIONES.items.map((d) => d.nombre)
+    assert.deepEqual(
+      C.PALANCAS.items.map((p) => p.dimension),
+      dimensiones,
+    )
   })
 })
 
@@ -219,17 +242,142 @@ describe('Registro y tono', () => {
 
   it('no hay verbos del Héroe', () => {
     const HEROE = ['conquista', 'domina', 'triunfa', 'gana el mercado', 'lidera el mercado']
-    assert.deepEqual(HEROE.filter((v) => TEXTO.includes(v)), [])
+    assert.deepEqual(
+      HEROE.filter((v) => TEXTO.includes(v)),
+      [],
+    )
   })
 
   it('no hay registro de Cuidador', () => {
-    const CUIDADOR = ['te cuidamos', 'nos encargamos de todo', 'tu tranquilidad', 'déjalo en nuestras manos']
-    assert.deepEqual(CUIDADOR.filter((v) => TEXTO.includes(v)), [])
+    const CUIDADOR = [
+      'te cuidamos',
+      'nos encargamos de todo',
+      'tu tranquilidad',
+      'déjalo en nuestras manos',
+    ]
+    assert.deepEqual(
+      CUIDADOR.filter((v) => TEXTO.includes(v)),
+      [],
+    )
   })
 
   it('una sola acción primaria, repetida', () => {
     assert.equal(C.CIERRE.cta, C.PORTADA.cta)
     assert.ok(!TEXTO.includes('agenda una demo'))
     assert.ok(!TEXTO.includes('solicita una demostración'))
+  })
+})
+
+describe('11 · Tres niveles de profundidad', () => {
+  /** Las secciones en el orden de la página, con su nombre para los mensajes. */
+  const NOMBRES = [
+    'HECHOS',
+    'PROBLEMA',
+    'DIMENSIONES',
+    'INDICE',
+    'PALANCAS',
+    'PASOS',
+    'NO_SOMOS',
+    'PRECIO',
+    'PREGUNTAS',
+    'CIERRE',
+  ] as const
+  const SECCIONES = C.SECCIONES.map((s, i) => ({ nombre: NOMBRES[i], ...s }))
+
+  it('cada sección tiene los tres niveles, sin excepciones', () => {
+    assert.equal(SECCIONES.length, NOMBRES.length)
+    for (const s of SECCIONES) {
+      for (const nivel of ['tag', 'h2', 'h3'] as const) {
+        assert.ok(s[nivel]?.trim().length, `${s.nombre} no tiene ${nivel}`)
+      }
+    }
+  })
+
+  it('cada tag es una pregunta, porque es la pregunta que la sección responde', () => {
+    for (const s of SECCIONES) {
+      assert.ok(
+        s.tag.startsWith('¿') && s.tag.endsWith('?'),
+        `el tag de ${s.nombre} no es una pregunta: «${s.tag}»`,
+      )
+    }
+  })
+
+  it('los tags mantienen una sola voz: la nuestra, o ninguna', () => {
+    // Es nuestra página. Aquí decimos «qué hacemos», no «qué hacen», y tampoco
+    // le prestamos la voz al lector con un «¿por dónde empiezo?»: diez tags en
+    // tres voces distintas leídos en fila suenan a tres páginas pegadas.
+    const AJENA = /\b(ustedes|hacen|miden|cobran|ofrecen|prometen|trabajan|empiezan|son)\b/i
+    for (const s of SECCIONES) {
+      assert.ok(!AJENA.test(s.tag), `el tag de ${s.nombre} habla de nosotros en tercera persona`)
+    }
+  })
+
+  it('los h2 leídos en orden son frases completas', () => {
+    // Es la condición de que el skimming funcione: quien solo lee los h2 lee
+    // prosa, no fragmentos que dependan del texto que hay debajo.
+    for (const s of SECCIONES) {
+      assert.ok(/[.?]$/.test(s.h2), `el h2 de ${s.nombre} no cierra la frase: «${s.h2}»`)
+    }
+  })
+
+  it('ningún h2 depende del h2 anterior para entenderse', () => {
+    // Un h2 que empieza con conector se rompe si la sección de arriba no se lee,
+    // y en el skimming se lee salteado.
+    const CONECTORES = /^(y|pero|entonces|además|por eso|así que|también|sin embargo)\b/i
+    for (const s of SECCIONES) {
+      assert.ok(!CONECTORES.test(s.h2), `el h2 de ${s.nombre} arranca con un conector`)
+    }
+  })
+
+  it('cada h3 agrega detalle en vez de repetir el h2', () => {
+    for (const s of SECCIONES) {
+      assert.ok(s.h3.length > s.h2.length, `el h3 de ${s.nombre} no agrega detalle sobre su h2`)
+      assert.ok(!s.h3.includes(s.h2), `el h3 de ${s.nombre} repite su h2 en vez de profundizarlo`)
+    }
+  })
+
+  it('ni los tags ni los h2 se repiten entre secciones', () => {
+    for (const nivel of ['tag', 'h2'] as const) {
+      const vistos = SECCIONES.map((s) => s[nivel])
+      assert.equal(new Set(vistos).size, vistos.length, `hay ${nivel} repetidos`)
+    }
+  })
+
+  it('la historia completa se lee en un vistazo', () => {
+    // Si la cadena de h2 no se puede leer de corrido en unos segundos, deja de
+    // ser un resumen y vuelve a ser texto.
+    const cadena = SECCIONES.map((s) => s.h2).join(' ')
+    assert.ok(cadena.length < 700, `la cadena de h2 mide ${cadena.length} caracteres`)
+  })
+
+  it('la página renderiza los tres niveles de cada sección', () => {
+    const pagina = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8')
+    for (const nombre of NOMBRES) {
+      assert.ok(
+        new RegExp(`tag=\\{${nombre}\\.tag\\}`).test(pagina),
+        `${nombre} no pasa su tag al encabezado`,
+      )
+      for (const nivel of ['h2', 'h3']) {
+        assert.ok(
+          new RegExp(`${nivel}=\\{${nombre}\\.${nivel}\\}`).test(pagina),
+          `${nombre} no pasa su ${nivel} al encabezado`,
+        )
+      }
+    }
+  })
+
+  it('cada nivel tiene su propio estilo, y los tres se agrupan', () => {
+    const css = readFileSync(new URL('../app/globals.css', import.meta.url), 'utf8')
+    // Los dos primeros son los niveles nuevos. Los dos últimos son lo que los
+    // agrupa: sin ellos los tres niveles quedan a la misma distancia entre sí
+    // que del cuerpo, y dejan de leerse como un encabezado.
+    for (const selector of [
+      '.tag {',
+      '.seccion h3 {',
+      '.encabezado > .tag {',
+      '.encabezado h3 {',
+    ]) {
+      assert.ok(css.includes(selector), `falta el estilo ${selector}`)
+    }
   })
 })

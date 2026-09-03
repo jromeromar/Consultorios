@@ -108,18 +108,33 @@ body {
  * instrumento. En móvil se pliega arriba en vez de comerse el ancho.
  */
 .seccion {
-  display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
-  gap: 0 28px;
   padding: 56px 0;
   border-top: 1px solid var(--color-linea);
 }
-.seccion > .riel {
+
+/* Los tres niveles de un encabezado. Cada uno tiene que leerse solo, así que
+   cada uno tiene su propio peso, su propio tamaño y su propia medida: el tag
+   marca la pregunta, el h2 la responde, el h3 la matiza. */
+
+/* El tag es la pregunta que la sección responde. Va en la cara de utilidad y
+   en el acento porque es lo único de la sección que sirve para navegar. */
+.tag {
   font-family: var(--font-dato);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: var(--color-tenue);
-  padding-top: 6px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-acento-ink);
+  margin: 0;
+}
+.tag::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin-right: 10px;
+  vertical-align: 0.32em;
+  background: currentColor;
+  opacity: 0.55;
 }
 .seccion h2 {
   font-size: clamp(24px, 3.2vw, 34px);
@@ -129,6 +144,28 @@ body {
   margin: 0;
   max-width: 30ch;
   text-wrap: balance;
+}
+
+/* Un grado más de detalle que el h2, y un grado menos de énfasis. Ni el negro
+   del h2 ni la serif del cuerpo: es su propio nivel. */
+.seccion h3 {
+  font-size: clamp(16px, 1.4vw, 17.5px);
+  line-height: 1.42;
+  letter-spacing: -0.005em;
+  font-weight: 500;
+  color: var(--color-tinta-2);
+  margin: 0;
+  max-width: 54ch;
+  text-wrap: pretty;
+}
+
+/* Los espacios agrupan: tag, h2 y h3 se leen como una unidad porque el aire
+   entre ellos es menor que el que los separa del cuerpo. */
+.encabezado > .tag {
+  margin-bottom: 12px;
+}
+.encabezado h3 {
+  margin-top: 16px;
 }
 .prosa {
   font-family: var(--font-prosa);
@@ -146,7 +183,7 @@ body {
   line-height: 1.6;
   color: var(--color-tinta-2);
   max-width: 60ch;
-  margin: 14px 0 0;
+  margin: 30px 0 0;
 }
 .dato {
   font-family: var(--font-dato);
@@ -262,12 +299,10 @@ body {
 
 @media (max-width: 760px) {
   .seccion {
-    grid-template-columns: 1fr;
-    gap: 10px;
     padding: 40px 0;
   }
-  .seccion > .riel {
-    padding-top: 0;
+  .encabezado > .tag {
+    margin-bottom: 11px;
   }
   .panel .cifra {
     font-size: 60px;

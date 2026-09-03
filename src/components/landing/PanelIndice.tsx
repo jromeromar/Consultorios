@@ -1,4 +1,4 @@
-import { INSTRUMENTO } from '@/contenido/landing'
+import { DIMENSIONES } from '@/contenido/landing'
 
 /**
  * La pantalla del índice: un número, el percentil y las cinco barras con su peso.
@@ -51,7 +51,7 @@ export function PanelIndice() {
       </div>
 
       <ul className="mt-6 space-y-3">
-        {INSTRUMENTO.dimensiones.map((d) => {
+        {DIMENSIONES.items.map((d) => {
           const valor = EJEMPLO.dimensiones.find((x) => x.id === d.id)?.valor ?? 0
           return (
             <li key={d.id}>

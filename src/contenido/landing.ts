@@ -71,27 +71,56 @@ export const PORTADA = {
   campo: 'Nombre de tu consultorio como aparece en Google',
 } as const
 
-// ── 2.2 Barra de hechos ─────────────────────────────────────────────────────
+// ══════════════════════════════════════════════════════════════════════════
+// Las secciones, en tres niveles de profundidad
+// ══════════════════════════════════════════════════════════════════════════
+//
+// Cada sección tiene los mismos tres niveles, y cada nivel se sostiene solo:
+//
+//   tag  · la pregunta que la sección responde, en la voz del lector
+//   h2   · la respuesta en una frase. Leídos en orden, los h2 cuentan la
+//          historia completa sin nada más. Es la prueba de la página.
+//   h3   · la misma respuesta con un grado más de detalle
+//   texto· la explicación
+//
+// Quien hace skimming lee los h2 y entiende. Quien se detiene lee los h3 y
+// entiende mejor. Quien quiere el detalle lo tiene debajo.
+
+// ── Hallazgos · sustituye a la barra de logos ───────────────────────────────
 
 export const HECHOS = {
-  encabezado: 'Lo que encontramos mirando desde afuera',
+  tag: '¿Qué encontramos?',
+  h2: 'Cinco de cinco no gestionan sus reseñas.',
+  h3:
+    'Entrevistamos profesionales de odontología y medicina estética en Colombia. Ninguno ' +
+    'revisa lo que un paciente encuentra al buscarlo.',
   items: [
-    { cifra: '5 de 5', texto: 'profesionales entrevistados no gestionan sus reseñas de Google.' },
+    {
+      cifra: '5 de 5',
+      texto: 'profesionales entrevistados no gestionan sus reseñas de Google.',
+    },
     {
       cifra: '4 de 5',
       texto: 'no reciben un solo paciente por una búsqueda genérica de su especialidad.',
     },
-    { cifra: 'Ninguno', texto: 'sabe cuántas personas le escriben y no agendan.' },
+    {
+      cifra: 'Ninguno',
+      texto: 'sabe cuántas personas le escriben y no agendan.',
+    },
   ],
   fuente:
     'Entrevistas con profesionales de odontología y medicina estética en Colombia, 2026. ' +
     'Datos agregados y anónimos.',
 } as const
 
-// ── 2.3 El problema ─────────────────────────────────────────────────────────
+// ── El problema ─────────────────────────────────────────────────────────────
 
 export const PROBLEMA = {
+  tag: '¿Qué está pasando?',
   h2: 'El paciente ya decidió antes de escribirte.',
+  h3:
+    'Compara cuatro fichas de Google en dos minutos y le escribe a una. Las otras tres no se ' +
+    'enteran de que existió esa comparación.',
   parrafos: [
     'Busca su procedimiento en Google con la palabra «cuánto vale». Le aparecen cuatro ' +
       'consultorios. Abre las fichas. En una, la última reseña es de hace catorce meses y ' +
@@ -104,20 +133,18 @@ export const PROBLEMA = {
   ],
 } as const
 
-// ── 2.4 El instrumento ──────────────────────────────────────────────────────
+// ── Qué se puede medir ──────────────────────────────────────────────────────
 
-export const INSTRUMENTO = {
-  h2: 'Un índice que cualquiera puede recalcular.',
-  introCalibrado:
-    'El Índice de Reputación mide cinco cosas que un paciente puede ver y tú también, sin ' +
-    'darnos acceso a nada. Fórmula publicada, pesos publicados y margen de error al lado de ' +
-    'la cifra.',
-  introEnCalibracion:
-    'El Índice de Reputación mide cinco cosas que un paciente puede ver y tú también, sin ' +
-    'darnos acceso a nada. La fórmula y los pesos son públicos. Esta es la versión 1 y está ' +
-    'en calibración: cuando la prueba cierre, cada cifra sale con su margen de error al lado.',
-  insignia: 'Versión 1 · en calibración',
-  dimensiones: [
+export const DIMENSIONES = {
+  tag: '¿Qué se puede medir?',
+  h2: 'Esa decisión la toman cinco cosas, y todas se pueden ver.',
+  h3:
+    'Presencia, prueba social, encontrabilidad, respuesta y reservabilidad. Cada una con su ' +
+    'peso publicado, y ninguna necesita que nos des acceso a nada.',
+  intro:
+    'Son cinco cosas que un paciente puede ver hoy y tú también. Los pesos están abajo, al ' +
+    'lado de cada una, y suman 100.',
+  items: [
     {
       id: 'presencia',
       nombre: 'Presencia',
@@ -160,6 +187,24 @@ export const INSTRUMENTO = {
         'le confirme.',
     },
   ],
+} as const
+
+// ── Cómo se mide ────────────────────────────────────────────────────────────
+
+export const INDICE = {
+  tag: '¿Cómo lo medimos?',
+  h2: 'Las cinco caben en un número que cualquiera puede recalcular.',
+  h3:
+    'Solo datos públicos y fórmula abierta. Y separamos lo que movimos de lo que no depende ' +
+    'de nadie.',
+  introCalibrado:
+    'El Índice de Reputación se calcula con la fórmula y los pesos que están publicados, y ' +
+    'cada cifra sale con su margen de error al lado.',
+  introEnCalibracion:
+    'El Índice de Reputación se calcula con la fórmula y los pesos que están publicados. Esta ' +
+    'es la versión 1 y está en calibración: cuando la prueba cierre, cada cifra sale con su ' +
+    'margen de error al lado.',
+  insignia: 'Versión 1 · en calibración',
   reglas: [
     {
       titulo: 'Fórmula publicada.',
@@ -183,13 +228,17 @@ export const INSTRUMENTO = {
   ],
 } as const
 
-// ── 2.5 Qué hacemos con la medición ────────────────────────────────────────
+// ── Qué hacemos ─────────────────────────────────────────────────────────────
 
 export const PALANCAS = {
-  h2: 'El servicio es exactamente lo que mueve el índice. Nada más.',
+  tag: '¿Qué hacemos?',
+  h2: 'Movemos esas cinco. Nada más.',
+  h3:
+    'Una palanca por dimensión. Si algo no mueve el índice, no lo hacemos, aunque te lo hayan ' +
+    'vendido en otra parte.',
   intro:
-    'No es un menú. Cinco palancas, una por dimensión. Si algo no mueve el índice, no lo ' +
-    'hacemos, aunque te lo hayan vendido en otra parte.',
+    'No es un menú y no hay planes. Son cinco palancas, una por cada cosa que se mide, y cada ' +
+    'mes te mostramos cuál se movió.',
   items: [
     {
       dimension: 'Presencia',
@@ -233,10 +282,12 @@ export const PALANCAS = {
   },
 } as const
 
-// ── 2.6 Cómo funciona ───────────────────────────────────────────────────────
+// ── Cómo trabajar con nosotros ──────────────────────────────────────────────
 
 export const PASOS = {
-  h2: 'Tres pasos. El primero es gratis y toma un minuto.',
+  tag: '¿Cómo trabajar con nosotros?',
+  h2: 'Empiezas midiendo, y medir es gratis.',
+  h3: 'Tres pasos: mides, entiendes, operamos. El primero toma un minuto y no compromete nada.',
   items: [
     {
       numero: 1,
@@ -264,10 +315,14 @@ export const PASOS = {
   ctaSecundario: 'Pedir el informe completo',
 } as const
 
-// ── 2.7 Lo que esto no es ───────────────────────────────────────────────────
+// ── Lo que esto no es ───────────────────────────────────────────────────────
 
 export const NO_SOMOS = {
-  h2: 'Tres cosas que no somos, para que no las esperes.',
+  tag: '¿Qué no somos?',
+  h2: 'No somos directorio, ni agencia de menú, ni un bot que habla por ti.',
+  h3:
+    'El paciente nunca ve nuestra marca, no vendemos piezas por mes, y cualquier cosa clínica ' +
+    'va a una persona de tu equipo.',
   items: [
     {
       titulo: 'No somos un directorio.',
@@ -290,18 +345,29 @@ export const NO_SOMOS = {
   ],
 } as const
 
-// ── 2.8 Precio ──────────────────────────────────────────────────────────────
+// ── Precio ──────────────────────────────────────────────────────────────────
 
 export const PRECIO = {
+  tag: '¿Cuánto cuesta?',
   h2: 'Un servicio, tres precios. El alcance es el mismo.',
+  h3: 'El tramo lo fija el tamaño de tu base de pacientes, no el alcance. Nadie recibe menos.',
   intro:
     'El tramo lo fija el tamaño de tu base de pacientes, porque es lo que determina el trabajo. ' +
     'No hay planes: nadie recibe menos.',
   tramos: ['Hasta 1.500 pacientes', 'Hasta 4.000', 'Más de 4.000'],
   filas: [
-    { concepto: 'Setup, una vez', valores: ['COP 2.500.000', '3.500.000', '4.800.000'] },
-    { concepto: 'Operación mensual', valores: ['1.000.000', '1.500.000', '2.200.000'] },
-    { concepto: 'Contenido mensual, opcional', valores: ['800.000', '1.200.000', '1.800.000'] },
+    {
+      concepto: 'Setup, una vez',
+      valores: ['COP 2.500.000', '3.500.000', '4.800.000'],
+    },
+    {
+      concepto: 'Operación mensual',
+      valores: ['1.000.000', '1.500.000', '2.200.000'],
+    },
+    {
+      concepto: 'Contenido mensual, opcional',
+      valores: ['800.000', '1.200.000', '1.800.000'],
+    },
   ],
   pausaDefinida:
     'Si la operación no alcanza el umbral de entrega acordado durante dos meses seguidos, la ' +
@@ -314,11 +380,14 @@ export const PRECIO = {
     'a alguien por redes y video, este módulo no se suma a ese gasto: lo reemplaza y lo mide.',
 } as const
 
-// ── 2.9 Preguntas ───────────────────────────────────────────────────────────
+// ── Preguntas ───────────────────────────────────────────────────────────────
 
 export const PREGUNTAS = {
-  h2: 'Lo que nos preguntan antes de decir sí.',
-  /** En el orden de las entrevistas: la desconfianza primero, el precio al final. */
+  tag: '¿Qué nos preguntan?',
+  h2: 'No prometemos resultados. Medimos, y el número lo ves tú primero.',
+  h3:
+    'Estas son las siete preguntas que nos hacen antes de decir sí, en el orden en que ' +
+    'aparecen de verdad: primero la desconfianza al proveedor, al final el precio.',
   items: [
     {
       pregunta: '«Suena a que prometen y no cumplen.»',
@@ -347,8 +416,7 @@ export const PREGUNTAS = {
     },
     {
       pregunta: '«¿Ustedes borran las reseñas malas?»',
-      respuesta:
-        'No. Las respondemos. Es lo que mueve el perfil y lo único que es legítimo.',
+      respuesta: 'No. Las respondemos. Es lo que mueve el perfil y lo único que es legítimo.',
     },
     {
       pregunta: '«Es caro comparado con el directorio.»',
@@ -368,16 +436,35 @@ export const PREGUNTAS = {
   ],
 } as const
 
-// ── 2.10 Cierre ─────────────────────────────────────────────────────────────
+// ── Cierre ──────────────────────────────────────────────────────────────────
 
 export const CIERRE = {
+  tag: '¿Por dónde empezamos?',
   h2: 'Tu reputación ya existe. Solo falta medirla.',
+  h3: 'Un minuto y el nombre de tu consultorio. Sin registro y sin darnos acceso a nada.',
   cuerpo:
     'Un minuto, el nombre de tu consultorio, y ves lo que un paciente ve. Gratis, sin registro ' +
     'y sin darnos acceso a nada.',
   cta: PORTADA.cta,
   microcopy: 'Datos públicos. Fórmula publicada. Recalculable por cualquiera.',
 } as const
+
+/**
+ * El orden de la página. Es también la prueba: leídos en orden, los `h2` de esta
+ * lista tienen que contar la historia completa sin ayuda de nada más.
+ */
+export const SECCIONES = [
+  HECHOS,
+  PROBLEMA,
+  DIMENSIONES,
+  INDICE,
+  PALANCAS,
+  PASOS,
+  NO_SOMOS,
+  PRECIO,
+  PREGUNTAS,
+  CIERRE,
+] as const
 
 // ── 3. Meta contenido ───────────────────────────────────────────────────────
 
