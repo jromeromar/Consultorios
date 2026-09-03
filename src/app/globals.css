@@ -1,38 +1,84 @@
 @import 'tailwindcss';
 
 /*
- * Paleta: la instancia validada de la guía de visualización de datos.
- * Los tokens de marca viven en la familia azul para no competir con los
- * colores de serie de las gráficas.
+ * Identidad de Kleo. Del griego kleos: lo que se dice de alguien cuando no está
+ * delante. La marca es un instrumento que lee eso, y la paleta lo dice: tinta
+ * con sesgo verde-azul, papel con sesgo verde-gris, un solo acento y el ocre
+ * reservado para lo que todavía no está cerrado.
+ *
+ * NINGÚN color se escribe fuera de este bloque. La identidad no está aprobada;
+ * cuando lo esté, cambiar estos tokens tiene que bastar.
  */
 @theme {
-  --color-plane: #f9f9f7;
-  --color-surface: #fcfcfb;
-  --color-surface-2: #f2f1ee;
-  --color-ink: #0b0b0b;
-  --color-ink-2: #52514e;
-  --color-muted: #898781;
-  --color-hair: #e1e0d9;
-  --color-axis: #c3c2b7;
+  --color-papel: #f4f6f3;
+  --color-papel-2: #e7ebe7;
+  --color-papel-3: #dde3de;
+  --color-tinta: #131a18;
+  --color-tinta-2: #3c4744;
+  --color-tenue: #6b7671;
+  --color-linea: #d3dad5;
+  --color-linea-fuerte: #b7c1bb;
 
-  --color-brand: #123047;
-  --color-accent: #1c5cab;
-  --color-accent-soft: #cde2fb;
+  --color-acento: #0d5c4d;
+  --color-acento-ink: #0a4a3e;
+  --color-acento-tenue: #d9e8e3;
+  /* El panel del índice invierte con el tema, así que su barra lleva token
+     propio: acento claro sobre panel oscuro, acento oscuro sobre panel claro. */
+  --color-barra-panel: #4fb39b;
 
-  --color-series-1: #2a78d6;
-  --color-series-2: #eb6834;
-  --color-series-3: #1baf7a;
+  /* Semántico, separado del acento: solo para lo que está sin cerrar. */
+  --color-abierto: #8a5a12;
+  --color-abierto-tenue: #f3e8d3;
 
-  --color-good: #0ca30c;
-  --color-warning: #fab219;
-  --color-serious: #ec835a;
-  --color-critical: #d03b3b;
-
-  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-estructura: var(--fuente-estructura), ui-sans-serif, system-ui, sans-serif;
+  --font-prosa: var(--fuente-prosa), Georgia, serif;
+  --font-dato: var(--fuente-dato), ui-monospace, monospace;
 }
 
 :root {
   color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --color-papel: #10130f;
+    --color-papel-2: #191e1b;
+    --color-papel-3: #232a26;
+    --color-tinta: #eef2ee;
+    --color-tinta-2: #b6c0bb;
+    --color-tenue: #8a948f;
+    --color-linea: #2a312d;
+    --color-linea-fuerte: #3a423d;
+    --color-acento: #3f9a86;
+    --color-acento-ink: #6bbfa9;
+    --color-acento-tenue: #14332c;
+    --color-barra-panel: #0d5c4d;
+    --color-abierto: #d09a4a;
+    --color-abierto-tenue: #2e2415;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-papel: #10130f;
+  --color-papel-2: #191e1b;
+  --color-papel-3: #232a26;
+  --color-tinta: #eef2ee;
+  --color-tinta-2: #b6c0bb;
+  --color-tenue: #8a948f;
+  --color-linea: #2a312d;
+  --color-linea-fuerte: #3a423d;
+  --color-acento: #3f9a86;
+  --color-acento-ink: #6bbfa9;
+  --color-acento-tenue: #14332c;
+  --color-barra-panel: #0d5c4d;
+  --color-abierto: #d09a4a;
+  --color-abierto-tenue: #2e2415;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -40,22 +86,199 @@ html {
 }
 
 body {
-  background: var(--color-plane);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+  margin: 0;
+  background: var(--color-papel);
+  color: var(--color-tinta);
+  font-family: var(--font-estructura);
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Números que se alinean en columna: tablas y ejes. Nunca en cifras grandes. */
-.tabular {
+/* ── composición ────────────────────────────────────────────────────────── */
+
+.medida {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/*
+ * Riel de lectura: el número de sección en monoespaciada, como el readout de un
+ * instrumento. En móvil se pliega arriba en vez de comerse el ancho.
+ */
+.seccion {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 0 28px;
+  padding: 56px 0;
+  border-top: 1px solid var(--color-linea);
+}
+.seccion > .riel {
+  font-family: var(--font-dato);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--color-tenue);
+  padding-top: 6px;
+}
+.seccion h2 {
+  font-size: clamp(24px, 3.2vw, 34px);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+.prosa {
+  font-family: var(--font-prosa);
+  font-size: 18px;
+  line-height: 1.62;
+  color: var(--color-tinta-2);
+  max-width: 62ch;
+}
+.prosa p + p {
+  margin-top: 16px;
+}
+.entrada {
+  font-family: var(--font-prosa);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-tinta-2);
+  max-width: 60ch;
+  margin: 14px 0 0;
+}
+.dato {
+  font-family: var(--font-dato);
   font-variant-numeric: tabular-nums;
+}
+.etiqueta {
+  font-family: var(--font-dato);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-tenue);
+}
+
+.tarjeta {
+  background: var(--color-papel-2);
+  border: 1px solid var(--color-linea);
+  border-radius: 3px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-acento);
+  color: var(--color-papel);
+  border: 0;
+  border-radius: 3px;
+  padding: 15px 26px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+.boton:hover {
+  background: var(--color-acento-ink);
+}
+.boton:focus-visible {
+  outline: 2px solid var(--color-tinta);
+  outline-offset: 2px;
+}
+.boton[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+.boton-secundario {
+  background: transparent;
+  color: var(--color-acento-ink);
+  border: 1px solid var(--color-linea-fuerte);
+}
+.boton-secundario:hover {
+  background: var(--color-papel-2);
+}
+
+.insignia {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-dato);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-abierto);
+  background: var(--color-abierto-tenue);
+  border: 1px solid color-mix(in srgb, var(--color-abierto) 35%, transparent);
+  border-radius: 2px;
+  padding: 4px 9px;
+}
+
+/* ── panel del índice: el único lugar donde la página sube la voz ───────── */
+
+.panel {
+  background: var(--color-tinta);
+  color: var(--color-papel);
+  border-radius: 4px;
+  padding: 26px 26px 22px;
+}
+.panel .cifra {
+  font-size: 76px;
+  line-height: 0.9;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.panel .barra-pista {
+  height: 7px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--color-papel) 22%, transparent);
+  overflow: hidden;
+}
+.panel .barra-valor {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--color-barra-panel);
+}
+
+/* ── cintillo de borrador ──────────────────────────────────────────────── */
+
+.cintillo {
+  background: var(--color-abierto);
+  color: var(--color-papel);
+  padding: 9px 24px;
+  text-align: center;
+  font-family: var(--font-dato);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.cintillo strong {
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .seccion {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 40px 0;
+  }
+  .seccion > .riel {
+    padding-top: 0;
+  }
+  .panel .cifra {
+    font-size: 60px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx src/lib/db/migrate.ts",
-    "db:reset": "rm -rf .data/pglite && npm run db:migrate"
+    "db:reset": "rm -rf .data/pglite && npm run db:migrate",
+    "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.8",
