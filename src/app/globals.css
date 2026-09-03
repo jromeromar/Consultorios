@@ -159,6 +159,29 @@ body {
   text-wrap: pretty;
 }
 
+/* El segmento, arriba del titular. Comparte la cara del tag pero no va en
+   mayúsculas: son setenta caracteres, y en caja alta a dos líneas se lee peor
+   justo donde el lector decide si la página es para él. */
+.segmento {
+  font-family: var(--font-dato);
+  font-size: 12.5px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--color-acento-ink);
+  max-width: 52ch;
+  margin: 0;
+}
+.segmento::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin-right: 10px;
+  vertical-align: 0.3em;
+  background: currentColor;
+  opacity: 0.55;
+}
+
 /* Los espacios agrupan: tag, h2 y h3 se leen como una unidad porque el aire
    entre ellos es menor que el que los separa del cuerpo. */
 .encabezado > .tag {

@@ -2,12 +2,14 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 import { Formulario } from '@/components/landing/Formulario'
+import { PanelFuentes } from '@/components/landing/PanelFuentes'
 import { PanelIndice } from '@/components/landing/PanelIndice'
 import {
   CIERRE,
   CONFIG,
   CONTACTO,
   DIMENSIONES,
+  DIRECTORIOS,
   HECHOS,
   INDICE,
   MARCA,
@@ -96,13 +98,19 @@ export default function Landing() {
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1.15fr_minmax(0,0.85fr)] lg:items-start lg:gap-16">
           <div>
-            <h1 className="max-w-[19ch] text-[clamp(34px,5.4vw,58px)] font-semibold leading-[1.04] tracking-[-0.03em] text-balance">
+            {/* Para quién es, antes del titular: quien no encaje se excluye en
+                cuatro segundos en vez de concluir que no se entiende. */}
+            <p className="segmento">{PORTADA.segmento}</p>
+            <h1 className="mt-5 max-w-[24ch] text-[clamp(32px,4.8vw,52px)] font-semibold leading-[1.06] tracking-[-0.03em] text-balance">
               {PORTADA.h1}
             </h1>
             <p className="prosa mt-6">{PORTADA.subtitulo}</p>
+            <p className="mt-5 max-w-[58ch] border-l-2 pl-4 text-[14.5px] leading-relaxed text-[var(--color-tinta-2)] border-[var(--color-linea-fuerte)]">
+              {PORTADA.noAplica}
+            </p>
             <Formulario />
           </div>
-          <PanelIndice />
+          <PanelFuentes />
         </div>
       </header>
 
@@ -161,6 +169,21 @@ export default function Landing() {
           </ul>
         </section>
 
+        {/* ── en qué se diferencia de un directorio ─────────────────────── */}
+        <section className="seccion">
+          <Encabezado tag={DIRECTORIOS.tag} h2={DIRECTORIOS.h2} h3={DIRECTORIOS.h3} />
+          <ul className="mt-7 grid gap-7 sm:grid-cols-3">
+            {DIRECTORIOS.items.map((d) => (
+              <li key={d.titulo}>
+                <p className="text-[15px] font-semibold">{d.titulo}</p>
+                <p className="mt-2 text-[13.5px] leading-relaxed text-[var(--color-tinta-2)]">
+                  {d.texto}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* ── cómo lo medimos ────────────────────────────────────────────── */}
         <section className="seccion">
           <Encabezado
@@ -174,18 +197,21 @@ export default function Landing() {
           <p className="entrada">
             {CONFIG.indiceCalibrado ? INDICE.introCalibrado : INDICE.introEnCalibracion}
           </p>
-          <dl className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-3">
-            {INDICE.reglas.map((r) => (
-              <div key={r.titulo}>
-                <dt className="text-[14px] font-semibold">{r.titulo}</dt>
-                <dd className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-tinta-2)]">
-                  {!CONFIG.indiceCalibrado && 'textoEnCalibracion' in r
-                    ? r.textoEnCalibracion
-                    : r.textoCalibrado}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_1.15fr] lg:items-start">
+            <PanelIndice />
+            <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+              {INDICE.reglas.map((r) => (
+                <div key={r.titulo}>
+                  <dt className="text-[14px] font-semibold">{r.titulo}</dt>
+                  <dd className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--color-tinta-2)]">
+                    {!CONFIG.indiceCalibrado && 'textoEnCalibracion' in r
+                      ? r.textoEnCalibracion
+                      : r.textoCalibrado}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         {/* ── qué hacemos ────────────────────────────────────────────────── */}
@@ -247,7 +273,7 @@ export default function Landing() {
         {/* ── qué no somos ───────────────────────────────────────────────── */}
         <section className="seccion">
           <Encabezado tag={NO_SOMOS.tag} h2={NO_SOMOS.h2} h3={NO_SOMOS.h3} />
-          <ul className="mt-7 grid gap-7 sm:grid-cols-3">
+          <ul className="mt-7 grid gap-7 sm:grid-cols-2">
             {NO_SOMOS.items.map((n) => (
               <li key={n.titulo}>
                 <p className="text-[15px] font-semibold">{n.titulo}</p>

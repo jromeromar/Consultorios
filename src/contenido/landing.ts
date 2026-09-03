@@ -53,22 +53,74 @@ export const CONFIG = {
   indiceDisponible: false,
 } as const
 
-// ── 2.1 Arriba del pliegue ──────────────────────────────────────────────────
+// ── Arriba del pliegue ──────────────────────────────────────────────────────
+//
+// Dos médicos leyeron la versión anterior. Un anestesiólogo escribió «no
+// entiendo», y no era la redacción: la página daba por hecho un recorrido de
+// compra que él no tiene. Una pediatra preguntó en qué se diferencia de
+// Doctoralia, porque nada arriba del pliegue lo decía.
+//
+// Por eso esta pantalla dice, en este orden: para quién es, qué hacemos, y en
+// qué sitios. El número viene después.
 
 export const PORTADA = {
-  h1: 'Reputación es lo que un paciente encuentra cuando te busca.',
-  /** Alternativas para probar. La A es la definición canónica de la marca. */
+  /**
+   * Para quién es, como regla y no como lista, para que quien no encaje se
+   * excluya en cuatro segundos en vez de concluir que la página no se entiende.
+   */
+  segmento: 'Para consultorios donde el paciente te elige buscando y paga de su bolsillo',
+
+  h1: 'Lo que un paciente encuentra cuando te busca, medido en un número.',
+
+  /** Alternativas para probar. */
   h1Alternativas: [
-    'Lo que un paciente encuentra cuando te busca, en un número que puedes verificar.',
-    '¿Cuándo fue la última vez que alguien te dejó una reseña?',
+    'Nos encargamos de lo que un paciente encuentra cuando te busca.',
+    'Lo que se dice de ti cuando no estás delante, medido.',
   ],
+
   subtitulo:
-    'Qué tan reciente es tu última reseña. Si alguien la respondió. Cuánto tardaste en ' +
-    'contestarle al que escribió un domingo. Eso se puede medir, comparar con tu especialidad ' +
-    'en tu ciudad, y seguir mes a mes. Nosotros lo medimos.',
+    'Tu ficha de Google, tus perfiles en Doctoralia y Top Doctors, tus reseñas y tu WhatsApp. ' +
+    'Medimos qué encuentra ahí un paciente, te damos el número comparado con tu especialidad en ' +
+    'tu ciudad, y después lo operamos cada mes.',
+
+  /**
+   * La frase de más confianza de la página, y la respuesta al anestesiólogo:
+   * decir a quién NO le sirve cuesta un lector y gana la referencia.
+   */
+  noAplica:
+    'Si tus pacientes te llegan por remisión o por EPS, esto todavía no te sirve, y preferimos ' +
+    'decírtelo ahora.',
+
   cta: 'Ver mi Índice de Reputación',
   microcopy: 'Gratis. Solo con datos públicos. No pedimos acceso a nada tuyo.',
   campo: 'Nombre de tu consultorio como aparece en Google',
+} as const
+
+/**
+ * Dónde miramos. Va arriba del pliegue porque es lo que responde de una vez las
+ * dos preguntas del campo: qué hacen ustedes, y en qué se diferencian de
+ * Doctoralia.
+ *
+ * Publicar la lista no es adorno: una cifra cuyo origen no puedes rastrear no
+ * la puedes verificar, y verificable es lo único que este índice promete.
+ */
+export const FUENTES = {
+  titulo: 'Dónde miramos',
+  items: [
+    {
+      nombre: 'Google',
+      detalle: 'Tu ficha, tus reseñas y tu posición en las búsquedas de tu ciudad.',
+    },
+    { nombre: 'Doctoralia', detalle: 'Si tienes perfil, tu calificación y en qué lugar sales.' },
+    {
+      nombre: 'Top Doctors',
+      detalle: 'Igual: si tienes perfil, tu calificación y en qué lugar sales.',
+    },
+    { nombre: 'Tu sitio', detalle: 'Si abre en el celular y si dice precios.' },
+    { nombre: 'Tu WhatsApp', detalle: 'Cuánto tarda en llegar la primera respuesta.' },
+    { nombre: 'Tu agenda', detalle: 'Si un paciente puede tomar la cita solo.' },
+  ],
+  nota: 'Todo público. Nada de esto necesita que nos des una clave.',
 } as const
 
 // ══════════════════════════════════════════════════════════════════════════
@@ -139,52 +191,89 @@ export const DIMENSIONES = {
   tag: '¿Qué se puede medir?',
   h2: 'Esa decisión la toman cinco cosas, y todas se pueden ver.',
   h3:
-    'Presencia, prueba social, encontrabilidad, respuesta y reservabilidad. Cada una con su ' +
-    'peso publicado, y ninguna necesita que nos des acceso a nada.',
+    'Dónde apareces, qué dicen de ti, si te encuentran, qué tan rápido contestas y si pueden ' +
+    'agendar solos. Cada una con su peso publicado.',
   intro:
-    'Son cinco cosas que un paciente puede ver hoy y tú también. Los pesos están abajo, al ' +
-    'lado de cada una, y suman 100.',
+    'Cinco cosas que un paciente puede ver hoy, y tú también. Los pesos están al lado de cada ' +
+    'una y suman 100.',
   items: [
     {
       id: 'presencia',
-      nombre: 'Presencia',
+      // Se llamaba «Presencia». Un médico no describe su consultorio así.
+      nombre: 'Dónde apareces',
       peso: 20,
       texto:
-        'Tu ficha de Google: reclamada, con categorías, servicios, horario, fotos recientes y ' +
-        'un sitio que abre en el celular.',
+        'Tu ficha de Google y tus perfiles en Doctoralia y Top Doctors: si existen, si están ' +
+        'reclamados y si están completos. Y si tu sitio abre en el celular.',
     },
     {
       id: 'prueba-social',
-      nombre: 'Prueba social',
+      nombre: 'Qué dicen de ti',
       peso: 30,
       texto:
-        'Cuántas reseñas tienes frente a la mediana de tu especialidad en tu ciudad, qué ' +
-        'calificación, hace cuánto fue la última, cuántas en los últimos 90 días y cuántas ' +
-        'respondiste.',
+        'Tus reseñas y tu calificación en Google y en los directorios, frente a la mediana de ' +
+        'tu especialidad en tu ciudad: cuántas tienes, hace cuánto fue la última, cuántas en ' +
+        'los últimos 90 días y cuántas respondiste.',
     },
     {
       id: 'encontrabilidad',
-      nombre: 'Encontrabilidad',
+      nombre: 'Si te encuentran',
       peso: 20,
       texto:
-        'Si apareces cuando alguien en tu ciudad busca tu especialidad o pregunta cuánto vale ' +
-        'un procedimiento.',
+        'Si sales cuando alguien en tu ciudad busca tu especialidad o pregunta cuánto vale un ' +
+        'procedimiento. En Google, y en qué lugar quedas dentro de cada directorio.',
     },
     {
       id: 'respuesta',
-      nombre: 'Respuesta',
+      nombre: 'Qué tan rápido contestas',
       peso: 20,
       texto:
-        'Cuánto tardas en contestar el primer mensaje, si contestas fuera de horario, si das ' +
-        'un precio o un rango, y si ofreces agendar.',
+        'Cuánto tardas en contestar el primer mensaje, si contestas fuera de horario, si das un ' +
+        'precio o un rango, y si ofreces agendar.',
     },
     {
       id: 'reservabilidad',
-      nombre: 'Reservabilidad',
+      nombre: 'Si pueden agendar solos',
       peso: 10,
       texto:
         'Si un paciente puede ver tu disponibilidad y tomar la cita sin esperar a que alguien ' +
         'le confirme.',
+    },
+  ],
+} as const
+
+// ── En qué se diferencia de un directorio ───────────────────────────────────
+//
+// Esta sección existe porque una pediatra preguntó «¿y cuál sería la diferencia
+// con Top Doctors, o Doctoralia?». Antes la respuesta estaba en la posición
+// siete, en abstracto, y sin nombrar a nadie. Cuando no nombras aquello con lo
+// que el lector te compara, el lector hace la comparación solo y la hace mal.
+
+export const DIRECTORIOS = {
+  tag: '¿Y en qué se diferencia de Doctoralia?',
+  h2: 'Doctoralia y Top Doctors son dos de los sitios que medimos.',
+  h3:
+    'Ellos te venden un perfil dentro de su sitio, al lado de otros. Nosotros medimos ese ' +
+    'perfil junto con todo lo demás, y operamos lo que es tuyo.',
+  items: [
+    {
+      titulo: 'Un directorio te lista.',
+      texto:
+        'Te cobra por aparecer dentro de su sitio, al lado de otros consultorios, y el paciente ' +
+        've la marca del directorio. Ese perfil es de ellos, no tuyo.',
+    },
+    {
+      titulo: 'Nosotros lo medimos.',
+      texto:
+        'Tu posición y tu calificación en cada directorio entran en el número, junto con tu ' +
+        'ficha de Google, tu sitio, tu WhatsApp y tu agenda. Un paciente no distingue entre ' +
+        'sitios: mira lo que encuentra.',
+    },
+    {
+      titulo: 'Y operamos lo que es tuyo.',
+      texto:
+        'El paciente nunca ve nuestra marca. Ve tu ficha, tu página y tu número. Si un día nos ' +
+        'dejas, todo lo que montamos se queda contigo.',
     },
   ],
 } as const
@@ -241,33 +330,34 @@ export const PALANCAS = {
     'mes te mostramos cuál se movió.',
   items: [
     {
-      dimension: 'Presencia',
+      dimension: 'Dónde apareces',
       texto:
-        'Reclamamos y completamos tu ficha de Google, y publicamos tu aviso de privacidad y tu ' +
-        'política de datos en una URL propia. Después la mantenemos al día.',
+        'Reclamamos y completamos tu ficha de Google y tus perfiles en Doctoralia y Top Doctors, ' +
+        'y publicamos tu aviso de privacidad y tu política de datos en una URL propia. Después ' +
+        'los mantenemos al día.',
     },
     {
-      dimension: 'Prueba social',
+      dimension: 'Qué dicen de ti',
       texto:
         'Después de cada cita, le pedimos reseña a quien asistió. Respondemos todas, las buenas ' +
         'y las malas, y recuperamos las históricas que quedaron sin respuesta.',
     },
     {
-      dimension: 'Encontrabilidad',
+      dimension: 'Si te encuentran',
       texto:
         'Publicaciones en tu perfil y páginas por servicio apuntadas a lo que la gente de tu ' +
         'ciudad pregunta de verdad: cuánto vale. Cada pieza pasa por tu aprobación antes de ' +
         'publicarse, porque lo publicado te obliga a ti.',
     },
     {
-      dimension: 'Respuesta',
+      dimension: 'Qué tan rápido contestas',
       texto:
         'Tu número de WhatsApp atendido las veinticuatro horas para lo administrativo: precio, ' +
         'horario, agenda, recordatorio. Todo lo clínico se deriva a una persona de tu equipo. ' +
         'Siempre.',
     },
     {
-      dimension: 'Reservabilidad',
+      dimension: 'Si pueden agendar solos',
       texto:
         'Conectamos tu agenda para que el paciente vea disponibilidad real y la cita quede ' +
         'escrita sin que nadie la transcriba. Ninguna persona nuestra entra a tu software.',
@@ -318,18 +408,10 @@ export const PASOS = {
 // ── Lo que esto no es ───────────────────────────────────────────────────────
 
 export const NO_SOMOS = {
-  tag: '¿Qué no somos?',
-  h2: 'No somos directorio, ni agencia de menú, ni un bot que habla por ti.',
-  h3:
-    'El paciente nunca ve nuestra marca, no vendemos piezas por mes, y cualquier cosa clínica ' +
-    'va a una persona de tu equipo.',
+  tag: '¿Qué más no somos?',
+  h2: 'No somos una agencia de menú, ni un bot que habla por ti.',
+  h3: 'No vendemos piezas por mes, y cualquier cosa clínica va a una persona de tu equipo.',
   items: [
-    {
-      titulo: 'No somos un directorio.',
-      texto:
-        'El paciente nunca ve nuestra marca. Ve la tuya: tu ficha, tu página, tu número. El ' +
-        'directorio cobra por listarte al lado de tu competencia; aquí nadie está al lado.',
-    },
     {
       titulo: 'No somos una agencia de menú.',
       texto:
@@ -386,9 +468,26 @@ export const PREGUNTAS = {
   tag: '¿Qué nos preguntan?',
   h2: 'No prometemos resultados. Medimos, y el número lo ves tú primero.',
   h3:
-    'Estas son las siete preguntas que nos hacen antes de decir sí, en el orden en que ' +
-    'aparecen de verdad: primero la desconfianza al proveedor, al final el precio.',
+    'Estas son las nueve preguntas que nos hacen antes de decir sí, en el orden en que ' +
+    'aparecen de verdad: primero la categoría, al final el precio.',
   items: [
+    {
+      // Textual, de una pediatra.
+      pregunta: '«¿Y cuál sería la diferencia con Top Doctors, o Doctoralia?»',
+      respuesta:
+        'Que ellos son dos de los sitios que medimos. Tu perfil ahí es de ellos y ahí estás al ' +
+        'lado de otros consultorios. Nosotros medimos tu posición y tu calificación en esos ' +
+        'sitios junto con tu ficha de Google, tu sitio y tu WhatsApp, y operamos lo que es ' +
+        'tuyo. El paciente nunca ve nuestra marca.',
+    },
+    {
+      // Textual, de un anestesiólogo que leyó la versión anterior.
+      pregunta: '«Yo no recibo pacientes por Google.»',
+      respuesta:
+        'Entonces esto todavía no te sirve, y preferimos decírtelo. Kleia funciona donde el ' +
+        'paciente te elige buscando y paga de su bolsillo. Si te llegan por remisión o por EPS, ' +
+        'el número te va a salir bajo y no va a significar nada.',
+    },
     {
       pregunta: '«Suena a que prometen y no cumplen.»',
       respuesta:
@@ -457,6 +556,7 @@ export const SECCIONES = [
   HECHOS,
   PROBLEMA,
   DIMENSIONES,
+  DIRECTORIOS,
   INDICE,
   PALANCAS,
   PASOS,

@@ -288,6 +288,7 @@ describe('11 · Tres niveles de profundidad', () => {
     'HECHOS',
     'PROBLEMA',
     'DIMENSIONES',
+    'DIRECTORIOS',
     'INDICE',
     'PALANCAS',
     'PASOS',
@@ -393,5 +394,84 @@ describe('11 · Tres niveles de profundidad', () => {
     ]) {
       assert.ok(css.includes(selector), `falta el estilo ${selector}`)
     }
+  })
+})
+
+describe('12 · Lo que dos médicos no entendieron', () => {
+  // Un anestesiólogo leyó la versión anterior y escribió «no entiendo». Una
+  // pediatra preguntó en qué se diferencia de Doctoralia. Ninguna de las dos
+  // reacciones era de redacción: eran de estructura. Estos controles son para
+  // que la estructura no vuelva atrás.
+
+  const PLIEGUE = [C.PORTADA.segmento, C.PORTADA.h1, C.PORTADA.subtitulo, C.PORTADA.noAplica].join(
+    ' ',
+  )
+
+  it('arriba del pliegue se dice para quién es', () => {
+    assert.ok(/paga de su bolsillo/i.test(C.PORTADA.segmento), 'el segmento no está declarado')
+    // Y a quién no le sirve, que es lo que convierte un «no entiendo» en un
+    // «no es para mí». Cuesta un lector y evita perder la referencia.
+    assert.ok(/remisión|EPS/i.test(C.PORTADA.noAplica), 'no se dice a quién no le sirve')
+  })
+
+  it('los directorios se nombran arriba del pliegue, no en la posición siete', () => {
+    for (const sitio of ['Doctoralia', 'Top Doctors']) {
+      assert.ok(PLIEGUE.includes(sitio), `${sitio} no aparece arriba del pliegue`)
+    }
+  })
+
+  it('la sección de directorios sale antes que el índice', () => {
+    const orden = C.SECCIONES.map((x) => x.h2)
+    assert.ok(
+      orden.indexOf(C.DIRECTORIOS.h2) < orden.indexOf(C.INDICE.h2),
+      'la diferencia con el directorio tiene que estar resuelta antes de explicar el número',
+    )
+  })
+
+  it('ninguna dimensión usa una palabra que un médico no diría', () => {
+    // «Encontrabilidad» y «reservabilidad» no son palabras que un médico use, y
+    // «prueba social» es jerga de agencia.
+    const JERGA = /encontrabilidad|reservabilidad|prueba social/i
+    for (const d of C.DIMENSIONES.items) {
+      assert.ok(!JERGA.test(d.nombre), `la dimensión «${d.nombre}» usa jerga`)
+    }
+  })
+
+  it('el índice mide posición y calificación en los directorios', () => {
+    const medido = C.DIMENSIONES.items.map((d) => d.texto).join(' ')
+    for (const sitio of ['Doctoralia', 'Top Doctors']) {
+      assert.ok(medido.includes(sitio), `${sitio} no entra en ninguna dimensión`)
+    }
+    assert.ok(/calificación/i.test(medido), 'no se dice que se mide la calificación')
+    assert.ok(/en qué lugar|posición/i.test(medido), 'no se dice que se mide la posición')
+  })
+
+  it('la lista de fuentes es la lista real, y las nombra todas', () => {
+    // Una cifra cuyo origen no se puede rastrear no se puede verificar, y
+    // verificable es lo único que este índice promete.
+    const fuentes: string[] = C.FUENTES.items.map((f) => f.nombre)
+    for (const sitio of ['Google', 'Doctoralia', 'Top Doctors']) {
+      assert.ok(fuentes.includes(sitio), `${sitio} no está en la lista de fuentes`)
+    }
+  })
+
+  it('el número de preguntas que se anuncia es el que hay', () => {
+    const NUMEROS: Record<string, number> = {
+      cinco: 5,
+      seis: 6,
+      siete: 7,
+      ocho: 8,
+      nueve: 9,
+      diez: 10,
+      once: 11,
+      doce: 12,
+    }
+    const dicho = C.PREGUNTAS.h3.match(new RegExp(`\\b(${Object.keys(NUMEROS).join('|')})\\b`, 'i'))
+    assert.ok(dicho, 'el h3 no anuncia un número de preguntas')
+    assert.equal(
+      NUMEROS[dicho[1].toLowerCase()],
+      C.PREGUNTAS.items.length,
+      `dice «${dicho[1]}» y hay ${C.PREGUNTAS.items.length}`,
+    )
   })
 })
