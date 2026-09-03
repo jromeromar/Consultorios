@@ -199,8 +199,22 @@ describe('8 · Ningún marcador de marca sin resolver', () => {
   })
 
   it('la marca tiene nombre', () => {
-    assert.equal(C.MARCA.nombre, 'Kleo')
-    assert.ok(C.META.title.startsWith('Kleo'))
+    assert.equal(C.MARCA.nombre, 'Kleia')
+    assert.ok(C.META.title.startsWith('Kleia'))
+  })
+
+  it('el nombre sale de un solo sitio', () => {
+    // Ya cambió una vez, de Kleo a Kleia. Que vuelva a cambiar tiene que seguir
+    // siendo una línea, así que nada de lo que se renderiza puede escribirlo.
+    assert.ok(C.META.title.startsWith(C.MARCA.nombre), 'el title no deriva de MARCA.nombre')
+    for (const ruta of ['../app/page.tsx', '../app/layout.tsx']) {
+      const archivo = readFileSync(new URL(ruta, import.meta.url), 'utf8')
+      const codigo = archivo.replace(/\/\*[\s\S]*?\*\/|\/\/.*/g, '')
+      assert.ok(
+        !codigo.includes(C.MARCA.nombre),
+        `${ruta} escribe «${C.MARCA.nombre}» a mano en vez de leer MARCA.nombre`,
+      )
+    }
   })
 
   it('el title y la meta caben en sus límites', () => {

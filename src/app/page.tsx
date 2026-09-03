@@ -62,7 +62,7 @@ function Encabezado({
 }
 
 /**
- * Landing de Kleo · servicio de reputación.
+ * Landing de Kleia · servicio de reputación.
  *
  * El copy vive entero en src/contenido/landing.ts, y cada decisión que el copy
  * dejó abierta es un interruptor de CONFIG. Esta página solo compone.

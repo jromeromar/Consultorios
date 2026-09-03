@@ -10,7 +10,7 @@
  */
 
 export const MARCA = {
-  nombre: 'Kleo',
+  nombre: 'Kleia',
   /**
    * `kleos` es la palabra griega para el renombre: lo que se dice de alguien
    * cuando no está presente. La marca es la definición del servicio.
