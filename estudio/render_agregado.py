@@ -344,13 +344,14 @@ def render(d: dict, marca: dict, *, solo_claro: bool = False) -> str:
     parcial = plantilla.cargar("agregado_hallazgo.html")
     t, c = d["textos"], d["contexto_demanda"]
 
+    sinteticos = bool(d["ficha_tecnica"].get("datos_sinteticos"))
+
     return plantilla.rellenar(base, {
         "titulo_pagina": t["estudio"]["titulo"],
         "descripcion": t["estudio"]["subtitulo"],
+        "robots": estilo.meta_robots(datos_sinteticos=sinteticos),
         "estilo": estilo.css(marca, solo_claro=solo_claro),
-        "cintillo": estilo.cintillo(
-            marca, datos_sinteticos=bool(d["ficha_tecnica"].get("datos_sinteticos"))
-        ),
+        "cintillo": estilo.cintillo(marca, datos_sinteticos=sinteticos),
         "marca": estilo.marca_visible(marca),
         "marca_nombre": escape(marca["nombre"]),
         "etiqueta_edicion": escape(t["estudio"]["etiqueta_edicion"]),

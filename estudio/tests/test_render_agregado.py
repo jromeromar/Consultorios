@@ -179,3 +179,23 @@ class TestNoMedido:
         html = render_agregado.render(d, marca)
         assert "estimad" not in html.lower()
         assert "aproximad" not in html.lower()
+
+
+class TestNoIndexarCifrasInventadas:
+    """
+    El cintillo avisa a quien abre el documento. El noindex evita que un
+    buscador lo sirva como investigación de mercado a alguien que nunca vio la
+    portada. Y depende de la edición, no del despliegue: una edición de campo
+    se publica para ser encontrada.
+    """
+
+    def test_una_edicion_sintetica_no_se_indexa(self, agregado):
+        assert 'name="robots" content="noindex,nofollow"' in agregado["html"]
+
+    def test_una_edicion_de_campo_si_se_indexa(self, corrida, marca):
+        d = leer_anonimo(corrida["edicion"], corrida["salida"])
+        d["ficha_tecnica"]["datos_sinteticos"] = False
+        html = render_agregado.render(d, marca)
+        assert "noindex" not in html
+        # Y sin el aviso tampoco: los dos salen de la misma decisión.
+        assert "DATOS SINTÉTICOS" not in html

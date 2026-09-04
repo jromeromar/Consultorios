@@ -93,6 +93,18 @@ AVISO_SINTETICOS = (
 )
 
 
+def meta_robots(*, datos_sinteticos: bool) -> str:
+    """
+    Un documento con cifras inventadas no se indexa.
+
+    El cintillo avisa a quien lo abre; esto evita que un buscador lo sirva como
+    si fuera investigación de mercado a alguien que nunca vio la portada. Va
+    aquí y no en el despliegue porque depende de la edición: una edición de
+    campo se publica para ser encontrada.
+    """
+    return '<meta name="robots" content="noindex,nofollow">' if datos_sinteticos else ''
+
+
 def cintillo(marca: dict, *, datos_sinteticos: bool = False) -> str:
     """
     Cintillo del documento. Se apaga poniendo `cintillo_provisional` en null.

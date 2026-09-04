@@ -130,3 +130,45 @@ class TestContratoMotorTextos:
         for clave in ("nombre", "campo_inicio", "campo_fin", "corte_reloj_horas",
                       "n_universo", "n_medidos", "n_respondio", "n_ciudades"):
             assert f.get(clave) is not None, clave
+
+
+class TestVocabularioProhibido:
+    """
+    El documento de copy de la marca prohíbe «captar», «conseguir», «traer»,
+    «llenar» y «más pacientes»: es vocabulario de expediente disciplinario en
+    publicidad médica en Colombia. La landing ya lo hace cumplir sobre su propio
+    contenido; el riesgo regulatorio es el mismo en estos documentos, que
+    también los firma la marca.
+
+    La excepción es deliberada y es la lista de límites: ahí «más pacientes»
+    aparece dentro de lo que el estudio NO permite concluir, y una prohibición
+    aplicada a ciegas convertiría un descargo en una frase más débil.
+    """
+
+    PROHIBIDAS = ("captaci", "captar", "conseguir pacientes", "traer pacientes",
+                  "llenar", "más pacientes")
+
+    def _cadenas(self, o, ruta=""):
+        if isinstance(o, str):
+            yield ruta, o
+        elif isinstance(o, dict):
+            for k, v in o.items():
+                yield from self._cadenas(v, f"{ruta}.{k}" if ruta else str(k))
+        elif isinstance(o, list):
+            for i, v in enumerate(o):
+                yield from self._cadenas(v, f"{ruta}[{i}]")
+
+    def test_ninguna_aparece_en_los_textos_publicables(self, textos):
+        fallos = [
+            (ruta, palabra) for ruta, cadena in self._cadenas(textos)
+            if not ruta.startswith("limites_informe")
+            for palabra in self.PROHIBIDAS if palabra in cadena.lower()
+        ]
+        assert fallos == [], fallos
+
+    def test_el_descargo_si_puede_nombrar_lo_que_no_concluye(self, textos):
+        limites = " ".join(textos["limites_informe"]).lower()
+        assert "más pacientes" in limites, (
+            "el descargo perdió la frase que niega explícitamente el resultado "
+            "que un lector querría leer"
+        )

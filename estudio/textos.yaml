@@ -231,8 +231,7 @@ hallazgos:
     forma: dispersion
     contra_hallazgo: true
     titulo: >-
-      Responder rápido no vino acompañado de mejores señales públicas de
-      captación
+      Responder rápido no vino acompañado de mejores señales públicas
     lede: >-
       Cruzando el tiempo de respuesta contra las señales públicas que este
       estudio observó no aparece relación. Los consultorios más rápidos no son
@@ -354,7 +353,7 @@ territorio:
     es una conversación aparte y su estado no se mide en este estudio.
 
 auditoria:
-  titulo: Auditoría de captación de pacientes
+  titulo: Auditoría de reputación pública
   deck: >-
     Dónde está este consultorio frente a los {n_medidos} consultorios de
     ortodoncia medidos en {n_ciudades} ciudades de Colombia, en los cinco pasos
@@ -374,8 +373,8 @@ auditoria:
 autoria:
   titulo: Quién hizo este estudio
   texto: >-
-    {marca} trabaja con consultorios de salud de alto ticket en la captación y
-    reserva de pacientes. El estudio se hizo para entender la categoría, y sus
+    {marca} trabaja con consultorios de salud de alto ticket en lo que un paciente
+    encuentra cuando los busca. El estudio se hizo para entender la categoría, y sus
     datos agregados son públicos. Un consultorio medido que quiera saber en qué
     punto de estas distribuciones está puede pedir su reporte individual, sin
     costo.
